@@ -3,7 +3,7 @@
 package project.main;
 
 
-public class SistemaInclusivo {
+public class Main {
     
 
     public static void main(String[] args) {

@@ -42,7 +42,7 @@ public class Login extends javax.swing.JFrame {
         jPanel3.setPreferredSize(new java.awt.Dimension(600, 740));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 32)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel6.setForeground(new java.awt.Color(51, 51, 51));
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("Inicia Sesión");
 
