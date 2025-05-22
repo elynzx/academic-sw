@@ -317,7 +317,7 @@ public class Matricula extends javax.swing.JFrame {
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 32)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(51, 51, 51));
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel7.setText("Formulario");
+        jLabel7.setText("Formulario de Matrícula");
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 400, -1));
 
         jComboBox3.setBackground(new java.awt.Color(239, 239, 239));
