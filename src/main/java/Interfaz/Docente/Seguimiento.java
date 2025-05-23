@@ -56,8 +56,11 @@ public class Seguimiento extends javax.swing.JFrame {
         btnCrearTicket1 = new javax.swing.JButton();
         lbNivel4 = new javax.swing.JLabel();
         jComboBox2 = new javax.swing.JComboBox<>();
+        lbNivel7 = new javax.swing.JLabel();
+        jTextField2 = new javax.swing.JTextField();
         jScrollPane3 = new javax.swing.JScrollPane();
         tbAlumnosDashboard1 = new javax.swing.JTable();
+        lbNivel6 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         mInicio = new javax.swing.JPanel();
@@ -157,27 +160,29 @@ public class Seguimiento extends javax.swing.JFrame {
         jTextField6.setText(" Apellidos");
         jTextField6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
         jTextField6.setEnabled(false);
-        jPanel1.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 320, 320, 30));
+        jPanel1.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 310, 320, 30));
 
         tbAlumnosDashboard.setBackground(new java.awt.Color(255, 255, 255));
         tbAlumnosDashboard.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         tbAlumnosDashboard.setForeground(new java.awt.Color(51, 51, 51));
         tbAlumnosDashboard.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+                {"Transición", null},
+                {"Juego", null},
+                {"Alimentación", null},
+                {"Seguridad", null},
+                {"Socialización", null},
+                {"Trabajo independiente", null}
             },
             new String [] {
-                "Id", "Nombre", "Apellido"
+                "Categoria", "Promedio"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.Object.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false
+                false, true
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -193,15 +198,15 @@ public class Seguimiento extends javax.swing.JFrame {
         tbAlumnosDashboard.setSelectionForeground(new java.awt.Color(0, 0, 0));
         jScrollPane2.setViewportView(tbAlumnosDashboard);
 
-        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 370, 320, 230));
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 440, 320, 160));
 
         lbNivel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lbNivel5.setForeground(new java.awt.Color(102, 102, 102));
         lbNivel5.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lbNivel5.setText("Datos del Estudiante");
+        lbNivel5.setText("Progreso Mensual");
         lbNivel5.setToolTipText("");
         lbNivel5.setPreferredSize(new java.awt.Dimension(70, 25));
-        jPanel1.add(lbNivel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 220, 190, 30));
+        jPanel1.add(lbNivel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 400, 190, 30));
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
         jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
@@ -209,7 +214,7 @@ public class Seguimiento extends javax.swing.JFrame {
         lbNivel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lbNivel1.setForeground(new java.awt.Color(102, 102, 102));
         lbNivel1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lbNivel1.setText("Puntuación");
+        lbNivel1.setText("Frencuencia de conducta");
         lbNivel1.setPreferredSize(new java.awt.Dimension(70, 25));
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
@@ -224,6 +229,11 @@ public class Seguimiento extends javax.swing.JFrame {
         jRadioButton1.setFocusPainted(false);
         jRadioButton1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jRadioButton1.setIconTextGap(10);
+        jRadioButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jRadioButton1MouseEntered(evt);
+            }
+        });
 
         jRadioButton2.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroup2.add(jRadioButton2);
@@ -235,6 +245,11 @@ public class Seguimiento extends javax.swing.JFrame {
         jRadioButton2.setFocusPainted(false);
         jRadioButton2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jRadioButton2.setIconTextGap(10);
+        jRadioButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jRadioButton2MouseEntered(evt);
+            }
+        });
 
         jRadioButton3.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroup2.add(jRadioButton3);
@@ -262,6 +277,11 @@ public class Seguimiento extends javax.swing.JFrame {
         jRadioButton4.setFocusPainted(false);
         jRadioButton4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jRadioButton4.setIconTextGap(10);
+        jRadioButton4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jRadioButton4MouseEntered(evt);
+            }
+        });
 
         jRadioButton5.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroup2.add(jRadioButton5);
@@ -289,6 +309,11 @@ public class Seguimiento extends javax.swing.JFrame {
         jRadioButton6.setFocusPainted(false);
         jRadioButton6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jRadioButton6.setIconTextGap(10);
+        jRadioButton6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jRadioButton6MouseEntered(evt);
+            }
+        });
         jRadioButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jRadioButton6ActionPerformed(evt);
@@ -365,6 +390,11 @@ public class Seguimiento extends javax.swing.JFrame {
         btnCrearTicket1.setText("GUARDAR");
         btnCrearTicket1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnCrearTicket1.setFocusPainted(false);
+        btnCrearTicket1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnCrearTicket1MouseEntered(evt);
+            }
+        });
         btnCrearTicket1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCrearTicket1ActionPerformed(evt);
@@ -379,13 +409,19 @@ public class Seguimiento extends javax.swing.JFrame {
 
         jComboBox2.setBackground(new java.awt.Color(239, 239, 239));
         jComboBox2.setForeground(new java.awt.Color(102, 102, 102));
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Elige el tipo de categoria", "Item 2", "Item 3", "Item 4" }));
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Socialización", "Transición", "Juego", "Alimentación", "Seguridad", "Trabajo independiente" }));
         jComboBox2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
-        jComboBox2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox2ActionPerformed(evt);
-            }
-        });
+
+        lbNivel7.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lbNivel7.setForeground(new java.awt.Color(102, 102, 102));
+        lbNivel7.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lbNivel7.setText("Descripción de conducta");
+        lbNivel7.setPreferredSize(new java.awt.Dimension(70, 25));
+
+        jTextField2.setBackground(new java.awt.Color(255, 255, 255));
+        jTextField2.setForeground(new java.awt.Color(51, 51, 51));
+        jTextField2.setText(" Participación en actividades grupales");
+        jTextField2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -393,14 +429,15 @@ public class Seguimiento extends javax.swing.JFrame {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(25, 25, 25)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(lbNivel1, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(lbNivel2, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(lbNivel4, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jTextField2)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbNivel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbNivel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lbNivel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbNivel7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane1)
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnCrearTicket1, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(23, Short.MAX_VALUE))
@@ -414,14 +451,18 @@ public class Seguimiento extends javax.swing.JFrame {
                 .addComponent(lbNivel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
+                .addGap(12, 12, 12)
+                .addComponent(lbNivel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(lbNivel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lbNivel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnCrearTicket1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(32, 32, 32))
@@ -463,7 +504,15 @@ public class Seguimiento extends javax.swing.JFrame {
         tbAlumnosDashboard1.setSelectionForeground(new java.awt.Color(0, 0, 0));
         jScrollPane3.setViewportView(tbAlumnosDashboard1);
 
-        jPanel1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, 310, 460));
+        jPanel1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, 310, 450));
+
+        lbNivel6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lbNivel6.setForeground(new java.awt.Color(102, 102, 102));
+        lbNivel6.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lbNivel6.setText("Datos del Estudiante");
+        lbNivel6.setToolTipText("");
+        lbNivel6.setPreferredSize(new java.awt.Dimension(70, 25));
+        jPanel1.add(lbNivel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 220, 190, 30));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 1200, 650));
 
@@ -758,45 +807,37 @@ public class Seguimiento extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnCrearTicket1ActionPerformed
 
-    private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
+    private void btnCrearTicket1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCrearTicket1MouseEntered
+
+        // btnCrearTicket1.setToolTipText("Acción del botón.");
+
+    }//GEN-LAST:event_btnCrearTicket1MouseEntered
+
+    private void jRadioButton1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jRadioButton1MouseEntered
+
+        jRadioButton1.setToolTipText("No se observa.");
+
+    }//GEN-LAST:event_jRadioButton1MouseEntered
+
+    private void jRadioButton2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jRadioButton2MouseEntered
+
+        jRadioButton2.setToolTipText("Muy baja.");
+
+    }//GEN-LAST:event_jRadioButton2MouseEntered
+
+    private void jRadioButton6MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jRadioButton6MouseEntered
+
+        jRadioButton6.setToolTipText("Alta y positiva.");
+
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox2ActionPerformed
+    }//GEN-LAST:event_jRadioButton6MouseEntered
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Seguimiento.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Seguimiento.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Seguimiento.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Seguimiento.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
+    private void jRadioButton4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jRadioButton4MouseEntered
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Seguimiento().setVisible(true);
-            }
-        });
-    }
+ jRadioButton4.setToolTipText("Moderada.");
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButton4MouseEntered
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCrearTicket1;
@@ -838,6 +879,7 @@ public class Seguimiento extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField6;
@@ -846,6 +888,8 @@ public class Seguimiento extends javax.swing.JFrame {
     private javax.swing.JLabel lbNivel3;
     private javax.swing.JLabel lbNivel4;
     private javax.swing.JLabel lbNivel5;
+    private javax.swing.JLabel lbNivel6;
+    private javax.swing.JLabel lbNivel7;
     private javax.swing.JLabel lbNomUsuario;
     private javax.swing.JPanel mEvaluaciones;
     private javax.swing.JPanel mIndividual;
