@@ -8,12 +8,12 @@ package Interfaz.Docente;
  *
  * @author rpasc
  */
-public class Dashboard extends javax.swing.JFrame {
+public class DashboardDocente extends javax.swing.JFrame {
 
     /**
      * Creates new form Docentes
      */
-    public Dashboard() {
+    public DashboardDocente() {
         initComponents();
     }
 
@@ -63,20 +63,17 @@ public class Dashboard extends javax.swing.JFrame {
         mEvaluaciones = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
-        mReemplazo = new javax.swing.JPanel();
-        jLabel17 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
-        mIndividual = new javax.swing.JPanel();
-        jLabel19 = new javax.swing.JLabel();
-        jLabel20 = new javax.swing.JLabel();
-        mReportes = new javax.swing.JPanel();
-        jLabel21 = new javax.swing.JLabel();
-        jLabel22 = new javax.swing.JLabel();
         mSalir = new javax.swing.JPanel();
         jLabel23 = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         lbNomUsuario = new javax.swing.JLabel();
+        mReemplazo = new javax.swing.JPanel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        mReportes = new javax.swing.JPanel();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
 
         jScrollPane3.setViewportView(jTextPane1);
 
@@ -105,7 +102,6 @@ public class Dashboard extends javax.swing.JFrame {
 
         jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 200, 630, 390));
 
-        tbAlumnosDashboard.setBackground(new java.awt.Color(255, 255, 255));
         tbAlumnosDashboard.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         tbAlumnosDashboard.setForeground(new java.awt.Color(51, 51, 51));
         tbAlumnosDashboard.setModel(new javax.swing.table.DefaultTableModel(
@@ -144,7 +140,6 @@ public class Dashboard extends javax.swing.JFrame {
         jPanel6.setBackground(new java.awt.Color(255, 255, 255));
         jPanel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
 
-        jList1.setBackground(new java.awt.Color(255, 255, 255));
         jList1.setBorder(null);
         jList1.setForeground(new java.awt.Color(51, 51, 51));
         jList1.setModel(new javax.swing.AbstractListModel<String>() {
@@ -474,112 +469,6 @@ public class Dashboard extends javax.swing.JFrame {
 
         jPanel5.add(mEvaluaciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 0, 120, 90));
 
-        mReemplazo.setBackground(new java.awt.Color(237, 237, 237));
-        mReemplazo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-        jLabel17.setFont(new java.awt.Font("Poppins", 0, 13)); // NOI18N
-        jLabel17.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Devices_1.png"))); // NOI18N
-        jLabel17.setToolTipText("");
-        jLabel17.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-
-        jLabel18.setFont(new java.awt.Font("Segoe UI", 1, 11)); // NOI18N
-        jLabel18.setForeground(new java.awt.Color(126, 3, 126));
-        jLabel18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel18.setText("PLAN DE REEMPLAZO");
-        jLabel18.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-
-        javax.swing.GroupLayout mReemplazoLayout = new javax.swing.GroupLayout(mReemplazo);
-        mReemplazo.setLayout(mReemplazoLayout);
-        mReemplazoLayout.setHorizontalGroup(
-            mReemplazoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel17, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jLabel18, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)
-        );
-        mReemplazoLayout.setVerticalGroup(
-            mReemplazoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(mReemplazoLayout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(jLabel18)
-                .addContainerGap(24, Short.MAX_VALUE))
-        );
-
-        jPanel5.add(mReemplazo, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 0, 130, 90));
-
-        mIndividual.setBackground(new java.awt.Color(237, 237, 237));
-        mIndividual.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-        jLabel19.setFont(new java.awt.Font("Poppins", 0, 13)); // NOI18N
-        jLabel19.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/File_1.png"))); // NOI18N
-        jLabel19.setToolTipText("");
-        jLabel19.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-
-        jLabel20.setFont(new java.awt.Font("Segoe UI", 1, 11)); // NOI18N
-        jLabel20.setForeground(new java.awt.Color(198, 103, 8));
-        jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel20.setText("PLAN INDIVIDUAL");
-        jLabel20.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-
-        javax.swing.GroupLayout mIndividualLayout = new javax.swing.GroupLayout(mIndividual);
-        mIndividual.setLayout(mIndividualLayout);
-        mIndividualLayout.setHorizontalGroup(
-            mIndividualLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel19, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jLabel20, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
-        );
-        mIndividualLayout.setVerticalGroup(
-            mIndividualLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(mIndividualLayout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(jLabel20)
-                .addContainerGap(24, Short.MAX_VALUE))
-        );
-
-        jPanel5.add(mIndividual, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 0, 120, 90));
-
-        mReportes.setBackground(new java.awt.Color(237, 237, 237));
-        mReportes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        mReportes.setPreferredSize(new java.awt.Dimension(120, 90));
-
-        jLabel21.setFont(new java.awt.Font("Poppins", 0, 13)); // NOI18N
-        jLabel21.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel21.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Clip_1.png"))); // NOI18N
-        jLabel21.setToolTipText("");
-        jLabel21.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-
-        jLabel22.setFont(new java.awt.Font("Segoe UI", 1, 11)); // NOI18N
-        jLabel22.setForeground(new java.awt.Color(214, 64, 64));
-        jLabel22.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel22.setText("REPORTES");
-        jLabel22.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-
-        javax.swing.GroupLayout mReportesLayout = new javax.swing.GroupLayout(mReportes);
-        mReportes.setLayout(mReportesLayout);
-        mReportesLayout.setHorizontalGroup(
-            mReportesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel21, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jLabel22, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
-        );
-        mReportesLayout.setVerticalGroup(
-            mReportesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(mReportesLayout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(jLabel22)
-                .addContainerGap(24, Short.MAX_VALUE))
-        );
-
-        jPanel5.add(mReportes, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 0, 120, 90));
-
         mSalir.setBackground(new java.awt.Color(237, 237, 237));
         mSalir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
@@ -631,6 +520,77 @@ public class Dashboard extends javax.swing.JFrame {
         lbNomUsuario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel5.add(lbNomUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 40, 170, -1));
 
+        mReemplazo.setBackground(new java.awt.Color(237, 237, 237));
+        mReemplazo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        jLabel17.setFont(new java.awt.Font("Poppins", 0, 13)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Devices_1.png"))); // NOI18N
+        jLabel17.setToolTipText("");
+        jLabel17.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+
+        jLabel18.setFont(new java.awt.Font("Segoe UI", 1, 11)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(126, 3, 126));
+        jLabel18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel18.setText("PLAN INDIVIDUAL");
+        jLabel18.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+
+        javax.swing.GroupLayout mReemplazoLayout = new javax.swing.GroupLayout(mReemplazo);
+        mReemplazo.setLayout(mReemplazoLayout);
+        mReemplazoLayout.setHorizontalGroup(
+            mReemplazoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel17, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel18, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)
+        );
+        mReemplazoLayout.setVerticalGroup(
+            mReemplazoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(mReemplazoLayout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(jLabel18)
+                .addContainerGap(24, Short.MAX_VALUE))
+        );
+
+        jPanel5.add(mReemplazo, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 0, 130, 90));
+
+        mReportes.setBackground(new java.awt.Color(237, 237, 237));
+        mReportes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        mReportes.setPreferredSize(new java.awt.Dimension(120, 90));
+
+        jLabel21.setFont(new java.awt.Font("Poppins", 0, 13)); // NOI18N
+        jLabel21.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel21.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Clip_1.png"))); // NOI18N
+        jLabel21.setToolTipText("");
+        jLabel21.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+
+        jLabel22.setFont(new java.awt.Font("Segoe UI", 1, 11)); // NOI18N
+        jLabel22.setForeground(new java.awt.Color(214, 64, 64));
+        jLabel22.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel22.setText("REPORTES");
+        jLabel22.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+
+        javax.swing.GroupLayout mReportesLayout = new javax.swing.GroupLayout(mReportes);
+        mReportes.setLayout(mReportesLayout);
+        mReportesLayout.setHorizontalGroup(
+            mReportesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel21, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel22, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
+        );
+        mReportesLayout.setVerticalGroup(
+            mReportesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(mReportesLayout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(jLabel22)
+                .addContainerGap(24, Short.MAX_VALUE))
+        );
+
+        jPanel5.add(mReportes, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 0, 120, 90));
+
         getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1200, 90));
 
         pack();
@@ -653,9 +613,7 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
@@ -686,7 +644,6 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel lbNivel;
     private javax.swing.JLabel lbNomUsuario;
     private javax.swing.JPanel mEvaluaciones;
-    private javax.swing.JPanel mIndividual;
     private javax.swing.JPanel mInicio;
     private javax.swing.JPanel mReemplazo;
     private javax.swing.JPanel mReportes;

@@ -28,9 +28,14 @@ public class Estudiantes extends javax.swing.JFrame {
 
         jPanel5 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        mInicio = new javax.swing.JPanel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
+        mSalir = new javax.swing.JPanel();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        lbNomUsuario = new javax.swing.JLabel();
+        mInicio1 = new javax.swing.JPanel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
         mEvaluaciones = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
@@ -40,11 +45,6 @@ public class Estudiantes extends javax.swing.JFrame {
         mReportes = new javax.swing.JPanel();
         jLabel21 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
-        mSalir = new javax.swing.JPanel();
-        jLabel23 = new javax.swing.JLabel();
-        jLabel24 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        lbNomUsuario = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -71,146 +71,6 @@ public class Estudiantes extends javax.swing.JFrame {
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logo1 1_2.png"))); // NOI18N
         jPanel5.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 0, 74, 90));
-
-        mInicio.setBackground(new java.awt.Color(237, 237, 237));
-        mInicio.setForeground(new java.awt.Color(255, 255, 255));
-        mInicio.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-        jLabel11.setFont(new java.awt.Font("Poppins", 0, 13)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Home-1.png"))); // NOI18N
-        jLabel11.setToolTipText("");
-        jLabel11.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-
-        jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 11)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(58, 163, 163));
-        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel12.setText("INICIO");
-        jLabel12.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-
-        javax.swing.GroupLayout mInicioLayout = new javax.swing.GroupLayout(mInicio);
-        mInicio.setLayout(mInicioLayout);
-        mInicioLayout.setHorizontalGroup(
-            mInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
-        );
-        mInicioLayout.setVerticalGroup(
-            mInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(mInicioLayout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(jLabel12)
-                .addContainerGap(24, Short.MAX_VALUE))
-        );
-
-        jPanel5.add(mInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 0, 120, 90));
-
-        mEvaluaciones.setBackground(new java.awt.Color(237, 237, 237));
-        mEvaluaciones.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-        jLabel15.setFont(new java.awt.Font("Poppins", 0, 13)); // NOI18N
-        jLabel15.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Vector (Stroke).png"))); // NOI18N
-        jLabel15.setToolTipText("");
-
-        jLabel16.setFont(new java.awt.Font("Segoe UI", 1, 11)); // NOI18N
-        jLabel16.setForeground(new java.awt.Color(66, 128, 191));
-        jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel16.setText("MATRICULA");
-        jLabel16.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-
-        javax.swing.GroupLayout mEvaluacionesLayout = new javax.swing.GroupLayout(mEvaluaciones);
-        mEvaluaciones.setLayout(mEvaluacionesLayout);
-        mEvaluacionesLayout.setHorizontalGroup(
-            mEvaluacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel15, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jLabel16, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
-        );
-        mEvaluacionesLayout.setVerticalGroup(
-            mEvaluacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(mEvaluacionesLayout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(jLabel16)
-                .addContainerGap(24, Short.MAX_VALUE))
-        );
-
-        jPanel5.add(mEvaluaciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 0, 120, 90));
-
-        mIndividual.setBackground(new java.awt.Color(255, 255, 255));
-        mIndividual.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-        jLabel19.setFont(new java.awt.Font("Poppins", 0, 13)); // NOI18N
-        jLabel19.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Vector (Stroke)-1.png"))); // NOI18N
-        jLabel19.setToolTipText("");
-
-        jLabel20.setFont(new java.awt.Font("Segoe UI", 1, 11)); // NOI18N
-        jLabel20.setForeground(new java.awt.Color(126, 3, 126));
-        jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel20.setText("ESTUDIANTES");
-        jLabel20.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-
-        javax.swing.GroupLayout mIndividualLayout = new javax.swing.GroupLayout(mIndividual);
-        mIndividual.setLayout(mIndividualLayout);
-        mIndividualLayout.setHorizontalGroup(
-            mIndividualLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel19, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jLabel20, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
-        );
-        mIndividualLayout.setVerticalGroup(
-            mIndividualLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(mIndividualLayout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(jLabel20)
-                .addContainerGap(24, Short.MAX_VALUE))
-        );
-
-        jPanel5.add(mIndividual, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 0, 120, 90));
-
-        mReportes.setBackground(new java.awt.Color(237, 237, 237));
-        mReportes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        mReportes.setPreferredSize(new java.awt.Dimension(120, 90));
-
-        jLabel21.setFont(new java.awt.Font("Poppins", 0, 13)); // NOI18N
-        jLabel21.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel21.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Clip_1.png"))); // NOI18N
-        jLabel21.setToolTipText("");
-        jLabel21.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-
-        jLabel22.setFont(new java.awt.Font("Segoe UI", 1, 11)); // NOI18N
-        jLabel22.setForeground(new java.awt.Color(214, 64, 64));
-        jLabel22.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel22.setText("REPORTES");
-        jLabel22.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-
-        javax.swing.GroupLayout mReportesLayout = new javax.swing.GroupLayout(mReportes);
-        mReportes.setLayout(mReportesLayout);
-        mReportesLayout.setHorizontalGroup(
-            mReportesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel21, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jLabel22, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
-        );
-        mReportesLayout.setVerticalGroup(
-            mReportesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(mReportesLayout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(jLabel22)
-                .addContainerGap(24, Short.MAX_VALUE))
-        );
-
-        jPanel5.add(mReportes, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 0, 120, 90));
 
         mSalir.setBackground(new java.awt.Color(237, 237, 237));
         mSalir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -263,6 +123,146 @@ public class Estudiantes extends javax.swing.JFrame {
         lbNomUsuario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel5.add(lbNomUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 40, 170, -1));
 
+        mInicio1.setBackground(new java.awt.Color(237, 237, 237));
+        mInicio1.setForeground(new java.awt.Color(255, 255, 255));
+        mInicio1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        jLabel14.setFont(new java.awt.Font("Poppins", 0, 13)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Home-1.png"))); // NOI18N
+        jLabel14.setToolTipText("");
+        jLabel14.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+
+        jLabel17.setFont(new java.awt.Font("Segoe UI", 1, 11)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(58, 163, 163));
+        jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel17.setText("INICIO");
+        jLabel17.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+
+        javax.swing.GroupLayout mInicio1Layout = new javax.swing.GroupLayout(mInicio1);
+        mInicio1.setLayout(mInicio1Layout);
+        mInicio1Layout.setHorizontalGroup(
+            mInicio1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel14, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel17, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
+        );
+        mInicio1Layout.setVerticalGroup(
+            mInicio1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(mInicio1Layout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(jLabel17)
+                .addContainerGap(24, Short.MAX_VALUE))
+        );
+
+        jPanel5.add(mInicio1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 0, 120, 90));
+
+        mEvaluaciones.setBackground(new java.awt.Color(237, 237, 237));
+        mEvaluaciones.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        jLabel15.setFont(new java.awt.Font("Poppins", 0, 13)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Vector (Stroke).png"))); // NOI18N
+        jLabel15.setToolTipText("");
+
+        jLabel16.setFont(new java.awt.Font("Segoe UI", 1, 11)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(66, 128, 191));
+        jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel16.setText("MATRICULA");
+        jLabel16.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+
+        javax.swing.GroupLayout mEvaluacionesLayout = new javax.swing.GroupLayout(mEvaluaciones);
+        mEvaluaciones.setLayout(mEvaluacionesLayout);
+        mEvaluacionesLayout.setHorizontalGroup(
+            mEvaluacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel15, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel16, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
+        );
+        mEvaluacionesLayout.setVerticalGroup(
+            mEvaluacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(mEvaluacionesLayout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(jLabel16)
+                .addContainerGap(24, Short.MAX_VALUE))
+        );
+
+        jPanel5.add(mEvaluaciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 0, 120, 90));
+
+        mIndividual.setBackground(new java.awt.Color(255, 255, 255));
+        mIndividual.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        jLabel19.setFont(new java.awt.Font("Poppins", 0, 13)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Vector (Stroke)-1.png"))); // NOI18N
+        jLabel19.setToolTipText("");
+
+        jLabel20.setFont(new java.awt.Font("Segoe UI", 1, 11)); // NOI18N
+        jLabel20.setForeground(new java.awt.Color(126, 3, 126));
+        jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel20.setText("ESTUDIANTES");
+        jLabel20.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+
+        javax.swing.GroupLayout mIndividualLayout = new javax.swing.GroupLayout(mIndividual);
+        mIndividual.setLayout(mIndividualLayout);
+        mIndividualLayout.setHorizontalGroup(
+            mIndividualLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel19, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel20, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
+        );
+        mIndividualLayout.setVerticalGroup(
+            mIndividualLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(mIndividualLayout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(jLabel20)
+                .addContainerGap(24, Short.MAX_VALUE))
+        );
+
+        jPanel5.add(mIndividual, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 0, 120, 90));
+
+        mReportes.setBackground(new java.awt.Color(237, 237, 237));
+        mReportes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        mReportes.setPreferredSize(new java.awt.Dimension(120, 90));
+
+        jLabel21.setFont(new java.awt.Font("Poppins", 0, 13)); // NOI18N
+        jLabel21.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel21.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Clip_1.png"))); // NOI18N
+        jLabel21.setToolTipText("");
+        jLabel21.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+
+        jLabel22.setFont(new java.awt.Font("Segoe UI", 1, 11)); // NOI18N
+        jLabel22.setForeground(new java.awt.Color(214, 64, 64));
+        jLabel22.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel22.setText("REPORTES");
+        jLabel22.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+
+        javax.swing.GroupLayout mReportesLayout = new javax.swing.GroupLayout(mReportes);
+        mReportes.setLayout(mReportesLayout);
+        mReportesLayout.setHorizontalGroup(
+            mReportesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel21, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel22, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
+        );
+        mReportesLayout.setVerticalGroup(
+            mReportesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(mReportesLayout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(jLabel22)
+                .addContainerGap(24, Short.MAX_VALUE))
+        );
+
+        jPanel5.add(mReportes, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 0, 120, 90));
+
         getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1200, 90));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -276,7 +276,6 @@ public class Estudiantes extends javax.swing.JFrame {
 
         jScrollPane1.setBorder(null);
 
-        jTable1.setBackground(new java.awt.Color(255, 255, 255));
         jTable1.setForeground(new java.awt.Color(51, 51, 51));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -348,7 +347,6 @@ public class Estudiantes extends javax.swing.JFrame {
         jLabel13.setText("Buscar Apellido o DNI:");
         jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 40, 130, 30));
 
-        textBuscarTicket.setBackground(new java.awt.Color(255, 255, 255));
         textBuscarTicket.setForeground(new java.awt.Color(51, 51, 51));
         textBuscarTicket.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         jPanel1.add(textBuscarTicket, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 40, 170, 30));
@@ -366,33 +364,27 @@ public class Estudiantes extends javax.swing.JFrame {
         });
         jPanel1.add(btnBuscarTicket, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 40, 30, 30));
 
-        cbEstadoTicket.setBackground(new java.awt.Color(255, 255, 255));
-        cbEstadoTicket.setForeground(new java.awt.Color(0, 0, 0));
         cbEstadoTicket.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         jPanel1.add(cbEstadoTicket, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, 210, 30));
 
         jLabel25.setForeground(new java.awt.Color(102, 102, 102));
         jLabel25.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel25.setText("Filtrar aula:");
+        jLabel25.setText("Filtrar Aula:");
         jPanel1.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, -1, -1));
 
         jLabel26.setForeground(new java.awt.Color(102, 102, 102));
         jLabel26.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel26.setText("Filtrar diagnóstico");
+        jLabel26.setText("Filtrar Diagnóstico");
         jPanel1.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 110, -1, -1));
 
-        cbCategoria.setBackground(new java.awt.Color(255, 255, 255));
-        cbCategoria.setForeground(new java.awt.Color(0, 0, 0));
         cbCategoria.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         jPanel1.add(cbCategoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 130, 260, 30));
 
         jLabel27.setForeground(new java.awt.Color(102, 102, 102));
         jLabel27.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel27.setText("Filtrar docente:");
+        jLabel27.setText("Filtrar Docente:");
         jPanel1.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 110, -1, -1));
 
-        cbEstadoTicket1.setBackground(new java.awt.Color(255, 255, 255));
-        cbEstadoTicket1.setForeground(new java.awt.Color(0, 0, 0));
         cbEstadoTicket1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         jPanel1.add(cbEstadoTicket1, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 130, 270, 30));
 
@@ -419,11 +411,11 @@ public class Estudiantes extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cbEstadoTicket;
     private javax.swing.JComboBox<String> cbEstadoTicket1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
@@ -442,7 +434,7 @@ public class Estudiantes extends javax.swing.JFrame {
     private javax.swing.JLabel lbNomUsuario;
     private javax.swing.JPanel mEvaluaciones;
     private javax.swing.JPanel mIndividual;
-    private javax.swing.JPanel mInicio;
+    private javax.swing.JPanel mInicio1;
     private javax.swing.JPanel mReportes;
     private javax.swing.JPanel mSalir;
     private javax.swing.JTextField textBuscarTicket;

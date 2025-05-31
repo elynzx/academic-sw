@@ -54,7 +54,6 @@ public class Login extends javax.swing.JFrame {
 
         textUsuario.setBackground(new java.awt.Color(204, 204, 204));
         textUsuario.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        textUsuario.setForeground(new java.awt.Color(0, 0, 0));
         textUsuario.setText("ePascual");
         textUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -68,7 +67,6 @@ public class Login extends javax.swing.JFrame {
 
         textContrasena.setBackground(new java.awt.Color(204, 204, 204));
         textContrasena.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        textContrasena.setForeground(new java.awt.Color(0, 0, 0));
         textContrasena.setText("jPerez");
         textContrasena.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
