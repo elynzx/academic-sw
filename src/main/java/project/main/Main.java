@@ -1,11 +1,15 @@
 package project.main;
 
-import Interfaz.Docente.Seguimiento;
+import Configuration.Conexion;
+import View.Docente.Seguimiento;
 
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+
+        Conexion objConexion = new Conexion();
+        objConexion.estableceConexion();
+ 
 
         Seguimiento seguimiento = new Seguimiento();
         seguimiento.setVisible(true);

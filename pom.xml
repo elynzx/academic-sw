@@ -5,13 +5,16 @@
     <artifactId>SistemaInclusivo</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
+    
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
         <exec.mainClass>project.main.SistemaInclusivo</exec.mainClass>
     </properties>
+    
     <name>SistemaInclusivo</name>
+    
     <repositories>
         <repository>
             <id>unknown-jars-temp-repo</id>
@@ -19,21 +22,33 @@
             <url>file:${project.basedir}/lib</url>
         </repository>
     </repositories>
+    
     <dependencies>
+        
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.33</version>
+        </dependency>
+        
         <dependency>
             <groupId>org.netbeans.external</groupId>
             <artifactId>AbsoluteLayout</artifactId>
             <version>RELEASE190</version>
         </dependency>
+        
         <dependency>
             <groupId>unknown.binary</groupId>
             <artifactId>datechooser</artifactId>
             <version>SNAPSHOT</version>
         </dependency>
+        
         <dependency>
             <groupId>com.toedter</groupId>
             <artifactId>jcalendar</artifactId>
             <version>1.4</version>
         </dependency>
+        
     </dependencies>
+    
 </project>

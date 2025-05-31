@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package Interfaz.Docente;
+package View.Docente;
 
 /**
  *
@@ -441,6 +441,7 @@ public class PlanIndividual extends javax.swing.JFrame {
 
         jCheckBox1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jCheckBox1.setText("Sí");
+        jCheckBox1.setEnabled(false);
         jCheckBox1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
 
         lbNivel6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N

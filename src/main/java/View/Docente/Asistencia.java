@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package Interfaz.Docente;
+package View.Docente;
 
 /**
  *
@@ -46,7 +46,6 @@ public class Asistencia extends javax.swing.JFrame {
 
         jScrollPane1.setBorder(null);
 
-        jTable1.setBackground(new java.awt.Color(255, 255, 255));
         jTable1.setForeground(new java.awt.Color(51, 51, 51));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
