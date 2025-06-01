@@ -1,7 +1,7 @@
 package project.main;
 
-import Configuration.Conexion;
-import View.Docente.Seguimiento;
+import configuration.Conexion;
+import view.Login;
 
 public class Main {
 
@@ -11,9 +11,9 @@ public class Main {
         objConexion.estableceConexion();
  
 
-        Seguimiento seguimiento = new Seguimiento();
-        seguimiento.setVisible(true);
-        seguimiento.setLocationRelativeTo(null);
+        Login LoginView = new Login();
+        LoginView.setVisible(true);
+        LoginView.setLocationRelativeTo(null);
 
     }
 

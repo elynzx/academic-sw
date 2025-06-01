@@ -1,0 +1,92 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package model.funcionalidad;
+
+import model.catalogo.TipoConducta;
+import model.catalogo.FuncionComportamiento;
+import java.sql.Date;
+import model.entidades.Estudiante;
+
+/**
+ *
+ * @author rpasc
+ */
+public class ConductaProblematica {
+
+    private int id;
+    private Estudiante estudiante;
+    private Date fecha;
+    private TipoConducta tipo;
+    private FuncionComportamiento funcion;
+    private String descripcion;
+    private int gravedad;
+
+    public ConductaProblematica(int id, Estudiante estudiante, Date fecha, TipoConducta tipo, FuncionComportamiento funcion, String descripcion, int gravedad) {
+        this.id = id;
+        this.estudiante = estudiante;
+        this.fecha = fecha;
+        this.tipo = tipo;
+        this.funcion = funcion;
+        this.descripcion = descripcion;
+        this.gravedad = gravedad;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public Estudiante getEstudiante() {
+        return estudiante;
+    }
+
+    public void setEstudiante(Estudiante estudiante) {
+        this.estudiante = estudiante;
+    }
+
+    public Date getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(Date fecha) {
+        this.fecha = fecha;
+    }
+
+    public TipoConducta getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(TipoConducta tipo) {
+        this.tipo = tipo;
+    }
+
+    public FuncionComportamiento getFuncion() {
+        return funcion;
+    }
+
+    public void setFuncion(FuncionComportamiento funcion) {
+        this.funcion = funcion;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public int getGravedad() {
+        return gravedad;
+    }
+
+    public void setGravedad(int gravedad) {
+        this.gravedad = gravedad;
+    }
+
+}
