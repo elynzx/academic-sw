@@ -16,8 +16,6 @@ import javax.swing.Timer;
 public class Utilidad {
 
 
-
-    //<<<<<<<<<< Fecha en interfaz >>>>>>>>>>>
     public void mostrarFechaCompleta(JLabel lbFecha) {
         SimpleDateFormat s = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
         Timer t = new Timer(1000, e -> {
@@ -39,6 +37,8 @@ public class Utilidad {
         });
         t.start();
     }
+    
+    
 
     //<<<<<<<<<< Seleccion Menu >>>>>>>>>>>
     Color gris = new Color(51, 51, 51);

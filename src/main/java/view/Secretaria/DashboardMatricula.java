@@ -4,6 +4,7 @@
  */
 package view.Secretaria;
 
+import Utilities.Utilidad;
 import configuration.UsuarioConectado;
 
 /**
@@ -12,11 +13,13 @@ import configuration.UsuarioConectado;
  */
 public class DashboardMatricula extends javax.swing.JFrame {
 
+    private Utilidad utilidad ;
 
     public DashboardMatricula() {
+        utilidad = new Utilidad();
         initComponents();
+        utilidad.mostrarFechaCompleta(lbFechaCompleta);
     }
-
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -51,7 +54,7 @@ public class DashboardMatricula extends javax.swing.JFrame {
         lbAsistentes = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tbAlumnosDashboard = new javax.swing.JTable();
-        jLabel5 = new javax.swing.JLabel();
+        lbFechaCompleta = new javax.swing.JLabel();
         jPanel14 = new javax.swing.JPanel();
         jLabel33 = new javax.swing.JLabel();
         lbEstudiante6 = new javax.swing.JLabel();
@@ -380,11 +383,11 @@ public class DashboardMatricula extends javax.swing.JFrame {
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, 790, 370));
 
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel5.setText("Fecha de hoy");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 30, 120, 40));
+        lbFechaCompleta.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
+        lbFechaCompleta.setForeground(new java.awt.Color(51, 51, 51));
+        lbFechaCompleta.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lbFechaCompleta.setText("Fecha de hoy");
+        jPanel1.add(lbFechaCompleta, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 30, 120, 40));
 
         jPanel14.setBackground(new java.awt.Color(230, 248, 248));
 
@@ -542,6 +545,7 @@ public class DashboardMatricula extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -561,7 +565,6 @@ public class DashboardMatricula extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
@@ -575,6 +578,7 @@ public class DashboardMatricula extends javax.swing.JFrame {
     private javax.swing.JLabel lbEstudiante5;
     private javax.swing.JLabel lbEstudiante6;
     private javax.swing.JLabel lbEstudiante7;
+    private javax.swing.JLabel lbFechaCompleta;
     private javax.swing.JLabel lbNivel10;
     private javax.swing.JLabel lbNivel7;
     private javax.swing.JLabel lbNivel8;

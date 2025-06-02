@@ -4,6 +4,7 @@
  */
 package view.Docente;
 
+import Utilities.Utilidad;
 import controller.DocenteCtrl;
 import dao.IDocenteDao;
 import java.util.List;
@@ -19,12 +20,15 @@ import model.entidades.Estudiante;
 public class DashboardDocente extends javax.swing.JFrame {
 
     private IDocenteDao docenteDao;
+    private Utilidad utilidad;
 
     public DashboardDocente(int idDocente, IDocenteDao docenteDao) {
         this.docenteDao = docenteDao;
+        utilidad = new Utilidad();
         initComponents();
         mostrarDatosAula(idDocente);
         cargarEstudiantesTabla(idDocente);
+        utilidad.mostrarFechaCompleta(lbFechaCompleta);
 
     }
 
@@ -91,7 +95,7 @@ public class DashboardDocente extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         lbNivel = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        lbFechaCompleta = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         mInicio = new javax.swing.JPanel();
@@ -415,11 +419,11 @@ public class DashboardDocente extends javax.swing.JFrame {
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 90, 190, 90));
 
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel5.setText("Fecha de hoy");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 30, 120, 40));
+        lbFechaCompleta.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
+        lbFechaCompleta.setForeground(new java.awt.Color(51, 51, 51));
+        lbFechaCompleta.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lbFechaCompleta.setText("Fecha de hoy");
+        jPanel1.add(lbFechaCompleta, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 30, 210, 40));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 1200, 650));
 
@@ -665,6 +669,11 @@ public class DashboardDocente extends javax.swing.JFrame {
 
     private void btnAsistenciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAsistenciaActionPerformed
 
+        Asistencia vAsistencia = new Asistencia();
+        vAsistencia.setVisible(true);
+        vAsistencia.setLocationRelativeTo(null);
+  
+
     }//GEN-LAST:event_btnAsistenciaActionPerformed
 
 
@@ -688,7 +697,6 @@ public class DashboardDocente extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JList<String> jList1;
@@ -709,6 +717,7 @@ public class DashboardDocente extends javax.swing.JFrame {
     private javax.swing.JLabel lbAsistentes;
     private javax.swing.JLabel lbAula;
     private javax.swing.JLabel lbEstudiante;
+    private javax.swing.JLabel lbFechaCompleta;
     private javax.swing.JLabel lbNivel;
     private javax.swing.JLabel lbNivel5;
     private javax.swing.JLabel lbNivel6;
