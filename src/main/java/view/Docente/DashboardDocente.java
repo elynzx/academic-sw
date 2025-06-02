@@ -4,8 +4,13 @@
  */
 package view.Docente;
 
+import controller.DocenteCtrl;
 import dao.IDocenteDao;
+import java.util.List;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 import model.entidades.Aula;
+import model.entidades.Estudiante;
 
 /**
  *
@@ -19,11 +24,12 @@ public class DashboardDocente extends javax.swing.JFrame {
         this.docenteDao = docenteDao;
         initComponents();
         mostrarDatosAula(idDocente);
+        cargarEstudiantesTabla(idDocente);
+
     }
 
     private void mostrarDatosAula(int idDocente) {
         Aula aula = docenteDao.obtenerDatosAula(idDocente);
-
         if (aula != null) {
             lbAula.setText(aula.getNombre());
             lbNivel.setText(aula.getNivelFuncional().getNombre());
@@ -31,6 +37,25 @@ public class DashboardDocente extends javax.swing.JFrame {
             lbAsistentes.setText(aula.getVacantesDisponibles() + " / " + aula.getVacantesTotales());
         } else {
             System.out.println("Error: No se encontraron datos del aula.");
+        }
+    }
+
+    private void cargarEstudiantesTabla(int idDocente) {
+
+        try {
+            List<Estudiante> listaEstudiantes = docenteDao.obtenerListaEstudiantes(idDocente);
+            DefaultTableModel modelo = (DefaultTableModel) tbAlumnosDashboard.getModel();
+            modelo.setRowCount(0);
+
+            for (Estudiante estudiante : listaEstudiantes) {
+                modelo.addRow(new Object[]{
+                    estudiante.getNombres(),
+                    estudiante.getApellidos()
+                });
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error al listar los incidentes: " + e.getMessage());
+            System.out.println("Error" + e);
         }
     }
 

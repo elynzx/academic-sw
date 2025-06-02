@@ -2,7 +2,6 @@ package controller;
 
 import configuration.SesionUsuario;
 import configuration.UsuarioConectado;
-import dao.DocenteDao;
 import dao.IDocenteDao;
 import dao.IUsuarioDao;
 import java.awt.HeadlessException;
@@ -11,20 +10,31 @@ import javax.swing.JOptionPane;
 import view.Administrador.InicioAdmin;
 import view.Docente.DashboardDocente;
 import view.Secretaria.DashboardMatricula;
+import com.google.common.base.Preconditions;
 
 public class UsuarioCtrl {
 
     private IDocenteDao docenteDao;
     private IUsuarioDao usuarioDao;
 
+
     public UsuarioCtrl(IUsuarioDao usuarioDao, IDocenteDao docenteDao) {
         this.usuarioDao = usuarioDao;
         this.docenteDao = docenteDao;
+
+
     }
 
     public boolean validarLogin(String username, String password) {
-        if (username.isEmpty() || password.isEmpty()) {
-            JOptionPane.showMessageDialog(null, "Por favor, complete todos los campos.");
+
+        try {
+            Preconditions.checkNotNull(username, "El usuario no puede ser null");
+            Preconditions.checkNotNull(password, "La contraseña no puede ser null");
+            Preconditions.checkArgument(!username.isEmpty(), "El usuario no puede estar vacío");
+            Preconditions.checkArgument(!password.isEmpty(), "La contraseña no puede estar vacía");
+
+        } catch (IllegalArgumentException e) {
+            JOptionPane.showMessageDialog(null, "Por favor, ingresa todos los datos.");
             return false;
         }
 

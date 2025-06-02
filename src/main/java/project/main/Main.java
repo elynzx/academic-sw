@@ -14,7 +14,7 @@ public class Main {
     public static void main(String[] args) {
 
         Conexion.estableceConexion();
-        
+
         IUsuarioDao usuarioDao = new UsuarioDao();
         IDocenteDao docenteDao = new DocenteDao();
 

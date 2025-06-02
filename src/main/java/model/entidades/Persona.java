@@ -26,7 +26,6 @@ public class Persona {
         this.genero = genero;
     }
     
-    
     public Persona(String nombres, String apellidos, String dni, Date fechaNacimiento, String genero) {
         this.nombres = nombres;
         this.apellidos = apellidos;
@@ -44,11 +43,13 @@ public class Persona {
         this.correo = correo;
         this.direccion = direccion;
     }
-    
 
+    public Persona(String nombres, String apellidos) {
+        this.nombres = nombres;
+        this.apellidos = apellidos;
+    }
     
-    
-    
+ 
     public Persona(int id, String nombres, String apellidos, String dni, String celular, String correo, String direccion, Date fechaNacimiento, String genero) {
         this.id = id;
         this.nombres = nombres;

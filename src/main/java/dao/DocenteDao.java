@@ -5,10 +5,12 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 import model.catalogo.Diagnostico;
 import model.catalogo.NivelFuncional;
 import model.entidades.Aula;
+import model.entidades.Estudiante;
 
 public class DocenteDao implements IDocenteDao {
 
@@ -63,9 +65,31 @@ public class DocenteDao implements IDocenteDao {
     }
 
     @Override
-    public List<String[]> obtenerListaEstudiantes(int idDocente) {
+    public List<Estudiante> obtenerListaEstudiantes(int idDocente) {
+        List<Estudiante> listaEstdudiantes = new ArrayList<>();
+        String sql = "SELECT e.id_estudiante, p.nombres, p.apellidos "
+                + "FROM estudiante e "
+                + "JOIN persona p ON e.id_persona = p.id_persona "
+                + "JOIN matricula m ON e.id_estudiante = m.id_estudiante "
+                + "JOIN aula a ON m.id_aula = a.id_aula "
+                + "WHERE a.id_docente = ?";
 
-        return null;
+        try (PreparedStatement pst = conn.prepareStatement(sql)) {
+            pst.setInt(1, idDocente);
+            ResultSet rs = pst.executeQuery();
+
+            while (rs.next()) {
+                Estudiante estudiante = new Estudiante(
+                        rs.getInt("id_estudiante"),
+                        rs.getString("nombres"),
+                        rs.getString("apellidos")
+                );
+                listaEstdudiantes.add(estudiante);
+            }
+        } catch (Exception e) {
+            System.out.println("Error al obtener la lista de estudiantes: : " + e.getMessage());
+        }
+        return listaEstdudiantes;
     }
 
 }

@@ -43,8 +43,14 @@ public class Estudiante extends Persona {
         this.apoderado = apoderado;
         this.observaciones = observaciones;
     }
-    
-    
+
+    public Estudiante() {
+    }
+
+    public Estudiante(int idEstudiante, String nombres, String apellidos) {
+        super(nombres, apellidos);
+        this.idEstudiante = idEstudiante;
+    }
 
     public int getIdEstudiante() {
         return idEstudiante;
