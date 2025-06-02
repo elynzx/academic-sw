@@ -5,7 +5,6 @@ import configuration.UsuarioConectado;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 
 public class UsuarioDao implements IUsuarioDao {
 
@@ -15,8 +14,9 @@ public class UsuarioDao implements IUsuarioDao {
         conn = Conexion.estableceConexion();
     }
 
+    @Override
     public UsuarioConectado validarLogin(String username, String password) {
-        String sql = "SELECT u.id_usuario, u.username, u.rol, u.password, p.nombres, p.apellidos "
+        String sql = "SELECT u.id_usuario, u.username, u.rol, p.id_persona, p.nombres, p.apellidos, u.password "
                 + "FROM usuario u "
                 + "JOIN persona p ON u.id_persona = p.id_persona "
                 + "WHERE u.username = ? AND u.estado = 'activo'";
@@ -27,25 +27,24 @@ public class UsuarioDao implements IUsuarioDao {
 
             if (rs.next()) {
                 String passwordIn = rs.getString("password");
-
                 if (password.equals(passwordIn)) {
                     return new UsuarioConectado(
                             rs.getInt("id_usuario"),
                             rs.getString("username"),
                             rs.getString("rol"),
                             rs.getString("nombres"),
-                            rs.getString("apellidos")
+                            rs.getString("apellidos"),
+                            rs.getInt("id_persona")
                     );
                 } else {
+
                     System.out.println("Contraseña incorrecta.");
                 }
             }
         } catch (Exception e) {
             System.out.println("Error en validarLogin: " + e.getMessage());
-        } 
+        }
         return null;
     }
 
 }
-
-

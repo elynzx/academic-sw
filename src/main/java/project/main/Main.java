@@ -2,6 +2,8 @@ package project.main;
 
 import configuration.Conexion;
 import controller.UsuarioCtrl;
+import dao.DocenteDao;
+import dao.IDocenteDao;
 import dao.IUsuarioDao;
 import dao.UsuarioDao;
 import java.sql.SQLException;
@@ -12,9 +14,11 @@ public class Main {
     public static void main(String[] args) {
 
         Conexion.estableceConexion();
+        
         IUsuarioDao usuarioDao = new UsuarioDao();
+        IDocenteDao docenteDao = new DocenteDao();
 
-        UsuarioCtrl usuarioCtrl = new UsuarioCtrl(usuarioDao);
+        UsuarioCtrl usuarioCtrl = new UsuarioCtrl(usuarioDao, docenteDao);
 
         Login loginView = new Login(usuarioCtrl);
         loginView.setVisible(true);

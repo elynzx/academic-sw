@@ -2,22 +2,24 @@ package controller;
 
 import configuration.SesionUsuario;
 import configuration.UsuarioConectado;
+import dao.DocenteDao;
+import dao.IDocenteDao;
 import dao.IUsuarioDao;
-import dao.UsuarioDao;
 import java.awt.HeadlessException;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import view.Administrador.InicioAdmin;
 import view.Docente.DashboardDocente;
-import view.Login;
 import view.Secretaria.DashboardMatricula;
 
 public class UsuarioCtrl {
 
+    private IDocenteDao docenteDao;
     private IUsuarioDao usuarioDao;
 
-    public UsuarioCtrl(IUsuarioDao usuarioDao) {
+    public UsuarioCtrl(IUsuarioDao usuarioDao, IDocenteDao docenteDao) {
         this.usuarioDao = usuarioDao;
+        this.docenteDao = docenteDao;
     }
 
     public boolean validarLogin(String username, String password) {
@@ -41,24 +43,30 @@ public class UsuarioCtrl {
     public void mostrarVista() {
 
         String rol = SesionUsuario.getUsuarioActual().getRol();
-
-        InicioAdmin vAdmin = new InicioAdmin();
-        DashboardDocente vDocente = new DashboardDocente();
-        DashboardMatricula vMatricula = new DashboardMatricula();
+        int idPersona = SesionUsuario.getUsuarioActual().getIdPersona();
+        int idDocente = docenteDao.obtenerIdDocenteporPersona(idPersona);
 
         try {
             switch (rol) {
                 case "administrador" -> {
+                    InicioAdmin vAdmin = new InicioAdmin();
                     vAdmin.setVisible(true);
                     vAdmin.setLocationRelativeTo(null);
                 }
 
                 case "docente" -> {
-                    vDocente.setVisible(true);
-                    vDocente.setLocationRelativeTo(null);
+                    if (idDocente != -1) {
+                        DashboardDocente vDocente = new DashboardDocente(idDocente, docenteDao);
+                        vDocente.setVisible(true);
+                        vDocente.setLocationRelativeTo(null);
+
+                    } else {
+                        JOptionPane.showMessageDialog(null, "No se encontró información del docente");
+                    }
                 }
 
                 case "secretaria" -> {
+                    DashboardMatricula vMatricula = new DashboardMatricula();
                     vMatricula.setVisible(true);
                     vMatricula.setLocationRelativeTo(null);
                 }
