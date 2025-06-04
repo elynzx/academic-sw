@@ -13,7 +13,7 @@ public class Incidentes extends javax.swing.JFrame {
     /**
      * Creates new form Evaluaciones
      */
-    public Incidentes() {
+    public Incidentes(int idDocente) {
         initComponents();
     }
 

@@ -5,13 +5,12 @@
 package model.entidades;
 
 import java.sql.Date;
-import model.entidades.Persona;
+import java.time.LocalDate;
+import java.time.Period;
+import java.util.List;
+import model.catalogo.Diagnostico;
 import model.catalogo.NivelFuncional;
 
-/**
- *
- * @author rpasc
- */
 public class Estudiante extends Persona {
 
     private int idEstudiante;
@@ -20,16 +19,19 @@ public class Estudiante extends Persona {
     private boolean tomaMedicamentos;
     private String medicamentos;
     private NivelFuncional nivelFuncional;
+    private List<Diagnostico> diagnosticos;
     private Apoderado apoderado;
     private String observaciones;
 
-    public Estudiante(int idEstudiante, boolean alergias, String tipoAlergia, boolean tomaMedicamentos, String medicamentos, int id, String nombres, String apellidos, String dni, Date fechaNacimiento, String genero) {
-        super(id, nombres, apellidos, dni, fechaNacimiento, genero);
+    public Estudiante(int idEstudiante, String nombres, String apellidos, Date fechaNacimiento,
+            String tipoAlergia, String medicamentos, String observaciones,
+            List<Diagnostico> diagnosticos) {
+        super(nombres, apellidos, fechaNacimiento);
         this.idEstudiante = idEstudiante;
-        this.alergias = alergias;
         this.tipoAlergia = tipoAlergia;
-        this.tomaMedicamentos = tomaMedicamentos;
         this.medicamentos = medicamentos;
+        this.observaciones = observaciones;
+        this.diagnosticos = diagnosticos;
     }
 
     public Estudiante(int idEstudiante, boolean alergias, String tipoAlergia, boolean tomaMedicamentos, String medicamentos, NivelFuncional nivelFuncional, Apoderado apoderado, String observaciones, int id, String nombres, String apellidos, String dni, String celular, String correo, String direccion, Date fechaNacimiento, String genero) {
@@ -42,9 +44,6 @@ public class Estudiante extends Persona {
         this.nivelFuncional = nivelFuncional;
         this.apoderado = apoderado;
         this.observaciones = observaciones;
-    }
-
-    public Estudiante() {
     }
 
     public Estudiante(int idEstudiante, String nombres, String apellidos) {
@@ -114,6 +113,22 @@ public class Estudiante extends Persona {
 
     public void setObservaciones(String observaciones) {
         this.observaciones = observaciones;
+    }
+
+    public int getEdad() {
+        if (getFechaNacimiento() != null) {
+            LocalDate nacimiento = getFechaNacimiento().toLocalDate();
+            return Period.between(nacimiento, LocalDate.now()).getYears();
+        }
+        return 0;
+    }
+
+    public List<Diagnostico> getDiagnosticos() {
+        return diagnosticos;
+    }
+
+    public void setDiagnosticos(List<Diagnostico> diagnosticos) {
+        this.diagnosticos = diagnosticos;
     }
 
 }

@@ -2,10 +2,12 @@ package project.main;
 
 import configuration.Conexion;
 import controller.UsuarioCtrl;
-import dao.DocenteDao;
-import dao.IDocenteDao;
-import dao.IUsuarioDao;
-import dao.UsuarioDao;
+import model.dao.DocenteDao;
+import model.dao.EstudianteDao;
+import model.dao.IDocenteDao;
+import model.dao.IEstudianteDao;
+import model.dao.IUsuarioDao;
+import model.dao.UsuarioDao;
 import java.sql.SQLException;
 import view.Login;
 
@@ -17,8 +19,9 @@ public class Main {
 
         IUsuarioDao usuarioDao = new UsuarioDao();
         IDocenteDao docenteDao = new DocenteDao();
+        IEstudianteDao estudianteDao = new EstudianteDao();
 
-        UsuarioCtrl usuarioCtrl = new UsuarioCtrl(usuarioDao, docenteDao);
+        UsuarioCtrl usuarioCtrl = new UsuarioCtrl(usuarioDao, docenteDao, estudianteDao);
 
         Login loginView = new Login(usuarioCtrl);
         loginView.setVisible(true);

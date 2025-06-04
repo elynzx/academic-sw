@@ -1,4 +1,4 @@
-package dao;
+package model.dao;
 
 import configuration.Conexion;
 import configuration.UsuarioConectado;

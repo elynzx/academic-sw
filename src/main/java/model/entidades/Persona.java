@@ -17,6 +17,13 @@ public class Persona {
     public Persona() {
     }
 
+    public Persona(String nombres, String apellidos, Date fechaNacimiento) {
+        this.nombres = nombres;
+        this.apellidos = apellidos;
+        this.fechaNacimiento = fechaNacimiento;
+    }
+
+
     public Persona(int id, String nombres, String apellidos, String dni, Date fechaNacimiento, String genero) {
         this.id = id;
         this.nombres = nombres;
@@ -25,7 +32,7 @@ public class Persona {
         this.fechaNacimiento = fechaNacimiento;
         this.genero = genero;
     }
-    
+
     public Persona(String nombres, String apellidos, String dni, Date fechaNacimiento, String genero) {
         this.nombres = nombres;
         this.apellidos = apellidos;
@@ -48,8 +55,7 @@ public class Persona {
         this.nombres = nombres;
         this.apellidos = apellidos;
     }
-    
- 
+
     public Persona(int id, String nombres, String apellidos, String dni, String celular, String correo, String direccion, Date fechaNacimiento, String genero) {
         this.id = id;
         this.nombres = nombres;

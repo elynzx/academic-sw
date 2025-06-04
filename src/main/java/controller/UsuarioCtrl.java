@@ -2,8 +2,8 @@ package controller;
 
 import configuration.SesionUsuario;
 import configuration.UsuarioConectado;
-import dao.IDocenteDao;
-import dao.IUsuarioDao;
+import model.dao.IDocenteDao;
+import model.dao.IUsuarioDao;
 import java.awt.HeadlessException;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -11,17 +11,18 @@ import view.Administrador.InicioAdmin;
 import view.Docente.DashboardDocente;
 import view.Secretaria.DashboardMatricula;
 import com.google.common.base.Preconditions;
+import model.dao.IEstudianteDao;
 
 public class UsuarioCtrl {
 
     private IDocenteDao docenteDao;
     private IUsuarioDao usuarioDao;
+    private IEstudianteDao estudianteDao;
 
-
-    public UsuarioCtrl(IUsuarioDao usuarioDao, IDocenteDao docenteDao) {
+    public UsuarioCtrl(IUsuarioDao usuarioDao, IDocenteDao docenteDao, IEstudianteDao estudianteDao) {
         this.usuarioDao = usuarioDao;
         this.docenteDao = docenteDao;
-
+        this.estudianteDao = estudianteDao;
 
     }
 
@@ -66,7 +67,7 @@ public class UsuarioCtrl {
 
                 case "docente" -> {
                     if (idDocente != -1) {
-                        DashboardDocente vDocente = new DashboardDocente(idDocente, docenteDao);
+                        DashboardDocente vDocente = new DashboardDocente(idDocente);
                         vDocente.setVisible(true);
                         vDocente.setLocationRelativeTo(null);
 

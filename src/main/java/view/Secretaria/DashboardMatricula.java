@@ -4,7 +4,7 @@
  */
 package view.Secretaria;
 
-import Utilities.Utilidad;
+import utillities.Utilidad;
 import configuration.UsuarioConectado;
 
 /**

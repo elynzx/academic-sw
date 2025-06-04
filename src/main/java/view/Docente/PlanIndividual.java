@@ -13,7 +13,7 @@ public class PlanIndividual extends javax.swing.JFrame {
     /**
      * Creates new form PlanReemplazo
      */
-    public PlanIndividual() {
+    public PlanIndividual(int idDocente) {
         initComponents();
     }
 

@@ -30,7 +30,7 @@ public class Asistencia extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        btnCrearTicket = new javax.swing.JButton();
+        btnGuardarAsistencia = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -81,15 +81,15 @@ public class Asistencia extends javax.swing.JFrame {
         jTable1.setShowVerticalLines(false);
         jScrollPane1.setViewportView(jTable1);
 
-        btnCrearTicket.setBackground(new java.awt.Color(66, 128, 191));
-        btnCrearTicket.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        btnCrearTicket.setForeground(new java.awt.Color(255, 255, 255));
-        btnCrearTicket.setText("GUARDAR");
-        btnCrearTicket.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnCrearTicket.setFocusPainted(false);
-        btnCrearTicket.addActionListener(new java.awt.event.ActionListener() {
+        btnGuardarAsistencia.setBackground(new java.awt.Color(66, 128, 191));
+        btnGuardarAsistencia.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        btnGuardarAsistencia.setForeground(new java.awt.Color(255, 255, 255));
+        btnGuardarAsistencia.setText("GUARDAR");
+        btnGuardarAsistencia.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnGuardarAsistencia.setFocusPainted(false);
+        btnGuardarAsistencia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCrearTicketActionPerformed(evt);
+                btnGuardarAsistenciaActionPerformed(evt);
             }
         });
 
@@ -110,7 +110,7 @@ public class Asistencia extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 415, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnCrearTicket, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnGuardarAsistencia, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(35, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -123,7 +123,7 @@ public class Asistencia extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 435, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(btnCrearTicket, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnGuardarAsistencia, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(42, Short.MAX_VALUE))
         );
 
@@ -141,13 +141,13 @@ public class Asistencia extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnCrearTicketActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearTicketActionPerformed
+    private void btnGuardarAsistenciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarAsistenciaActionPerformed
 
-        //incidenteCtrl.crearIncidente(lbFecha, lbHora, textAula, textCelular, cbCategoria, textDescripcion, usuario);
-    }//GEN-LAST:event_btnCrearTicketActionPerformed
+  
+    }//GEN-LAST:event_btnGuardarAsistenciaActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnCrearTicket;
+    private javax.swing.JButton btnGuardarAsistencia;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;

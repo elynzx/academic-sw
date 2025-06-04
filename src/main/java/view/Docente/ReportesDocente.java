@@ -13,7 +13,7 @@ public class ReportesDocente extends javax.swing.JFrame {
     /**
      * Creates new form ReportesDocente
      */
-    public ReportesDocente() {
+    public ReportesDocente(int idDocente) {
         initComponents();
     }
 
