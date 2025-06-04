@@ -15,7 +15,6 @@ import javax.swing.Timer;
 
 public class Utilidad {
 
-
     public void mostrarFechaCompleta(JLabel lbFecha) {
         SimpleDateFormat s = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
         Timer t = new Timer(1000, e -> {
@@ -38,7 +37,31 @@ public class Utilidad {
         t.start();
     }
 
-    //<<<<<<<<<< Seleccion Menu >>>>>>>>>>>
+    public void mostrarFecha(JLabel lbFecha) {
+        SimpleDateFormat f = new SimpleDateFormat("dd-MM-yyyy");
+        Timer t = new Timer(1000, e -> {
+            Date d = new Date();
+            lbFecha.setText(f.format(d));
+        });
+        t.start();
+    }
+
+    public void mostrarDiaHora(JLabel lbFecha) {
+        SimpleDateFormat s = new SimpleDateFormat("EEEE dd 'de' MMMM 'del' YYYY HH:mm:ss");
+        Timer t = new Timer(1000, e -> {
+            Date d = new Date();
+            String fechaHora = s.format(d).toUpperCase();
+            lbFecha.setText(fechaHora);
+        });
+        t.start();
+    }
+
+    public void mostrarDia(JLabel lbDia) {
+        String fecha = new SimpleDateFormat("EEEE dd 'de' MMMM 'del' YYYY").format(new Date()).toUpperCase();
+        lbDia.setText(fecha);
+    }
+
+//<<<<<<<<<< Seleccion Menu >>>>>>>>>>>
     Color gris = new Color(239, 239, 239);
     Color blanco = new Color(255, 255, 255);
 
@@ -67,11 +90,6 @@ public class Utilidad {
         });
     }
 
-    
-    
-    
-    
-    
 //    
 //    public void configurarEventosMenu(JPanel panel, JFrame vista, JPanel[] componentesMenu) {
 //        panel.addMouseListener(new MouseAdapter() {

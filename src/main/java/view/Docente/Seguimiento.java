@@ -28,16 +28,17 @@ public class Seguimiento extends javax.swing.JFrame {
     private IDocenteDao docenteDao = DocenteDao.obtenerInstancia();
     private IEstudianteDao estudianteDao = EstudianteDao.obtenerInstancia();
     private ISeguimiento seguimientoDao = new SeguimientoDao();
-
+    private int idDocente;
     private DocenteCtrl docenteCtrl;
     private Utilidad utilidad = new Utilidad();
 
     public Seguimiento(int idDocente) {
-
+        this.idDocente = idDocente;
         docenteCtrl = new DocenteCtrl(docenteDao);
 
         initComponents();
 
+        utilidad.mostrarDia(lbFechaHoy);
         cargarEstudiantesTabla(idDocente);
         seleccionTbAlumnos();
         cargarCategorias();
@@ -106,10 +107,6 @@ public class Seguimiento extends javax.swing.JFrame {
         buttonGroup2 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
         txtIdEstudiante = new javax.swing.JTextField();
         txtNombreEstudiante = new javax.swing.JTextField();
         lbNivel3 = new javax.swing.JLabel();
@@ -120,24 +117,24 @@ public class Seguimiento extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
         lbNivel1 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
-        jRadioButton1 = new javax.swing.JRadioButton();
+        rbF01 = new javax.swing.JRadioButton();
         jRadioButton2 = new javax.swing.JRadioButton();
         jRadioButton3 = new javax.swing.JRadioButton();
         jRadioButton4 = new javax.swing.JRadioButton();
         jRadioButton5 = new javax.swing.JRadioButton();
         jRadioButton6 = new javax.swing.JRadioButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        txtConductaObs = new javax.swing.JTextArea();
         lbNivel2 = new javax.swing.JLabel();
-        btnCrearTicket1 = new javax.swing.JButton();
         lbNivel4 = new javax.swing.JLabel();
         cbCategoriaSeguimiento = new javax.swing.JComboBox<>();
         lbNivel7 = new javax.swing.JLabel();
         jTextField2 = new javax.swing.JTextField();
+        btnCrearTicket2 = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         tbListaEstudiantes = new javax.swing.JTable();
         lbNivel6 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        lbFechaHoy = new javax.swing.JLabel();
         txtDiagnosticoEstudiante = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -178,68 +175,33 @@ public class Seguimiento extends javax.swing.JFrame {
         jLabel7.setText("Seguimiento Conductual Diario");
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 520, -1));
 
-        jLabel4.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel4.setText("Buscar por Apellido:");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 140, -1, -1));
-
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
-
-        jTextField1.setForeground(new java.awt.Color(51, 51, 51));
-        jTextField1.setBorder(null);
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Magnifer75.png"))); // NOI18N
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addGap(0, 0, 0)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 274, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jTextField1))
-                .addGap(0, 0, 0))
-        );
-
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 160, 320, -1));
-
         txtIdEstudiante.setEditable(false);
-        txtIdEstudiante.setBackground(new java.awt.Color(244, 244, 244));
+        txtIdEstudiante.setBackground(new java.awt.Color(248, 248, 248));
         txtIdEstudiante.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
         txtIdEstudiante.setForeground(new java.awt.Color(102, 102, 102));
         txtIdEstudiante.setBorder(null);
-        jPanel1.add(txtIdEstudiante, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 210, 80, 30));
+        jPanel1.add(txtIdEstudiante, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 100, 80, 30));
 
         txtNombreEstudiante.setEditable(false);
-        txtNombreEstudiante.setBackground(new java.awt.Color(244, 244, 244));
+        txtNombreEstudiante.setBackground(new java.awt.Color(248, 248, 248));
         txtNombreEstudiante.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
         txtNombreEstudiante.setForeground(new java.awt.Color(102, 102, 102));
         txtNombreEstudiante.setBorder(null);
-        jPanel1.add(txtNombreEstudiante, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 250, 230, 30));
+        jPanel1.add(txtNombreEstudiante, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 150, 230, 30));
 
         lbNivel3.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         lbNivel3.setForeground(new java.awt.Color(200, 80, 145));
         lbNivel3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lbNivel3.setText("Lista de Estudiantes");
         lbNivel3.setPreferredSize(new java.awt.Dimension(70, 25));
-        jPanel1.add(lbNivel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 210, -1));
+        jPanel1.add(lbNivel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 220, 30));
 
         txtApellidoEstudiante.setEditable(false);
-        txtApellidoEstudiante.setBackground(new java.awt.Color(244, 244, 244));
+        txtApellidoEstudiante.setBackground(new java.awt.Color(248, 248, 248));
         txtApellidoEstudiante.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
         txtApellidoEstudiante.setForeground(new java.awt.Color(102, 102, 102));
         txtApellidoEstudiante.setBorder(null);
-        jPanel1.add(txtApellidoEstudiante, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 300, 230, 30));
+        jPanel1.add(txtApellidoEstudiante, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 200, 230, 30));
 
         tbCategoriasEstudiante.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         tbCategoriasEstudiante.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
@@ -273,13 +235,13 @@ public class Seguimiento extends javax.swing.JFrame {
             }
         });
         tbCategoriasEstudiante.setGridColor(new java.awt.Color(214, 214, 214));
-        tbCategoriasEstudiante.setRowHeight(22);
+        tbCategoriasEstudiante.setRowHeight(34);
         tbCategoriasEstudiante.setSelectionBackground(new java.awt.Color(255, 243, 250));
         tbCategoriasEstudiante.setShowGrid(false);
         tbCategoriasEstudiante.setShowHorizontalLines(true);
         jScrollPane2.setViewportView(tbCategoriasEstudiante);
 
-        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 440, 320, 160));
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 370, 320, 230));
 
         lbNivel5.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         lbNivel5.setForeground(new java.awt.Color(200, 80, 145));
@@ -287,10 +249,10 @@ public class Seguimiento extends javax.swing.JFrame {
         lbNivel5.setText("Progreso");
         lbNivel5.setToolTipText("");
         lbNivel5.setPreferredSize(new java.awt.Dimension(70, 25));
-        jPanel1.add(lbNivel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 400, 320, 30));
+        jPanel1.add(lbNivel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 310, 320, 40));
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(229, 229, 229)));
+        jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(229, 178, 206)));
 
         lbNivel1.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         lbNivel1.setForeground(new java.awt.Color(102, 102, 102));
@@ -300,19 +262,19 @@ public class Seguimiento extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
-        jRadioButton1.setBackground(new java.awt.Color(255, 255, 255));
-        buttonGroup2.add(jRadioButton1);
-        jRadioButton1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jRadioButton1.setForeground(new java.awt.Color(51, 51, 51));
-        jRadioButton1.setText("0");
-        jRadioButton1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102)));
-        jRadioButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jRadioButton1.setFocusPainted(false);
-        jRadioButton1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jRadioButton1.setIconTextGap(10);
-        jRadioButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+        rbF01.setBackground(new java.awt.Color(255, 255, 255));
+        buttonGroup2.add(rbF01);
+        rbF01.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        rbF01.setForeground(new java.awt.Color(51, 51, 51));
+        rbF01.setText("0");
+        rbF01.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102)));
+        rbF01.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        rbF01.setFocusPainted(false);
+        rbF01.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        rbF01.setIconTextGap(10);
+        rbF01.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jRadioButton1MouseEntered(evt);
+                rbF01MouseEntered(evt);
             }
         });
 
@@ -407,7 +369,7 @@ public class Seguimiento extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(0, 0, 0)
-                .addComponent(jRadioButton1)
+                .addComponent(rbF01)
                 .addGap(27, 27, 27)
                 .addComponent(jRadioButton2)
                 .addGap(27, 27, 27)
@@ -425,7 +387,7 @@ public class Seguimiento extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRadioButton1)
+                    .addComponent(rbF01)
                     .addComponent(jRadioButton2)
                     .addComponent(jRadioButton3)
                     .addComponent(jRadioButton4)
@@ -434,8 +396,8 @@ public class Seguimiento extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jRadioButton1.getAccessibleContext().setAccessibleName("");
-        jRadioButton1.getAccessibleContext().setAccessibleDescription("");
+        rbF01.getAccessibleContext().setAccessibleName("");
+        rbF01.getAccessibleContext().setAccessibleDescription("");
         jRadioButton2.getAccessibleContext().setAccessibleName("");
         jRadioButton2.getAccessibleContext().setAccessibleDescription("");
         jRadioButton3.getAccessibleContext().setAccessibleName("");
@@ -447,35 +409,18 @@ public class Seguimiento extends javax.swing.JFrame {
         jRadioButton6.getAccessibleContext().setAccessibleName("");
         jRadioButton6.getAccessibleContext().setAccessibleDescription("");
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
-        jTextArea1.setForeground(new java.awt.Color(102, 102, 102));
-        jTextArea1.setRows(5);
-        jTextArea1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(229, 229, 229)));
-        jScrollPane1.setViewportView(jTextArea1);
+        txtConductaObs.setColumns(20);
+        txtConductaObs.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
+        txtConductaObs.setForeground(new java.awt.Color(102, 102, 102));
+        txtConductaObs.setRows(5);
+        txtConductaObs.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(229, 229, 229)));
+        jScrollPane1.setViewportView(txtConductaObs);
 
         lbNivel2.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         lbNivel2.setForeground(new java.awt.Color(102, 102, 102));
         lbNivel2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lbNivel2.setText("Observaciones");
         lbNivel2.setPreferredSize(new java.awt.Dimension(70, 25));
-
-        btnCrearTicket1.setBackground(new java.awt.Color(200, 80, 145));
-        btnCrearTicket1.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
-        btnCrearTicket1.setForeground(new java.awt.Color(255, 255, 255));
-        btnCrearTicket1.setText("GUARDAR");
-        btnCrearTicket1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnCrearTicket1.setFocusPainted(false);
-        btnCrearTicket1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btnCrearTicket1MouseEntered(evt);
-            }
-        });
-        btnCrearTicket1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCrearTicket1ActionPerformed(evt);
-            }
-        });
 
         lbNivel4.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         lbNivel4.setForeground(new java.awt.Color(102, 102, 102));
@@ -497,12 +442,19 @@ public class Seguimiento extends javax.swing.JFrame {
         jTextField2.setForeground(new java.awt.Color(102, 102, 102));
         jTextField2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(229, 229, 229)));
 
+        btnCrearTicket2.setBackground(new java.awt.Color(200, 80, 145));
+        btnCrearTicket2.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
+        btnCrearTicket2.setForeground(new java.awt.Color(255, 255, 255));
+        btnCrearTicket2.setText("GUARDAR");
+        btnCrearTicket2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnCrearTicket2.setFocusPainted(false);
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(31, 31, 31)
+                .addGap(34, 34, 34)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(jTextField2)
                     .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -512,8 +464,8 @@ public class Seguimiento extends javax.swing.JFrame {
                     .addComponent(lbNivel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lbNivel7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane1)
-                    .addComponent(btnCrearTicket1, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(27, Short.MAX_VALUE))
+                    .addComponent(btnCrearTicket2, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(34, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -522,24 +474,26 @@ public class Seguimiento extends javax.swing.JFrame {
                 .addComponent(lbNivel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(cbCategoriaSeguimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(lbNivel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(lbNivel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lbNivel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(btnCrearTicket1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(23, 23, 23))
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(lbNivel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(68, 68, 68))
+                    .addComponent(btnCrearTicket2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(25, 25, 25))
         );
 
-        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 110, 420, 500));
+        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 90, 430, 520));
 
         tbListaEstudiantes.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         tbListaEstudiantes.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
@@ -576,7 +530,7 @@ public class Seguimiento extends javax.swing.JFrame {
         tbListaEstudiantes.setShowHorizontalLines(true);
         jScrollPane3.setViewportView(tbListaEstudiantes);
 
-        jPanel1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, 290, 460));
+        jPanel1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, 280, 450));
 
         lbNivel6.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         lbNivel6.setForeground(new java.awt.Color(200, 80, 145));
@@ -584,39 +538,39 @@ public class Seguimiento extends javax.swing.JFrame {
         lbNivel6.setText("Datos del Estudiante");
         lbNivel6.setToolTipText("");
         lbNivel6.setPreferredSize(new java.awt.Dimension(70, 25));
-        jPanel1.add(lbNivel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 210, 190, 30));
+        jPanel1.add(lbNivel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 100, 190, 30));
 
-        jLabel5.setFont(new java.awt.Font("Trebuchet MS", 2, 18)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel5.setText("Fecha de hoy");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 30, 270, 40));
+        lbFechaHoy.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
+        lbFechaHoy.setForeground(new java.awt.Color(51, 51, 51));
+        lbFechaHoy.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lbFechaHoy.setText("Fecha de hoy");
+        jPanel1.add(lbFechaHoy, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 30, 420, 40));
 
         txtDiagnosticoEstudiante.setEditable(false);
-        txtDiagnosticoEstudiante.setBackground(new java.awt.Color(244, 244, 244));
+        txtDiagnosticoEstudiante.setBackground(new java.awt.Color(248, 248, 248));
         txtDiagnosticoEstudiante.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
         txtDiagnosticoEstudiante.setForeground(new java.awt.Color(102, 102, 102));
         txtDiagnosticoEstudiante.setBorder(null);
-        jPanel1.add(txtDiagnosticoEstudiante, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 350, 230, 30));
+        jPanel1.add(txtDiagnosticoEstudiante, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 250, 230, 30));
 
         jLabel3.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(102, 102, 102));
         jLabel3.setText("Diagnóstico:");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 350, -1, 30));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 250, -1, 30));
 
         jLabel6.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
         jLabel6.setText("ID:");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 210, 20, 30));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 100, 20, 30));
 
         jLabel8.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(102, 102, 102));
         jLabel8.setText("Apellidos:");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 300, -1, 30));
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 200, -1, 30));
 
         jLabel9.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(102, 102, 102));
         jLabel9.setText("Nombres:");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 250, -1, 30));
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 150, -1, 30));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 1200, 650));
 
@@ -700,6 +654,11 @@ public class Seguimiento extends javax.swing.JFrame {
 
         mIncidentes.setBackground(new java.awt.Color(237, 237, 237));
         mIncidentes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        mIncidentes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                mIncidentesMouseClicked(evt);
+            }
+        });
 
         jLabel15.setFont(new java.awt.Font("Poppins", 0, 13)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(255, 255, 255));
@@ -767,7 +726,7 @@ public class Seguimiento extends javax.swing.JFrame {
                 .addContainerGap(22, Short.MAX_VALUE))
         );
 
-        jPanel5.add(mSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 0, 70, 90));
+        jPanel5.add(mSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 0, 70, 90));
 
         jLabel10.setBackground(new java.awt.Color(51, 51, 51));
         jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -872,21 +831,11 @@ public class Seguimiento extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jRadioButton6ActionPerformed
 
-    private void btnCrearTicket1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearTicket1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnCrearTicket1ActionPerformed
+    private void rbF01MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rbF01MouseEntered
 
-    private void btnCrearTicket1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCrearTicket1MouseEntered
+        rbF01.setToolTipText("No se observa.");
 
-        // btnCrearTicket1.setToolTipText("Acción del botón.");
-
-    }//GEN-LAST:event_btnCrearTicket1MouseEntered
-
-    private void jRadioButton1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jRadioButton1MouseEntered
-
-        jRadioButton1.setToolTipText("No se observa.");
-
-    }//GEN-LAST:event_jRadioButton1MouseEntered
+    }//GEN-LAST:event_rbF01MouseEntered
 
     private void jRadioButton2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jRadioButton2MouseEntered
 
@@ -907,12 +856,21 @@ public class Seguimiento extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jRadioButton4MouseEntered
 
+    private void mIncidentesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mIncidentesMouseClicked
+
+        Incidentes vIncedente = new Incidentes(idDocente);
+        vIncedente.setVisible(true);
+        vIncedente.setLocationRelativeTo(null);
+        this.dispose();
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_mIncidentesMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnCrearTicket1;
+    private javax.swing.JButton btnCrearTicket2;
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JComboBox<CategoriaConducta> cbCategoriaSeguimiento;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -928,18 +886,14 @@ public class Seguimiento extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JRadioButton jRadioButton3;
     private javax.swing.JRadioButton jRadioButton4;
@@ -948,9 +902,8 @@ public class Seguimiento extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
+    private javax.swing.JLabel lbFechaHoy;
     private javax.swing.JLabel lbNivel1;
     private javax.swing.JLabel lbNivel2;
     private javax.swing.JLabel lbNivel3;
@@ -965,9 +918,11 @@ public class Seguimiento extends javax.swing.JFrame {
     private javax.swing.JPanel mReportes;
     private javax.swing.JPanel mSalir;
     private javax.swing.JPanel mSeguimiento;
+    private javax.swing.JRadioButton rbF01;
     private javax.swing.JTable tbCategoriasEstudiante;
     private javax.swing.JTable tbListaEstudiantes;
     private javax.swing.JTextField txtApellidoEstudiante;
+    private javax.swing.JTextArea txtConductaObs;
     private javax.swing.JTextField txtDiagnosticoEstudiante;
     private javax.swing.JTextField txtIdEstudiante;
     private javax.swing.JTextField txtNombreEstudiante;

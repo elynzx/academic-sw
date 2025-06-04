@@ -16,4 +16,5 @@ public interface ISeguimiento {
     
     List<CategoriaConducta> ObtenerCategoriaConductas();
     
+    
 }

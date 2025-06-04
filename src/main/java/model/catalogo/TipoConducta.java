@@ -9,8 +9,9 @@ package model.catalogo;
  * @author rpasc
  */
 public class TipoConducta {
+
     private int id;
-    private String nombre;    
+    private String nombre;
 
     public TipoConducta(int id, String nombre) {
         this.id = id;
@@ -32,5 +33,10 @@ public class TipoConducta {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-    
+
+    @Override
+    public String toString() {
+        return this.nombre;
+    }
+
 }

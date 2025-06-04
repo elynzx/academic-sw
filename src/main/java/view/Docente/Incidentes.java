@@ -4,24 +4,86 @@
  */
 package view.Docente;
 
+import java.util.List;
+import model.catalogo.Antecedente;
+import model.catalogo.CategoriaConducta;
+import model.catalogo.FuncionComportamiento;
+import model.catalogo.TipoConducta;
+import model.dao.IRegistroIncidente;
+import model.dao.RegistroIncidenteDao;
+
 /**
  *
  * @author rpasc
  */
 public class Incidentes extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Evaluaciones
-     */
+    private IRegistroIncidente registroIncidenteDao = new RegistroIncidenteDao();
+
     public Incidentes(int idDocente) {
+
         initComponents();
+        cargarTipoConductas();
+        cargarFuncionComportamiento();
+        cargarAntecedentes();
+    }
+
+    private void cargarTipoConductas() {
+        cbTipoConducta.removeAllItems();
+        try {
+            List<TipoConducta> listaTipoConductas = registroIncidenteDao.ObtenerTipoConductas();
+            if (listaTipoConductas != null && !listaTipoConductas.isEmpty()) {
+                for (TipoConducta tipoConducta : listaTipoConductas) {
+                    cbTipoConducta.addItem(tipoConducta);
+                }
+            } else {
+                System.out.println("No hay categorías disponibles.");
+            }
+        } catch (Exception e) {
+            System.out.println("Error al obtener los tipos de conducta: " + e.getMessage());
+        }
+    }
+    
+
+    private void cargarFuncionComportamiento() {
+        cbFuncionComportamiento.removeAllItems();
+        try {
+            List<FuncionComportamiento> listaFuncionComportamientos = registroIncidenteDao.ObtenerFuncionComportamientos();
+            if (listaFuncionComportamientos != null && !listaFuncionComportamientos.isEmpty()) {
+                for (FuncionComportamiento funcionComportamiento : listaFuncionComportamientos) {
+                    cbFuncionComportamiento.addItem(funcionComportamiento);
+                }
+            } else {
+                System.out.println("No hay categorías disponibles.");
+            }
+        } catch (Exception e) {
+            System.out.println("Error al obtener la lista de categorías: " + e.getMessage());
+        }
     }
 
     
-    
+    private void cargarAntecedentes() {
+        cbAntecedente.removeAllItems();
+        try {
+            List<Antecedente> listaAntecedentes = registroIncidenteDao.obtenerAntecedentes();
+
+            if (listaAntecedentes != null && !listaAntecedentes.isEmpty()) {
+                for (Antecedente antecedente : listaAntecedentes) {
+                    cbAntecedente.addItem(antecedente);
+                }
+            } else {
+                System.out.println("No hay categorías disponibles.");
+            }
+        } catch (Exception e) {
+            System.out.println("Error al obtener la lista de categorías: " + e.getMessage());
+        }
+    }
+
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
+        buttonGroup2 = new javax.swing.ButtonGroup();
         jPanel5 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         mInicio = new javax.swing.JPanel();
@@ -33,9 +95,6 @@ public class Incidentes extends javax.swing.JFrame {
         mEvaluaciones = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
-        mSalir = new javax.swing.JPanel();
-        jLabel23 = new javax.swing.JLabel();
-        jLabel24 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         lbNomUsuario = new javax.swing.JLabel();
         mReemplazo = new javax.swing.JPanel();
@@ -44,28 +103,27 @@ public class Incidentes extends javax.swing.JFrame {
         mReportes = new javax.swing.JPanel();
         jLabel21 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
+        mSalir = new javax.swing.JPanel();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        jLabel7 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
+        txtBuscarEstudiante = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
-        tbAlumnosDashboard = new javax.swing.JTable();
+        tbIncidentesEstudiante = new javax.swing.JTable();
         lbNivel5 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         lbNivel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        txtConductaDsc = new javax.swing.JTextArea();
         lbNivel2 = new javax.swing.JLabel();
-        btnCrearTicket1 = new javax.swing.JButton();
+        btnCrearConductaProblematica = new javax.swing.JButton();
         lbNivel4 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        cbTipoConducta = new javax.swing.JComboBox<>();
         lbNivel6 = new javax.swing.JLabel();
-        jComboBox4 = new javax.swing.JComboBox<>();
+        cbFuncionComportamiento = new javax.swing.JComboBox<>();
         lbNivel11 = new javax.swing.JLabel();
         jPanel8 = new javax.swing.JPanel();
         jRadioButton13 = new javax.swing.JRadioButton();
@@ -74,18 +132,17 @@ public class Incidentes extends javax.swing.JFrame {
         jRadioButton16 = new javax.swing.JRadioButton();
         jRadioButton17 = new javax.swing.JRadioButton();
         jRadioButton18 = new javax.swing.JRadioButton();
-        jLabel5 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         lbNivel3 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTextArea2 = new javax.swing.JTextArea();
+        txtComportamiento = new javax.swing.JTextArea();
         lbNivel7 = new javax.swing.JLabel();
-        btnCrearTicket2 = new javax.swing.JButton();
+        btnCrearFicha = new javax.swing.JButton();
         lbNivel8 = new javax.swing.JLabel();
-        jComboBox3 = new javax.swing.JComboBox<>();
+        cbAntecedente = new javax.swing.JComboBox<>();
         lbNivel9 = new javax.swing.JLabel();
         jScrollPane4 = new javax.swing.JScrollPane();
-        jTextArea3 = new javax.swing.JTextArea();
+        txtConsecuencia = new javax.swing.JTextArea();
         lbNivel10 = new javax.swing.JLabel();
         jPanel9 = new javax.swing.JPanel();
         jRadioButton19 = new javax.swing.JRadioButton();
@@ -94,9 +151,17 @@ public class Incidentes extends javax.swing.JFrame {
         jRadioButton22 = new javax.swing.JRadioButton();
         jRadioButton23 = new javax.swing.JRadioButton();
         jRadioButton24 = new javax.swing.JRadioButton();
-        jTextField7 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        lbNivel12 = new javax.swing.JLabel();
+        txtIdEstudiante = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        txtNombreEstudiante = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        txtDiagnosticoEstudiante = new javax.swing.JTextField();
+        txtApellidoEstudiante = new javax.swing.JTextField();
+        lbNivel13 = new javax.swing.JLabel();
+        lbFechaHoy = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -214,42 +279,6 @@ public class Incidentes extends javax.swing.JFrame {
 
         jPanel5.add(mEvaluaciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 0, 120, 90));
 
-        mSalir.setBackground(new java.awt.Color(237, 237, 237));
-        mSalir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-        jLabel23.setFont(new java.awt.Font("Poppins", 0, 13)); // NOI18N
-        jLabel23.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel23.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Log Out_2.png"))); // NOI18N
-        jLabel23.setToolTipText("");
-        jLabel23.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-
-        jLabel24.setBackground(new java.awt.Color(51, 51, 51));
-        jLabel24.setFont(new java.awt.Font("Segoe UI", 1, 11)); // NOI18N
-        jLabel24.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel24.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel24.setText("SALIR");
-        jLabel24.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-
-        javax.swing.GroupLayout mSalirLayout = new javax.swing.GroupLayout(mSalir);
-        mSalir.setLayout(mSalirLayout);
-        mSalirLayout.setHorizontalGroup(
-            mSalirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel23, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
-            .addComponent(jLabel24, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        mSalirLayout.setVerticalGroup(
-            mSalirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(mSalirLayout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(jLabel24)
-                .addContainerGap(22, Short.MAX_VALUE))
-        );
-
-        jPanel5.add(mSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 0, 70, 90));
-
         jLabel10.setBackground(new java.awt.Color(51, 51, 51));
         jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(51, 51, 51));
@@ -336,26 +365,57 @@ public class Incidentes extends javax.swing.JFrame {
 
         jPanel5.add(mReportes, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 0, 120, 90));
 
+        mSalir.setBackground(new java.awt.Color(237, 237, 237));
+        mSalir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        jLabel23.setFont(new java.awt.Font("Poppins", 0, 13)); // NOI18N
+        jLabel23.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel23.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Log Out_2.png"))); // NOI18N
+        jLabel23.setToolTipText("");
+        jLabel23.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+
+        jLabel24.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel24.setFont(new java.awt.Font("Segoe UI", 1, 11)); // NOI18N
+        jLabel24.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel24.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel24.setText("SALIR");
+        jLabel24.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+
+        javax.swing.GroupLayout mSalirLayout = new javax.swing.GroupLayout(mSalir);
+        mSalir.setLayout(mSalirLayout);
+        mSalirLayout.setHorizontalGroup(
+            mSalirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel23, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
+            .addComponent(jLabel24, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        mSalirLayout.setVerticalGroup(
+            mSalirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(mSalirLayout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(jLabel24)
+                .addContainerGap(22, Short.MAX_VALUE))
+        );
+
+        jPanel5.add(mSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 0, 70, 90));
+
         getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1200, 90));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 32)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel7.setText("Registro de Incidentes");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 400, -1));
-
+        jLabel4.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel4.setText("Buscar por Apellidos:");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 40, -1, 30));
+        jLabel4.setText("Buscar por Nombre y Apellidos:");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, 180, -1));
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
+        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
 
-        jTextField1.setForeground(new java.awt.Color(51, 51, 51));
-        jTextField1.setBorder(null);
+        txtBuscarEstudiante.setForeground(new java.awt.Color(51, 51, 51));
+        txtBuscarEstudiante.setBorder(null);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Magnifer75.png"))); // NOI18N
 
@@ -366,44 +426,25 @@ public class Incidentes extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addGap(0, 0, 0)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(txtBuscarEstudiante, javax.swing.GroupLayout.DEFAULT_SIZE, 244, Short.MAX_VALUE)
+                .addGap(0, 0, 0))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jTextField1))
+                    .addComponent(txtBuscarEstudiante))
                 .addGap(0, 0, 0))
         );
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 40, 290, -1));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, 290, -1));
 
-        jTextField3.setBackground(new java.awt.Color(244, 244, 244));
-        jTextField3.setForeground(new java.awt.Color(102, 102, 102));
-        jTextField3.setText(" ID");
-        jTextField3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
-        jTextField3.setEnabled(false);
-        jPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 110, 90, 30));
-
-        jTextField4.setBackground(new java.awt.Color(244, 244, 244));
-        jTextField4.setForeground(new java.awt.Color(102, 102, 102));
-        jTextField4.setText(" Nombres");
-        jTextField4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
-        jTextField4.setEnabled(false);
-        jPanel1.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, 290, 30));
-
-        jTextField6.setBackground(new java.awt.Color(244, 244, 244));
-        jTextField6.setForeground(new java.awt.Color(102, 102, 102));
-        jTextField6.setText(" Apellidos");
-        jTextField6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
-        jTextField6.setEnabled(false);
-        jPanel1.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, 290, 30));
-
-        tbAlumnosDashboard.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
-        tbAlumnosDashboard.setForeground(new java.awt.Color(51, 51, 51));
-        tbAlumnosDashboard.setModel(new javax.swing.table.DefaultTableModel(
+        tbIncidentesEstudiante.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
+        tbIncidentesEstudiante.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
+        tbIncidentesEstudiante.setForeground(new java.awt.Color(51, 51, 51));
+        tbIncidentesEstudiante.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
                 {null, null, null},
@@ -429,68 +470,70 @@ public class Incidentes extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        tbAlumnosDashboard.setGridColor(new java.awt.Color(153, 153, 153));
-        tbAlumnosDashboard.setSelectionBackground(new java.awt.Color(225, 240, 245));
-        jScrollPane2.setViewportView(tbAlumnosDashboard);
+        tbIncidentesEstudiante.setGridColor(new java.awt.Color(153, 153, 153));
+        tbIncidentesEstudiante.setRowHeight(25);
+        tbIncidentesEstudiante.setSelectionBackground(new java.awt.Color(225, 240, 245));
+        jScrollPane2.setViewportView(tbIncidentesEstudiante);
 
-        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 350, 290, 260));
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 410, 290, 200));
 
-        lbNivel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lbNivel5.setForeground(new java.awt.Color(102, 102, 102));
+        lbNivel5.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        lbNivel5.setForeground(new java.awt.Color(66, 128, 191));
         lbNivel5.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lbNivel5.setText("Incidentes Recientes");
         lbNivel5.setToolTipText("");
         lbNivel5.setPreferredSize(new java.awt.Dimension(70, 25));
-        jPanel1.add(lbNivel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 320, 190, 30));
+        jPanel1.add(lbNivel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 370, 190, 30));
 
         jPanel4.setBackground(new java.awt.Color(203, 223, 243));
 
-        lbNivel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lbNivel1.setFont(new java.awt.Font("Trebuchet MS", 1, 16)); // NOI18N
         lbNivel1.setForeground(new java.awt.Color(102, 102, 102));
         lbNivel1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lbNivel1.setText("Función del comportamiento");
         lbNivel1.setPreferredSize(new java.awt.Dimension(70, 25));
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setForeground(new java.awt.Color(102, 102, 102));
-        jTextArea1.setRows(5);
-        jTextArea1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
-        jScrollPane1.setViewportView(jTextArea1);
+        txtConductaDsc.setColumns(20);
+        txtConductaDsc.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
+        txtConductaDsc.setForeground(new java.awt.Color(51, 51, 51));
+        txtConductaDsc.setRows(5);
+        txtConductaDsc.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
+        jScrollPane1.setViewportView(txtConductaDsc);
 
-        lbNivel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lbNivel2.setFont(new java.awt.Font("Trebuchet MS", 1, 16)); // NOI18N
         lbNivel2.setForeground(new java.awt.Color(102, 102, 102));
         lbNivel2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lbNivel2.setText("Descripción");
         lbNivel2.setPreferredSize(new java.awt.Dimension(70, 25));
 
-        btnCrearTicket1.setBackground(new java.awt.Color(66, 128, 191));
-        btnCrearTicket1.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
-        btnCrearTicket1.setForeground(new java.awt.Color(255, 255, 255));
-        btnCrearTicket1.setText("GUARDAR");
-        btnCrearTicket1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnCrearTicket1.setFocusPainted(false);
+        btnCrearConductaProblematica.setBackground(new java.awt.Color(66, 128, 191));
+        btnCrearConductaProblematica.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
+        btnCrearConductaProblematica.setForeground(new java.awt.Color(255, 255, 255));
+        btnCrearConductaProblematica.setText("GUARDAR");
+        btnCrearConductaProblematica.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnCrearConductaProblematica.setFocusPainted(false);
 
-        lbNivel4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lbNivel4.setFont(new java.awt.Font("Trebuchet MS", 1, 16)); // NOI18N
         lbNivel4.setForeground(new java.awt.Color(102, 102, 102));
         lbNivel4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lbNivel4.setText("Tipo de Conducta");
         lbNivel4.setPreferredSize(new java.awt.Dimension(70, 25));
 
-        jComboBox2.setForeground(new java.awt.Color(102, 102, 102));
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Agresión física", "Gritos o llanto", "Fugas o escapes", "Desobediencia", "Rechazo a actividad", "Comportamiento autolesivo", "Conducta disruptiva (tirar objetos, interrumpir)", "Aislamiento" }));
-        jComboBox2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
+        cbTipoConducta.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
+        cbTipoConducta.setForeground(new java.awt.Color(51, 51, 51));
+        cbTipoConducta.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
 
-        lbNivel6.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        lbNivel6.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         lbNivel6.setForeground(new java.awt.Color(66, 128, 191));
         lbNivel6.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lbNivel6.setText("Conducta Problemática");
         lbNivel6.setPreferredSize(new java.awt.Dimension(70, 25));
 
-        jComboBox4.setForeground(new java.awt.Color(102, 102, 102));
-        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Atención", "Escape", "Estimulación Sensorial", "Acceso a objetos o actividades", "Control / evitar tarea", "Evación de exigencias" }));
-        jComboBox4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
+        cbFuncionComportamiento.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
+        cbFuncionComportamiento.setForeground(new java.awt.Color(51, 51, 51));
+        cbFuncionComportamiento.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
 
-        lbNivel11.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lbNivel11.setFont(new java.awt.Font("Trebuchet MS", 1, 16)); // NOI18N
         lbNivel11.setForeground(new java.awt.Color(102, 102, 102));
         lbNivel11.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lbNivel11.setText("Gravedad");
@@ -499,6 +542,7 @@ public class Incidentes extends javax.swing.JFrame {
         jPanel8.setBackground(new java.awt.Color(203, 223, 243));
 
         jRadioButton13.setBackground(new java.awt.Color(203, 223, 243));
+        buttonGroup1.add(jRadioButton13);
         jRadioButton13.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jRadioButton13.setForeground(new java.awt.Color(51, 51, 51));
         jRadioButton13.setText("0");
@@ -509,6 +553,7 @@ public class Incidentes extends javax.swing.JFrame {
         jRadioButton13.setIconTextGap(10);
 
         jRadioButton14.setBackground(new java.awt.Color(203, 223, 243));
+        buttonGroup1.add(jRadioButton14);
         jRadioButton14.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jRadioButton14.setForeground(new java.awt.Color(51, 51, 51));
         jRadioButton14.setText("1");
@@ -519,6 +564,7 @@ public class Incidentes extends javax.swing.JFrame {
         jRadioButton14.setIconTextGap(10);
 
         jRadioButton15.setBackground(new java.awt.Color(203, 223, 243));
+        buttonGroup1.add(jRadioButton15);
         jRadioButton15.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jRadioButton15.setForeground(new java.awt.Color(51, 51, 51));
         jRadioButton15.setText("2");
@@ -529,6 +575,7 @@ public class Incidentes extends javax.swing.JFrame {
         jRadioButton15.setIconTextGap(10);
 
         jRadioButton16.setBackground(new java.awt.Color(203, 223, 243));
+        buttonGroup1.add(jRadioButton16);
         jRadioButton16.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jRadioButton16.setForeground(new java.awt.Color(51, 51, 51));
         jRadioButton16.setText("3");
@@ -539,6 +586,7 @@ public class Incidentes extends javax.swing.JFrame {
         jRadioButton16.setIconTextGap(10);
 
         jRadioButton17.setBackground(new java.awt.Color(203, 223, 243));
+        buttonGroup1.add(jRadioButton17);
         jRadioButton17.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jRadioButton17.setForeground(new java.awt.Color(51, 51, 51));
         jRadioButton17.setText("4");
@@ -549,6 +597,7 @@ public class Incidentes extends javax.swing.JFrame {
         jRadioButton17.setIconTextGap(10);
 
         jRadioButton18.setBackground(new java.awt.Color(203, 223, 243));
+        buttonGroup1.add(jRadioButton18);
         jRadioButton18.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jRadioButton18.setForeground(new java.awt.Color(51, 51, 51));
         jRadioButton18.setText("5");
@@ -609,27 +658,27 @@ public class Incidentes extends javax.swing.JFrame {
                                 .addComponent(lbNivel2, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(lbNivel4, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGap(140, 140, 140))
-                        .addComponent(btnCrearTicket1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnCrearConductaProblematica, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jScrollPane1)
                         .addComponent(lbNivel6, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jComboBox4, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(cbFuncionComportamiento, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(cbTipoConducta, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(lbNivel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap(31, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap(42, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(lbNivel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
                 .addComponent(lbNivel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(cbTipoConducta, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lbNivel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(cbFuncionComportamiento, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lbNivel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -639,68 +688,64 @@ public class Incidentes extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(btnCrearTicket1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnCrearConductaProblematica, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(29, 29, 29))
         );
 
-        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 110, 390, 500));
-
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel5.setText("Fecha de hoy");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 30, 270, 40));
+        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 110, 390, 500));
 
         jPanel6.setBackground(new java.awt.Color(225, 240, 245));
 
-        lbNivel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lbNivel3.setFont(new java.awt.Font("Trebuchet MS", 1, 16)); // NOI18N
         lbNivel3.setForeground(new java.awt.Color(102, 102, 102));
         lbNivel3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lbNivel3.setText("Gravedad");
         lbNivel3.setPreferredSize(new java.awt.Dimension(70, 25));
 
-        jTextArea2.setColumns(20);
-        jTextArea2.setForeground(new java.awt.Color(102, 102, 102));
-        jTextArea2.setRows(5);
-        jTextArea2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
-        jScrollPane3.setViewportView(jTextArea2);
+        txtComportamiento.setColumns(20);
+        txtComportamiento.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
+        txtComportamiento.setForeground(new java.awt.Color(51, 51, 51));
+        txtComportamiento.setRows(5);
+        txtComportamiento.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
+        jScrollPane3.setViewportView(txtComportamiento);
 
-        lbNivel7.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lbNivel7.setFont(new java.awt.Font("Trebuchet MS", 1, 16)); // NOI18N
         lbNivel7.setForeground(new java.awt.Color(102, 102, 102));
         lbNivel7.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lbNivel7.setText("Comportamiento");
         lbNivel7.setPreferredSize(new java.awt.Dimension(70, 25));
 
-        btnCrearTicket2.setBackground(new java.awt.Color(66, 128, 191));
-        btnCrearTicket2.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
-        btnCrearTicket2.setForeground(new java.awt.Color(255, 255, 255));
-        btnCrearTicket2.setText("GUARDAR");
-        btnCrearTicket2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnCrearTicket2.setFocusPainted(false);
+        btnCrearFicha.setBackground(new java.awt.Color(66, 128, 191));
+        btnCrearFicha.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
+        btnCrearFicha.setForeground(new java.awt.Color(255, 255, 255));
+        btnCrearFicha.setText("GUARDAR");
+        btnCrearFicha.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnCrearFicha.setFocusPainted(false);
 
-        lbNivel8.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lbNivel8.setFont(new java.awt.Font("Trebuchet MS", 1, 16)); // NOI18N
         lbNivel8.setForeground(new java.awt.Color(102, 102, 102));
         lbNivel8.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lbNivel8.setText("Antecedente");
         lbNivel8.setPreferredSize(new java.awt.Dimension(70, 25));
 
-        jComboBox3.setForeground(new java.awt.Color(102, 102, 102));
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Se le negó un objeto o actividad", "Interrupción en su rutina", "Inicio de una actividad nueva", "Transición entre actividades", "Se le dio una instrucción", "Se encontraba solo", "Estaba aburrido/inactivo", "No se respondió de inmediato al estudiante" }));
-        jComboBox3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
+        cbAntecedente.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
+        cbAntecedente.setForeground(new java.awt.Color(51, 51, 51));
+        cbAntecedente.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
 
-        lbNivel9.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        lbNivel9.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         lbNivel9.setForeground(new java.awt.Color(66, 128, 191));
         lbNivel9.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lbNivel9.setText("Ficha ABC");
         lbNivel9.setPreferredSize(new java.awt.Dimension(70, 25));
 
-        jTextArea3.setColumns(20);
-        jTextArea3.setForeground(new java.awt.Color(102, 102, 102));
-        jTextArea3.setRows(5);
-        jTextArea3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
-        jScrollPane4.setViewportView(jTextArea3);
+        txtConsecuencia.setColumns(20);
+        txtConsecuencia.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
+        txtConsecuencia.setForeground(new java.awt.Color(51, 51, 51));
+        txtConsecuencia.setRows(5);
+        txtConsecuencia.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
+        jScrollPane4.setViewportView(txtConsecuencia);
 
-        lbNivel10.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lbNivel10.setFont(new java.awt.Font("Trebuchet MS", 1, 16)); // NOI18N
         lbNivel10.setForeground(new java.awt.Color(102, 102, 102));
         lbNivel10.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lbNivel10.setText("Consecuencia");
@@ -709,6 +754,7 @@ public class Incidentes extends javax.swing.JFrame {
         jPanel9.setBackground(new java.awt.Color(225, 240, 245));
 
         jRadioButton19.setBackground(new java.awt.Color(225, 240, 245));
+        buttonGroup2.add(jRadioButton19);
         jRadioButton19.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jRadioButton19.setForeground(new java.awt.Color(51, 51, 51));
         jRadioButton19.setText("0");
@@ -719,6 +765,7 @@ public class Incidentes extends javax.swing.JFrame {
         jRadioButton19.setIconTextGap(10);
 
         jRadioButton20.setBackground(new java.awt.Color(225, 240, 245));
+        buttonGroup2.add(jRadioButton20);
         jRadioButton20.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jRadioButton20.setForeground(new java.awt.Color(51, 51, 51));
         jRadioButton20.setText("1");
@@ -729,6 +776,7 @@ public class Incidentes extends javax.swing.JFrame {
         jRadioButton20.setIconTextGap(10);
 
         jRadioButton21.setBackground(new java.awt.Color(225, 240, 245));
+        buttonGroup2.add(jRadioButton21);
         jRadioButton21.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jRadioButton21.setForeground(new java.awt.Color(51, 51, 51));
         jRadioButton21.setText("2");
@@ -739,6 +787,7 @@ public class Incidentes extends javax.swing.JFrame {
         jRadioButton21.setIconTextGap(10);
 
         jRadioButton22.setBackground(new java.awt.Color(225, 240, 245));
+        buttonGroup2.add(jRadioButton22);
         jRadioButton22.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jRadioButton22.setForeground(new java.awt.Color(51, 51, 51));
         jRadioButton22.setText("3");
@@ -749,6 +798,7 @@ public class Incidentes extends javax.swing.JFrame {
         jRadioButton22.setIconTextGap(10);
 
         jRadioButton23.setBackground(new java.awt.Color(225, 240, 245));
+        buttonGroup2.add(jRadioButton23);
         jRadioButton23.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jRadioButton23.setForeground(new java.awt.Color(51, 51, 51));
         jRadioButton23.setText("4");
@@ -759,6 +809,7 @@ public class Incidentes extends javax.swing.JFrame {
         jRadioButton23.setIconTextGap(10);
 
         jRadioButton24.setBackground(new java.awt.Color(225, 240, 245));
+        buttonGroup2.add(jRadioButton24);
         jRadioButton24.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jRadioButton24.setForeground(new java.awt.Color(51, 51, 51));
         jRadioButton24.setText("5");
@@ -821,8 +872,8 @@ public class Incidentes extends javax.swing.JFrame {
                                         .addComponent(lbNivel3, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(lbNivel8, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGap(140, 140, 140))
-                                .addComponent(btnCrearTicket2, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jComboBox3, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(btnCrearFicha, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(cbAntecedente, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addComponent(lbNivel9, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(31, Short.MAX_VALUE))
         );
@@ -834,7 +885,7 @@ public class Incidentes extends javax.swing.JFrame {
                 .addGap(27, 27, 27)
                 .addComponent(lbNivel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(cbAntecedente, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lbNivel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -848,33 +899,78 @@ public class Incidentes extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(btnCrearTicket2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnCrearFicha, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(29, 29, 29))
         );
 
-        jPanel1.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 110, 390, 500));
+        jPanel1.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 110, 390, 500));
 
-        jTextField7.setBackground(new java.awt.Color(244, 244, 244));
-        jTextField7.setForeground(new java.awt.Color(102, 102, 102));
-        jTextField7.setText("Diagnóstico");
-        jTextField7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
-        jTextField7.setEnabled(false);
-        jPanel1.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 270, 290, 30));
+        txtIdEstudiante.setEditable(false);
+        txtIdEstudiante.setBackground(new java.awt.Color(248, 248, 248));
+        txtIdEstudiante.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
+        txtIdEstudiante.setForeground(new java.awt.Color(102, 102, 102));
+        txtIdEstudiante.setBorder(null);
+        jPanel1.add(txtIdEstudiante, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 190, 60, 30));
 
-        jTextField5.setBackground(new java.awt.Color(244, 244, 244));
-        jTextField5.setForeground(new java.awt.Color(102, 102, 102));
-        jTextField5.setText("Nivel funcional");
-        jTextField5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
-        jTextField5.setEnabled(false);
-        jPanel1.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, 290, 30));
+        jLabel6.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
+        jLabel6.setText("ID:");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 190, 20, 30));
 
-        lbNivel12.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lbNivel12.setForeground(new java.awt.Color(102, 102, 102));
-        lbNivel12.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lbNivel12.setText("Datos del Estudiante");
-        lbNivel12.setToolTipText("");
-        lbNivel12.setPreferredSize(new java.awt.Dimension(70, 25));
-        jPanel1.add(lbNivel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, 190, 30));
+        txtNombreEstudiante.setEditable(false);
+        txtNombreEstudiante.setBackground(new java.awt.Color(248, 248, 248));
+        txtNombreEstudiante.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
+        txtNombreEstudiante.setForeground(new java.awt.Color(102, 102, 102));
+        txtNombreEstudiante.setBorder(null);
+        jPanel1.add(txtNombreEstudiante, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 230, 200, 30));
+
+        jLabel9.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel9.setText("Nombres:");
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, -1, 30));
+
+        jLabel8.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel8.setText("Apellidos:");
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 270, -1, 30));
+
+        jLabel3.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel3.setText("Diagnóstico:");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 310, -1, 30));
+
+        txtDiagnosticoEstudiante.setEditable(false);
+        txtDiagnosticoEstudiante.setBackground(new java.awt.Color(248, 248, 248));
+        txtDiagnosticoEstudiante.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
+        txtDiagnosticoEstudiante.setForeground(new java.awt.Color(102, 102, 102));
+        txtDiagnosticoEstudiante.setBorder(null);
+        jPanel1.add(txtDiagnosticoEstudiante, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 310, 200, 30));
+
+        txtApellidoEstudiante.setEditable(false);
+        txtApellidoEstudiante.setBackground(new java.awt.Color(248, 248, 248));
+        txtApellidoEstudiante.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
+        txtApellidoEstudiante.setForeground(new java.awt.Color(102, 102, 102));
+        txtApellidoEstudiante.setBorder(null);
+        jPanel1.add(txtApellidoEstudiante, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 270, 200, 30));
+
+        lbNivel13.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        lbNivel13.setForeground(new java.awt.Color(66, 128, 191));
+        lbNivel13.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lbNivel13.setText("Datos del Estudiante");
+        lbNivel13.setToolTipText("");
+        lbNivel13.setPreferredSize(new java.awt.Dimension(70, 25));
+        jPanel1.add(lbNivel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, 180, 30));
+
+        lbFechaHoy.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
+        lbFechaHoy.setForeground(new java.awt.Color(51, 51, 51));
+        lbFechaHoy.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lbFechaHoy.setText("Fecha de hoy");
+        jPanel1.add(lbFechaHoy, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 30, 390, 40));
+
+        jLabel19.setFont(new java.awt.Font("Trebuchet MS", 1, 32)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel19.setText("Registro de Incidentes");
+        jPanel1.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 520, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 1200, 650));
 
@@ -882,13 +978,14 @@ public class Incidentes extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
 
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnCrearTicket1;
-    private javax.swing.JButton btnCrearTicket2;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JComboBox<String> jComboBox3;
-    private javax.swing.JComboBox<String> jComboBox4;
+    private javax.swing.JButton btnCrearConductaProblematica;
+    private javax.swing.JButton btnCrearFicha;
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.ButtonGroup buttonGroup2;
+    private javax.swing.JComboBox<Antecedente> cbAntecedente;
+    private javax.swing.JComboBox<FuncionComportamiento> cbFuncionComportamiento;
+    private javax.swing.JComboBox<TipoConducta> cbTipoConducta;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -899,14 +996,17 @@ public class Incidentes extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;
@@ -930,19 +1030,11 @@ public class Incidentes extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextArea jTextArea2;
-    private javax.swing.JTextArea jTextArea3;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
+    private javax.swing.JLabel lbFechaHoy;
     private javax.swing.JLabel lbNivel1;
     private javax.swing.JLabel lbNivel10;
     private javax.swing.JLabel lbNivel11;
-    private javax.swing.JLabel lbNivel12;
+    private javax.swing.JLabel lbNivel13;
     private javax.swing.JLabel lbNivel2;
     private javax.swing.JLabel lbNivel3;
     private javax.swing.JLabel lbNivel4;
@@ -958,6 +1050,14 @@ public class Incidentes extends javax.swing.JFrame {
     private javax.swing.JPanel mReportes;
     private javax.swing.JPanel mSalir;
     private javax.swing.JPanel mSeguimiento;
-    private javax.swing.JTable tbAlumnosDashboard;
+    private javax.swing.JTable tbIncidentesEstudiante;
+    private javax.swing.JTextField txtApellidoEstudiante;
+    private javax.swing.JTextField txtBuscarEstudiante;
+    private javax.swing.JTextArea txtComportamiento;
+    private javax.swing.JTextArea txtConductaDsc;
+    private javax.swing.JTextArea txtConsecuencia;
+    private javax.swing.JTextField txtDiagnosticoEstudiante;
+    private javax.swing.JTextField txtIdEstudiante;
+    private javax.swing.JTextField txtNombreEstudiante;
     // End of variables declaration//GEN-END:variables
 }
