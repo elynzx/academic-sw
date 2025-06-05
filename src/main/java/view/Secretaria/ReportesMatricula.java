@@ -4,17 +4,37 @@
  */
 package view.Secretaria;
 
+import controller.SecretariaCtrl;
+import javax.swing.JLabel;
+
 /**
  *
  * @author rpasc
  */
 public class ReportesMatricula extends javax.swing.JFrame {
 
-   
+   private SecretariaCtrl secretaria;
     public ReportesMatricula() {
         initComponents();
+        secretaria = new SecretariaCtrl(this);
     }
 
+    public JLabel getJlblestudiantes() {
+        return jlblestudiantes;
+    }
+
+    public JLabel getJlblinicio() {
+        return jlblinicio;
+    }
+
+    public JLabel getJlblmatricula() {
+        return jlblmatricula;
+    }
+
+    public JLabel getJlblreportes() {
+        return jlblreportes;
+    }
+    
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -28,16 +48,16 @@ public class ReportesMatricula extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         lbNomUsuario = new javax.swing.JLabel();
         mInicio1 = new javax.swing.JPanel();
-        jLabel14 = new javax.swing.JLabel();
+        jlblinicio = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         mEvaluaciones = new javax.swing.JPanel();
-        jLabel15 = new javax.swing.JLabel();
+        jlblmatricula = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         mIndividual = new javax.swing.JPanel();
-        jLabel19 = new javax.swing.JLabel();
+        jlblestudiantes = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
         mReportes = new javax.swing.JPanel();
-        jLabel21 = new javax.swing.JLabel();
+        jlblreportes = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
@@ -80,6 +100,11 @@ public class ReportesMatricula extends javax.swing.JFrame {
         jLabel23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Log Out_2.png"))); // NOI18N
         jLabel23.setToolTipText("");
         jLabel23.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        jLabel23.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel23MouseClicked(evt);
+            }
+        });
 
         jLabel24.setBackground(new java.awt.Color(51, 51, 51));
         jLabel24.setFont(new java.awt.Font("Segoe UI", 1, 11)); // NOI18N
@@ -126,12 +151,17 @@ public class ReportesMatricula extends javax.swing.JFrame {
         mInicio1.setForeground(new java.awt.Color(255, 255, 255));
         mInicio1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        jLabel14.setFont(new java.awt.Font("Poppins", 0, 13)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Home-1.png"))); // NOI18N
-        jLabel14.setToolTipText("");
-        jLabel14.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        jlblinicio.setFont(new java.awt.Font("Poppins", 0, 13)); // NOI18N
+        jlblinicio.setForeground(new java.awt.Color(255, 255, 255));
+        jlblinicio.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jlblinicio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Home-1.png"))); // NOI18N
+        jlblinicio.setToolTipText("");
+        jlblinicio.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        jlblinicio.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jlblinicioMouseClicked(evt);
+            }
+        });
 
         jLabel17.setFont(new java.awt.Font("Segoe UI", 1, 11)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(58, 163, 163));
@@ -143,14 +173,14 @@ public class ReportesMatricula extends javax.swing.JFrame {
         mInicio1.setLayout(mInicio1Layout);
         mInicio1Layout.setHorizontalGroup(
             mInicio1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel14, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jlblinicio, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jLabel17, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
         );
         mInicio1Layout.setVerticalGroup(
             mInicio1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(mInicio1Layout.createSequentialGroup()
                 .addGap(16, 16, 16)
-                .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jlblinicio, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(jLabel17)
                 .addContainerGap(24, Short.MAX_VALUE))
@@ -161,11 +191,16 @@ public class ReportesMatricula extends javax.swing.JFrame {
         mEvaluaciones.setBackground(new java.awt.Color(237, 237, 237));
         mEvaluaciones.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        jLabel15.setFont(new java.awt.Font("Poppins", 0, 13)); // NOI18N
-        jLabel15.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Vector (Stroke).png"))); // NOI18N
-        jLabel15.setToolTipText("");
+        jlblmatricula.setFont(new java.awt.Font("Poppins", 0, 13)); // NOI18N
+        jlblmatricula.setForeground(new java.awt.Color(255, 255, 255));
+        jlblmatricula.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jlblmatricula.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Vector (Stroke).png"))); // NOI18N
+        jlblmatricula.setToolTipText("");
+        jlblmatricula.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jlblmatriculaMouseClicked(evt);
+            }
+        });
 
         jLabel16.setFont(new java.awt.Font("Segoe UI", 1, 11)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(66, 128, 191));
@@ -177,14 +212,14 @@ public class ReportesMatricula extends javax.swing.JFrame {
         mEvaluaciones.setLayout(mEvaluacionesLayout);
         mEvaluacionesLayout.setHorizontalGroup(
             mEvaluacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel15, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jlblmatricula, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jLabel16, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
         );
         mEvaluacionesLayout.setVerticalGroup(
             mEvaluacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(mEvaluacionesLayout.createSequentialGroup()
                 .addGap(16, 16, 16)
-                .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jlblmatricula, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(jLabel16)
                 .addContainerGap(24, Short.MAX_VALUE))
@@ -195,11 +230,16 @@ public class ReportesMatricula extends javax.swing.JFrame {
         mIndividual.setBackground(new java.awt.Color(237, 237, 237));
         mIndividual.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        jLabel19.setFont(new java.awt.Font("Poppins", 0, 13)); // NOI18N
-        jLabel19.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Vector (Stroke)-1.png"))); // NOI18N
-        jLabel19.setToolTipText("");
+        jlblestudiantes.setFont(new java.awt.Font("Poppins", 0, 13)); // NOI18N
+        jlblestudiantes.setForeground(new java.awt.Color(255, 255, 255));
+        jlblestudiantes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jlblestudiantes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Vector (Stroke)-1.png"))); // NOI18N
+        jlblestudiantes.setToolTipText("");
+        jlblestudiantes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jlblestudiantesMouseClicked(evt);
+            }
+        });
 
         jLabel20.setFont(new java.awt.Font("Segoe UI", 1, 11)); // NOI18N
         jLabel20.setForeground(new java.awt.Color(126, 3, 126));
@@ -211,14 +251,14 @@ public class ReportesMatricula extends javax.swing.JFrame {
         mIndividual.setLayout(mIndividualLayout);
         mIndividualLayout.setHorizontalGroup(
             mIndividualLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel19, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jlblestudiantes, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jLabel20, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
         );
         mIndividualLayout.setVerticalGroup(
             mIndividualLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(mIndividualLayout.createSequentialGroup()
                 .addGap(16, 16, 16)
-                .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jlblestudiantes, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(jLabel20)
                 .addContainerGap(24, Short.MAX_VALUE))
@@ -230,12 +270,17 @@ public class ReportesMatricula extends javax.swing.JFrame {
         mReportes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         mReportes.setPreferredSize(new java.awt.Dimension(120, 90));
 
-        jLabel21.setFont(new java.awt.Font("Poppins", 0, 13)); // NOI18N
-        jLabel21.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel21.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Clip_1.png"))); // NOI18N
-        jLabel21.setToolTipText("");
-        jLabel21.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        jlblreportes.setFont(new java.awt.Font("Poppins", 0, 13)); // NOI18N
+        jlblreportes.setForeground(new java.awt.Color(255, 255, 255));
+        jlblreportes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jlblreportes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Clip_1.png"))); // NOI18N
+        jlblreportes.setToolTipText("");
+        jlblreportes.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        jlblreportes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jlblreportesMouseClicked(evt);
+            }
+        });
 
         jLabel22.setFont(new java.awt.Font("Segoe UI", 1, 11)); // NOI18N
         jLabel22.setForeground(new java.awt.Color(214, 64, 64));
@@ -247,14 +292,14 @@ public class ReportesMatricula extends javax.swing.JFrame {
         mReportes.setLayout(mReportesLayout);
         mReportesLayout.setHorizontalGroup(
             mReportesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel21, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jlblreportes, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jLabel22, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
         );
         mReportesLayout.setVerticalGroup(
             mReportesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(mReportesLayout.createSequentialGroup()
                 .addGap(16, 16, 16)
-                .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jlblreportes, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(jLabel22)
                 .addContainerGap(24, Short.MAX_VALUE))
@@ -515,6 +560,26 @@ public class ReportesMatricula extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jlblinicioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jlblinicioMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jlblinicioMouseClicked
+
+    private void jlblmatriculaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jlblmatriculaMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jlblmatriculaMouseClicked
+
+    private void jlblestudiantesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jlblestudiantesMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jlblestudiantesMouseClicked
+
+    private void jlblreportesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jlblreportesMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jlblreportesMouseClicked
+
+    private void jLabel23MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel23MouseClicked
+        this.dispose();
+    }//GEN-LAST:event_jLabel23MouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCrearTicket4;
@@ -526,14 +591,10 @@ public class ReportesMatricula extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
@@ -548,6 +609,10 @@ public class ReportesMatricula extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
+    private javax.swing.JLabel jlblestudiantes;
+    private javax.swing.JLabel jlblinicio;
+    private javax.swing.JLabel jlblmatricula;
+    private javax.swing.JLabel jlblreportes;
     private javax.swing.JLabel lbNivel10;
     private javax.swing.JLabel lbNivel11;
     private javax.swing.JLabel lbNivel12;

@@ -6,7 +6,12 @@ package view.Secretaria;
 
 import utillities.Utilidad;
 import configuration.UsuarioConectado;
-
+import javax.swing.JLabel;
+import controller.SecretariaCtrl;
+import javax.swing.JTable;
+import view.Secretaria.Estudiantes;
+import view.Secretaria.Matricula;
+import view.Secretaria.ReportesMatricula;
 /**
  *
  * @author rpasc
@@ -14,12 +19,91 @@ import configuration.UsuarioConectado;
 public class DashboardMatricula extends javax.swing.JFrame {
 
     private Utilidad utilidad ;
+    private SecretariaCtrl secretaria;
+    private view.Secretaria.Estudiantes estudiantes;
+    private view.Secretaria.Matricula matricula;
+    private view.Secretaria.ReportesMatricula reportes;
 
     public DashboardMatricula() {
         utilidad = new Utilidad();
         initComponents();
         utilidad.mostrarFechaCompleta(lbFechaCompleta);
+        secretaria = new SecretariaCtrl(this);
+        
     }
+
+    public JLabel getJlblestudiantes() {
+        return jlblestudiantes;
+    }
+
+    public JLabel getJlblinicio() {
+        return jlblinicio;
+    }
+
+    public JLabel getJlblmatricula() {
+        return jlblmatricula;
+    }
+
+    public JLabel getJlblreportes() {
+        return jlblreportes;
+    }
+
+    public void setTbAlumnosDashboard(JTable tbAlumnosDashboard) {
+        this.tbAlumnosDashboard = tbAlumnosDashboard;
+    }
+    
+    public javax.swing.JTable getTbAlumnosDashboard() {
+    return tbAlumnosDashboard;
+    }
+
+    public javax.swing.JLabel getJlblnombre() {
+        return jlblnombre;
+    }
+
+    public javax.swing.JLabel setJlblnombre() {
+        return jlblnombre;
+    }
+
+
+    public void setJlblmatriculas(JLabel jlblmatriculas) {
+        this.jlblmatriculas = jlblmatriculas;
+    }
+
+    public javax.swing.JLabel getJlbltotal() {
+        return jlbltotal;
+    }
+
+    public void setJlbltotal(JLabel jlbltotal) {
+        this.jlbltotal = jlbltotal;
+    }
+
+    public javax.swing.JLabel getJlblvacantes() {
+        return jlblvacantes;
+    }
+
+    public void setJlblvacantes(JLabel jlblvacantes) {
+        this.jlblvacantes = jlblvacantes;
+    }
+
+    public javax.swing.JLabel getLbAsistentes() {
+        return jlblasistentes;
+    }
+
+    public void setLbAsistentes(JLabel lbAsistentes) {
+        this.jlblasistentes = lbAsistentes;
+    }
+    
+    
+    public javax.swing.JLabel getJlblmatriculas(){
+        return jlblmatriculas;
+    }
+    
+     public javax.swing.JLabel getJlblasistentes() {
+        return jlblasistentes;
+    }
+    
+    
+    
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -28,39 +112,39 @@ public class DashboardMatricula extends javax.swing.JFrame {
         jPanel5 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         mEvaluaciones = new javax.swing.JPanel();
-        jLabel15 = new javax.swing.JLabel();
+        jlblmatricula = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         mIndividual = new javax.swing.JPanel();
-        jLabel19 = new javax.swing.JLabel();
+        jlblestudiantes = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
         mReportes = new javax.swing.JPanel();
-        jLabel21 = new javax.swing.JLabel();
+        jlblreportes = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
         mSalir = new javax.swing.JPanel();
         jLabel23 = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        lbNomUsuario = new javax.swing.JLabel();
         mInicio1 = new javax.swing.JPanel();
-        jLabel13 = new javax.swing.JLabel();
+        jlblinicio = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
+        jlblnombre = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jPanel10 = new javax.swing.JPanel();
         jLabel30 = new javax.swing.JLabel();
-        lbEstudiante5 = new javax.swing.JLabel();
+        jlbltotal = new javax.swing.JLabel();
         jPanel13 = new javax.swing.JPanel();
         jLabel32 = new javax.swing.JLabel();
-        lbAsistentes = new javax.swing.JLabel();
+        jlblasistentes = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tbAlumnosDashboard = new javax.swing.JTable();
         lbFechaCompleta = new javax.swing.JLabel();
         jPanel14 = new javax.swing.JPanel();
         jLabel33 = new javax.swing.JLabel();
-        lbEstudiante6 = new javax.swing.JLabel();
+        jlblmatriculas = new javax.swing.JLabel();
         jPanel15 = new javax.swing.JPanel();
         jLabel34 = new javax.swing.JLabel();
-        lbEstudiante7 = new javax.swing.JLabel();
+        jlblvacantes = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         lbNivel7 = new javax.swing.JLabel();
         lbNivel9 = new javax.swing.JLabel();
@@ -68,6 +152,7 @@ public class DashboardMatricula extends javax.swing.JFrame {
         lbNivel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel5.setBackground(new java.awt.Color(237, 237, 237));
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -79,11 +164,16 @@ public class DashboardMatricula extends javax.swing.JFrame {
         mEvaluaciones.setBackground(new java.awt.Color(237, 237, 237));
         mEvaluaciones.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        jLabel15.setFont(new java.awt.Font("Poppins", 0, 13)); // NOI18N
-        jLabel15.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Vector (Stroke).png"))); // NOI18N
-        jLabel15.setToolTipText("");
+        jlblmatricula.setFont(new java.awt.Font("Poppins", 0, 13)); // NOI18N
+        jlblmatricula.setForeground(new java.awt.Color(255, 255, 255));
+        jlblmatricula.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jlblmatricula.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Vector (Stroke).png"))); // NOI18N
+        jlblmatricula.setToolTipText("");
+        jlblmatricula.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jlblmatriculaMouseClicked(evt);
+            }
+        });
 
         jLabel16.setFont(new java.awt.Font("Segoe UI", 1, 11)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(66, 128, 191));
@@ -95,14 +185,14 @@ public class DashboardMatricula extends javax.swing.JFrame {
         mEvaluaciones.setLayout(mEvaluacionesLayout);
         mEvaluacionesLayout.setHorizontalGroup(
             mEvaluacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel15, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jlblmatricula, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jLabel16, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
         );
         mEvaluacionesLayout.setVerticalGroup(
             mEvaluacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(mEvaluacionesLayout.createSequentialGroup()
                 .addGap(16, 16, 16)
-                .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jlblmatricula, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(jLabel16)
                 .addContainerGap(24, Short.MAX_VALUE))
@@ -113,11 +203,16 @@ public class DashboardMatricula extends javax.swing.JFrame {
         mIndividual.setBackground(new java.awt.Color(237, 237, 237));
         mIndividual.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        jLabel19.setFont(new java.awt.Font("Poppins", 0, 13)); // NOI18N
-        jLabel19.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Vector (Stroke)-1.png"))); // NOI18N
-        jLabel19.setToolTipText("");
+        jlblestudiantes.setFont(new java.awt.Font("Poppins", 0, 13)); // NOI18N
+        jlblestudiantes.setForeground(new java.awt.Color(255, 255, 255));
+        jlblestudiantes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jlblestudiantes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Vector (Stroke)-1.png"))); // NOI18N
+        jlblestudiantes.setToolTipText("");
+        jlblestudiantes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jlblestudiantesMouseClicked(evt);
+            }
+        });
 
         jLabel20.setFont(new java.awt.Font("Segoe UI", 1, 11)); // NOI18N
         jLabel20.setForeground(new java.awt.Color(126, 3, 126));
@@ -129,14 +224,14 @@ public class DashboardMatricula extends javax.swing.JFrame {
         mIndividual.setLayout(mIndividualLayout);
         mIndividualLayout.setHorizontalGroup(
             mIndividualLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel19, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jlblestudiantes, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jLabel20, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
         );
         mIndividualLayout.setVerticalGroup(
             mIndividualLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(mIndividualLayout.createSequentialGroup()
                 .addGap(16, 16, 16)
-                .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jlblestudiantes, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(jLabel20)
                 .addContainerGap(24, Short.MAX_VALUE))
@@ -148,12 +243,17 @@ public class DashboardMatricula extends javax.swing.JFrame {
         mReportes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         mReportes.setPreferredSize(new java.awt.Dimension(120, 90));
 
-        jLabel21.setFont(new java.awt.Font("Poppins", 0, 13)); // NOI18N
-        jLabel21.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel21.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Clip_1.png"))); // NOI18N
-        jLabel21.setToolTipText("");
-        jLabel21.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        jlblreportes.setFont(new java.awt.Font("Poppins", 0, 13)); // NOI18N
+        jlblreportes.setForeground(new java.awt.Color(255, 255, 255));
+        jlblreportes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jlblreportes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Clip_1.png"))); // NOI18N
+        jlblreportes.setToolTipText("");
+        jlblreportes.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        jlblreportes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jlblreportesMouseClicked(evt);
+            }
+        });
 
         jLabel22.setFont(new java.awt.Font("Segoe UI", 1, 11)); // NOI18N
         jLabel22.setForeground(new java.awt.Color(214, 64, 64));
@@ -165,14 +265,14 @@ public class DashboardMatricula extends javax.swing.JFrame {
         mReportes.setLayout(mReportesLayout);
         mReportesLayout.setHorizontalGroup(
             mReportesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel21, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jlblreportes, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jLabel22, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
         );
         mReportesLayout.setVerticalGroup(
             mReportesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(mReportesLayout.createSequentialGroup()
                 .addGap(16, 16, 16)
-                .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jlblreportes, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(jLabel22)
                 .addContainerGap(24, Short.MAX_VALUE))
@@ -189,6 +289,11 @@ public class DashboardMatricula extends javax.swing.JFrame {
         jLabel23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Log Out_2.png"))); // NOI18N
         jLabel23.setToolTipText("");
         jLabel23.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        jLabel23.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel23MouseClicked(evt);
+            }
+        });
 
         jLabel24.setBackground(new java.awt.Color(51, 51, 51));
         jLabel24.setFont(new java.awt.Font("Segoe UI", 1, 11)); // NOI18N
@@ -223,24 +328,21 @@ public class DashboardMatricula extends javax.swing.JFrame {
         jLabel10.setText("Hola,");
         jPanel5.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 20, 40, -1));
 
-        lbNomUsuario.setFont(new java.awt.Font("Segoe UI Black", 0, 16)); // NOI18N
-        lbNomUsuario.setForeground(new java.awt.Color(51, 51, 51));
-        lbNomUsuario.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lbNomUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/User Alt3.png"))); // NOI18N
-        lbNomUsuario.setText("Evelyn Pascual");
-        lbNomUsuario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel5.add(lbNomUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 40, 170, -1));
-
         mInicio1.setBackground(new java.awt.Color(255, 255, 255));
         mInicio1.setForeground(new java.awt.Color(255, 255, 255));
         mInicio1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        jLabel13.setFont(new java.awt.Font("Poppins", 0, 13)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Home-1.png"))); // NOI18N
-        jLabel13.setToolTipText("");
-        jLabel13.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        jlblinicio.setFont(new java.awt.Font("Poppins", 0, 13)); // NOI18N
+        jlblinicio.setForeground(new java.awt.Color(255, 255, 255));
+        jlblinicio.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jlblinicio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Home-1.png"))); // NOI18N
+        jlblinicio.setToolTipText("");
+        jlblinicio.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        jlblinicio.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jlblinicioMouseClicked(evt);
+            }
+        });
 
         jLabel14.setFont(new java.awt.Font("Segoe UI", 1, 11)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(58, 163, 163));
@@ -252,20 +354,28 @@ public class DashboardMatricula extends javax.swing.JFrame {
         mInicio1.setLayout(mInicio1Layout);
         mInicio1Layout.setHorizontalGroup(
             mInicio1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jlblinicio, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jLabel14, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
         );
         mInicio1Layout.setVerticalGroup(
             mInicio1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(mInicio1Layout.createSequentialGroup()
                 .addGap(16, 16, 16)
-                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jlblinicio, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(jLabel14)
                 .addContainerGap(24, Short.MAX_VALUE))
         );
 
         jPanel5.add(mInicio1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 0, 120, 90));
+
+        jlblnombre.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jlblnombre.setForeground(new java.awt.Color(51, 51, 51));
+        jlblnombre.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jlblnombre.setText("nombre");
+        jPanel5.add(jlblnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 40, 178, 28));
+
+        getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1200, -1));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -274,7 +384,7 @@ public class DashboardMatricula extends javax.swing.JFrame {
         jLabel7.setForeground(new java.awt.Color(51, 51, 51));
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel7.setText("Inicio");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 400, -1));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 50, 400, -1));
 
         jPanel10.setBackground(new java.awt.Color(230, 248, 248));
 
@@ -284,10 +394,10 @@ public class DashboardMatricula extends javax.swing.JFrame {
         jLabel30.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/vect (2).png"))); // NOI18N
         jLabel30.setText("Total Estudiantes");
 
-        lbEstudiante5.setFont(new java.awt.Font("Segoe UI", 1, 32)); // NOI18N
-        lbEstudiante5.setForeground(new java.awt.Color(51, 51, 51));
-        lbEstudiante5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbEstudiante5.setText("120");
+        jlbltotal.setFont(new java.awt.Font("Segoe UI", 1, 32)); // NOI18N
+        jlbltotal.setForeground(new java.awt.Color(51, 51, 51));
+        jlbltotal.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jlbltotal.setText("120");
 
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);
@@ -296,7 +406,7 @@ public class DashboardMatricula extends javax.swing.JFrame {
             .addGroup(jPanel10Layout.createSequentialGroup()
                 .addGap(0, 0, 0)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lbEstudiante5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jlbltotal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel30, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE))
                 .addGap(0, 0, 0))
         );
@@ -306,7 +416,7 @@ public class DashboardMatricula extends javax.swing.JFrame {
                 .addGap(12, 12, 12)
                 .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lbEstudiante5, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jlbltotal, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(20, Short.MAX_VALUE))
         );
 
@@ -320,10 +430,10 @@ public class DashboardMatricula extends javax.swing.JFrame {
         jLabel32.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/vect (3).png"))); // NOI18N
         jLabel32.setText("Aulas Disponibles");
 
-        lbAsistentes.setFont(new java.awt.Font("Segoe UI", 1, 32)); // NOI18N
-        lbAsistentes.setForeground(new java.awt.Color(51, 51, 51));
-        lbAsistentes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbAsistentes.setText("2 / 12");
+        jlblasistentes.setFont(new java.awt.Font("Segoe UI", 1, 32)); // NOI18N
+        jlblasistentes.setForeground(new java.awt.Color(51, 51, 51));
+        jlblasistentes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jlblasistentes.setText("2 / 12");
 
         javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
         jPanel13.setLayout(jPanel13Layout);
@@ -332,7 +442,7 @@ public class DashboardMatricula extends javax.swing.JFrame {
             .addGroup(jPanel13Layout.createSequentialGroup()
                 .addGap(0, 0, 0)
                 .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lbAsistentes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jlblasistentes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel32, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE))
                 .addGap(0, 0, 0))
         );
@@ -342,7 +452,7 @@ public class DashboardMatricula extends javax.swing.JFrame {
                 .addGap(12, 12, 12)
                 .addComponent(jLabel32, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lbAsistentes, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jlblasistentes, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(20, Short.MAX_VALUE))
         );
 
@@ -387,7 +497,7 @@ public class DashboardMatricula extends javax.swing.JFrame {
         lbFechaCompleta.setForeground(new java.awt.Color(51, 51, 51));
         lbFechaCompleta.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lbFechaCompleta.setText("Fecha de hoy");
-        jPanel1.add(lbFechaCompleta, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 30, 120, 40));
+        jPanel1.add(lbFechaCompleta, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 30, 230, 40));
 
         jPanel14.setBackground(new java.awt.Color(230, 248, 248));
 
@@ -397,10 +507,10 @@ public class DashboardMatricula extends javax.swing.JFrame {
         jLabel33.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/vect (2).png"))); // NOI18N
         jLabel33.setText("Matrículas de Hoy");
 
-        lbEstudiante6.setFont(new java.awt.Font("Segoe UI", 1, 32)); // NOI18N
-        lbEstudiante6.setForeground(new java.awt.Color(51, 51, 51));
-        lbEstudiante6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbEstudiante6.setText("2");
+        jlblmatriculas.setFont(new java.awt.Font("Segoe UI", 1, 32)); // NOI18N
+        jlblmatriculas.setForeground(new java.awt.Color(51, 51, 51));
+        jlblmatriculas.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jlblmatriculas.setText("2");
 
         javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
         jPanel14.setLayout(jPanel14Layout);
@@ -409,7 +519,7 @@ public class DashboardMatricula extends javax.swing.JFrame {
             .addGroup(jPanel14Layout.createSequentialGroup()
                 .addGap(0, 0, 0)
                 .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lbEstudiante6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jlblmatriculas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel33, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE))
                 .addGap(0, 0, 0))
         );
@@ -419,7 +529,7 @@ public class DashboardMatricula extends javax.swing.JFrame {
                 .addGap(12, 12, 12)
                 .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lbEstudiante6, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jlblmatriculas, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(20, Short.MAX_VALUE))
         );
 
@@ -433,10 +543,10 @@ public class DashboardMatricula extends javax.swing.JFrame {
         jLabel34.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/vect (4).png"))); // NOI18N
         jLabel34.setText("Vacantes Disponibles");
 
-        lbEstudiante7.setFont(new java.awt.Font("Segoe UI", 1, 32)); // NOI18N
-        lbEstudiante7.setForeground(new java.awt.Color(51, 51, 51));
-        lbEstudiante7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbEstudiante7.setText("30");
+        jlblvacantes.setFont(new java.awt.Font("Segoe UI", 1, 32)); // NOI18N
+        jlblvacantes.setForeground(new java.awt.Color(51, 51, 51));
+        jlblvacantes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jlblvacantes.setText("30");
 
         javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
         jPanel15.setLayout(jPanel15Layout);
@@ -445,7 +555,7 @@ public class DashboardMatricula extends javax.swing.JFrame {
             .addGroup(jPanel15Layout.createSequentialGroup()
                 .addGap(0, 0, 0)
                 .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lbEstudiante7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jlblvacantes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel34, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE))
                 .addGap(0, 0, 0))
         );
@@ -455,7 +565,7 @@ public class DashboardMatricula extends javax.swing.JFrame {
                 .addGap(12, 12, 12)
                 .addComponent(jLabel34, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lbEstudiante7, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jlblvacantes, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(20, Short.MAX_VALUE))
         );
 
@@ -489,10 +599,10 @@ public class DashboardMatricula extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(21, 21, 21)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(lbNivel10, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lbNivel9, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lbNivel7, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lbNivel9, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
+                    .addComponent(lbNivel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(39, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -517,47 +627,40 @@ public class DashboardMatricula extends javax.swing.JFrame {
         lbNivel8.setPreferredSize(new java.awt.Dimension(70, 25));
         jPanel1.add(lbNivel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 200, 340, 30));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1200, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 1200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 740, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, 0)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 650, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 1200, 650));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jlblmatriculaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jlblmatriculaMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jlblmatriculaMouseClicked
+
+    private void jlblestudiantesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jlblestudiantesMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jlblestudiantesMouseClicked
+
+    private void jlblreportesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jlblreportesMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jlblreportesMouseClicked
+
+    private void jlblinicioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jlblinicioMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jlblinicioMouseClicked
+
+    private void jLabel23MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel23MouseClicked
+        this.dispose();
+    }//GEN-LAST:event_jLabel23MouseClicked
 
     
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
@@ -574,16 +677,20 @@ public class DashboardMatricula extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JLabel lbAsistentes;
-    private javax.swing.JLabel lbEstudiante5;
-    private javax.swing.JLabel lbEstudiante6;
-    private javax.swing.JLabel lbEstudiante7;
+    private javax.swing.JLabel jlblasistentes;
+    private javax.swing.JLabel jlblestudiantes;
+    private javax.swing.JLabel jlblinicio;
+    private javax.swing.JLabel jlblmatricula;
+    private javax.swing.JLabel jlblmatriculas;
+    private javax.swing.JLabel jlblnombre;
+    private javax.swing.JLabel jlblreportes;
+    private javax.swing.JLabel jlbltotal;
+    private javax.swing.JLabel jlblvacantes;
     private javax.swing.JLabel lbFechaCompleta;
     private javax.swing.JLabel lbNivel10;
     private javax.swing.JLabel lbNivel7;
     private javax.swing.JLabel lbNivel8;
     private javax.swing.JLabel lbNivel9;
-    private javax.swing.JLabel lbNomUsuario;
     private javax.swing.JPanel mEvaluaciones;
     private javax.swing.JPanel mIndividual;
     private javax.swing.JPanel mInicio1;
