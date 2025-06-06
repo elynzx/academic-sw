@@ -9,10 +9,14 @@ import view.Secretaria.Matricula;
 import view.Secretaria.ReportesMatricula;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.sql.Date;
 
 import model.funcionalidad.ListaAulas;
 import javax.swing.table.DefaultTableModel;
 import java.util.List;
+import model.catalogo.NivelFuncional;
+import model.entidades.Apoderado;
+import model.entidades.Estudiante;
 import model.entidades.Persona;
 
 
@@ -24,24 +28,13 @@ public class SecretariaCtrl {
     private SecretariaDao dao;
     private Persona persona;
     int ad,vdt,adt;
+    
+    
 
-    
-    
-    public SecretariaCtrl(Matricula matricula) {
-        this.matricula = matricula;
-        
-        this.matricula.jbtnregistrar.addActionListener(new ActionListener() {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            registrar(); 
-        }
-        });
-     }
-    
+
     private void registrar() {
-        // Aquí va la lógica de registro
-        System.out.println("Botón presionado. Aquí irá la lógica del registro.");
-        // Puedes acceder a campos con: vista.getNombre(), etc.
+        Estudiante alumno = new Estudiante();
+        
     }
     
     public SecretariaCtrl(DashboardMatricula dashboard) {
@@ -98,6 +91,14 @@ public class SecretariaCtrl {
     
     public SecretariaCtrl(Matricula matricula){
         this.matricula=matricula;
+        
+        this.matricula.jbtnregistrar.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            registrar(); 
+        }
+        });
+    
         
         matricula.getJlblreportes().addMouseListener(new MouseAdapter() {
             public void mouseClicked(MouseEvent e) {

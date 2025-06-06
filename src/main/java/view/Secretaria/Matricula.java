@@ -66,23 +66,23 @@ public class Matricula extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         panelDatos20 = new javax.swing.JPanel();
-        textCorreo = new javax.swing.JTextField();
+        jlblnombreAlumno = new javax.swing.JTextField();
         jSeparator19 = new javax.swing.JSeparator();
         jLabel27 = new javax.swing.JLabel();
         panelDatos21 = new javax.swing.JPanel();
-        textCorreo1 = new javax.swing.JTextField();
+        jlblapellidoAlumno = new javax.swing.JTextField();
         jSeparator20 = new javax.swing.JSeparator();
         jLabel28 = new javax.swing.JLabel();
         panelDatos23 = new javax.swing.JPanel();
-        textCorreo3 = new javax.swing.JTextField();
+        jlbldniAlumno = new javax.swing.JTextField();
         jSeparator22 = new javax.swing.JSeparator();
         jLabel30 = new javax.swing.JLabel();
         panelDatos22 = new javax.swing.JPanel();
         jLabel29 = new javax.swing.JLabel();
-        jComboBox4 = new javax.swing.JComboBox<>();
+        jcmbgeneroAlumno = new javax.swing.JComboBox<>();
         panelDatos24 = new javax.swing.JPanel();
         jLabel31 = new javax.swing.JLabel();
-        jDateChooser2 = new com.toedter.calendar.JDateChooser();
+        jDatenacimientoAlumno = new com.toedter.calendar.JDateChooser();
         jRadioButton1 = new javax.swing.JRadioButton();
         jRadioButton2 = new javax.swing.JRadioButton();
         jLabel37 = new javax.swing.JLabel();
@@ -94,29 +94,29 @@ public class Matricula extends javax.swing.JFrame {
         jtxtmedicinas = new javax.swing.JTextField();
         jPanel4 = new javax.swing.JPanel();
         panelDatos26 = new javax.swing.JPanel();
-        textCorreo5 = new javax.swing.JTextField();
+        jtxtnombreApoderado = new javax.swing.JTextField();
         jSeparator24 = new javax.swing.JSeparator();
         jLabel41 = new javax.swing.JLabel();
         panelDatos31 = new javax.swing.JPanel();
-        textCorreo8 = new javax.swing.JTextField();
+        jtxtdniApoderado = new javax.swing.JTextField();
         jSeparator27 = new javax.swing.JSeparator();
         jLabel43 = new javax.swing.JLabel();
         panelDatos33 = new javax.swing.JPanel();
         jLabel44 = new javax.swing.JLabel();
-        jComboBox7 = new javax.swing.JComboBox<>();
+        jcmbparentesco = new javax.swing.JComboBox<>();
         panelDatos42 = new javax.swing.JPanel();
-        textCorreo17 = new javax.swing.JTextField();
+        jtxtcelular = new javax.swing.JTextField();
         jSeparator36 = new javax.swing.JSeparator();
         jLabel53 = new javax.swing.JLabel();
         panelDatos35 = new javax.swing.JPanel();
-        textCorreo10 = new javax.swing.JTextField();
+        jtxtcorreo = new javax.swing.JTextField();
         jSeparator29 = new javax.swing.JSeparator();
         jLabel46 = new javax.swing.JLabel();
         jLabel39 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea2 = new javax.swing.JTextArea();
+        jTextAreadireccion = new javax.swing.JTextArea();
         panelDatos39 = new javax.swing.JPanel();
-        textCorreo14 = new javax.swing.JTextField();
+        jtxtapellidoApoderado = new javax.swing.JTextField();
         jSeparator33 = new javax.swing.JSeparator();
         jLabel50 = new javax.swing.JLabel();
         lbNivel6 = new javax.swing.JLabel();
@@ -125,26 +125,26 @@ public class Matricula extends javax.swing.JFrame {
         panelDatos25 = new javax.swing.JPanel();
         panelDatos27 = new javax.swing.JPanel();
         jLabel35 = new javax.swing.JLabel();
-        jComboBox8 = new javax.swing.JComboBox<>();
+        jcmbnivelFuncional = new javax.swing.JComboBox<>();
         panelDatos28 = new javax.swing.JPanel();
         jLabel36 = new javax.swing.JLabel();
-        jComboBox9 = new javax.swing.JComboBox<>();
+        jcmbaulaAsignada = new javax.swing.JComboBox<>();
         panelDatos30 = new javax.swing.JPanel();
-        textCorreo7 = new javax.swing.JTextField();
+        jtxtdocenteCargo = new javax.swing.JTextField();
         jSeparator26 = new javax.swing.JSeparator();
         jLabel38 = new javax.swing.JLabel();
         lbNivel4 = new javax.swing.JLabel();
         jLabel42 = new javax.swing.JLabel();
         jScrollPane4 = new javax.swing.JScrollPane();
-        jTextArea4 = new javax.swing.JTextArea();
+        jTextAreaobservaciones = new javax.swing.JTextArea();
         panelDatos29 = new javax.swing.JPanel();
         jLabel33 = new javax.swing.JLabel();
-        jComboBox10 = new javax.swing.JComboBox<>();
+        jcmbestado = new javax.swing.JComboBox<>();
         jScrollPane5 = new javax.swing.JScrollPane();
-        jList2 = new javax.swing.JList<>();
+        jListdiagnostico = new javax.swing.JList<>();
         jLabel32 = new javax.swing.JLabel();
         panelDatos43 = new javax.swing.JPanel();
-        textCorreo18 = new javax.swing.JTextField();
+        jtxtfecha = new javax.swing.JTextField();
         jSeparator37 = new javax.swing.JSeparator();
         jLabel54 = new javax.swing.JLabel();
         btnCrearTicket5 = new javax.swing.JButton();
@@ -398,10 +398,10 @@ public class Matricula extends javax.swing.JFrame {
 
         panelDatos20.setBackground(new java.awt.Color(255, 255, 255));
 
-        textCorreo.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        textCorreo.setForeground(new java.awt.Color(66, 128, 191));
-        textCorreo.setBorder(null);
-        textCorreo.setCaretColor(new java.awt.Color(51, 51, 51));
+        jlblnombreAlumno.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        jlblnombreAlumno.setForeground(new java.awt.Color(66, 128, 191));
+        jlblnombreAlumno.setBorder(null);
+        jlblnombreAlumno.setCaretColor(new java.awt.Color(51, 51, 51));
 
         jSeparator19.setForeground(new java.awt.Color(102, 102, 102));
 
@@ -419,14 +419,14 @@ public class Matricula extends javax.swing.JFrame {
                     .addGroup(panelDatos20Layout.createSequentialGroup()
                         .addComponent(jLabel27)
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(textCorreo)))
+                    .addComponent(jlblnombreAlumno)))
         );
         panelDatos20Layout.setVerticalGroup(
             panelDatos20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelDatos20Layout.createSequentialGroup()
                 .addComponent(jLabel27, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(textCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jlblnombreAlumno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(jSeparator19)
                 .addContainerGap())
@@ -434,10 +434,10 @@ public class Matricula extends javax.swing.JFrame {
 
         panelDatos21.setBackground(new java.awt.Color(255, 255, 255));
 
-        textCorreo1.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        textCorreo1.setForeground(new java.awt.Color(66, 128, 191));
-        textCorreo1.setBorder(null);
-        textCorreo1.setCaretColor(new java.awt.Color(51, 51, 51));
+        jlblapellidoAlumno.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        jlblapellidoAlumno.setForeground(new java.awt.Color(66, 128, 191));
+        jlblapellidoAlumno.setBorder(null);
+        jlblapellidoAlumno.setCaretColor(new java.awt.Color(51, 51, 51));
 
         jSeparator20.setForeground(new java.awt.Color(102, 102, 102));
 
@@ -455,14 +455,14 @@ public class Matricula extends javax.swing.JFrame {
                     .addGroup(panelDatos21Layout.createSequentialGroup()
                         .addComponent(jLabel28)
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(textCorreo1)))
+                    .addComponent(jlblapellidoAlumno)))
         );
         panelDatos21Layout.setVerticalGroup(
             panelDatos21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelDatos21Layout.createSequentialGroup()
                 .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(textCorreo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jlblapellidoAlumno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(jSeparator20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -470,10 +470,10 @@ public class Matricula extends javax.swing.JFrame {
 
         panelDatos23.setBackground(new java.awt.Color(255, 255, 255));
 
-        textCorreo3.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        textCorreo3.setForeground(new java.awt.Color(66, 128, 191));
-        textCorreo3.setBorder(null);
-        textCorreo3.setCaretColor(new java.awt.Color(51, 51, 51));
+        jlbldniAlumno.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        jlbldniAlumno.setForeground(new java.awt.Color(66, 128, 191));
+        jlbldniAlumno.setBorder(null);
+        jlbldniAlumno.setCaretColor(new java.awt.Color(51, 51, 51));
 
         jSeparator22.setForeground(new java.awt.Color(102, 102, 102));
 
@@ -491,14 +491,14 @@ public class Matricula extends javax.swing.JFrame {
                     .addGroup(panelDatos23Layout.createSequentialGroup()
                         .addComponent(jLabel30)
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(textCorreo3)))
+                    .addComponent(jlbldniAlumno)))
         );
         panelDatos23Layout.setVerticalGroup(
             panelDatos23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelDatos23Layout.createSequentialGroup()
                 .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(textCorreo3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jlbldniAlumno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(jSeparator22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -509,10 +509,10 @@ public class Matricula extends javax.swing.JFrame {
         jLabel29.setForeground(new java.awt.Color(153, 153, 153));
         jLabel29.setText("Género:");
 
-        jComboBox4.setBackground(new java.awt.Color(239, 239, 239));
-        jComboBox4.setForeground(new java.awt.Color(102, 102, 102));
-        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Item 2", "Item 3", "Item 4" }));
-        jComboBox4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
+        jcmbgeneroAlumno.setBackground(new java.awt.Color(239, 239, 239));
+        jcmbgeneroAlumno.setForeground(new java.awt.Color(102, 102, 102));
+        jcmbgeneroAlumno.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Item 2", "Item 3", "Item 4" }));
+        jcmbgeneroAlumno.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
 
         javax.swing.GroupLayout panelDatos22Layout = new javax.swing.GroupLayout(panelDatos22);
         panelDatos22.setLayout(panelDatos22Layout);
@@ -521,7 +521,7 @@ public class Matricula extends javax.swing.JFrame {
             .addGroup(panelDatos22Layout.createSequentialGroup()
                 .addGap(0, 0, 0)
                 .addGroup(panelDatos22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jComboBox4, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jcmbgeneroAlumno, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(panelDatos22Layout.createSequentialGroup()
                         .addComponent(jLabel29)
                         .addGap(0, 0, Short.MAX_VALUE))))
@@ -531,7 +531,7 @@ public class Matricula extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelDatos22Layout.createSequentialGroup()
                 .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jcmbgeneroAlumno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -540,7 +540,7 @@ public class Matricula extends javax.swing.JFrame {
         jLabel31.setForeground(new java.awt.Color(153, 153, 153));
         jLabel31.setText("Fecha de Nacimiento:");
 
-        jDateChooser2.setBackground(new java.awt.Color(255, 255, 255));
+        jDatenacimientoAlumno.setBackground(new java.awt.Color(255, 255, 255));
 
         javax.swing.GroupLayout panelDatos24Layout = new javax.swing.GroupLayout(panelDatos24);
         panelDatos24.setLayout(panelDatos24Layout);
@@ -549,14 +549,14 @@ public class Matricula extends javax.swing.JFrame {
             .addGroup(panelDatos24Layout.createSequentialGroup()
                 .addComponent(jLabel31)
                 .addGap(0, 0, Short.MAX_VALUE))
-            .addComponent(jDateChooser2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jDatenacimientoAlumno, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         panelDatos24Layout.setVerticalGroup(
             panelDatos24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelDatos24Layout.createSequentialGroup()
                 .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jDateChooser2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jDatenacimientoAlumno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(7, 7, 7))
         );
 
@@ -685,10 +685,10 @@ public class Matricula extends javax.swing.JFrame {
 
         panelDatos26.setBackground(new java.awt.Color(255, 255, 255));
 
-        textCorreo5.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        textCorreo5.setForeground(new java.awt.Color(66, 128, 191));
-        textCorreo5.setBorder(null);
-        textCorreo5.setCaretColor(new java.awt.Color(51, 51, 51));
+        jtxtnombreApoderado.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        jtxtnombreApoderado.setForeground(new java.awt.Color(66, 128, 191));
+        jtxtnombreApoderado.setBorder(null);
+        jtxtnombreApoderado.setCaretColor(new java.awt.Color(51, 51, 51));
 
         jSeparator24.setForeground(new java.awt.Color(102, 102, 102));
 
@@ -708,7 +708,7 @@ public class Matricula extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelDatos26Layout.createSequentialGroup()
                         .addGroup(panelDatos26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jSeparator24, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(textCorreo5))
+                            .addComponent(jtxtnombreApoderado))
                         .addContainerGap())))
         );
         panelDatos26Layout.setVerticalGroup(
@@ -716,7 +716,7 @@ public class Matricula extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelDatos26Layout.createSequentialGroup()
                 .addComponent(jLabel41, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(textCorreo5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jtxtnombreApoderado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(jSeparator24, javax.swing.GroupLayout.PREFERRED_SIZE, 3, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -724,10 +724,10 @@ public class Matricula extends javax.swing.JFrame {
 
         panelDatos31.setBackground(new java.awt.Color(255, 255, 255));
 
-        textCorreo8.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        textCorreo8.setForeground(new java.awt.Color(66, 128, 191));
-        textCorreo8.setBorder(null);
-        textCorreo8.setCaretColor(new java.awt.Color(51, 51, 51));
+        jtxtdniApoderado.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        jtxtdniApoderado.setForeground(new java.awt.Color(66, 128, 191));
+        jtxtdniApoderado.setBorder(null);
+        jtxtdniApoderado.setCaretColor(new java.awt.Color(51, 51, 51));
 
         jSeparator27.setForeground(new java.awt.Color(102, 102, 102));
 
@@ -747,7 +747,7 @@ public class Matricula extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelDatos31Layout.createSequentialGroup()
                         .addGroup(panelDatos31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jSeparator27)
-                            .addComponent(textCorreo8))
+                            .addComponent(jtxtdniApoderado))
                         .addContainerGap())))
         );
         panelDatos31Layout.setVerticalGroup(
@@ -755,7 +755,7 @@ public class Matricula extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelDatos31Layout.createSequentialGroup()
                 .addComponent(jLabel43, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(textCorreo8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jtxtdniApoderado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(jSeparator27, javax.swing.GroupLayout.PREFERRED_SIZE, 5, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -766,10 +766,10 @@ public class Matricula extends javax.swing.JFrame {
         jLabel44.setForeground(new java.awt.Color(153, 153, 153));
         jLabel44.setText("Parentesco");
 
-        jComboBox7.setBackground(new java.awt.Color(239, 239, 239));
-        jComboBox7.setForeground(new java.awt.Color(102, 102, 102));
-        jComboBox7.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Padre", "Madre", "Abuelo/a", "Tío/a", "Hermano/a", "Tutor legal", "Otro" }));
-        jComboBox7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
+        jcmbparentesco.setBackground(new java.awt.Color(239, 239, 239));
+        jcmbparentesco.setForeground(new java.awt.Color(102, 102, 102));
+        jcmbparentesco.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Padre", "Madre", "Abuelo/a", "Tío/a", "Hermano/a", "Tutor legal", "Otro" }));
+        jcmbparentesco.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
 
         javax.swing.GroupLayout panelDatos33Layout = new javax.swing.GroupLayout(panelDatos33);
         panelDatos33.setLayout(panelDatos33Layout);
@@ -779,7 +779,7 @@ public class Matricula extends javax.swing.JFrame {
                 .addGap(0, 0, 0)
                 .addGroup(panelDatos33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel44)
-                    .addComponent(jComboBox7, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jcmbparentesco, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(7, Short.MAX_VALUE))
         );
         panelDatos33Layout.setVerticalGroup(
@@ -787,16 +787,16 @@ public class Matricula extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelDatos33Layout.createSequentialGroup()
                 .addComponent(jLabel44, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jComboBox7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jcmbparentesco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
         panelDatos42.setBackground(new java.awt.Color(255, 255, 255));
 
-        textCorreo17.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        textCorreo17.setForeground(new java.awt.Color(66, 128, 191));
-        textCorreo17.setBorder(null);
-        textCorreo17.setCaretColor(new java.awt.Color(51, 51, 51));
+        jtxtcelular.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        jtxtcelular.setForeground(new java.awt.Color(66, 128, 191));
+        jtxtcelular.setBorder(null);
+        jtxtcelular.setCaretColor(new java.awt.Color(51, 51, 51));
 
         jSeparator36.setForeground(new java.awt.Color(102, 102, 102));
 
@@ -812,7 +812,7 @@ public class Matricula extends javax.swing.JFrame {
                 .addGroup(panelDatos42Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jSeparator36)
                     .addComponent(jLabel53)
-                    .addComponent(textCorreo17, javax.swing.GroupLayout.DEFAULT_SIZE, 242, Short.MAX_VALUE))
+                    .addComponent(jtxtcelular, javax.swing.GroupLayout.DEFAULT_SIZE, 242, Short.MAX_VALUE))
                 .addGap(0, 12, Short.MAX_VALUE))
         );
         panelDatos42Layout.setVerticalGroup(
@@ -820,7 +820,7 @@ public class Matricula extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelDatos42Layout.createSequentialGroup()
                 .addComponent(jLabel53, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(textCorreo17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jtxtcelular, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(jSeparator36, javax.swing.GroupLayout.PREFERRED_SIZE, 3, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -828,10 +828,10 @@ public class Matricula extends javax.swing.JFrame {
 
         panelDatos35.setBackground(new java.awt.Color(255, 255, 255));
 
-        textCorreo10.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        textCorreo10.setForeground(new java.awt.Color(66, 128, 191));
-        textCorreo10.setBorder(null);
-        textCorreo10.setCaretColor(new java.awt.Color(51, 51, 51));
+        jtxtcorreo.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        jtxtcorreo.setForeground(new java.awt.Color(66, 128, 191));
+        jtxtcorreo.setBorder(null);
+        jtxtcorreo.setCaretColor(new java.awt.Color(51, 51, 51));
 
         jSeparator29.setForeground(new java.awt.Color(102, 102, 102));
 
@@ -850,7 +850,7 @@ public class Matricula extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(panelDatos35Layout.createSequentialGroup()
                         .addGroup(panelDatos35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(textCorreo10)
+                            .addComponent(jtxtcorreo)
                             .addComponent(jSeparator29, javax.swing.GroupLayout.DEFAULT_SIZE, 244, Short.MAX_VALUE))
                         .addContainerGap())))
         );
@@ -859,7 +859,7 @@ public class Matricula extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelDatos35Layout.createSequentialGroup()
                 .addComponent(jLabel46, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(textCorreo10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jtxtcorreo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(jSeparator29, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -871,23 +871,23 @@ public class Matricula extends javax.swing.JFrame {
         jScrollPane2.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane2.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
-        jTextArea2.setColumns(20);
-        jTextArea2.setForeground(new java.awt.Color(66, 128, 191));
-        jTextArea2.setLineWrap(true);
-        jTextArea2.setRows(5);
-        jTextArea2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
-        jTextArea2.setCaretColor(new java.awt.Color(51, 51, 51));
-        jTextArea2.setHighlighter(null);
-        jTextArea2.setMinimumSize(new java.awt.Dimension(235, 18));
-        jTextArea2.setPreferredSize(new java.awt.Dimension(228, 82));
-        jScrollPane2.setViewportView(jTextArea2);
+        jTextAreadireccion.setColumns(20);
+        jTextAreadireccion.setForeground(new java.awt.Color(66, 128, 191));
+        jTextAreadireccion.setLineWrap(true);
+        jTextAreadireccion.setRows(5);
+        jTextAreadireccion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
+        jTextAreadireccion.setCaretColor(new java.awt.Color(51, 51, 51));
+        jTextAreadireccion.setHighlighter(null);
+        jTextAreadireccion.setMinimumSize(new java.awt.Dimension(235, 18));
+        jTextAreadireccion.setPreferredSize(new java.awt.Dimension(228, 82));
+        jScrollPane2.setViewportView(jTextAreadireccion);
 
         panelDatos39.setBackground(new java.awt.Color(255, 255, 255));
 
-        textCorreo14.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        textCorreo14.setForeground(new java.awt.Color(66, 128, 191));
-        textCorreo14.setBorder(null);
-        textCorreo14.setCaretColor(new java.awt.Color(51, 51, 51));
+        jtxtapellidoApoderado.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        jtxtapellidoApoderado.setForeground(new java.awt.Color(66, 128, 191));
+        jtxtapellidoApoderado.setBorder(null);
+        jtxtapellidoApoderado.setCaretColor(new java.awt.Color(51, 51, 51));
 
         jSeparator33.setForeground(new java.awt.Color(102, 102, 102));
 
@@ -907,7 +907,7 @@ public class Matricula extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelDatos39Layout.createSequentialGroup()
                         .addGroup(panelDatos39Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jSeparator33, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(textCorreo14))
+                            .addComponent(jtxtapellidoApoderado))
                         .addContainerGap())))
         );
         panelDatos39Layout.setVerticalGroup(
@@ -915,7 +915,7 @@ public class Matricula extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelDatos39Layout.createSequentialGroup()
                 .addComponent(jLabel50, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(textCorreo14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jtxtapellidoApoderado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(jSeparator33)
                 .addContainerGap())
@@ -1002,10 +1002,10 @@ public class Matricula extends javax.swing.JFrame {
         jLabel35.setForeground(new java.awt.Color(153, 153, 153));
         jLabel35.setText("Nivel Funcional:");
 
-        jComboBox8.setBackground(new java.awt.Color(239, 239, 239));
-        jComboBox8.setForeground(new java.awt.Color(102, 102, 102));
-        jComboBox8.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Bajo: Requiere ayuda constante", "Medio: Requiere apoyo ocasional", "Alto: Mayor autonomía" }));
-        jComboBox8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
+        jcmbnivelFuncional.setBackground(new java.awt.Color(239, 239, 239));
+        jcmbnivelFuncional.setForeground(new java.awt.Color(102, 102, 102));
+        jcmbnivelFuncional.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Bajo: Requiere ayuda constante", "Medio: Requiere apoyo ocasional", "Alto: Mayor autonomía" }));
+        jcmbnivelFuncional.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
 
         javax.swing.GroupLayout panelDatos27Layout = new javax.swing.GroupLayout(panelDatos27);
         panelDatos27.setLayout(panelDatos27Layout);
@@ -1014,7 +1014,7 @@ public class Matricula extends javax.swing.JFrame {
             .addGroup(panelDatos27Layout.createSequentialGroup()
                 .addGap(0, 0, 0)
                 .addGroup(panelDatos27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jComboBox8, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jcmbnivelFuncional, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(panelDatos27Layout.createSequentialGroup()
                         .addComponent(jLabel35)
                         .addGap(0, 0, Short.MAX_VALUE))))
@@ -1024,7 +1024,7 @@ public class Matricula extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelDatos27Layout.createSequentialGroup()
                 .addComponent(jLabel35, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jComboBox8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jcmbnivelFuncional, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0))
         );
 
@@ -1033,10 +1033,10 @@ public class Matricula extends javax.swing.JFrame {
         jLabel36.setForeground(new java.awt.Color(153, 153, 153));
         jLabel36.setText("Aula asignada:");
 
-        jComboBox9.setBackground(new java.awt.Color(239, 239, 239));
-        jComboBox9.setForeground(new java.awt.Color(102, 102, 102));
-        jComboBox9.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Bajo", "Medio", "Alto" }));
-        jComboBox9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
+        jcmbaulaAsignada.setBackground(new java.awt.Color(239, 239, 239));
+        jcmbaulaAsignada.setForeground(new java.awt.Color(102, 102, 102));
+        jcmbaulaAsignada.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Bajo", "Medio", "Alto" }));
+        jcmbaulaAsignada.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
 
         javax.swing.GroupLayout panelDatos28Layout = new javax.swing.GroupLayout(panelDatos28);
         panelDatos28.setLayout(panelDatos28Layout);
@@ -1045,7 +1045,7 @@ public class Matricula extends javax.swing.JFrame {
             .addGroup(panelDatos28Layout.createSequentialGroup()
                 .addGap(0, 0, 0)
                 .addGroup(panelDatos28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jComboBox9, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jcmbaulaAsignada, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel36))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
@@ -1054,16 +1054,16 @@ public class Matricula extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelDatos28Layout.createSequentialGroup()
                 .addComponent(jLabel36, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jComboBox9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jcmbaulaAsignada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0))
         );
 
         panelDatos30.setBackground(new java.awt.Color(255, 255, 255));
 
-        textCorreo7.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        textCorreo7.setForeground(new java.awt.Color(66, 128, 191));
-        textCorreo7.setBorder(null);
-        textCorreo7.setCaretColor(new java.awt.Color(51, 51, 51));
+        jtxtdocenteCargo.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        jtxtdocenteCargo.setForeground(new java.awt.Color(66, 128, 191));
+        jtxtdocenteCargo.setBorder(null);
+        jtxtdocenteCargo.setCaretColor(new java.awt.Color(51, 51, 51));
 
         jSeparator26.setForeground(new java.awt.Color(102, 102, 102));
 
@@ -1078,7 +1078,7 @@ public class Matricula extends javax.swing.JFrame {
                 .addGap(0, 0, 0)
                 .addGroup(panelDatos30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jSeparator26)
-                    .addComponent(textCorreo7)
+                    .addComponent(jtxtdocenteCargo)
                     .addGroup(panelDatos30Layout.createSequentialGroup()
                         .addComponent(jLabel38)
                         .addGap(0, 0, Short.MAX_VALUE))))
@@ -1088,7 +1088,7 @@ public class Matricula extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelDatos30Layout.createSequentialGroup()
                 .addComponent(jLabel38, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(textCorreo7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jtxtdocenteCargo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(jSeparator26, javax.swing.GroupLayout.PREFERRED_SIZE, 3, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0))
@@ -1106,26 +1106,26 @@ public class Matricula extends javax.swing.JFrame {
         jScrollPane4.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane4.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
-        jTextArea4.setColumns(20);
-        jTextArea4.setForeground(new java.awt.Color(66, 128, 191));
-        jTextArea4.setLineWrap(true);
-        jTextArea4.setRows(5);
-        jTextArea4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
-        jTextArea4.setCaretColor(new java.awt.Color(51, 51, 51));
-        jTextArea4.setHighlighter(null);
-        jTextArea4.setMinimumSize(new java.awt.Dimension(235, 18));
-        jTextArea4.setPreferredSize(new java.awt.Dimension(228, 82));
-        jScrollPane4.setViewportView(jTextArea4);
+        jTextAreaobservaciones.setColumns(20);
+        jTextAreaobservaciones.setForeground(new java.awt.Color(66, 128, 191));
+        jTextAreaobservaciones.setLineWrap(true);
+        jTextAreaobservaciones.setRows(5);
+        jTextAreaobservaciones.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
+        jTextAreaobservaciones.setCaretColor(new java.awt.Color(51, 51, 51));
+        jTextAreaobservaciones.setHighlighter(null);
+        jTextAreaobservaciones.setMinimumSize(new java.awt.Dimension(235, 18));
+        jTextAreaobservaciones.setPreferredSize(new java.awt.Dimension(228, 82));
+        jScrollPane4.setViewportView(jTextAreaobservaciones);
 
         panelDatos29.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel33.setForeground(new java.awt.Color(153, 153, 153));
         jLabel33.setText("Estado:");
 
-        jComboBox10.setBackground(new java.awt.Color(239, 239, 239));
-        jComboBox10.setForeground(new java.awt.Color(102, 102, 102));
-        jComboBox10.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Activo", "Inactivo", "Retirado", "Grduado" }));
-        jComboBox10.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
+        jcmbestado.setBackground(new java.awt.Color(239, 239, 239));
+        jcmbestado.setForeground(new java.awt.Color(102, 102, 102));
+        jcmbestado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Activo", "Inactivo", "Retirado", "Grduado" }));
+        jcmbestado.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
 
         javax.swing.GroupLayout panelDatos29Layout = new javax.swing.GroupLayout(panelDatos29);
         panelDatos29.setLayout(panelDatos29Layout);
@@ -1135,7 +1135,7 @@ public class Matricula extends javax.swing.JFrame {
                 .addGap(0, 0, 0)
                 .addGroup(panelDatos29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel33)
-                    .addComponent(jComboBox10, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jcmbestado, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelDatos29Layout.setVerticalGroup(
@@ -1144,25 +1144,25 @@ public class Matricula extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jComboBox10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jcmbestado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jList2.setModel(new javax.swing.AbstractListModel<String>() {
+        jListdiagnostico.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Trastorno del Espectro Autista (TEA)", "Síndrome de Asperger", "Síndrome de Down", "Retraso mental leve", "Retraso mental moderado" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane5.setViewportView(jList2);
+        jScrollPane5.setViewportView(jListdiagnostico);
 
         jLabel32.setForeground(new java.awt.Color(153, 153, 153));
         jLabel32.setText("Diagnóstico:");
 
         panelDatos43.setBackground(new java.awt.Color(255, 255, 255));
 
-        textCorreo18.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        textCorreo18.setForeground(new java.awt.Color(66, 128, 191));
-        textCorreo18.setBorder(null);
-        textCorreo18.setCaretColor(new java.awt.Color(51, 51, 51));
+        jtxtfecha.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        jtxtfecha.setForeground(new java.awt.Color(66, 128, 191));
+        jtxtfecha.setBorder(null);
+        jtxtfecha.setCaretColor(new java.awt.Color(51, 51, 51));
 
         jSeparator37.setForeground(new java.awt.Color(102, 102, 102));
 
@@ -1178,7 +1178,7 @@ public class Matricula extends javax.swing.JFrame {
                 .addGroup(panelDatos43Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jSeparator37, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel54)
-                    .addComponent(textCorreo18, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jtxtfecha, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         panelDatos43Layout.setVerticalGroup(
@@ -1186,7 +1186,7 @@ public class Matricula extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelDatos43Layout.createSequentialGroup()
                 .addComponent(jLabel54, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(textCorreo18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jtxtfecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(jSeparator37, javax.swing.GroupLayout.PREFERRED_SIZE, 3, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0))
@@ -1381,12 +1381,7 @@ public class Matricula extends javax.swing.JFrame {
     private javax.swing.JButton btnCrearTicket5;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
-    private javax.swing.JComboBox<String> jComboBox10;
-    private javax.swing.JComboBox<String> jComboBox4;
-    private javax.swing.JComboBox<String> jComboBox7;
-    private javax.swing.JComboBox<String> jComboBox8;
-    private javax.swing.JComboBox<String> jComboBox9;
-    private com.toedter.calendar.JDateChooser jDateChooser2;
+    private com.toedter.calendar.JDateChooser jDatenacimientoAlumno;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel16;
@@ -1418,7 +1413,7 @@ public class Matricula extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel53;
     private javax.swing.JLabel jLabel54;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JList<String> jList2;
+    private javax.swing.JList<String> jListdiagnostico;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -1441,15 +1436,30 @@ public class Matricula extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator33;
     private javax.swing.JSeparator jSeparator36;
     private javax.swing.JSeparator jSeparator37;
-    private javax.swing.JTextArea jTextArea2;
-    private javax.swing.JTextArea jTextArea4;
+    private javax.swing.JTextArea jTextAreadireccion;
+    private javax.swing.JTextArea jTextAreaobservaciones;
     public javax.swing.JButton jbtnregistrar;
+    private javax.swing.JComboBox<String> jcmbaulaAsignada;
+    private javax.swing.JComboBox<String> jcmbestado;
+    private javax.swing.JComboBox<String> jcmbgeneroAlumno;
+    private javax.swing.JComboBox<String> jcmbnivelFuncional;
+    private javax.swing.JComboBox<String> jcmbparentesco;
+    private javax.swing.JTextField jlblapellidoAlumno;
+    private javax.swing.JTextField jlbldniAlumno;
     private javax.swing.JLabel jlblestudiantes;
     private javax.swing.JLabel jlblinicio;
     private javax.swing.JLabel jlblmatricula;
+    private javax.swing.JTextField jlblnombreAlumno;
     private javax.swing.JLabel jlblreportes;
     private javax.swing.JTextField jtxtalergia;
+    private javax.swing.JTextField jtxtapellidoApoderado;
+    private javax.swing.JTextField jtxtcelular;
+    private javax.swing.JTextField jtxtcorreo;
+    private javax.swing.JTextField jtxtdniApoderado;
+    private javax.swing.JTextField jtxtdocenteCargo;
+    private javax.swing.JTextField jtxtfecha;
     private javax.swing.JTextField jtxtmedicinas;
+    private javax.swing.JTextField jtxtnombreApoderado;
     private javax.swing.JLabel lbNivel3;
     private javax.swing.JLabel lbNivel4;
     private javax.swing.JLabel lbNivel6;
@@ -1477,15 +1487,5 @@ public class Matricula extends javax.swing.JFrame {
     private javax.swing.JPanel panelDatos42;
     private javax.swing.JPanel panelDatos43;
     private javax.swing.JTextField textBuscarTicket;
-    private javax.swing.JTextField textCorreo;
-    private javax.swing.JTextField textCorreo1;
-    private javax.swing.JTextField textCorreo10;
-    private javax.swing.JTextField textCorreo14;
-    private javax.swing.JTextField textCorreo17;
-    private javax.swing.JTextField textCorreo18;
-    private javax.swing.JTextField textCorreo3;
-    private javax.swing.JTextField textCorreo5;
-    private javax.swing.JTextField textCorreo7;
-    private javax.swing.JTextField textCorreo8;
     // End of variables declaration//GEN-END:variables
 }

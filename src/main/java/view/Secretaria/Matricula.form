@@ -614,7 +614,7 @@
                                   <Component id="jLabel27" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                               </Group>
-                              <Component id="textCorreo" max="32767" attributes="0"/>
+                              <Component id="jlblnombreAlumno" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -624,7 +624,7 @@
                       <Group type="102" alignment="1" attributes="0">
                           <Component id="jLabel27" min="-2" pref="16" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                          <Component id="textCorreo" min="-2" max="-2" attributes="0"/>
+                          <Component id="jlblnombreAlumno" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                           <Component id="jSeparator19" max="32767" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
@@ -633,7 +633,7 @@
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JTextField" name="textCorreo">
+                <Component class="javax.swing.JTextField" name="jlblnombreAlumno">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="13" style="0"/>
@@ -684,7 +684,7 @@
                                   <Component id="jLabel28" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                               </Group>
-                              <Component id="textCorreo1" max="32767" attributes="0"/>
+                              <Component id="jlblapellidoAlumno" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -694,7 +694,7 @@
                       <Group type="102" alignment="1" attributes="0">
                           <Component id="jLabel28" min="-2" pref="16" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                          <Component id="textCorreo1" min="-2" max="-2" attributes="0"/>
+                          <Component id="jlblapellidoAlumno" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                           <Component id="jSeparator20" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
@@ -703,7 +703,7 @@
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JTextField" name="textCorreo1">
+                <Component class="javax.swing.JTextField" name="jlblapellidoAlumno">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="13" style="0"/>
@@ -754,7 +754,7 @@
                                   <Component id="jLabel30" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                               </Group>
-                              <Component id="textCorreo3" max="32767" attributes="0"/>
+                              <Component id="jlbldniAlumno" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -764,7 +764,7 @@
                       <Group type="102" alignment="1" attributes="0">
                           <Component id="jLabel30" min="-2" pref="16" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                          <Component id="textCorreo3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jlbldniAlumno" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                           <Component id="jSeparator22" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
@@ -773,7 +773,7 @@
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JTextField" name="textCorreo3">
+                <Component class="javax.swing.JTextField" name="jlbldniAlumno">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="13" style="0"/>
@@ -819,7 +819,7 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jComboBox4" max="32767" attributes="0"/>
+                              <Component id="jcmbgeneroAlumno" max="32767" attributes="0"/>
                               <Group type="102" attributes="0">
                                   <Component id="jLabel29" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -833,7 +833,7 @@
                       <Group type="102" alignment="1" attributes="0">
                           <Component id="jLabel29" min="-2" pref="16" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
-                          <Component id="jComboBox4" min="-2" max="-2" attributes="0"/>
+                          <Component id="jcmbgeneroAlumno" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -848,7 +848,7 @@
                     <Property name="text" type="java.lang.String" value="G&#xe9;nero:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JComboBox" name="jComboBox4">
+                <Component class="javax.swing.JComboBox" name="jcmbgeneroAlumno">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ef" green="ef" red="ef" type="rgb"/>
@@ -892,7 +892,7 @@
                           <Component id="jLabel31" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
-                      <Component id="jDateChooser2" alignment="0" max="32767" attributes="0"/>
+                      <Component id="jDatenacimientoAlumno" alignment="0" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
@@ -900,7 +900,7 @@
                       <Group type="102" alignment="1" attributes="0">
                           <Component id="jLabel31" min="-2" pref="16" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jDateChooser2" min="-2" max="-2" attributes="0"/>
+                          <Component id="jDatenacimientoAlumno" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -915,7 +915,7 @@
                     <Property name="text" type="java.lang.String" value="Fecha de Nacimiento:"/>
                   </Properties>
                 </Component>
-                <Component class="com.toedter.calendar.JDateChooser" name="jDateChooser2">
+                <Component class="com.toedter.calendar.JDateChooser" name="jDatenacimientoAlumno">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -1110,7 +1110,7 @@
                               <Group type="102" alignment="1" attributes="0">
                                   <Group type="103" groupAlignment="1" attributes="0">
                                       <Component id="jSeparator24" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="textCorreo5" alignment="1" max="32767" attributes="0"/>
+                                      <Component id="jtxtnombreApoderado" alignment="1" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                               </Group>
@@ -1123,7 +1123,7 @@
                       <Group type="102" alignment="1" attributes="0">
                           <Component id="jLabel41" min="-2" pref="16" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                          <Component id="textCorreo5" min="-2" max="-2" attributes="0"/>
+                          <Component id="jtxtnombreApoderado" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                           <Component id="jSeparator24" min="-2" pref="3" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
@@ -1132,7 +1132,7 @@
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JTextField" name="textCorreo5">
+                <Component class="javax.swing.JTextField" name="jtxtnombreApoderado">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="13" style="0"/>
@@ -1185,7 +1185,7 @@
                               <Group type="102" alignment="1" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="jSeparator27" max="32767" attributes="0"/>
-                                      <Component id="textCorreo8" max="32767" attributes="0"/>
+                                      <Component id="jtxtdniApoderado" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                               </Group>
@@ -1198,7 +1198,7 @@
                       <Group type="102" alignment="1" attributes="0">
                           <Component id="jLabel43" min="-2" pref="16" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                          <Component id="textCorreo8" min="-2" max="-2" attributes="0"/>
+                          <Component id="jtxtdniApoderado" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                           <Component id="jSeparator27" min="-2" pref="5" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
@@ -1207,7 +1207,7 @@
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JTextField" name="textCorreo8">
+                <Component class="javax.swing.JTextField" name="jtxtdniApoderado">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="13" style="0"/>
@@ -1254,7 +1254,7 @@
                           <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jLabel44" min="-2" max="-2" attributes="0"/>
-                              <Component id="jComboBox7" min="-2" pref="242" max="-2" attributes="0"/>
+                              <Component id="jcmbparentesco" min="-2" pref="242" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace pref="7" max="32767" attributes="0"/>
                       </Group>
@@ -1265,7 +1265,7 @@
                       <Group type="102" alignment="1" attributes="0">
                           <Component id="jLabel44" min="-2" pref="16" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
-                          <Component id="jComboBox7" min="-2" max="-2" attributes="0"/>
+                          <Component id="jcmbparentesco" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -1280,7 +1280,7 @@
                     <Property name="text" type="java.lang.String" value="Parentesco"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JComboBox" name="jComboBox7">
+                <Component class="javax.swing.JComboBox" name="jcmbparentesco">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ef" green="ef" red="ef" type="rgb"/>
@@ -1328,7 +1328,7 @@
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="jSeparator36" max="32767" attributes="0"/>
                               <Component id="jLabel53" min="-2" max="-2" attributes="0"/>
-                              <Component id="textCorreo17" alignment="0" pref="242" max="32767" attributes="0"/>
+                              <Component id="jtxtcelular" alignment="0" pref="242" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace min="0" pref="12" max="32767" attributes="0"/>
                       </Group>
@@ -1339,7 +1339,7 @@
                       <Group type="102" alignment="1" attributes="0">
                           <Component id="jLabel53" min="-2" pref="16" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                          <Component id="textCorreo17" min="-2" max="-2" attributes="0"/>
+                          <Component id="jtxtcelular" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                           <Component id="jSeparator36" min="-2" pref="3" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
@@ -1348,7 +1348,7 @@
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JTextField" name="textCorreo17">
+                <Component class="javax.swing.JTextField" name="jtxtcelular">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="13" style="0"/>
@@ -1400,7 +1400,7 @@
                               </Group>
                               <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="1" attributes="0">
-                                      <Component id="textCorreo10" max="32767" attributes="0"/>
+                                      <Component id="jtxtcorreo" max="32767" attributes="0"/>
                                       <Component id="jSeparator29" pref="244" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
@@ -1414,7 +1414,7 @@
                       <Group type="102" alignment="1" attributes="0">
                           <Component id="jLabel46" min="-2" pref="16" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                          <Component id="textCorreo10" min="-2" max="-2" attributes="0"/>
+                          <Component id="jtxtcorreo" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                           <Component id="jSeparator29" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
@@ -1423,7 +1423,7 @@
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JTextField" name="textCorreo10">
+                <Component class="javax.swing.JTextField" name="jtxtcorreo">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="13" style="0"/>
@@ -1475,7 +1475,7 @@
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JTextArea" name="jTextArea2">
+                <Component class="javax.swing.JTextArea" name="jTextAreadireccion">
                   <Properties>
                     <Property name="columns" type="int" value="20"/>
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -1526,7 +1526,7 @@
                               <Group type="102" alignment="1" attributes="0">
                                   <Group type="103" groupAlignment="1" attributes="0">
                                       <Component id="jSeparator33" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="textCorreo14" alignment="1" max="32767" attributes="0"/>
+                                      <Component id="jtxtapellidoApoderado" alignment="1" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                               </Group>
@@ -1539,7 +1539,7 @@
                       <Group type="102" alignment="1" attributes="0">
                           <Component id="jLabel50" min="-2" pref="16" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                          <Component id="textCorreo14" min="-2" max="-2" attributes="0"/>
+                          <Component id="jtxtapellidoApoderado" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                           <Component id="jSeparator33" max="32767" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
@@ -1548,7 +1548,7 @@
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JTextField" name="textCorreo14">
+                <Component class="javax.swing.JTextField" name="jtxtapellidoApoderado">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="13" style="0"/>
@@ -1754,7 +1754,7 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jComboBox8" max="32767" attributes="0"/>
+                              <Component id="jcmbnivelFuncional" max="32767" attributes="0"/>
                               <Group type="102" attributes="0">
                                   <Component id="jLabel35" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -1768,7 +1768,7 @@
                       <Group type="102" alignment="1" attributes="0">
                           <Component id="jLabel35" min="-2" pref="16" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
-                          <Component id="jComboBox8" min="-2" max="-2" attributes="0"/>
+                          <Component id="jcmbnivelFuncional" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -1783,7 +1783,7 @@
                     <Property name="text" type="java.lang.String" value="Nivel Funcional:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JComboBox" name="jComboBox8">
+                <Component class="javax.swing.JComboBox" name="jcmbnivelFuncional">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ef" green="ef" red="ef" type="rgb"/>
@@ -1825,7 +1825,7 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jComboBox9" min="-2" pref="250" max="-2" attributes="0"/>
+                              <Component id="jcmbaulaAsignada" min="-2" pref="250" max="-2" attributes="0"/>
                               <Component id="jLabel36" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -1837,7 +1837,7 @@
                       <Group type="102" alignment="1" attributes="0">
                           <Component id="jLabel36" min="-2" pref="16" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jComboBox9" min="-2" max="-2" attributes="0"/>
+                          <Component id="jcmbaulaAsignada" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -1852,7 +1852,7 @@
                     <Property name="text" type="java.lang.String" value="Aula asignada:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JComboBox" name="jComboBox9">
+                <Component class="javax.swing.JComboBox" name="jcmbaulaAsignada">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ef" green="ef" red="ef" type="rgb"/>
@@ -1896,7 +1896,7 @@
                           <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jSeparator26" max="32767" attributes="0"/>
-                              <Component id="textCorreo7" max="32767" attributes="0"/>
+                              <Component id="jtxtdocenteCargo" max="32767" attributes="0"/>
                               <Group type="102" attributes="0">
                                   <Component id="jLabel38" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -1910,7 +1910,7 @@
                       <Group type="102" alignment="1" attributes="0">
                           <Component id="jLabel38" min="-2" pref="16" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                          <Component id="textCorreo7" min="-2" max="-2" attributes="0"/>
+                          <Component id="jtxtdocenteCargo" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                           <Component id="jSeparator26" min="-2" pref="3" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
@@ -1919,7 +1919,7 @@
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JTextField" name="textCorreo7">
+                <Component class="javax.swing.JTextField" name="jtxtdocenteCargo">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="13" style="0"/>
@@ -1986,7 +1986,7 @@
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JTextArea" name="jTextArea4">
+                <Component class="javax.swing.JTextArea" name="jTextAreaobservaciones">
                   <Properties>
                     <Property name="columns" type="int" value="20"/>
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -2031,7 +2031,7 @@
                           <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jLabel33" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jComboBox10" alignment="0" min="-2" pref="101" max="-2" attributes="0"/>
+                              <Component id="jcmbestado" alignment="0" min="-2" pref="101" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
@@ -2043,7 +2043,7 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jLabel33" min="-2" pref="16" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
-                          <Component id="jComboBox10" min="-2" max="-2" attributes="0"/>
+                          <Component id="jcmbestado" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -2057,7 +2057,7 @@
                     <Property name="text" type="java.lang.String" value="Estado:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JComboBox" name="jComboBox10">
+                <Component class="javax.swing.JComboBox" name="jcmbestado">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ef" green="ef" red="ef" type="rgb"/>
@@ -2094,7 +2094,7 @@
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JList" name="jList2">
+                <Component class="javax.swing.JList" name="jListdiagnostico">
                   <Properties>
                     <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
                       <StringArray count="5">
@@ -2135,7 +2135,7 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jSeparator37" alignment="0" min="-2" pref="242" max="-2" attributes="0"/>
                               <Component id="jLabel54" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="textCorreo18" alignment="0" min="-2" pref="121" max="-2" attributes="0"/>
+                              <Component id="jtxtfecha" alignment="0" min="-2" pref="121" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
@@ -2146,7 +2146,7 @@
                       <Group type="102" alignment="1" attributes="0">
                           <Component id="jLabel54" min="-2" pref="16" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                          <Component id="textCorreo18" min="-2" max="-2" attributes="0"/>
+                          <Component id="jtxtfecha" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                           <Component id="jSeparator37" min="-2" pref="3" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
@@ -2155,7 +2155,7 @@
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JTextField" name="textCorreo18">
+                <Component class="javax.swing.JTextField" name="jtxtfecha">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="13" style="0"/>
