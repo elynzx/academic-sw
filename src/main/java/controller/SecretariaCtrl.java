@@ -32,8 +32,6 @@ public class SecretariaCtrl {
     int ad,vdt,adt;
     
     
-
-
     private void registrar() {
         String nombreAlumno=matricula.getNombresAlumno();
         String apellidoAlumno=matricula.getApellidosAlumno();
@@ -152,9 +150,7 @@ public class SecretariaCtrl {
             case "Retraso mental leve":diagnostico_final="Retraso mental leve";
             case "Retraso mental moderado": diagnostico_final="Retraso mental moderado";
         }
-        
     }
-    
     public SecretariaCtrl(DashboardMatricula dashboard) {
         this.dashboard = dashboard;
         this.dao = new SecretariaDao();
@@ -247,7 +243,7 @@ public class SecretariaCtrl {
                 }
             });
         }
-    
+
     public SecretariaCtrl(ReportesMatricula reportes){
         this.reportes = reportes;
         

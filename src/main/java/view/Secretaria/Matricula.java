@@ -1362,7 +1362,7 @@ public class Matricula extends javax.swing.JFrame {
     }//GEN-LAST:event_jlblreportesMouseClicked
 
     private void jLabel23MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel23MouseClicked
-        this.dispose();
+
     }//GEN-LAST:event_jLabel23MouseClicked
 
     private void jRadioButtonAlergiasSiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonAlergiasSiActionPerformed
