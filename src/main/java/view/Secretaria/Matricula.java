@@ -17,6 +17,8 @@ public class Matricula extends javax.swing.JFrame {
     public Matricula() {
         initComponents();
         secretaria = new SecretariaCtrl(this);
+        jtxtmedicinas.setEditable(false);
+        jtxtalergia.setEditable(false);
     }
 
     public JLabel getJlblestudiantes() {
@@ -84,13 +86,12 @@ public class Matricula extends javax.swing.JFrame {
         jRadioButton1 = new javax.swing.JRadioButton();
         jRadioButton2 = new javax.swing.JRadioButton();
         jLabel37 = new javax.swing.JLabel();
-        jTextField17 = new javax.swing.JTextField();
         jLabel40 = new javax.swing.JLabel();
         jRadioButton3 = new javax.swing.JRadioButton();
         jRadioButton4 = new javax.swing.JRadioButton();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        jTextArea3 = new javax.swing.JTextArea();
         lbNivel3 = new javax.swing.JLabel();
+        jtxtalergia = new javax.swing.JTextField();
+        jtxtmedicinas = new javax.swing.JTextField();
         jPanel4 = new javax.swing.JPanel();
         panelDatos26 = new javax.swing.JPanel();
         textCorreo5 = new javax.swing.JTextField();
@@ -150,7 +151,7 @@ public class Matricula extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         textBuscarTicket = new javax.swing.JTextField();
         btnBuscarTicket = new javax.swing.JButton();
-        btnCrearTicket6 = new javax.swing.JButton();
+        jbtnregistrar = new javax.swing.JButton();
         btnCrearTicket3 = new javax.swing.JButton();
         btnCrearTicket4 = new javax.swing.JButton();
 
@@ -562,18 +563,23 @@ public class Matricula extends javax.swing.JFrame {
         buttonGroup1.add(jRadioButton1);
         jRadioButton1.setForeground(new java.awt.Color(102, 102, 102));
         jRadioButton1.setText("Sí");
+        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton1ActionPerformed(evt);
+            }
+        });
 
         buttonGroup1.add(jRadioButton2);
         jRadioButton2.setForeground(new java.awt.Color(102, 102, 102));
         jRadioButton2.setText("No");
+        jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton2ActionPerformed(evt);
+            }
+        });
 
         jLabel37.setForeground(new java.awt.Color(153, 153, 153));
         jLabel37.setText("Alergias:");
-
-        jTextField17.setBackground(new java.awt.Color(204, 204, 204));
-        jTextField17.setForeground(new java.awt.Color(66, 128, 191));
-        jTextField17.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
-        jTextField17.setEnabled(false);
 
         jLabel40.setForeground(new java.awt.Color(153, 153, 153));
         jLabel40.setText("Medicinas:");
@@ -581,25 +587,20 @@ public class Matricula extends javax.swing.JFrame {
         buttonGroup2.add(jRadioButton3);
         jRadioButton3.setForeground(new java.awt.Color(102, 102, 102));
         jRadioButton3.setText("Sí");
+        jRadioButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton3ActionPerformed(evt);
+            }
+        });
 
         buttonGroup2.add(jRadioButton4);
         jRadioButton4.setForeground(new java.awt.Color(102, 102, 102));
         jRadioButton4.setText("No");
-
-        jScrollPane3.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-        jScrollPane3.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
-
-        jTextArea3.setBackground(new java.awt.Color(204, 204, 204));
-        jTextArea3.setColumns(20);
-        jTextArea3.setForeground(new java.awt.Color(66, 128, 191));
-        jTextArea3.setLineWrap(true);
-        jTextArea3.setRows(5);
-        jTextArea3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
-        jTextArea3.setCaretColor(new java.awt.Color(51, 51, 51));
-        jTextArea3.setHighlighter(null);
-        jTextArea3.setMinimumSize(new java.awt.Dimension(235, 18));
-        jTextArea3.setPreferredSize(new java.awt.Dimension(235, 82));
-        jScrollPane3.setViewportView(jTextArea3);
+        jRadioButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton4ActionPerformed(evt);
+            }
+        });
 
         lbNivel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lbNivel3.setForeground(new java.awt.Color(102, 102, 102));
@@ -612,29 +613,36 @@ public class Matricula extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(29, 29, 29)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lbNivel3, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(panelDatos21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(panelDatos23, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(panelDatos22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(panelDatos24, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(panelDatos20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                            .addComponent(jLabel37, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jRadioButton1)
-                            .addGap(76, 76, 76)
-                            .addComponent(jRadioButton2))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                            .addComponent(jLabel40, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jRadioButton3)
-                            .addGap(76, 76, 76)
-                            .addComponent(jRadioButton4))
-                        .addComponent(jTextField17)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 245, Short.MAX_VALUE)))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(28, 28, 28)
+                        .addComponent(jtxtmedicinas, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                            .addGap(29, 29, 29)
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(lbNivel3, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(panelDatos21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(panelDatos23, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(panelDatos22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(panelDatos24, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(panelDatos20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                        .addComponent(jLabel37, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jRadioButton1)
+                                        .addGap(76, 76, 76)
+                                        .addComponent(jRadioButton2))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                        .addComponent(jLabel40, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                                        .addComponent(jRadioButton3)
+                                        .addGap(76, 76, 76)
+                                        .addComponent(jRadioButton4)))))
+                        .addGroup(jPanel2Layout.createSequentialGroup()
+                            .addContainerGap()
+                            .addComponent(jtxtalergia, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(34, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -658,15 +666,15 @@ public class Matricula extends javax.swing.JFrame {
                     .addComponent(jRadioButton2)
                     .addComponent(jRadioButton1))
                 .addGap(8, 8, 8)
-                .addComponent(jTextField17, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10)
+                .addComponent(jtxtalergia, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel40, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jRadioButton4)
                     .addComponent(jRadioButton3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jtxtmedicinas, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(58, Short.MAX_VALUE))
         );
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, -1, 510));
@@ -1280,13 +1288,18 @@ public class Matricula extends javax.swing.JFrame {
         });
         jPanel1.add(btnBuscarTicket, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 40, 30, 30));
 
-        btnCrearTicket6.setBackground(new java.awt.Color(66, 128, 191));
-        btnCrearTicket6.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
-        btnCrearTicket6.setForeground(new java.awt.Color(255, 255, 255));
-        btnCrearTicket6.setText("REGISTRAR");
-        btnCrearTicket6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnCrearTicket6.setFocusPainted(false);
-        jPanel1.add(btnCrearTicket6, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 100, 137, 40));
+        jbtnregistrar.setBackground(new java.awt.Color(66, 128, 191));
+        jbtnregistrar.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
+        jbtnregistrar.setForeground(new java.awt.Color(255, 255, 255));
+        jbtnregistrar.setText("REGISTRAR");
+        jbtnregistrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jbtnregistrar.setFocusPainted(false);
+        jbtnregistrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtnregistrarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jbtnregistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 100, 137, 40));
 
         btnCrearTicket3.setBackground(new java.awt.Color(58, 163, 163));
         btnCrearTicket3.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
@@ -1333,6 +1346,26 @@ public class Matricula extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jLabel23MouseClicked
 
+    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
+        jtxtalergia.setEditable(true);
+    }//GEN-LAST:event_jRadioButton1ActionPerformed
+
+    private void jRadioButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton3ActionPerformed
+        jtxtmedicinas.setEditable(true);
+    }//GEN-LAST:event_jRadioButton3ActionPerformed
+
+    private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
+        jtxtalergia.setEditable(false);
+    }//GEN-LAST:event_jRadioButton2ActionPerformed
+
+    private void jRadioButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton4ActionPerformed
+        jtxtmedicinas.setEditable(false);
+    }//GEN-LAST:event_jRadioButton4ActionPerformed
+
+    private void jbtnregistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnregistrarActionPerformed
+       
+    }//GEN-LAST:event_jbtnregistrarActionPerformed
+
 
     
     
@@ -1346,7 +1379,6 @@ public class Matricula extends javax.swing.JFrame {
     private javax.swing.JButton btnCrearTicket3;
     private javax.swing.JButton btnCrearTicket4;
     private javax.swing.JButton btnCrearTicket5;
-    private javax.swing.JButton btnCrearTicket6;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JComboBox<String> jComboBox10;
@@ -1397,7 +1429,6 @@ public class Matricula extends javax.swing.JFrame {
     private javax.swing.JRadioButton jRadioButton3;
     private javax.swing.JRadioButton jRadioButton4;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JSeparator jSeparator19;
@@ -1411,13 +1442,14 @@ public class Matricula extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator36;
     private javax.swing.JSeparator jSeparator37;
     private javax.swing.JTextArea jTextArea2;
-    private javax.swing.JTextArea jTextArea3;
     private javax.swing.JTextArea jTextArea4;
-    private javax.swing.JTextField jTextField17;
+    public javax.swing.JButton jbtnregistrar;
     private javax.swing.JLabel jlblestudiantes;
     private javax.swing.JLabel jlblinicio;
     private javax.swing.JLabel jlblmatricula;
     private javax.swing.JLabel jlblreportes;
+    private javax.swing.JTextField jtxtalergia;
+    private javax.swing.JTextField jtxtmedicinas;
     private javax.swing.JLabel lbNivel3;
     private javax.swing.JLabel lbNivel4;
     private javax.swing.JLabel lbNivel6;

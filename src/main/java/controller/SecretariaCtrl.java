@@ -1,6 +1,8 @@
 package controller;
 import configuration.SesionUsuario;
 import dao.SecretariaDao;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import view.Secretaria.DashboardMatricula;
 import view.Secretaria.Estudiantes;
 import view.Secretaria.Matricula;
@@ -25,7 +27,22 @@ public class SecretariaCtrl {
 
     
     
+    public SecretariaCtrl(Matricula matricula) {
+        this.matricula = matricula;
+        
+        this.matricula.jbtnregistrar.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            registrar(); 
+        }
+        });
+     }
     
+    private void registrar() {
+        // Aquí va la lógica de registro
+        System.out.println("Botón presionado. Aquí irá la lógica del registro.");
+        // Puedes acceder a campos con: vista.getNombre(), etc.
+    }
     
     public SecretariaCtrl(DashboardMatricula dashboard) {
         this.dashboard = dashboard;
