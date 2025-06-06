@@ -33,7 +33,7 @@ public class SecretariaCtrl {
 
 
     private void registrar() {
-        Estudiante alumno = new Estudiante();
+        
         
     }
     
