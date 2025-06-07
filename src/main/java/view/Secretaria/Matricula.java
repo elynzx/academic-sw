@@ -4,8 +4,15 @@
  */
 package view.Secretaria;
 
+import com.toedter.calendar.JDateChooser;
 import controller.SecretariaCtrl;
+import java.sql.Date;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JLabel;
+import javax.swing.JList;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
 
 /**
  *
@@ -66,15 +73,15 @@ public class Matricula extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         panelDatos20 = new javax.swing.JPanel();
-        jlblnombreAlumno = new javax.swing.JTextField();
+        jtxtnombreAlumno = new javax.swing.JTextField();
         jSeparator19 = new javax.swing.JSeparator();
         jLabel27 = new javax.swing.JLabel();
         panelDatos21 = new javax.swing.JPanel();
-        jlblapellidoAlumno = new javax.swing.JTextField();
+        jtxtapellidoAlumno = new javax.swing.JTextField();
         jSeparator20 = new javax.swing.JSeparator();
         jLabel28 = new javax.swing.JLabel();
         panelDatos23 = new javax.swing.JPanel();
-        jlbldniAlumno = new javax.swing.JTextField();
+        jtxtdniAlumno = new javax.swing.JTextField();
         jSeparator22 = new javax.swing.JSeparator();
         jLabel30 = new javax.swing.JLabel();
         panelDatos22 = new javax.swing.JPanel();
@@ -83,12 +90,12 @@ public class Matricula extends javax.swing.JFrame {
         panelDatos24 = new javax.swing.JPanel();
         jLabel31 = new javax.swing.JLabel();
         jDatenacimientoAlumno = new com.toedter.calendar.JDateChooser();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
+        jRadioButtonAlergiasSi = new javax.swing.JRadioButton();
+        jRadioButtonAlergiasNo = new javax.swing.JRadioButton();
         jLabel37 = new javax.swing.JLabel();
         jLabel40 = new javax.swing.JLabel();
-        jRadioButton3 = new javax.swing.JRadioButton();
-        jRadioButton4 = new javax.swing.JRadioButton();
+        jRadioButtonMedicinasSi = new javax.swing.JRadioButton();
+        jRadioButtonMedicinasNo = new javax.swing.JRadioButton();
         lbNivel3 = new javax.swing.JLabel();
         jtxtalergia = new javax.swing.JTextField();
         jtxtmedicinas = new javax.swing.JTextField();
@@ -398,10 +405,10 @@ public class Matricula extends javax.swing.JFrame {
 
         panelDatos20.setBackground(new java.awt.Color(255, 255, 255));
 
-        jlblnombreAlumno.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        jlblnombreAlumno.setForeground(new java.awt.Color(66, 128, 191));
-        jlblnombreAlumno.setBorder(null);
-        jlblnombreAlumno.setCaretColor(new java.awt.Color(51, 51, 51));
+        jtxtnombreAlumno.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        jtxtnombreAlumno.setForeground(new java.awt.Color(66, 128, 191));
+        jtxtnombreAlumno.setBorder(null);
+        jtxtnombreAlumno.setCaretColor(new java.awt.Color(51, 51, 51));
 
         jSeparator19.setForeground(new java.awt.Color(102, 102, 102));
 
@@ -419,14 +426,14 @@ public class Matricula extends javax.swing.JFrame {
                     .addGroup(panelDatos20Layout.createSequentialGroup()
                         .addComponent(jLabel27)
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jlblnombreAlumno)))
+                    .addComponent(jtxtnombreAlumno)))
         );
         panelDatos20Layout.setVerticalGroup(
             panelDatos20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelDatos20Layout.createSequentialGroup()
                 .addComponent(jLabel27, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(jlblnombreAlumno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jtxtnombreAlumno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(jSeparator19)
                 .addContainerGap())
@@ -434,10 +441,10 @@ public class Matricula extends javax.swing.JFrame {
 
         panelDatos21.setBackground(new java.awt.Color(255, 255, 255));
 
-        jlblapellidoAlumno.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        jlblapellidoAlumno.setForeground(new java.awt.Color(66, 128, 191));
-        jlblapellidoAlumno.setBorder(null);
-        jlblapellidoAlumno.setCaretColor(new java.awt.Color(51, 51, 51));
+        jtxtapellidoAlumno.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        jtxtapellidoAlumno.setForeground(new java.awt.Color(66, 128, 191));
+        jtxtapellidoAlumno.setBorder(null);
+        jtxtapellidoAlumno.setCaretColor(new java.awt.Color(51, 51, 51));
 
         jSeparator20.setForeground(new java.awt.Color(102, 102, 102));
 
@@ -455,14 +462,14 @@ public class Matricula extends javax.swing.JFrame {
                     .addGroup(panelDatos21Layout.createSequentialGroup()
                         .addComponent(jLabel28)
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jlblapellidoAlumno)))
+                    .addComponent(jtxtapellidoAlumno)))
         );
         panelDatos21Layout.setVerticalGroup(
             panelDatos21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelDatos21Layout.createSequentialGroup()
                 .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(jlblapellidoAlumno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jtxtapellidoAlumno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(jSeparator20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -470,10 +477,10 @@ public class Matricula extends javax.swing.JFrame {
 
         panelDatos23.setBackground(new java.awt.Color(255, 255, 255));
 
-        jlbldniAlumno.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        jlbldniAlumno.setForeground(new java.awt.Color(66, 128, 191));
-        jlbldniAlumno.setBorder(null);
-        jlbldniAlumno.setCaretColor(new java.awt.Color(51, 51, 51));
+        jtxtdniAlumno.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        jtxtdniAlumno.setForeground(new java.awt.Color(66, 128, 191));
+        jtxtdniAlumno.setBorder(null);
+        jtxtdniAlumno.setCaretColor(new java.awt.Color(51, 51, 51));
 
         jSeparator22.setForeground(new java.awt.Color(102, 102, 102));
 
@@ -491,14 +498,14 @@ public class Matricula extends javax.swing.JFrame {
                     .addGroup(panelDatos23Layout.createSequentialGroup()
                         .addComponent(jLabel30)
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jlbldniAlumno)))
+                    .addComponent(jtxtdniAlumno)))
         );
         panelDatos23Layout.setVerticalGroup(
             panelDatos23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelDatos23Layout.createSequentialGroup()
                 .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(jlbldniAlumno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jtxtdniAlumno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(jSeparator22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -560,21 +567,21 @@ public class Matricula extends javax.swing.JFrame {
                 .addGap(7, 7, 7))
         );
 
-        buttonGroup1.add(jRadioButton1);
-        jRadioButton1.setForeground(new java.awt.Color(102, 102, 102));
-        jRadioButton1.setText("Sí");
-        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+        buttonGroup1.add(jRadioButtonAlergiasSi);
+        jRadioButtonAlergiasSi.setForeground(new java.awt.Color(102, 102, 102));
+        jRadioButtonAlergiasSi.setText("Sí");
+        jRadioButtonAlergiasSi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton1ActionPerformed(evt);
+                jRadioButtonAlergiasSiActionPerformed(evt);
             }
         });
 
-        buttonGroup1.add(jRadioButton2);
-        jRadioButton2.setForeground(new java.awt.Color(102, 102, 102));
-        jRadioButton2.setText("No");
-        jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
+        buttonGroup1.add(jRadioButtonAlergiasNo);
+        jRadioButtonAlergiasNo.setForeground(new java.awt.Color(102, 102, 102));
+        jRadioButtonAlergiasNo.setText("No");
+        jRadioButtonAlergiasNo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton2ActionPerformed(evt);
+                jRadioButtonAlergiasNoActionPerformed(evt);
             }
         });
 
@@ -584,21 +591,21 @@ public class Matricula extends javax.swing.JFrame {
         jLabel40.setForeground(new java.awt.Color(153, 153, 153));
         jLabel40.setText("Medicinas:");
 
-        buttonGroup2.add(jRadioButton3);
-        jRadioButton3.setForeground(new java.awt.Color(102, 102, 102));
-        jRadioButton3.setText("Sí");
-        jRadioButton3.addActionListener(new java.awt.event.ActionListener() {
+        buttonGroup2.add(jRadioButtonMedicinasSi);
+        jRadioButtonMedicinasSi.setForeground(new java.awt.Color(102, 102, 102));
+        jRadioButtonMedicinasSi.setText("Sí");
+        jRadioButtonMedicinasSi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton3ActionPerformed(evt);
+                jRadioButtonMedicinasSiActionPerformed(evt);
             }
         });
 
-        buttonGroup2.add(jRadioButton4);
-        jRadioButton4.setForeground(new java.awt.Color(102, 102, 102));
-        jRadioButton4.setText("No");
-        jRadioButton4.addActionListener(new java.awt.event.ActionListener() {
+        buttonGroup2.add(jRadioButtonMedicinasNo);
+        jRadioButtonMedicinasNo.setForeground(new java.awt.Color(102, 102, 102));
+        jRadioButtonMedicinasNo.setText("No");
+        jRadioButtonMedicinasNo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton4ActionPerformed(evt);
+                jRadioButtonMedicinasNoActionPerformed(evt);
             }
         });
 
@@ -631,15 +638,15 @@ public class Matricula extends javax.swing.JFrame {
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                                         .addComponent(jLabel37, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jRadioButton1)
+                                        .addComponent(jRadioButtonAlergiasSi)
                                         .addGap(76, 76, 76)
-                                        .addComponent(jRadioButton2))
+                                        .addComponent(jRadioButtonAlergiasNo))
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                                         .addComponent(jLabel40, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
-                                        .addComponent(jRadioButton3)
+                                        .addComponent(jRadioButtonMedicinasSi)
                                         .addGap(76, 76, 76)
-                                        .addComponent(jRadioButton4)))))
+                                        .addComponent(jRadioButtonMedicinasNo)))))
                         .addGroup(jPanel2Layout.createSequentialGroup()
                             .addContainerGap()
                             .addComponent(jtxtalergia, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE))))
@@ -663,15 +670,15 @@ public class Matricula extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel37, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jRadioButton2)
-                    .addComponent(jRadioButton1))
+                    .addComponent(jRadioButtonAlergiasNo)
+                    .addComponent(jRadioButtonAlergiasSi))
                 .addGap(8, 8, 8)
                 .addComponent(jtxtalergia, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel40, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jRadioButton4)
-                    .addComponent(jRadioButton3))
+                    .addComponent(jRadioButtonMedicinasNo)
+                    .addComponent(jRadioButtonMedicinasSi))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jtxtmedicinas, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(58, Short.MAX_VALUE))
@@ -1346,31 +1353,125 @@ public class Matricula extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jLabel23MouseClicked
 
-    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
+    private void jRadioButtonAlergiasSiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonAlergiasSiActionPerformed
         jtxtalergia.setEditable(true);
-    }//GEN-LAST:event_jRadioButton1ActionPerformed
+    }//GEN-LAST:event_jRadioButtonAlergiasSiActionPerformed
 
-    private void jRadioButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton3ActionPerformed
+    private void jRadioButtonMedicinasSiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonMedicinasSiActionPerformed
         jtxtmedicinas.setEditable(true);
-    }//GEN-LAST:event_jRadioButton3ActionPerformed
+    }//GEN-LAST:event_jRadioButtonMedicinasSiActionPerformed
 
-    private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
+    private void jRadioButtonAlergiasNoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonAlergiasNoActionPerformed
         jtxtalergia.setEditable(false);
-    }//GEN-LAST:event_jRadioButton2ActionPerformed
+    }//GEN-LAST:event_jRadioButtonAlergiasNoActionPerformed
 
-    private void jRadioButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton4ActionPerformed
+    private void jRadioButtonMedicinasNoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonMedicinasNoActionPerformed
         jtxtmedicinas.setEditable(false);
-    }//GEN-LAST:event_jRadioButton4ActionPerformed
+    }//GEN-LAST:event_jRadioButtonMedicinasNoActionPerformed
 
     private void jbtnregistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnregistrarActionPerformed
        
     }//GEN-LAST:event_jbtnregistrarActionPerformed
 
-
+    public String getNombresAlumno() {
+        return jtxtnombreAlumno.getText();
+    }
     
+    public String getApellidosAlumno(){
+        return jtxtapellidoAlumno.getText();
+    }
     
+    public String getDniAlumno(){
+        return jtxtdniAlumno.getText();
+    }
     
+    public String getGeneroAlumno(){
+        return (String) jcmbgeneroAlumno.getSelectedItem();
+    }
     
+    public Date getJDatenacimientoAlumno(){
+        return (Date) jDatenacimientoAlumno.getDate();
+    }
+    
+    public boolean getJRadioButtonAlergiasSi(){
+        return true;
+    }
+    
+    public boolean getJRadioButtonAlergiasNo(){
+        return false;
+    }
+    
+    public String getJtxtalergia(){
+        return jtxtalergia.getText();
+    }
+    
+    public boolean getJRadioButtonMedicinasSi(){
+        return true;
+    }
+    
+    public boolean getJRadioButtonMedicinasNo(){
+        return false;
+    }
+    
+    public String getjtxtmedicinas(){
+        return jtxtmedicinas.getText();
+    }
+    
+    public String getJtxtnombreApoderado(){
+        return jtxtnombreApoderado.getText();
+    }
+    
+    public String getJtxtapellidoApoderado(){
+        return jtxtapellidoApoderado.getText();
+    }
+    
+    public String getJtxtdniApoderado(){
+        return jtxtdniApoderado.getText();
+    }
+    
+    public String getJcmbparentesco(){
+        return (String) jcmbparentesco.getSelectedItem();
+    }
+    
+    public String getJtxtcelular(){
+        return jtxtcelular.getText();
+    }
+    
+    public String getJtxtcorreo(){
+        return jtxtcorreo.getText();
+    }
+    
+    public String getJTextAreadireccion(){
+        return jTextAreadireccion.getText();
+    }
+    
+    public String getJcmbestado(){
+        return (String) jcmbestado.getSelectedItem();
+    }
+    
+    public String getJtxtfecha(){
+        return jtxtfecha.getText();
+    }
+    
+    public String getJListdiagnostico(){
+        return jListdiagnostico.getSelectedValue();
+    }
+    
+    public String getJcmbnivelFuncional(){
+        return (String) jcmbnivelFuncional.getSelectedItem();
+    }
+    
+    public String getJcmbaulaAsignada(){
+        return (String) jcmbaulaAsignada.getSelectedItem();
+    }
+    
+    public String getJtxtdocenteCargo(){
+        return jtxtdocenteCargo.getText();
+    }
+    
+    public String getJTextAreaobservaciones(){
+        return jTextAreaobservaciones.getText();
+    }
     
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -1419,10 +1520,10 @@ public class Matricula extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JRadioButton jRadioButton3;
-    private javax.swing.JRadioButton jRadioButton4;
+    private javax.swing.JRadioButton jRadioButtonAlergiasNo;
+    private javax.swing.JRadioButton jRadioButtonAlergiasSi;
+    private javax.swing.JRadioButton jRadioButtonMedicinasNo;
+    private javax.swing.JRadioButton jRadioButtonMedicinasSi;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
@@ -1444,21 +1545,21 @@ public class Matricula extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jcmbgeneroAlumno;
     private javax.swing.JComboBox<String> jcmbnivelFuncional;
     private javax.swing.JComboBox<String> jcmbparentesco;
-    private javax.swing.JTextField jlblapellidoAlumno;
-    private javax.swing.JTextField jlbldniAlumno;
     private javax.swing.JLabel jlblestudiantes;
     private javax.swing.JLabel jlblinicio;
     private javax.swing.JLabel jlblmatricula;
-    private javax.swing.JTextField jlblnombreAlumno;
     private javax.swing.JLabel jlblreportes;
     private javax.swing.JTextField jtxtalergia;
+    private javax.swing.JTextField jtxtapellidoAlumno;
     private javax.swing.JTextField jtxtapellidoApoderado;
     private javax.swing.JTextField jtxtcelular;
     private javax.swing.JTextField jtxtcorreo;
+    private javax.swing.JTextField jtxtdniAlumno;
     private javax.swing.JTextField jtxtdniApoderado;
     private javax.swing.JTextField jtxtdocenteCargo;
     private javax.swing.JTextField jtxtfecha;
     private javax.swing.JTextField jtxtmedicinas;
+    private javax.swing.JTextField jtxtnombreAlumno;
     private javax.swing.JTextField jtxtnombreApoderado;
     private javax.swing.JLabel lbNivel3;
     private javax.swing.JLabel lbNivel4;

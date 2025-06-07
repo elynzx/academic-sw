@@ -33,7 +33,59 @@ public class SecretariaCtrl {
 
 
     private void registrar() {
+        String nombreAlumno=matricula.getNombresAlumno();
+        String apellidoAlumno=matricula.getApellidosAlumno();
+        String dniAlumno=matricula.getDniAlumno();
+        String generoAlumno=matricula.getDniAlumno();
+        Date fechaNacimientoAlumno=matricula.getJDatenacimientoAlumno();
+        String tipoAlergia=matricula.getJtxtalergia();
+        boolean confirmacionAlergia;
+        if(tipoAlergia == null || tipoAlergia.isEmpty()){
+            confirmacionAlergia = false;
+        }else{
+            confirmacionAlergia = true;
+        }
+        String tipoMedicamento=matricula.getjtxtmedicinas();
+        boolean confirmacionMedicamentos;
+        if(tipoMedicamento == null || tipoMedicamento.isEmpty()){
+            confirmacionMedicamentos = false;
+        }else{
+            confirmacionMedicamentos = true;
+        }
+        String nombreApoderado=matricula.getJtxtnombreApoderado();
+        String apellidoApoderado=matricula.getJtxtapellidoApoderado();
+        String dniApoderado=matricula.getJtxtdniApoderado();
+        String parentesco=matricula.getJcmbparentesco();
+        String celular=matricula.getJtxtcelular();
+        String correo=matricula.getJtxtcorreo();
+        String direccion=matricula.getJTextAreadireccion();
+        String estado=matricula.getJcmbestado();
+        String fecha=matricula.getJtxtfecha();
+        String diagnostico=matricula.getJListdiagnostico();
+        String nivelFuncional=matricula.getJcmbnivelFuncional();
+        String aulaAsignada=matricula.getJcmbaulaAsignada();
+        String docenteCargo=matricula.getJtxtdocenteCargo();
+        String observaciones=matricula.getJTextAreaobservaciones();
         
+        Estudiante estudiante = new Estudiante(
+            0, // idEstudiante (temporal)
+            confirmacionAlergia, // alergias (temporal)
+            tipoAlergia, // tipoAlergia
+            confirmacionMedicamentos, // tomaMedicamentos
+            tipoMedicamento, // medicamentos
+            null, // nivelFuncional (falta implementar)
+            null, // apoderado (falta implementar)
+            "", // observaciones
+            0, // id (persona)
+            nombreAlumno,
+            apellidoAlumno,
+            dniAlumno,
+            celular,
+            correo,
+            direccion,
+            fechaNacimientoAlumno,
+            generoAlumno
+        );
         
     }
     
@@ -89,38 +141,38 @@ public class SecretariaCtrl {
         });
     }
     
-    public SecretariaCtrl(Matricula matricula){
-        this.matricula=matricula;
-        
-        this.matricula.jbtnregistrar.addActionListener(new ActionListener() {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            registrar(); 
+        public SecretariaCtrl(Matricula matricula){
+            this.matricula=matricula;
+
+            this.matricula.jbtnregistrar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                registrar(); 
+            }
+            });
+
+
+            matricula.getJlblreportes().addMouseListener(new MouseAdapter() {
+                public void mouseClicked(MouseEvent e) {
+                    new ReportesMatricula().setVisible(true);
+                    matricula.dispose();
+                }
+            });
+
+            matricula.getJlblestudiantes().addMouseListener(new MouseAdapter() {
+                public void mouseClicked(MouseEvent e) {
+                    new Estudiantes().setVisible(true);
+                    matricula.dispose();
+                }
+            });
+
+            matricula.getJlblinicio().addMouseListener(new MouseAdapter() {
+                public void mouseClicked(MouseEvent e) {
+                    new DashboardMatricula().setVisible(true);
+                    matricula.dispose();
+                }
+            });
         }
-        });
-    
-        
-        matricula.getJlblreportes().addMouseListener(new MouseAdapter() {
-            public void mouseClicked(MouseEvent e) {
-                new ReportesMatricula().setVisible(true);
-                matricula.dispose();
-            }
-        });
-        
-        matricula.getJlblestudiantes().addMouseListener(new MouseAdapter() {
-            public void mouseClicked(MouseEvent e) {
-                new Estudiantes().setVisible(true);
-                matricula.dispose();
-            }
-        });
-        
-        matricula.getJlblinicio().addMouseListener(new MouseAdapter() {
-            public void mouseClicked(MouseEvent e) {
-                new DashboardMatricula().setVisible(true);
-                matricula.dispose();
-            }
-        });
-    }
     
     public SecretariaCtrl(ReportesMatricula reportes){
         this.reportes = reportes;
