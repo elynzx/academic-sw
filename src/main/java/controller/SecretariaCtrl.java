@@ -243,7 +243,6 @@ public class SecretariaCtrl {
                 }
             });
         }
-
     public SecretariaCtrl(ReportesMatricula reportes){
         this.reportes = reportes;
         

@@ -1417,7 +1417,13 @@ public class Matricula extends javax.swing.JFrame {
         return (String)jcmbgeneroApoderado.getSelectedItem();
     }
     
+    public String getApellidosAlumno(){
+        return jtxtapellidoAlumno.getText();
+    }
     
+    public String getDniAlumno(){
+        return jtxtdniAlumno.getText();
+    }
     
     public boolean getJRadioButtonAlergiasSi(){
         return true;
@@ -1586,7 +1592,6 @@ public class Matricula extends javax.swing.JFrame {
     private javax.swing.JLabel jlblestudiantes;
     private javax.swing.JLabel jlblinicio;
     private javax.swing.JLabel jlblmatricula;
-    private javax.swing.JTextField jlblnombreAlumno;
     private javax.swing.JLabel jlblreportes;
     private javax.swing.JTextField jtxtalergia;
     private javax.swing.JTextField jtxtapellidoAlumno;
