@@ -4,8 +4,8 @@
  */
 package model.dao;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import model.catalogo.CategoriaConducta;
 
 /**
@@ -15,6 +15,7 @@ import model.catalogo.CategoriaConducta;
 public interface ISeguimiento {
     
     List<CategoriaConducta> ObtenerCategoriaConductas();
-    
+    boolean guardarSeguimiento(int idEstudiante, int idCategoria, String descripcion, int frecuencia, String observaciones);
+    List<Map<String, Object>> obtenerPromedioFrecuencia(int idEstudiante);
     
 }

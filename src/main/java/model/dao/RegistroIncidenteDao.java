@@ -93,4 +93,17 @@ public class RegistroIncidenteDao implements IRegistroIncidente {
         return listaAntecedentes;
     }
 
+    @Override
+    public boolean guardarConductaProblematica(int idEstudiante, int idConducta, int idFuncionComportamiento, int gravedad, String descripcion) {
+      
+    return true;
+    
+    }
+
+    @Override
+    public boolean guardarFichaAbc(int idEstudiante, int idAntecedente, String comportamiento, String consecuencia, int gravedad) {
+     
+    return true;
+    }
+
 }

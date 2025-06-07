@@ -19,9 +19,10 @@ import model.dao.RegistroIncidenteDao;
 public class Incidentes extends javax.swing.JFrame {
 
     private IRegistroIncidente registroIncidenteDao = new RegistroIncidenteDao();
+     private int idDocente;
 
     public Incidentes(int idDocente) {
-
+        this.idDocente = idDocente;
         initComponents();
         cargarTipoConductas();
         cargarFuncionComportamiento();
@@ -43,7 +44,6 @@ public class Incidentes extends javax.swing.JFrame {
             System.out.println("Error al obtener los tipos de conducta: " + e.getMessage());
         }
     }
-    
 
     private void cargarFuncionComportamiento() {
         cbFuncionComportamiento.removeAllItems();
@@ -61,7 +61,6 @@ public class Incidentes extends javax.swing.JFrame {
         }
     }
 
-    
     private void cargarAntecedentes() {
         cbAntecedente.removeAllItems();
         try {
@@ -211,6 +210,11 @@ public class Incidentes extends javax.swing.JFrame {
 
         mSeguimiento.setBackground(new java.awt.Color(237, 237, 237));
         mSeguimiento.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        mSeguimiento.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                mSeguimientoMouseClicked(evt);
+            }
+        });
 
         jLabel13.setFont(new java.awt.Font("Poppins", 0, 13)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
@@ -296,6 +300,11 @@ public class Incidentes extends javax.swing.JFrame {
 
         mReemplazo.setBackground(new java.awt.Color(237, 237, 237));
         mReemplazo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        mReemplazo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                mReemplazoMouseClicked(evt);
+            }
+        });
 
         jLabel17.setFont(new java.awt.Font("Poppins", 0, 13)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(255, 255, 255));
@@ -976,6 +985,21 @@ public class Incidentes extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void mSeguimientoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mSeguimientoMouseClicked
+        Seguimiento vSeguimiento = new Seguimiento(idDocente);
+        vSeguimiento.setVisible(true);
+        vSeguimiento.setLocationRelativeTo(null);
+        this.dispose();
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_mSeguimientoMouseClicked
+
+    private void mReemplazoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mReemplazoMouseClicked
+
+     
+        // TODO add your handling code here:
+    }//GEN-LAST:event_mReemplazoMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
