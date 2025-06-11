@@ -59,13 +59,31 @@ public class SecretariaCtrl {
         String celular=matricula.getJtxtcelular();
         String correo=matricula.getJtxtcorreo();
         String direccion=matricula.getJTextAreadireccion();
+        String generoApoderado=matricula.getJcmbgeneroApoderado();
+        Date FechaNacimientoApoderado = matricula.getjDatenacimientoApoderado();
+                
+        
         String estado=matricula.getJcmbestado();
         String fecha=matricula.getJtxtfecha();
         String diagnostico=matricula.getJListdiagnostico();
         String nivelFuncional=matricula.getJcmbnivelFuncional();
         String aulaAsignada=matricula.getJcmbaulaAsignada();
-        String docenteCargo=matricula.getJtxtdocenteCargo();
+        String docenteCargo=matricula.getJcmbdocenteCargo();
         String observaciones=matricula.getJTextAreaobservaciones();
+        
+        Apoderado apoderado = new Apoderado (
+            0, //id apoderado
+            parentesco,
+            0, //id persona
+            nombreApoderado,
+            apellidoApoderado,
+            dniApoderado,
+            celular,
+            correo,
+            direccion,
+            FechaNacimientoApoderado,
+            generoApoderado
+        );
         
         Estudiante estudiante = new Estudiante(
             0, // idEstudiante (temporal)
@@ -86,6 +104,8 @@ public class SecretariaCtrl {
             fechaNacimientoAlumno,
             generoAlumno
         );
+        
+
         
     }
     

@@ -127,6 +127,10 @@ public class Matricula extends javax.swing.JFrame {
         jSeparator33 = new javax.swing.JSeparator();
         jLabel50 = new javax.swing.JLabel();
         lbNivel6 = new javax.swing.JLabel();
+        jDatenacimientoApoderado = new com.toedter.calendar.JDateChooser();
+        jLabel34 = new javax.swing.JLabel();
+        jcmbgeneroApoderado = new javax.swing.JComboBox<>();
+        jLabel45 = new javax.swing.JLabel();
         btnCrearTicket2 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         panelDatos25 = new javax.swing.JPanel();
@@ -136,10 +140,6 @@ public class Matricula extends javax.swing.JFrame {
         panelDatos28 = new javax.swing.JPanel();
         jLabel36 = new javax.swing.JLabel();
         jcmbaulaAsignada = new javax.swing.JComboBox<>();
-        panelDatos30 = new javax.swing.JPanel();
-        jtxtdocenteCargo = new javax.swing.JTextField();
-        jSeparator26 = new javax.swing.JSeparator();
-        jLabel38 = new javax.swing.JLabel();
         lbNivel4 = new javax.swing.JLabel();
         jLabel42 = new javax.swing.JLabel();
         jScrollPane4 = new javax.swing.JScrollPane();
@@ -154,6 +154,8 @@ public class Matricula extends javax.swing.JFrame {
         jtxtfecha = new javax.swing.JTextField();
         jSeparator37 = new javax.swing.JSeparator();
         jLabel54 = new javax.swing.JLabel();
+        jLabel47 = new javax.swing.JLabel();
+        jcmbdocenteAsignado = new javax.swing.JComboBox<>();
         btnCrearTicket5 = new javax.swing.JButton();
         jLabel13 = new javax.swing.JLabel();
         textBuscarTicket = new javax.swing.JTextField();
@@ -528,7 +530,7 @@ public class Matricula extends javax.swing.JFrame {
             .addGroup(panelDatos22Layout.createSequentialGroup()
                 .addGap(0, 0, 0)
                 .addGroup(panelDatos22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jcmbgeneroAlumno, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jcmbgeneroAlumno, 0, 245, Short.MAX_VALUE)
                     .addGroup(panelDatos22Layout.createSequentialGroup()
                         .addComponent(jLabel29)
                         .addGap(0, 0, Short.MAX_VALUE))))
@@ -555,7 +557,7 @@ public class Matricula extends javax.swing.JFrame {
             panelDatos24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelDatos24Layout.createSequentialGroup()
                 .addComponent(jLabel31)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 131, Short.MAX_VALUE))
             .addComponent(jDatenacimientoAlumno, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         panelDatos24Layout.setVerticalGroup(
@@ -681,10 +683,10 @@ public class Matricula extends javax.swing.JFrame {
                     .addComponent(jRadioButtonMedicinasSi))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jtxtmedicinas, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(58, Short.MAX_VALUE))
+                .addContainerGap(88, Short.MAX_VALUE))
         );
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, -1, 510));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, -1, 540));
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
         jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
@@ -775,7 +777,7 @@ public class Matricula extends javax.swing.JFrame {
 
         jcmbparentesco.setBackground(new java.awt.Color(239, 239, 239));
         jcmbparentesco.setForeground(new java.awt.Color(102, 102, 102));
-        jcmbparentesco.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Padre", "Madre", "Abuelo/a", "Tío/a", "Hermano/a", "Tutor legal", "Otro" }));
+        jcmbparentesco.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Padre", "Madre", "Abuelo/a", "Tío", "Tia", "Hermano/a", "Tutor legal", "Otro" }));
         jcmbparentesco.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
 
         javax.swing.GroupLayout panelDatos33Layout = new javax.swing.GroupLayout(panelDatos33);
@@ -934,25 +936,46 @@ public class Matricula extends javax.swing.JFrame {
         lbNivel6.setText("2. Datos del apoderado");
         lbNivel6.setPreferredSize(new java.awt.Dimension(70, 25));
 
+        jDatenacimientoApoderado.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel34.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel34.setText("Fecha de Nacimiento:");
+
+        jcmbgeneroApoderado.setBackground(new java.awt.Color(239, 239, 239));
+        jcmbgeneroApoderado.setForeground(new java.awt.Color(102, 102, 102));
+        jcmbgeneroApoderado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Item 2", "Item 3", "Item 4" }));
+        jcmbgeneroApoderado.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
+
+        jLabel45.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel45.setText("Género:");
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap(25, Short.MAX_VALUE)
+                .addContainerGap(30, Short.MAX_VALUE)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lbNivel6, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel39)
-                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(panelDatos42, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 254, Short.MAX_VALUE)
-                        .addComponent(panelDatos35, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(panelDatos33, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(panelDatos31, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(panelDatos39, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(panelDatos26, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addGap(29, 29, 29))
+                    .addComponent(jcmbgeneroApoderado, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel34)
+                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lbNivel6, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel39)
+                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(panelDatos42, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 254, Short.MAX_VALUE)
+                                .addComponent(panelDatos35, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(panelDatos33, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(panelDatos31, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(panelDatos39, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(panelDatos26, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jLabel45))
+                        .addGroup(jPanel4Layout.createSequentialGroup()
+                            .addComponent(jDatenacimientoApoderado, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(5, 5, 5))))
+                .addGap(21, 21, 21))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -967,18 +990,26 @@ public class Matricula extends javax.swing.JFrame {
                 .addComponent(panelDatos31, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(panelDatos33, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel45, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jcmbgeneroApoderado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel34, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jDatenacimientoApoderado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(panelDatos42, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(panelDatos35, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel39)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(33, Short.MAX_VALUE))
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
-        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 100, 310, 510));
+        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 100, 310, 540));
 
         btnCrearTicket2.setBackground(new java.awt.Color(102, 102, 102));
         btnCrearTicket2.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
@@ -997,7 +1028,7 @@ public class Matricula extends javax.swing.JFrame {
         panelDatos25.setLayout(panelDatos25Layout);
         panelDatos25Layout.setHorizontalGroup(
             panelDatos25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 6, Short.MAX_VALUE)
         );
         panelDatos25Layout.setVerticalGroup(
             panelDatos25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1054,7 +1085,7 @@ public class Matricula extends javax.swing.JFrame {
                 .addGroup(panelDatos28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jcmbaulaAsignada, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel36))
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 16, Short.MAX_VALUE))
         );
         panelDatos28Layout.setVerticalGroup(
             panelDatos28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1062,42 +1093,6 @@ public class Matricula extends javax.swing.JFrame {
                 .addComponent(jLabel36, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jcmbaulaAsignada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0))
-        );
-
-        panelDatos30.setBackground(new java.awt.Color(255, 255, 255));
-
-        jtxtdocenteCargo.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        jtxtdocenteCargo.setForeground(new java.awt.Color(66, 128, 191));
-        jtxtdocenteCargo.setBorder(null);
-        jtxtdocenteCargo.setCaretColor(new java.awt.Color(51, 51, 51));
-
-        jSeparator26.setForeground(new java.awt.Color(102, 102, 102));
-
-        jLabel38.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel38.setText("Docente a cargo:");
-
-        javax.swing.GroupLayout panelDatos30Layout = new javax.swing.GroupLayout(panelDatos30);
-        panelDatos30.setLayout(panelDatos30Layout);
-        panelDatos30Layout.setHorizontalGroup(
-            panelDatos30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelDatos30Layout.createSequentialGroup()
-                .addGap(0, 0, 0)
-                .addGroup(panelDatos30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jSeparator26)
-                    .addComponent(jtxtdocenteCargo)
-                    .addGroup(panelDatos30Layout.createSequentialGroup()
-                        .addComponent(jLabel38)
-                        .addGap(0, 0, Short.MAX_VALUE))))
-        );
-        panelDatos30Layout.setVerticalGroup(
-            panelDatos30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelDatos30Layout.createSequentialGroup()
-                .addComponent(jLabel38, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(jtxtdocenteCargo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(jSeparator26, javax.swing.GroupLayout.PREFERRED_SIZE, 3, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0))
         );
 
@@ -1131,7 +1126,7 @@ public class Matricula extends javax.swing.JFrame {
 
         jcmbestado.setBackground(new java.awt.Color(239, 239, 239));
         jcmbestado.setForeground(new java.awt.Color(102, 102, 102));
-        jcmbestado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Activo", "Inactivo", "Retirado", "Grduado" }));
+        jcmbestado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Activo", "Inactivo", "Retirado", "Garduado" }));
         jcmbestado.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
 
         javax.swing.GroupLayout panelDatos29Layout = new javax.swing.GroupLayout(panelDatos29);
@@ -1199,6 +1194,14 @@ public class Matricula extends javax.swing.JFrame {
                 .addGap(0, 0, 0))
         );
 
+        jLabel47.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel47.setText("Docente a cargo:");
+
+        jcmbdocenteAsignado.setBackground(new java.awt.Color(239, 239, 239));
+        jcmbdocenteAsignado.setForeground(new java.awt.Color(102, 102, 102));
+        jcmbdocenteAsignado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Bajo", "Medio", "Alto" }));
+        jcmbdocenteAsignado.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -1206,14 +1209,15 @@ public class Matricula extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(31, 31, 31)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel42)
+                    .addComponent(jLabel47)
                     .addComponent(lbNivel4, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(panelDatos28, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel42)
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                                    .addGap(0, 0, Short.MAX_VALUE)
+                                    .addGap(0, 6, Short.MAX_VALUE)
                                     .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addComponent(panelDatos27, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(jPanel3Layout.createSequentialGroup()
@@ -1222,12 +1226,12 @@ public class Matricula extends javax.swing.JFrame {
                                 .addGroup(jPanel3Layout.createSequentialGroup()
                                     .addComponent(panelDatos29, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGap(18, 18, 18)
-                                    .addComponent(panelDatos43, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
+                                    .addComponent(panelDatos43, javax.swing.GroupLayout.PREFERRED_SIZE, 129, Short.MAX_VALUE)))
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(panelDatos25, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addComponent(jScrollPane4)
-                        .addComponent(panelDatos30, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addContainerGap(23, Short.MAX_VALUE))
+                        .addComponent(jcmbdocenteAsignado, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(11, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1240,7 +1244,7 @@ public class Matricula extends javax.swing.JFrame {
                         .addComponent(panelDatos25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(panelDatos29, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(panelDatos43, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -1254,16 +1258,18 @@ public class Matricula extends javax.swing.JFrame {
                 .addComponent(panelDatos27, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(panelDatos28, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
+                .addComponent(jLabel47)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(panelDatos30, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jcmbdocenteAsignado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel42)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addGap(22, 22, 22))
         );
 
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 100, 310, 510));
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 100, 310, 540));
 
         btnCrearTicket5.setBackground(new java.awt.Color(66, 128, 191));
         btnCrearTicket5.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
@@ -1392,6 +1398,16 @@ public class Matricula extends javax.swing.JFrame {
     public Date getJDatenacimientoAlumno(){
         return (Date) jDatenacimientoAlumno.getDate();
     }
+
+    public Date getjDatenacimientoApoderado() {
+        return (Date)jDatenacimientoApoderado.getDate();
+    }
+
+    public String getJcmbgeneroApoderado() {
+        return (String)jcmbgeneroApoderado.getSelectedItem();
+    }
+    
+    
     
     public boolean getJRadioButtonAlergiasSi(){
         return true;
@@ -1465,8 +1481,8 @@ public class Matricula extends javax.swing.JFrame {
         return (String) jcmbaulaAsignada.getSelectedItem();
     }
     
-    public String getJtxtdocenteCargo(){
-        return jtxtdocenteCargo.getText();
+    public String getJcmbdocenteCargo(){
+        return (String) jcmbdocenteAsignado.getSelectedItem();
     }
     
     public String getJTextAreaobservaciones(){
@@ -1483,6 +1499,7 @@ public class Matricula extends javax.swing.JFrame {
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
     private com.toedter.calendar.JDateChooser jDatenacimientoAlumno;
+    private com.toedter.calendar.JDateChooser jDatenacimientoApoderado;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel16;
@@ -1499,17 +1516,19 @@ public class Matricula extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel37;
-    private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel41;
     private javax.swing.JLabel jLabel42;
     private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel44;
+    private javax.swing.JLabel jLabel45;
     private javax.swing.JLabel jLabel46;
+    private javax.swing.JLabel jLabel47;
     private javax.swing.JLabel jLabel50;
     private javax.swing.JLabel jLabel53;
     private javax.swing.JLabel jLabel54;
@@ -1531,7 +1550,6 @@ public class Matricula extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator20;
     private javax.swing.JSeparator jSeparator22;
     private javax.swing.JSeparator jSeparator24;
-    private javax.swing.JSeparator jSeparator26;
     private javax.swing.JSeparator jSeparator27;
     private javax.swing.JSeparator jSeparator29;
     private javax.swing.JSeparator jSeparator33;
@@ -1541,8 +1559,10 @@ public class Matricula extends javax.swing.JFrame {
     private javax.swing.JTextArea jTextAreaobservaciones;
     public javax.swing.JButton jbtnregistrar;
     private javax.swing.JComboBox<String> jcmbaulaAsignada;
+    private javax.swing.JComboBox<String> jcmbdocenteAsignado;
     private javax.swing.JComboBox<String> jcmbestado;
     private javax.swing.JComboBox<String> jcmbgeneroAlumno;
+    private javax.swing.JComboBox<String> jcmbgeneroApoderado;
     private javax.swing.JComboBox<String> jcmbnivelFuncional;
     private javax.swing.JComboBox<String> jcmbparentesco;
     private javax.swing.JLabel jlblestudiantes;
@@ -1556,7 +1576,6 @@ public class Matricula extends javax.swing.JFrame {
     private javax.swing.JTextField jtxtcorreo;
     private javax.swing.JTextField jtxtdniAlumno;
     private javax.swing.JTextField jtxtdniApoderado;
-    private javax.swing.JTextField jtxtdocenteCargo;
     private javax.swing.JTextField jtxtfecha;
     private javax.swing.JTextField jtxtmedicinas;
     private javax.swing.JTextField jtxtnombreAlumno;
@@ -1580,7 +1599,6 @@ public class Matricula extends javax.swing.JFrame {
     private javax.swing.JPanel panelDatos27;
     private javax.swing.JPanel panelDatos28;
     private javax.swing.JPanel panelDatos29;
-    private javax.swing.JPanel panelDatos30;
     private javax.swing.JPanel panelDatos31;
     private javax.swing.JPanel panelDatos33;
     private javax.swing.JPanel panelDatos35;
