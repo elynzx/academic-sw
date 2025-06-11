@@ -352,7 +352,7 @@ public class SecretariaDao implements ISecretariaDao{
         }
     }
     
-        public int obtenerEstudiante(Estudiante estudiante){
+    public int obtenerEstudiante(Estudiante estudiante){
         int idEstudiante=0;
         String consulta="SELECT id_estudiante FROM estudiante WHERE id_persona ="+estudiante.getId()+"";
         try (PreparedStatement pst = conn.prepareStatement(consulta)) {
@@ -367,6 +367,8 @@ public class SecretariaDao implements ISecretariaDao{
         }
         return idEstudiante;
     }
+    
+    public int obtener
     
 
     

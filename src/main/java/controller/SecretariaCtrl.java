@@ -144,7 +144,14 @@ public class SecretariaCtrl {
     
     private void cargarCombos(){
         String diagnostico=matricula.getJListdiagnostico();
-        String diagnostico_final=
+        String diagnostico_final;
+        switch(diagnostico){
+            case "Trastorno del Espectro Autista (TEA)":diagnostico_final="Autismo";
+            case "Síndrome de Asperger":diagnostico_final="Asperger";
+            case "Síndrome de Down":diagnostico_final="Síndrome de Down";
+            case "Retraso mental leve":diagnostico_final="Retraso mental leve";
+            case "Retraso mental moderado": diagnostico_final="Retraso mental moderado";
+        }
         
     }
     
