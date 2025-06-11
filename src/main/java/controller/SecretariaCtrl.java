@@ -85,15 +85,38 @@ public class SecretariaCtrl {
             generoApoderado
         );
         
+
+        int id_nivel=0;
+        String nivel_funcional = null;
+        switch(nivelFuncional){
+            case "Bajo: Requiere ayuda constante":id_nivel=1; nivel_funcional="Bajo";
+            case "Medio: Requiere apoyo ocasional":id_nivel=2; nivel_funcional="Medio";
+            case "Alto: Mayor autonomía": id_nivel=3; nivel_funcional="Alto";
+        }
+        
+        NivelFuncional nivel = new NivelFuncional(
+                id_nivel,
+                nivel_funcional
+        );
+        
+        int id_persona_estudiante=0;
+        int id_persona_apoderado=0;
+        int id_estudiante=0;
+        int id_apoderado=0;
+        
+        id_persona_apoderado=dao.obtenerPersonaApoderado(apoderado);
+        apoderado.setId(id_persona_apoderado);
+        
+        
         Estudiante estudiante = new Estudiante(
             0, // idEstudiante (temporal)
             confirmacionAlergia, // alergias (temporal)
             tipoAlergia, // tipoAlergia
             confirmacionMedicamentos, // tomaMedicamentos
             tipoMedicamento, // medicamentos
-            null, // nivelFuncional (falta implementar)
-            null, // apoderado (falta implementar)
-            "", // observaciones
+            nivel, // nivelFuncional (falta implementar)
+            apoderado, // apoderado (falta implementar)
+            observaciones, // observaciones
             0, // id (persona)
             nombreAlumno,
             apellidoAlumno,
@@ -104,6 +127,13 @@ public class SecretariaCtrl {
             fechaNacimientoAlumno,
             generoAlumno
         );
+        
+        id_persona_estudiante=dao.obtenerPersonaEstudiante(estudiante);
+        estudiante.setId(id_persona_estudiante);
+        
+        dao.registrarApoderado(apoderado, parentesco);
+        
+        
         
 
         

@@ -10,8 +10,10 @@ import java.util.ArrayList;
 import java.util.List;
 import model.catalogo.Diagnostico;
 import model.catalogo.NivelFuncional;
+import model.entidades.Apoderado;
 import model.entidades.Aula;
 import model.entidades.Docente;
+import model.entidades.Estudiante;
 import model.entidades.Persona;
 import model.entidades.Secretaria;
 import model.entidades.Usuario;
@@ -220,6 +222,107 @@ public class SecretariaDao implements ISecretariaDao{
 
         return vdt;
     }
+    
+    
+    private void registrarPersonaApoderado(Apoderado apoderado){
+        String consulta="INSERT INTO persona (nombres,apellidos,dni,celular,correo,direccion,fecha_nacimiento,genero) VALUES (?,?,?,?,?,?,?,?)";
+        try (PreparedStatement pst = conn.prepareStatement(consulta)) {
+            pst.setString(1, apoderado.getNombres());
+            pst.setString(2, apoderado.getApellidos());
+            pst.setString(3, apoderado.getDni());
+            pst.setString(4, apoderado.getCelular());
+            pst.setString(5, apoderado.getCorreo());
+            pst.setString(6, apoderado.getDireccion());
+            pst.setDate(7, apoderado.getFechaNacimiento());
+            pst.setString(8, apoderado.getGenero());
+            pst.executeUpdate();
+            System.out.println("Persona Apoderado registrado correctamente");
+        } catch (SQLException e) {
+            System.out.println("Error al registrar persona Apoderado");
+            e.printStackTrace();
+        }
+    }
+    
+    private void registrarPersonaEstudiante(Estudiante estudiante){
+        String consulta="INSERT INTO persona (nombres,apellidos,dni,celular,correo,direccion,fecha_nacimiento,genero) VALUES (?,?,?,?,?,?,?,?)";
+        try (PreparedStatement pst = conn.prepareStatement(consulta)) {
+            pst.setString(1, estudiante.getNombres());
+            pst.setString(2, estudiante.getApellidos());
+            pst.setString(3, estudiante.getDni());
+            pst.setString(4, estudiante.getCelular());
+            pst.setString(5, estudiante.getCorreo());
+            pst.setString(6, estudiante.getDireccion());
+            pst.setDate(7, estudiante.getFechaNacimiento());
+            pst.setString(8, estudiante.getGenero());
+            pst.executeUpdate();
+            System.out.println("Persona Estudiante registrado correctamente");
+        } catch (SQLException e) {
+            System.out.println("Error al registrar persona Estudiante");
+            e.printStackTrace();
+        }
+    }
+    
+    
+    
+    public int obtenerPersonaEstudiante(Estudiante estudiante){
+        int idPersonaEstudiante=0;
+        String consulta="SELECT id_persona FROM persona WHERE dni='"+estudiante.getDni()+"'";
+        try (PreparedStatement pst = conn.prepareStatement(consulta)) {
+            ResultSet rs = pst.executeQuery();
+            
+            if (rs.next()) {
+                idPersonaEstudiante=rs.getInt("id_persona");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return idPersonaEstudiante;
+    }
+    
+    public int obtenerPersonaApoderado(Apoderado apoderado){
+        int idPersonaApoderado=0;
+        String consulta="SELECT id_persona FROM persona WHERE dni='"+apoderado.getDni()+"'";
+        try (PreparedStatement pst = conn.prepareStatement(consulta)) {
+            ResultSet rs = pst.executeQuery();
+            
+            if (rs.next()) {
+                idPersonaApoderado=rs.getInt("id_persona");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return idPersonaApoderado;
+    }
+    
+    public void registrarApoderado(Apoderado apoderado, String parentesco){
+        String consulta="INSERT INTO apoderado (id_persona,parentesco) VALUES (?,?);";
+        try (PreparedStatement pst = conn.prepareStatement(consulta)) {
+            pst.setInt(1, apoderado.getId());
+            pst.setString(2, parentesco);
+            pst.executeUpdate();
+            System.out.println("Apoderado registrado correctamente");
+        } catch (SQLException e) {
+            System.out.println("Error al registrar apoderado");
+            e.printStackTrace();
+        }
+    }
+    
+    public int obtenerApoderado(Apoderado apoderado){
+        int idApoderado=0;
+        String consulta="SELECT id_apoderado FROM apoderado WHERE id_persona ="+apoderado.getId()+"";
+        try (PreparedStatement pst = conn.prepareStatement(consulta)) {
+            ResultSet rs = pst.executeQuery();
+            
+            if (rs.next()) {
+                idApoderado=rs.getInt("id_apoderado");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return idApoderado;
+    }
+    
+
     
     
 }
