@@ -13,6 +13,7 @@ import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+import javax.swing.event.ListSelectionListener;
 
 /**
  *
@@ -1044,6 +1045,11 @@ public class Matricula extends javax.swing.JFrame {
         jcmbnivelFuncional.setForeground(new java.awt.Color(102, 102, 102));
         jcmbnivelFuncional.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Bajo: Requiere ayuda constante", "Medio: Requiere apoyo ocasional", "Alto: Mayor autonomía" }));
         jcmbnivelFuncional.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
+        jcmbnivelFuncional.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jcmbnivelFuncionalActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout panelDatos27Layout = new javax.swing.GroupLayout(panelDatos27);
         panelDatos27.setLayout(panelDatos27Layout);
@@ -1379,6 +1385,10 @@ public class Matricula extends javax.swing.JFrame {
        
     }//GEN-LAST:event_jbtnregistrarActionPerformed
 
+    private void jcmbnivelFuncionalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcmbnivelFuncionalActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jcmbnivelFuncionalActionPerformed
+
     public String getNombresAlumno() {
         return jtxtnombreAlumno.getText();
     }
@@ -1489,6 +1499,14 @@ public class Matricula extends javax.swing.JFrame {
         return jTextAreaobservaciones.getText();
     }
     
+    public void addListSelectionListenerDiagnostico(ListSelectionListener listener) {
+        jListdiagnostico.addListSelectionListener(listener);
+    }
+
+
+
+
+    
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBuscarTicket;
@@ -1533,7 +1551,7 @@ public class Matricula extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel53;
     private javax.swing.JLabel jLabel54;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JList<String> jListdiagnostico;
+    public javax.swing.JList<String> jListdiagnostico;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

@@ -14,6 +14,8 @@ import java.sql.Date;
 import model.funcionalidad.ListaAulas;
 import javax.swing.table.DefaultTableModel;
 import java.util.List;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 import model.catalogo.NivelFuncional;
 import model.entidades.Apoderado;
 import model.entidades.Estudiante;
@@ -107,6 +109,9 @@ public class SecretariaCtrl {
         id_persona_apoderado=dao.obtenerPersonaApoderado(apoderado);
         apoderado.setId(id_persona_apoderado);
         
+        dao.registrarApoderado(apoderado, parentesco);
+        id_apoderado=dao.obtenerApoderado(apoderado);
+        apoderado.setIdApoderado(id_apoderado);
         
         Estudiante estudiante = new Estudiante(
             0, // idEstudiante (temporal)
@@ -131,11 +136,15 @@ public class SecretariaCtrl {
         id_persona_estudiante=dao.obtenerPersonaEstudiante(estudiante);
         estudiante.setId(id_persona_estudiante);
         
-        dao.registrarApoderado(apoderado, parentesco);
-        
-        
-        
-
+        dao.registrarEstudiante(estudiante);
+        id_estudiante=dao.obtenerEstudiante(estudiante);
+        estudiante.setIdEstudiante(id_estudiante);
+         
+    }
+    
+    private void cargarCombos(){
+        String diagnostico=matricula.getJListdiagnostico();
+        String diagnostico_final=
         
     }
     
@@ -193,6 +202,14 @@ public class SecretariaCtrl {
     
         public SecretariaCtrl(Matricula matricula){
             this.matricula=matricula;
+            
+            this.matricula.addListSelectionListenerDiagnostico(new ListSelectionListener() {
+            @Override
+            public void valueChanged(ListSelectionEvent evt) {
+                cargarCombos();
+            }
+        });
+
 
             this.matricula.jbtnregistrar.addActionListener(new ActionListener() {
             @Override

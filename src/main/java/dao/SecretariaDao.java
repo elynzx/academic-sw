@@ -317,9 +317,55 @@ public class SecretariaDao implements ISecretariaDao{
                 idApoderado=rs.getInt("id_apoderado");
             }
         } catch (SQLException e) {
+            System.out.println("Error al obtener id del apoderado");
             e.printStackTrace();
         }
         return idApoderado;
+    }
+    
+    public void registrarEstudiante(Estudiante estudiante){
+        String consulta="INSERT INTO estudiante (id_persona,alergias,tipo_alergia,toma_medicamentos,medicamentos,id_nivel_funcional,id_apoderado,observaciones) VALUES (?,?,?,?,?,?,?,?);";
+        int confirmacionAlergia=0;
+        int confirmacionMedicamentos=0;
+        
+        if(estudiante.isAlergias()==true){
+            confirmacionAlergia=1;
+        }
+        
+        if(estudiante.isTomaMedicamentos()==true){
+            confirmacionMedicamentos=1;
+        }
+        try (PreparedStatement pst = conn.prepareStatement(consulta)) {
+            pst.setInt(1, estudiante.getId());
+            pst.setInt(2, confirmacionAlergia);
+            pst.setString(3, estudiante.getTipoAlergia());
+            pst.setInt(4, confirmacionMedicamentos);
+            pst.setString(5, estudiante.getMedicamentos());
+            pst.setInt(6, estudiante.getNivelFuncional().getId());
+            pst.setInt(7, estudiante.getApoderado().getIdApoderado());
+            pst.setString(8, estudiante.getObservaciones());
+            pst.executeUpdate();
+            System.out.println("Estudiante registrado correctamente");
+        } catch (SQLException e) {
+            System.out.println("Error al registrar estudiante");
+            e.printStackTrace();
+        }
+    }
+    
+        public int obtenerEstudiante(Estudiante estudiante){
+        int idEstudiante=0;
+        String consulta="SELECT id_estudiante FROM estudiante WHERE id_persona ="+estudiante.getId()+"";
+        try (PreparedStatement pst = conn.prepareStatement(consulta)) {
+            ResultSet rs = pst.executeQuery();
+            
+            if (rs.next()) {
+                idEstudiante=rs.getInt("id_estudiante");
+            }
+        } catch (SQLException e) {
+            System.out.println("Error al obtener id del estudiante");
+            e.printStackTrace();
+        }
+        return idEstudiante;
     }
     
 
