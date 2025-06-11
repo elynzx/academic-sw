@@ -368,7 +368,9 @@ public class SecretariaDao implements ISecretariaDao{
         return idEstudiante;
     }
     
-    public int obtener
+    public void obtenerAula(){
+        
+    }
     
 
     
