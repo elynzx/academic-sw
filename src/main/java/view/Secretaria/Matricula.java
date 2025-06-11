@@ -1417,13 +1417,9 @@ public class Matricula extends javax.swing.JFrame {
         return (String)jcmbgeneroApoderado.getSelectedItem();
     }
     
-    public String getApellidosAlumno(){
-        return jtxtapellidoAlumno.getText();
-    }
+
     
-    public String getDniAlumno(){
-        return jtxtdniAlumno.getText();
-    }
+
     
     public boolean getJRadioButtonAlergiasSi(){
         return true;
