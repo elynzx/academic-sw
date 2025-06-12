@@ -1,6 +1,7 @@
 package controller;
 
 
+import com.itextpdf.kernel.geom.PageSize;
 import configuration.SesionUsuario;
 import dao.SecretariaDao;
 import java.awt.event.ActionEvent;
@@ -34,6 +35,9 @@ import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
+
+import com.itextpdf.kernel.geom.PageSize;
+
 import java.awt.Desktop;
 import static java.awt.SystemColor.desktop;
 import java.io.File;
@@ -223,12 +227,14 @@ public class SecretariaCtrl {
         aula=dao.obtenerAula(aula, docente, aulaAsignada);
         
         //objeto matricula
-        matriculaObjeto.setId(0);
-        matriculaObjeto.setEstudiante(estudiante);
-        matriculaObjeto.setAula(aula);
-        matriculaObjeto.setFechaMatricula(fechaMatriculaSQL);
-        matriculaObjeto.setEstado(estado);
-        matriculaObjeto.setObservaciones(observaciones);
+        matriculaObjeto = new model.funcionalidad.Matricula(
+                0,
+                estudiante,
+                aula,
+                fechaMatriculaSQL,
+                estado,
+                observaciones
+        );
         
         
         
@@ -236,7 +242,7 @@ public class SecretariaCtrl {
         
         matriculaObjeto.setId(dao.obtenerMatricula(matriculaObjeto, estudiante, aula));
         
-        
+        generarPdf(matriculaObjeto, aula);
         
         
         JOptionPane.showMessageDialog(matricula, "Matricula Realizada correctamente");
@@ -526,42 +532,60 @@ public class SecretariaCtrl {
             }
     }
     
-    private void generarPdf(model.funcionalidad.Matricula matriculaObjeto){
+    private void generarPdf(model.funcionalidad.Matricula matriculaObjeto, Aula aula) {
         try {
-            // 1. Obtener la ruta absoluta al directorio del paquete pdf
-            String relativePath = "src/main/java/pdf/Matricula_estudiante_"+matriculaObjeto.getId()+".pdf";
+            // 1. Ruta del archivo
+            String relativePath = "src/main/java/pdf/Matricula_estudiante_" + matriculaObjeto.getId() + ".pdf";
             File file = new File(relativePath);
             file.getParentFile().mkdirs(); // crear carpetas si no existen
 
-            // 2. Crear el PDF en esa ruta
+            // 2. Crear PDF en orientación horizontal (landscape)
             PdfWriter writer = new PdfWriter(file);
             PdfDocument pdf = new PdfDocument(writer);
-            Document document = new Document(pdf);
+            Document document = new Document(pdf, PageSize.A4.rotate()); // A4 horizontal
 
-            // 3. Crear tabla
-            float[] columnWidths = {100f, 100f, 100f, 100f};
+            // 4. Crear tabla
+            float[] columnWidths = {40f, 100f, 150f, 150f, 180f, 180f, 130f, 170f, 80f};
             Table table = new Table(columnWidths);
 
+            // Encabezados
             table.addHeaderCell("ID");
             table.addHeaderCell("Nombres");
             table.addHeaderCell("Apellidos");
-            table.addHeaderCell("Fecha Matricula");
+            table.addHeaderCell("Diagnóstico");
+            table.addHeaderCell("Nivel Funcional");
+            table.addHeaderCell("Aula Asignada");
+            table.addHeaderCell("N° Contacto");
+            table.addHeaderCell("Docente a Cargo");
+            table.addHeaderCell("Fecha Matrícula");
+            table.addHeaderCell("Pensión");
 
-            // 4. Datos ejemplo
-            table.addCell("1");
-            table.addCell("Ana");
-            table.addCell("Martínez");
-            table.addCell("2025-06-11");
+            // Datos
+            table.addCell(String.valueOf(matriculaObjeto.getId()));
+            table.addCell(matriculaObjeto.getEstudiante().getNombres());
+            table.addCell(matriculaObjeto.getEstudiante().getApellidos());
+            table.addCell(aula.getDiagnosticoReferente().getNombre());
+            table.addCell(aula.getNivelFuncional().getNombre());
+            table.addCell(aula.getNombre());
+            table.addCell(matriculaObjeto.getEstudiante().getCelular());
+            table.addCell(aula.getDocente().getNombres() + " " + aula.getDocente().getApellidos());
+            table.addCell(String.valueOf(matriculaObjeto.getFechaMatricula()));
+            table.addCell("S/. 750");
 
-            document.add(new Paragraph("Recibo de Matricula"));
+            // Agregar tabla al documento
             document.add(table);
 
+            // Cerrar documento
             document.close();
             System.out.println("PDF guardado correctamente en el paquete pdf.");
+
+            // Abrir automáticamente
             Desktop.getDesktop().open(file);
-        } catch (Exception e) {
+
+    } catch (Exception e) {
             e.printStackTrace();
-        }
     }
+}
+
 }
 

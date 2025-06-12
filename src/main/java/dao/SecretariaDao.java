@@ -458,11 +458,11 @@ public class SecretariaDao implements ISecretariaDao{
     
     public int obtenerMatricula(model.funcionalidad.Matricula matriculaObjeto, Estudiante estudiante, Aula aula){
         int IdMatricula=0;
-        String consulta="SELECT id_matricula FROM matricula WHERE id_estudiante ="+estudiante.getId()+" AND id_aula="+aula.getId()+" AND fecha_matricula='"+matriculaObjeto.getFechaMatricula()+"'";
+        String consulta="SELECT id_matricula FROM matricula WHERE id_estudiante ="+estudiante.getIdEstudiante()+" AND id_aula="+aula.getId()+" AND fecha_matricula='"+matriculaObjeto.getFechaMatricula()+"'";
             try (PreparedStatement pst = conn.prepareStatement(consulta)) {
             ResultSet rs = pst.executeQuery();
             if (rs.next()) {
-                matriculaObjeto.setId(rs.getInt("id_matricula"));
+                IdMatricula=rs.getInt("id_matricula");
             }
         } catch (SQLException e) {
             System.out.println("Error al obtener id matricula");
