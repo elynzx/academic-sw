@@ -1,4 +1,6 @@
 package controller;
+
+
 import configuration.SesionUsuario;
 import dao.SecretariaDao;
 import java.awt.event.ActionEvent;
@@ -9,6 +11,7 @@ import view.Secretaria.Matricula;
 import view.Secretaria.ReportesMatricula;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.FileOutputStream;
 import java.sql.Date;
 
 import model.funcionalidad.ListaAulas;
@@ -26,8 +29,17 @@ import model.entidades.Docente;
 import model.entidades.Estudiante;
 import model.entidades.Persona;
 
-import com.itextpdf.pdfa.PdfADocument;
-import com.itextpdf.pdfa.PdfADocument;
+import com.itextpdf.kernel.pdf.PdfWriter;
+import com.itextpdf.kernel.pdf.PdfDocument;
+import com.itextpdf.layout.Document;
+import com.itextpdf.layout.element.Paragraph;
+import com.itextpdf.layout.element.Table;
+import java.awt.Desktop;
+import static java.awt.SystemColor.desktop;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.time.LocalDate;
+
 
 
 public class SecretariaCtrl {
@@ -38,6 +50,7 @@ public class SecretariaCtrl {
     private SecretariaDao dao = new SecretariaDao();
     private Persona persona;
     int ad,vdt,adt;
+    private model.funcionalidad.Matricula matriculaObjeto;
     
     
     private void registrar() {
@@ -205,8 +218,26 @@ public class SecretariaCtrl {
                 docente
         );
         
+        Date fechaMatriculaSQL = Date.valueOf(LocalDate.now());
+        
         aula=dao.obtenerAula(aula, docente, aulaAsignada);
+        
+        //objeto matricula
+        matriculaObjeto.setId(0);
+        matriculaObjeto.setEstudiante(estudiante);
+        matriculaObjeto.setAula(aula);
+        matriculaObjeto.setFechaMatricula(fechaMatriculaSQL);
+        matriculaObjeto.setEstado(estado);
+        matriculaObjeto.setObservaciones(observaciones);
+        
+        
+        
         dao.registrarMatricula(aula, estudiante, estado, pension);
+        
+        matriculaObjeto.setId(dao.obtenerMatricula(matriculaObjeto, estudiante, aula));
+        
+        
+        
         
         JOptionPane.showMessageDialog(matricula, "Matricula Realizada correctamente");
         
@@ -495,8 +526,42 @@ public class SecretariaCtrl {
             }
     }
     
-    private 
-    
-    
+    private void generarPdf(model.funcionalidad.Matricula matriculaObjeto){
+        try {
+            // 1. Obtener la ruta absoluta al directorio del paquete pdf
+            String relativePath = "src/main/java/pdf/Matricula_estudiante_"+matriculaObjeto.getId()+".pdf";
+            File file = new File(relativePath);
+            file.getParentFile().mkdirs(); // crear carpetas si no existen
+
+            // 2. Crear el PDF en esa ruta
+            PdfWriter writer = new PdfWriter(file);
+            PdfDocument pdf = new PdfDocument(writer);
+            Document document = new Document(pdf);
+
+            // 3. Crear tabla
+            float[] columnWidths = {100f, 100f, 100f, 100f};
+            Table table = new Table(columnWidths);
+
+            table.addHeaderCell("ID");
+            table.addHeaderCell("Nombres");
+            table.addHeaderCell("Apellidos");
+            table.addHeaderCell("Fecha Matricula");
+
+            // 4. Datos ejemplo
+            table.addCell("1");
+            table.addCell("Ana");
+            table.addCell("Martínez");
+            table.addCell("2025-06-11");
+
+            document.add(new Paragraph("Recibo de Matricula"));
+            document.add(table);
+
+            document.close();
+            System.out.println("PDF guardado correctamente en el paquete pdf.");
+            Desktop.getDesktop().open(file);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }
 

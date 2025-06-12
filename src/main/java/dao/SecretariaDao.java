@@ -402,7 +402,7 @@ public class SecretariaDao implements ISecretariaDao{
     }
     
     public Aula obtenerAula(Aula aula,Docente docente,String aulaAsignada){
-        String consulta="SELECT a.id_aula, a.id_nivel_funcional, a.id_diagnostico_referente,a.vacantes_totales,a.vacantes_disponibles,\n" +
+        String consulta="SELECT a.id_aula, a.nombre,a.id_nivel_funcional, a.id_diagnostico_referente,a.vacantes_totales,a.vacantes_disponibles,\n" +
         "a.id_docente,d.id_persona,d.id_docente,d.id_usuario, p.nombres,p.apellidos,p.dni,p.celular,p.correo,p.direccion,p.fecha_nacimiento,p.genero \n" +
         "FROM aula a \n" +
         "JOIN docente d ON a.id_docente = d.id_docente \n" +
@@ -414,8 +414,12 @@ public class SecretariaDao implements ISecretariaDao{
                 aula.setId(rs.getInt("id_aula"));
                 aula.setVacantesTotales(rs.getInt("vacantes_totales"));
                 aula.setVacantesDisponibles(rs.getInt("vacantes_disponibles"));
+                aula.setNombre(rs.getString("nombre"));
                 docente.setIdDocente(rs.getInt("id_docente"));
                 docente.setId(rs.getInt("id_persona"));
+                docente.setNombres(rs.getString("nombres"));
+                docente.setApellidos(rs.getString("apellidos"));
+                docente.setDni(rs.getString("dni"));
                 aula.setDocente(docente);
             }
         } catch (SQLException e) {
@@ -451,6 +455,24 @@ public class SecretariaDao implements ISecretariaDao{
         }
         
     }
+    
+    public int obtenerMatricula(model.funcionalidad.Matricula matriculaObjeto, Estudiante estudiante, Aula aula){
+        int IdMatricula=0;
+        String consulta="SELECT id_matricula FROM matricula WHERE id_estudiante ="+estudiante.getId()+" AND id_aula="+aula.getId()+" AND fecha_matricula='"+matriculaObjeto.getFechaMatricula()+"'";
+            try (PreparedStatement pst = conn.prepareStatement(consulta)) {
+            ResultSet rs = pst.executeQuery();
+            if (rs.next()) {
+                matriculaObjeto.setId(rs.getInt("id_matricula"));
+            }
+        } catch (SQLException e) {
+            System.out.println("Error al obtener id matricula");
+            e.printStackTrace();
+        }
+        
+        return IdMatricula;
+    }
+    
+    
     
     public List<String[]> listarEstudiantesMatriculados() {
     List<String[]> lista = new ArrayList<>();
