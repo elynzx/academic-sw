@@ -400,6 +400,57 @@ public class SecretariaDao implements ISecretariaDao{
         return profesores.toArray(String[]::new);
     }
     
+    public Aula obtenerAula(Aula aula,Docente docente,String aulaAsignada){
+        String consulta="SELECT a.id_aula, a.id_nivel_funcional, a.id_diagnostico_referente,a.vacantes_totales,a.vacantes_disponibles,\n" +
+        "a.id_docente,d.id_persona,d.id_docente,d.id_usuario, p.nombres,p.apellidos,p.dni,p.celular,p.correo,p.direccion,p.fecha_nacimiento,p.genero \n" +
+        "FROM aula a \n" +
+        "JOIN docente d ON a.id_docente = d.id_docente \n" +
+        "JOIN persona p ON p.id_persona = d.id_persona \n" +
+        "WHERE nombre = '"+aulaAsignada+"'";
+        try (PreparedStatement pst = conn.prepareStatement(consulta)) {
+            ResultSet rs = pst.executeQuery();
+            while (rs.next()) {
+                aula.setId(rs.getInt("id_aula"));
+                aula.setVacantesTotales(rs.getInt("vacantes_totales"));
+                aula.setVacantesDisponibles(rs.getInt("vacantes_disponibles"));
+                docente.setIdDocente(rs.getInt("id_docente"));
+                docente.setId(rs.getInt("id_persona"));
+                aula.setDocente(docente);
+            }
+        } catch (SQLException e) {
+            System.out.println("Error al obtener aula");
+            e.printStackTrace();
+        }
+        return aula;
+    }
+    
+    public void registrarMatricula(Aula aula,Estudiante estudiante,String estado,double pension){
+        String consulta = "INSERT INTO matricula (id_estudiante, id_aula, fecha_matricula, estado, pension) VALUES (?, ?, CURDATE(), ?, ?);";
+        try (PreparedStatement pst = conn.prepareStatement(consulta)) {
+            pst.setInt(1, estudiante.getIdEstudiante());
+            pst.setInt(2, aula.getId());
+            pst.setString(3, estado);
+            pst.setDouble(4, pension);
+            
+            pst.executeUpdate();
+            System.out.println("Matricula registrada correctamente");
+        } catch (SQLException e) {
+            System.out.println("Error al registrar Matricula");
+            e.printStackTrace();
+        }
+        
+        String consulta2 = "UPDATE aula SET vacantes_disponibles = vacantes_disponibles - 1 WHERE id_aula = ?;";
+        try (PreparedStatement pst = conn.prepareStatement(consulta2)) {
+            pst.setInt(1, aula.getId());
+            pst.executeUpdate();
+            System.out.println("Matricula registrada correctamente");
+        } catch (SQLException e) {
+            System.out.println("Error al registrar Matricula");
+            e.printStackTrace();
+        }
+        
+    }
+    
 
     
     

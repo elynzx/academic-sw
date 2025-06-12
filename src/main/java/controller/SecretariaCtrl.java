@@ -19,6 +19,8 @@ import javax.swing.event.ListSelectionListener;
 import model.catalogo.Diagnostico;
 import model.catalogo.NivelFuncional;
 import model.entidades.Apoderado;
+import model.entidades.Aula;
+import model.entidades.Docente;
 import model.entidades.Estudiante;
 import model.entidades.Persona;
 
@@ -76,6 +78,7 @@ public class SecretariaCtrl {
         String aulaAsignada=matricula.getJcmbaulaAsignada();
         String docenteCargo=matricula.getJcmbdocenteCargo();
         String observaciones=matricula.getJTextAreaobservaciones();
+        double pension = 750;
         
         Apoderado apoderado = new Apoderado (
             0, //id apoderado
@@ -147,6 +150,53 @@ public class SecretariaCtrl {
         dao.registrarEstudiante(estudiante);
         id_estudiante=dao.obtenerEstudiante(estudiante);
         estudiante.setIdEstudiante(id_estudiante);
+        
+        int id_diagnostico=0;
+        String diagnostico_final = null;
+        switch(diagnostico){
+            case "Trastorno del Espectro Autista (TEA)":diagnostico_final="Autismo";id_diagnostico=1;break;
+            case "Síndrome de Asperger":diagnostico_final="Asperger";id_diagnostico=2;break;
+            case "Síndrome de Down":diagnostico_final="Síndrome de Down";id_diagnostico=3;break;
+            case "Retraso mental leve":diagnostico_final="Retraso mental leve";id_diagnostico=4;break;
+            case "Retraso mental moderado": diagnostico_final="Retraso mental moderado";id_diagnostico=5;
+        }
+        
+        
+        Diagnostico diag = new Diagnostico(
+        id_diagnostico,
+           diagnostico_final
+        );
+        
+        Docente docente = new Docente(
+                0,
+                null,
+                0,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+        );
+        
+        Aula aula = new Aula(
+                0,
+                aulaAsignada,
+                nivel,
+                diag,
+                0,
+                0,
+                docente
+        );
+        
+        aula=dao.obtenerAula(aula, docente, aulaAsignada);
+        dao.registrarMatricula(aula, estudiante, estado, pension);
+        
+        
+        
+        
          
     }
     
