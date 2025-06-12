@@ -5,20 +5,17 @@
 package view.Secretaria;
 
 import utillities.Utilidad;
-import configuration.UsuarioConectado;
 import javax.swing.JLabel;
 import controller.SecretariaCtrl;
 import javax.swing.JTable;
-import view.Secretaria.Estudiantes;
-import view.Secretaria.Matricula;
-import view.Secretaria.ReportesMatricula;
+
 /**
  *
  * @author rpasc
  */
 public class DashboardMatricula extends javax.swing.JFrame {
 
-    private Utilidad utilidad ;
+    private Utilidad utilidad;
     private SecretariaCtrl secretaria;
     private view.Secretaria.Estudiantes estudiantes;
     private view.Secretaria.Matricula matricula;
@@ -29,7 +26,7 @@ public class DashboardMatricula extends javax.swing.JFrame {
         initComponents();
         utilidad.mostrarFechaCompleta(lbFechaCompleta);
         secretaria = new SecretariaCtrl(this);
-        
+
     }
 
     public JLabel getJlblestudiantes() {
@@ -51,9 +48,9 @@ public class DashboardMatricula extends javax.swing.JFrame {
     public void setTbAlumnosDashboard(JTable tbAlumnosDashboard) {
         this.tbAlumnosDashboard = tbAlumnosDashboard;
     }
-    
+
     public javax.swing.JTable getTbAlumnosDashboard() {
-    return tbAlumnosDashboard;
+        return tbAlumnosDashboard;
     }
 
     public javax.swing.JLabel getJlblnombre() {
@@ -63,7 +60,6 @@ public class DashboardMatricula extends javax.swing.JFrame {
     public javax.swing.JLabel setJlblnombre() {
         return jlblnombre;
     }
-
 
     public void setJlblmatriculas(JLabel jlblmatriculas) {
         this.jlblmatriculas = jlblmatriculas;
@@ -92,18 +88,14 @@ public class DashboardMatricula extends javax.swing.JFrame {
     public void setLbAsistentes(JLabel lbAsistentes) {
         this.jlblasistentes = lbAsistentes;
     }
-    
-    
-    public javax.swing.JLabel getJlblmatriculas(){
+
+    public javax.swing.JLabel getJlblmatriculas() {
         return jlblmatriculas;
     }
-    
-     public javax.swing.JLabel getJlblasistentes() {
+
+    public javax.swing.JLabel getJlblasistentes() {
         return jlblasistentes;
     }
-    
-    
-    
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -163,6 +155,11 @@ public class DashboardMatricula extends javax.swing.JFrame {
 
         mEvaluaciones.setBackground(new java.awt.Color(237, 237, 237));
         mEvaluaciones.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        mEvaluaciones.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                mEvaluacionesMouseClicked(evt);
+            }
+        });
 
         jlblmatricula.setFont(new java.awt.Font("Poppins", 0, 13)); // NOI18N
         jlblmatricula.setForeground(new java.awt.Color(255, 255, 255));
@@ -652,7 +649,15 @@ public class DashboardMatricula extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jLabel23MouseClicked
 
-    
+    private void mEvaluacionesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mEvaluacionesMouseClicked
+
+        Matricula vMatricula = new Matricula();
+        vMatricula.setVisible(true);
+        vMatricula.setLocationRelativeTo(null);
+        this.dispose();
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_mEvaluacionesMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -7,8 +7,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import model.catalogo.Diagnostico;
-import model.catalogo.NivelFuncional;
+import model.funcionalidad.catalogo.Diagnostico;
+import model.funcionalidad.catalogo.NivelFuncional;
 import model.entidades.Aula;
 import model.entidades.Estudiante;
 

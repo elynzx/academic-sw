@@ -49,7 +49,7 @@ public class Login extends javax.swing.JFrame {
         jLabel1.setText("Usuario");
 
         textUsername.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        textUsername.setText("henry_vs");
+        textUsername.setText("epascual");
         textUsername.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 textUsernameActionPerformed(evt);
@@ -61,9 +61,9 @@ public class Login extends javax.swing.JFrame {
         jLabel2.setText("Contraseña");
 
         textPassword.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        textPassword.setText("87654321");
+        textPassword.setText("1234");
 
-        btnIngresar.setBackground(new java.awt.Color(66, 128, 191));
+        btnIngresar.setBackground(new java.awt.Color(45, 94, 152));
         btnIngresar.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
         btnIngresar.setForeground(new java.awt.Color(255, 255, 255));
         btnIngresar.setText("ENTRAR");
@@ -83,7 +83,7 @@ public class Login extends javax.swing.JFrame {
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel4.setText("Contáctate con el ");
 
-        lbContacto.setForeground(new java.awt.Color(66, 128, 191));
+        lbContacto.setForeground(new java.awt.Color(45, 94, 152));
         lbContacto.setText(" Área de Soporte");
         lbContacto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lbContacto.addMouseListener(new java.awt.event.MouseAdapter() {

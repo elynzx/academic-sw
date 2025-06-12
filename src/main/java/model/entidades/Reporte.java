@@ -4,7 +4,7 @@
  */
 package model.entidades;
 
-import model.catalogo.TipoReporte;
+import model.funcionalidad.catalogo.TipoReporte;
 import java.sql.Date;
 
 /**

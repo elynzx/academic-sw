@@ -62,16 +62,16 @@ public class Utilidad {
     }
 
 //<<<<<<<<<< Seleccion Menu >>>>>>>>>>>
-    Color gris = new Color(239, 239, 239);
+    Color azul = new Color(10,93,175);
     Color blanco = new Color(255, 255, 255);
 
     public void cambiarBgColor(JPanel panel) {
-        panel.setBackground(blanco);
+        panel.setBackground(azul);
     }
 
     public void rehacerBgColor(JPanel[] paneles) {
         for (JPanel panel : paneles) {
-            panel.setBackground(gris);
+            panel.setBackground(blanco);
         }
     }
 
@@ -90,6 +90,7 @@ public class Utilidad {
         });
     }
 
+    
 //    
 //    public void configurarEventosMenu(JPanel panel, JFrame vista, JPanel[] componentesMenu) {
 //        panel.addMouseListener(new MouseAdapter() {

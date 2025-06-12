@@ -4,7 +4,7 @@
  */
 package model.funcionalidad;
 
-import model.catalogo.Antecedente;
+import model.funcionalidad.catalogo.Antecedente;
 import java.sql.Date;
 import model.entidades.Estudiante;
 
@@ -22,7 +22,7 @@ public class FichaAbc {
     private String consecuencia;
     private int gravedad;
 
-    public FichaAbc(int id, Estudiante estudiante, Date fecha, Antecedente antecedente, String comportamiento, String consecuencia, int gravedad) {
+    public FichaAbc() {
         this.id = id;
         this.estudiante = estudiante;
         this.fecha = fecha;

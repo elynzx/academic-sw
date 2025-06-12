@@ -4,8 +4,8 @@
  */
 package model.entidades;
 
-import model.catalogo.Diagnostico;
-import model.catalogo.NivelFuncional;
+import model.funcionalidad.catalogo.Diagnostico;
+import model.funcionalidad.catalogo.NivelFuncional;
 
 /**
  *

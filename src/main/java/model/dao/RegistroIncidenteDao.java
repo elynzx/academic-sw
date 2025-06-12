@@ -11,9 +11,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import model.catalogo.Antecedente;
-import model.catalogo.FuncionComportamiento;
-import model.catalogo.TipoConducta;
+import model.funcionalidad.catalogo.Antecedente;
+import model.funcionalidad.catalogo.Diagnostico;
+import model.funcionalidad.catalogo.FuncionComportamiento;
+import model.funcionalidad.catalogo.TipoConducta;
+import model.entidades.Estudiante;
 
 /**
  *
@@ -28,7 +30,7 @@ public class RegistroIncidenteDao implements IRegistroIncidente {
     }
 
     @Override
-    public List<TipoConducta> ObtenerTipoConductas() {
+    public List<TipoConducta> obtenerTipoConductas() {
         List<TipoConducta> listaTipoConductas = new ArrayList<>();
 
         String sql = "SELECT id_tipo_conducta, nombre FROM tipo_conducta";
@@ -50,7 +52,7 @@ public class RegistroIncidenteDao implements IRegistroIncidente {
     }
 
     @Override
-    public List<FuncionComportamiento> ObtenerFuncionComportamientos() {
+    public List<FuncionComportamiento> obtenerFuncionComportamientos() {
         List<FuncionComportamiento> listaFuncionComportamientos = new ArrayList<>();
 
         String sql = "SELECT id_funcion, nombre FROM funcion_comportamiento";
@@ -95,15 +97,17 @@ public class RegistroIncidenteDao implements IRegistroIncidente {
 
     @Override
     public boolean guardarConductaProblematica(int idEstudiante, int idConducta, int idFuncionComportamiento, int gravedad, String descripcion) {
-      
-    return true;
-    
+
+        return true;
+
     }
 
     @Override
     public boolean guardarFichaAbc(int idEstudiante, int idAntecedente, String comportamiento, String consecuencia, int gravedad) {
-     
-    return true;
+
+        return true;
     }
 
+
+    
 }

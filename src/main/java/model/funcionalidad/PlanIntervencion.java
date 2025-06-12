@@ -4,9 +4,9 @@
  */
 package model.funcionalidad;
 
-import model.catalogo.TipoConducta;
-import model.catalogo.EstrategiaIntervencion;
-import model.catalogo.FuncionComportamiento;
+import model.funcionalidad.catalogo.TipoConducta;
+import model.funcionalidad.catalogo.EstrategiaIntervencion;
+import model.funcionalidad.catalogo.FuncionComportamiento;
 import java.sql.Date;
 import model.entidades.Estudiante;
 

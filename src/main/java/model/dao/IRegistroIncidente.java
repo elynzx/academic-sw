@@ -5,9 +5,10 @@
 package model.dao;
 
 import java.util.List;
-import model.catalogo.Antecedente;
-import model.catalogo.FuncionComportamiento;
-import model.catalogo.TipoConducta;
+import model.funcionalidad.catalogo.Antecedente;
+import model.funcionalidad.catalogo.FuncionComportamiento;
+import model.funcionalidad.catalogo.TipoConducta;
+import model.entidades.Estudiante;
 
 /**
  *
@@ -15,10 +16,10 @@ import model.catalogo.TipoConducta;
  */
 public interface IRegistroIncidente {
     
-      List<TipoConducta> ObtenerTipoConductas();
-      List<FuncionComportamiento> ObtenerFuncionComportamientos();
+      List<TipoConducta> obtenerTipoConductas();
+      List<FuncionComportamiento> obtenerFuncionComportamientos();
       List<Antecedente> obtenerAntecedentes();
       boolean guardarConductaProblematica(int idEstudiante, int idConducta, int idFuncionComportamiento, int gravedad, String descripcion);
       boolean guardarFichaAbc(int idEstudiante, int idAntecedente, String comportamiento, String consecuencia, int gravedad);
-      
+     
 }

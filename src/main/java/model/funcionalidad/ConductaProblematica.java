@@ -4,8 +4,8 @@
  */
 package model.funcionalidad;
 
-import model.catalogo.TipoConducta;
-import model.catalogo.FuncionComportamiento;
+import model.funcionalidad.catalogo.TipoConducta;
+import model.funcionalidad.catalogo.FuncionComportamiento;
 import java.sql.Date;
 import model.entidades.Estudiante;
 
@@ -32,6 +32,16 @@ public class ConductaProblematica {
         this.descripcion = descripcion;
         this.gravedad = gravedad;
     }
+
+    public ConductaProblematica(int id, Date fecha, TipoConducta tipo, int gravedad) {
+        this.id = id;
+        this.fecha = fecha;
+        this.tipo = tipo;
+        this.gravedad = gravedad;
+    }
+    
+    
+    
 
     public int getId() {
         return id;

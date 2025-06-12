@@ -8,8 +8,8 @@ import java.sql.Date;
 import java.time.LocalDate;
 import java.time.Period;
 import java.util.List;
-import model.catalogo.Diagnostico;
-import model.catalogo.NivelFuncional;
+import model.funcionalidad.catalogo.Diagnostico;
+import model.funcionalidad.catalogo.NivelFuncional;
 
 public class Estudiante extends Persona {
 
@@ -33,6 +33,13 @@ public class Estudiante extends Persona {
         this.observaciones = observaciones;
         this.diagnosticos = diagnosticos;
     }
+
+    public Estudiante(int idEstudiante, List<Diagnostico> diagnosticos, String nombres, String apellidos) {
+        super(nombres, apellidos);
+        this.idEstudiante = idEstudiante;
+        this.diagnosticos = diagnosticos;
+    }
+    
 
     public Estudiante(int idEstudiante, boolean alergias, String tipoAlergia, boolean tomaMedicamentos, String medicamentos, NivelFuncional nivelFuncional, Apoderado apoderado, String observaciones, int id, String nombres, String apellidos, String dni, String celular, String correo, String direccion, Date fechaNacimiento, String genero) {
         super(id, nombres, apellidos, dni, celular, correo, direccion, fechaNacimiento, genero);
@@ -129,6 +136,11 @@ public class Estudiante extends Persona {
 
     public void setDiagnosticos(List<Diagnostico> diagnosticos) {
         this.diagnosticos = diagnosticos;
+    }
+
+    @Override
+    public String toString() {
+        return getNombres() + " " + getApellidos();
     }
 
 }

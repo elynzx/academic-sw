@@ -9,11 +9,15 @@ import model.dao.IEstudianteDao;
 import model.dao.IUsuarioDao;
 import model.dao.UsuarioDao;
 import java.sql.SQLException;
+import view.Docente.MenuDocenteView;
 import view.Login;
 
 public class Main {
 
     public static void main(String[] args) {
+        
+       
+        
 
         Conexion.estableceConexion();
 
@@ -22,7 +26,8 @@ public class Main {
         IEstudianteDao estudianteDao = new EstudianteDao();
 
         UsuarioCtrl usuarioCtrl = new UsuarioCtrl(usuarioDao, docenteDao, estudianteDao);
-
+ 
+        
         Login loginView = new Login(usuarioCtrl);
         loginView.setVisible(true);
         loginView.setLocationRelativeTo(null);

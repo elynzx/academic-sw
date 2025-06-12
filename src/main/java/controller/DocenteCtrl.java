@@ -45,8 +45,4 @@ public class DocenteCtrl {
         return modelo;
     }
     
-    
-    
-    
-
 }

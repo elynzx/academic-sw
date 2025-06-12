@@ -4,7 +4,7 @@
  */
 package model.funcionalidad;
 
-import model.catalogo.CategoriaConducta;
+import model.funcionalidad.catalogo.CategoriaConducta;
 import java.sql.Date;
 import model.entidades.Estudiante;
 

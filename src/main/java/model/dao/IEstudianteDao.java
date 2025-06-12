@@ -4,6 +4,7 @@
  */
 package model.dao;
 
+import java.util.List;
 import model.entidades.Estudiante;
 
 /**
@@ -14,6 +15,6 @@ public interface IEstudianteDao {
 
         
     Estudiante obtenerDatosEstudiante(int idEstudiante);
-    
+//    List<Estudiante> obtenerEstudiantesDocente(int idDocente);
     
 }

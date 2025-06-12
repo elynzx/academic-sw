@@ -6,7 +6,7 @@ package model.dao;
 
 import java.util.List;
 import java.util.Map;
-import model.catalogo.CategoriaConducta;
+import model.funcionalidad.catalogo.CategoriaConducta;
 
 /**
  *

@@ -11,7 +11,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import model.catalogo.Diagnostico;
+import model.funcionalidad.catalogo.Diagnostico;
 import model.entidades.Estudiante;
 
 /**
@@ -81,4 +81,36 @@ public class EstudianteDao implements IEstudianteDao {
         return estudiante;
     }
 
+//    @Override
+//    public List<Estudiante> obtenerEstudiantesDocente(int idDocente) {
+//
+//        List<Estudiante> lista = new ArrayList<>();
+//        String sql = "SELECT e.id_estudiante, p.nombres, p.apellidos, "
+//                + "d.id_diagnostico, d.nombre AS diagnostico "
+//                + "FROM estudiante e "
+//                + "JOIN persona p ON e.id_persona = p.id_persona "
+//                + "JOIN matricula m ON e.id_estudiante = m.id_estudiante "
+//                + "LEFT JOIN diagnostico d ON ed.id_diagnostico = d.id_diagnostico "
+//                + "JOIN aula a ON m.id_aula = a.id_aula "
+//                + "WHERE a.id_docente = ? "
+//                + "ORDER BY p.nombres ASC";
+//
+//        try (PreparedStatement pst = conn.prepareStatement(sql)) {
+//            pst.setInt(1, idDocente);
+//            ResultSet rs = pst.executeQuery();
+//            List<Diagnostico> diagnosticos = new ArrayList<>();
+//            while (rs.next()) {
+//
+//                lista.add(new Estudiante(rs.getInt("id_estudiante"), rs.getString("nombres"), rs.getString("apellidos")));
+//                Diagnostico diagnostico = new Diagnostico(rs.getInt("id_diagnostico"), rs.getString("diagnostico"));
+//                diagnosticos.add(diagnostico);
+//            }
+//            if (lista != null) {
+//                lista.setDiagnosticos(diagnosticos);
+//            }
+//        } catch (SQLException e) {
+//            System.out.println("Error al obtener estudiantes del docente: " + e.getMessage());
+//        }
+//        return lista;
+//    }
 }

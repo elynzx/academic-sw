@@ -1,6 +1,6 @@
 package controller;
 import configuration.SesionUsuario;
-import dao.SecretariaDao;
+import model.dao.SecretariaDao;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import view.Secretaria.DashboardMatricula;
@@ -14,8 +14,6 @@ import java.sql.Date;
 import model.funcionalidad.ListaAulas;
 import javax.swing.table.DefaultTableModel;
 import java.util.List;
-import model.catalogo.NivelFuncional;
-import model.entidades.Apoderado;
 import model.entidades.Estudiante;
 import model.entidades.Persona;
 

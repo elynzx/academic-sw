@@ -8,10 +8,10 @@ import java.awt.HeadlessException;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import view.Administrador.InicioAdmin;
-import view.Docente.DashboardDocente;
 import view.Secretaria.DashboardMatricula;
 import com.google.common.base.Preconditions;
 import model.dao.IEstudianteDao;
+import view.Docente.MenuDocenteView;
 
 public class UsuarioCtrl {
 
@@ -67,9 +67,15 @@ public class UsuarioCtrl {
 
                 case "docente" -> {
                     if (idDocente != -1) {
-                        DashboardDocente vDocente = new DashboardDocente(idDocente);
-                        vDocente.setVisible(true);
-                        vDocente.setLocationRelativeTo(null);
+                        
+                        MenuDocenteView vMenuDocente = new MenuDocenteView(idDocente);
+                        vMenuDocente.setVisible(true);
+                        vMenuDocente.setLocationRelativeTo(null);
+                        
+//                        DashboardDocente vDocente = new DashboardDocente(idDocente);
+//                        vDocente.setVisible(true);
+//                        vDocente.setLocationRelativeTo(null);
+
 
                     } else {
                         JOptionPane.showMessageDialog(null, "No se encontró información del docente");
