@@ -224,7 +224,7 @@ public class SecretariaDao implements ISecretariaDao{
     }
     
     
-    private void registrarPersonaApoderado(Apoderado apoderado){
+    public void registrarPersonaApoderado(Apoderado apoderado){
         String consulta="INSERT INTO persona (nombres,apellidos,dni,celular,correo,direccion,fecha_nacimiento,genero) VALUES (?,?,?,?,?,?,?,?)";
         try (PreparedStatement pst = conn.prepareStatement(consulta)) {
             pst.setString(1, apoderado.getNombres());
@@ -243,7 +243,7 @@ public class SecretariaDao implements ISecretariaDao{
         }
     }
     
-    private void registrarPersonaEstudiante(Estudiante estudiante){
+    public void registrarPersonaEstudiante(Estudiante estudiante){
         String consulta="INSERT INTO persona (nombres,apellidos,dni,celular,correo,direccion,fecha_nacimiento,genero) VALUES (?,?,?,?,?,?,?,?)";
         try (PreparedStatement pst = conn.prepareStatement(consulta)) {
             pst.setString(1, estudiante.getNombres());
@@ -368,8 +368,36 @@ public class SecretariaDao implements ISecretariaDao{
         return idEstudiante;
     }
     
-    public void obtenerAula(){
-        
+    public String [] obtenerAula(Diagnostico diag,NivelFuncional nivel){
+        ArrayList<String> aulas = new ArrayList<>();
+        String consulta="SELECT nombre FROM aula WHERE id_diagnostico_referente = "+diag.getId()+" AND id_nivel_funcional = "+nivel.getId()+"";
+        try (PreparedStatement pst = conn.prepareStatement(consulta)) {
+            ResultSet rs = pst.executeQuery();
+            
+            while (rs.next()) {
+                aulas.add(rs.getString("nombre"));
+            }
+        } catch (SQLException e) {
+            System.out.println("Error al obtener aulas");
+            e.printStackTrace();
+        }
+        return aulas.toArray(String[]::new);
+    }
+    
+    public String [] obtenerprofesores(Diagnostico diag,NivelFuncional nivel,String aulaAsignada){
+        ArrayList<String> profesores = new ArrayList<>();
+        String consulta="SELECT p.nombres, p.apellidos FROM persona p JOIN docente d ON d.id_persona = p.id_persona JOIN aula a ON a.id_docente = d.id_docente JOIN nivel_funcional n ON a.id_nivel_funcional=n.id_nivel JOIN diagnostico di ON a.id_diagnostico_referente = di.id_diagnostico WHERE n.id_nivel="+nivel.getId()+" AND di.id_diagnostico="+diag.getId()+" AND a.nombre='"+aulaAsignada+"'";
+        try (PreparedStatement pst = conn.prepareStatement(consulta)) {
+            ResultSet rs = pst.executeQuery();
+            
+            while (rs.next()) {
+                profesores.add((rs.getString("nombres"))+" "+(rs.getString("apellidos")));
+            }
+        } catch (SQLException e) {
+            System.out.println("Error al obtener profesores");
+            e.printStackTrace();
+        }
+        return profesores.toArray(String[]::new);
     }
     
 

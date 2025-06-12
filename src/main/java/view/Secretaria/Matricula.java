@@ -521,7 +521,7 @@ public class Matricula extends javax.swing.JFrame {
 
         jcmbgeneroAlumno.setBackground(new java.awt.Color(239, 239, 239));
         jcmbgeneroAlumno.setForeground(new java.awt.Color(102, 102, 102));
-        jcmbgeneroAlumno.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Item 2", "Item 3", "Item 4" }));
+        jcmbgeneroAlumno.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "femenino", "masculino" }));
         jcmbgeneroAlumno.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
 
         javax.swing.GroupLayout panelDatos22Layout = new javax.swing.GroupLayout(panelDatos22);
@@ -684,10 +684,10 @@ public class Matricula extends javax.swing.JFrame {
                     .addComponent(jRadioButtonMedicinasSi))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jtxtmedicinas, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(88, Short.MAX_VALUE))
+                .addContainerGap(118, Short.MAX_VALUE))
         );
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, -1, 540));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, -1, 570));
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
         jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
@@ -944,7 +944,7 @@ public class Matricula extends javax.swing.JFrame {
 
         jcmbgeneroApoderado.setBackground(new java.awt.Color(239, 239, 239));
         jcmbgeneroApoderado.setForeground(new java.awt.Color(102, 102, 102));
-        jcmbgeneroApoderado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Item 2", "Item 3", "Item 4" }));
+        jcmbgeneroApoderado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "femenino", "masculino" }));
         jcmbgeneroApoderado.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
 
         jLabel45.setForeground(new java.awt.Color(153, 153, 153));
@@ -1010,7 +1010,7 @@ public class Matricula extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 100, 310, 540));
+        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 100, 310, 570));
 
         btnCrearTicket2.setBackground(new java.awt.Color(102, 102, 102));
         btnCrearTicket2.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
@@ -1250,7 +1250,7 @@ public class Matricula extends javax.swing.JFrame {
                         .addComponent(panelDatos25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(panelDatos29, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(panelDatos43, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -1264,7 +1264,7 @@ public class Matricula extends javax.swing.JFrame {
                 .addComponent(panelDatos27, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(panelDatos28, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
                 .addComponent(jLabel47)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jcmbdocenteAsignado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1275,7 +1275,7 @@ public class Matricula extends javax.swing.JFrame {
                 .addGap(22, 22, 22))
         );
 
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 100, 310, 540));
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 100, 310, 570));
 
         btnCrearTicket5.setBackground(new java.awt.Color(66, 128, 191));
         btnCrearTicket5.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
@@ -1336,7 +1336,7 @@ public class Matricula extends javax.swing.JFrame {
         btnCrearTicket4.setFocusPainted(false);
         jPanel1.add(btnCrearTicket4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 240, 137, 40));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 1200, 650));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 1200, 690));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -1405,21 +1405,17 @@ public class Matricula extends javax.swing.JFrame {
         return (String) jcmbgeneroAlumno.getSelectedItem();
     }
     
-    public Date getJDatenacimientoAlumno(){
-        return (Date) jDatenacimientoAlumno.getDate();
+    public java.util.Date getjDatenacimientoApoderado() {
+        return jDatenacimientoApoderado.getDate();
     }
 
-    public Date getjDatenacimientoApoderado() {
-        return (Date)jDatenacimientoApoderado.getDate();
+    public java.util.Date getJDatenacimientoAlumno() {
+        return jDatenacimientoAlumno.getDate();
     }
 
     public String getJcmbgeneroApoderado() {
         return (String)jcmbgeneroApoderado.getSelectedItem();
     }
-    
-
-    
-
     
     public boolean getJRadioButtonAlergiasSi(){
         return true;
@@ -1481,8 +1477,8 @@ public class Matricula extends javax.swing.JFrame {
         return jtxtfecha.getText();
     }
     
-    public String getJListdiagnostico(){
-        return jListdiagnostico.getSelectedValue();
+    public JList<String> getJListdiagnostico(){
+        return jListdiagnostico;
     }
     
     public String getJcmbnivelFuncional(){
@@ -1578,12 +1574,12 @@ public class Matricula extends javax.swing.JFrame {
     private javax.swing.JTextArea jTextAreadireccion;
     private javax.swing.JTextArea jTextAreaobservaciones;
     public javax.swing.JButton jbtnregistrar;
-    private javax.swing.JComboBox<String> jcmbaulaAsignada;
-    private javax.swing.JComboBox<String> jcmbdocenteAsignado;
+    public javax.swing.JComboBox<String> jcmbaulaAsignada;
+    public javax.swing.JComboBox<String> jcmbdocenteAsignado;
     private javax.swing.JComboBox<String> jcmbestado;
     private javax.swing.JComboBox<String> jcmbgeneroAlumno;
     private javax.swing.JComboBox<String> jcmbgeneroApoderado;
-    private javax.swing.JComboBox<String> jcmbnivelFuncional;
+    public javax.swing.JComboBox<String> jcmbnivelFuncional;
     private javax.swing.JComboBox<String> jcmbparentesco;
     private javax.swing.JLabel jlblestudiantes;
     private javax.swing.JLabel jlblinicio;

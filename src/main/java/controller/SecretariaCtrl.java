@@ -16,6 +16,7 @@ import javax.swing.table.DefaultTableModel;
 import java.util.List;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
+import model.catalogo.Diagnostico;
 import model.catalogo.NivelFuncional;
 import model.entidades.Apoderado;
 import model.entidades.Estudiante;
@@ -27,7 +28,7 @@ public class SecretariaCtrl {
     private Estudiantes estudiantes;
     private Matricula matricula;
     private ReportesMatricula reportes;
-    private SecretariaDao dao;
+    private SecretariaDao dao = new SecretariaDao();
     private Persona persona;
     int ad,vdt,adt;
     
@@ -36,8 +37,11 @@ public class SecretariaCtrl {
         String nombreAlumno=matricula.getNombresAlumno();
         String apellidoAlumno=matricula.getApellidosAlumno();
         String dniAlumno=matricula.getDniAlumno();
-        String generoAlumno=matricula.getDniAlumno();
-        Date fechaNacimientoAlumno=matricula.getJDatenacimientoAlumno();
+        String generoAlumno=matricula.getGeneroAlumno();
+        
+        java.util.Date utilFechaEstudiante = matricula.getJDatenacimientoAlumno();
+        java.sql.Date sqlFechaEstudiante= new java.sql.Date(utilFechaEstudiante.getTime());
+        
         String tipoAlergia=matricula.getJtxtalergia();
         boolean confirmacionAlergia;
         if(tipoAlergia == null || tipoAlergia.isEmpty()){
@@ -60,12 +64,14 @@ public class SecretariaCtrl {
         String correo=matricula.getJtxtcorreo();
         String direccion=matricula.getJTextAreadireccion();
         String generoApoderado=matricula.getJcmbgeneroApoderado();
-        Date FechaNacimientoApoderado = matricula.getjDatenacimientoApoderado();
+        
+        java.util.Date utilFechaApoderado = matricula.getjDatenacimientoApoderado();
+        java.sql.Date sqlFechaApoderado = new java.sql.Date(utilFechaApoderado.getTime());
                 
         
         String estado=matricula.getJcmbestado();
         String fecha=matricula.getJtxtfecha();
-        String diagnostico=matricula.getJListdiagnostico();
+        String diagnostico=matricula.getJListdiagnostico().getSelectedValue();
         String nivelFuncional=matricula.getJcmbnivelFuncional();
         String aulaAsignada=matricula.getJcmbaulaAsignada();
         String docenteCargo=matricula.getJcmbdocenteCargo();
@@ -81,7 +87,7 @@ public class SecretariaCtrl {
             celular,
             correo,
             direccion,
-            FechaNacimientoApoderado,
+            sqlFechaApoderado,
             generoApoderado
         );
         
@@ -89,9 +95,9 @@ public class SecretariaCtrl {
         int id_nivel=0;
         String nivel_funcional = null;
         switch(nivelFuncional){
-            case "Bajo: Requiere ayuda constante":id_nivel=1; nivel_funcional="Bajo";
-            case "Medio: Requiere apoyo ocasional":id_nivel=2; nivel_funcional="Medio";
-            case "Alto: Mayor autonomía": id_nivel=3; nivel_funcional="Alto";
+            case "Bajo: Requiere ayuda constante":id_nivel=1; nivel_funcional="Bajo";break;
+            case "Medio: Requiere apoyo ocasional":id_nivel=2; nivel_funcional="Medio";break;
+            case "Alto: Mayor autonomía": id_nivel=3; nivel_funcional="Alto";break;
         }
         
         NivelFuncional nivel = new NivelFuncional(
@@ -103,6 +109,9 @@ public class SecretariaCtrl {
         int id_persona_apoderado=0;
         int id_estudiante=0;
         int id_apoderado=0;
+        
+        dao.registrarPersonaApoderado(apoderado);
+        
         
         id_persona_apoderado=dao.obtenerPersonaApoderado(apoderado);
         apoderado.setId(id_persona_apoderado);
@@ -127,10 +136,11 @@ public class SecretariaCtrl {
             celular,
             correo,
             direccion,
-            fechaNacimientoAlumno,
+            sqlFechaApoderado,
             generoAlumno
         );
         
+        dao.registrarPersonaEstudiante(estudiante);
         id_persona_estudiante=dao.obtenerPersonaEstudiante(estudiante);
         estudiante.setId(id_persona_estudiante);
         
@@ -141,16 +151,104 @@ public class SecretariaCtrl {
     }
     
     private void cargarCombos(){
-        String diagnostico=matricula.getJListdiagnostico();
-        String diagnostico_final;
+        
+        String diagnostico=matricula.getJListdiagnostico().getSelectedValue();
+        String nivelFuncional=matricula.getJcmbnivelFuncional();
+        int id_diagnostico = 0;
+        int id_nivel=0;
+        String nivel_funcional = null;
+        switch(nivelFuncional){
+            case "Bajo: Requiere ayuda constante":id_nivel=1; nivel_funcional="Bajo";break;
+            case "Medio: Requiere apoyo ocasional":id_nivel=2; nivel_funcional="Medio";break;
+            case "Alto: Mayor autonomía": id_nivel=3; nivel_funcional="Alto";break;
+        }
+        
+        NivelFuncional nivel = new NivelFuncional(
+                id_nivel,
+                nivel_funcional
+        );
+        
+        String diagnostico_final = null;
         switch(diagnostico){
-            case "Trastorno del Espectro Autista (TEA)":diagnostico_final="Autismo";
-            case "Síndrome de Asperger":diagnostico_final="Asperger";
-            case "Síndrome de Down":diagnostico_final="Síndrome de Down";
-            case "Retraso mental leve":diagnostico_final="Retraso mental leve";
-            case "Retraso mental moderado": diagnostico_final="Retraso mental moderado";
+            case "Trastorno del Espectro Autista (TEA)":diagnostico_final="Autismo";id_diagnostico=1;break;
+            case "Síndrome de Asperger":diagnostico_final="Asperger";id_diagnostico=2;break;
+            case "Síndrome de Down":diagnostico_final="Síndrome de Down";id_diagnostico=3;break;
+            case "Retraso mental leve":diagnostico_final="Retraso mental leve";id_diagnostico=4;break;
+            case "Retraso mental moderado": diagnostico_final="Retraso mental moderado";id_diagnostico=5;
+        }
+        
+        
+        Diagnostico diag = new Diagnostico(
+        id_diagnostico,
+           diagnostico_final
+        );
+        
+        System.out.println("diagnostico: "+diag.getId()+" "+diag.getNombre());
+        System.out.println("nivel funcional: "+nivel.getId()+" "+nivel.getNombre());
+        
+        
+        
+        matricula.jcmbaulaAsignada.removeAllItems(); // Limpiar antes de cargar
+        matricula.jcmbdocenteAsignado.removeAllItems(); // Limpiar antes de cargar
+        
+        String aulas[] = dao.obtenerAula(diag, nivel);
+        for (int i = 0; i < aulas.length; i++) {
+            matricula.jcmbaulaAsignada.addItem(aulas[i]);
+        }
+        
+        
+        
+
+
+
+
+    }
+    
+    public void cargarProfesores(){
+        
+        String diagnostico=matricula.getJListdiagnostico().getSelectedValue();
+        String nivelFuncional=matricula.getJcmbnivelFuncional();
+        int id_diagnostico = 0;
+        int id_nivel=0;
+        String nivel_funcional = null;
+        switch(nivelFuncional){
+            case "Bajo: Requiere ayuda constante":id_nivel=1; nivel_funcional="Bajo";break;
+            case "Medio: Requiere apoyo ocasional":id_nivel=2; nivel_funcional="Medio";break;
+            case "Alto: Mayor autonomía": id_nivel=3; nivel_funcional="Alto";break;
+        }
+        
+        NivelFuncional nivel = new NivelFuncional(
+                id_nivel,
+                nivel_funcional
+        );
+        
+        String diagnostico_final = null;
+        switch(diagnostico){
+            case "Trastorno del Espectro Autista (TEA)":diagnostico_final="Autismo";id_diagnostico=1;break;
+            case "Síndrome de Asperger":diagnostico_final="Asperger";id_diagnostico=2;break;
+            case "Síndrome de Down":diagnostico_final="Síndrome de Down";id_diagnostico=3;break;
+            case "Retraso mental leve":diagnostico_final="Retraso mental leve";id_diagnostico=4;break;
+            case "Retraso mental moderado": diagnostico_final="Retraso mental moderado";id_diagnostico=5;
+        }
+        
+        
+        Diagnostico diag = new Diagnostico(
+        id_diagnostico,
+           diagnostico_final
+        );
+        
+        System.out.println("diagnostico: "+diag.getId()+" "+diag.getNombre());
+        System.out.println("nivel funcional: "+nivel.getId()+" "+nivel.getNombre());
+        
+        matricula.jcmbdocenteAsignado.removeAllItems();
+        
+        String aulaAsignada = matricula.getJcmbaulaAsignada();
+        String profesores[] = dao.obtenerprofesores(diag, nivel,aulaAsignada);
+        for (int i = 0; i < profesores.length; i++) {
+            matricula.jcmbdocenteAsignado.addItem(profesores[i]);
         }
     }
+    
     public SecretariaCtrl(DashboardMatricula dashboard) {
         this.dashboard = dashboard;
         this.dao = new SecretariaDao();
@@ -203,18 +301,32 @@ public class SecretariaCtrl {
         });
     }
     
-        public SecretariaCtrl(Matricula matricula){
+    public SecretariaCtrl(Matricula matricula){
             this.matricula=matricula;
             
-            this.matricula.addListSelectionListenerDiagnostico(new ListSelectionListener() {
+        this.matricula.jcmbnivelFuncional.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                cargarCombos();
+            }
+        });
+        
+        this.matricula.jcmbaulaAsignada.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                cargarProfesores();
+            }
+        });
+            
+        this.matricula.addListSelectionListenerDiagnostico(new ListSelectionListener() {
             @Override
             public void valueChanged(ListSelectionEvent evt) {
-                cargarCombos();
+                
             }
         });
 
 
-            this.matricula.jbtnregistrar.addActionListener(new ActionListener() {
+        this.matricula.jbtnregistrar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 registrar(); 
