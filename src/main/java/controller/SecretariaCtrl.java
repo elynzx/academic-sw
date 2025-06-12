@@ -26,6 +26,9 @@ import model.entidades.Docente;
 import model.entidades.Estudiante;
 import model.entidades.Persona;
 
+import com.itextpdf.pdfa.PdfADocument;
+import com.itextpdf.pdfa.PdfADocument;
+
 
 public class SecretariaCtrl {
     private DashboardMatricula dashboard;
@@ -492,33 +495,8 @@ public class SecretariaCtrl {
             }
     }
     
-    public void vaciarCampos(){
-        matricula.getNombresAlumno();
-        matricula.getApellidosAlumno();
-        matricula.getDniAlumno();
-        matricula.getGeneroAlumno();
-        
-        matricula.getJDatenacimientoAlumno();   
-        matricula.getJtxtalergia();
-        matricula.getjtxtmedicinas();
-        matricula.getJtxtnombreApoderado();
-        matricula.getJtxtapellidoApoderado();
-        matricula.getJtxtdniApoderado();
-        matricula.getJcmbparentesco();
-        matricula.getJtxtcelular();
-        matricula.getJtxtcorreo();
-        matricula.getJTextAreadireccion();
-        matricula.getJcmbgeneroApoderado();
-        
-        matricula.getjDatenacimientoApoderado();
-                
-        
-        matricula.getJcmbestado();
-        matricula.getJListdiagnostico().getSelectedValue();
-        matricula.getJcmbnivelFuncional();
-        matricula.getJcmbaulaAsignada();
-        matricula.getJcmbdocenteCargo();
-        matricula.getJTextAreaobservaciones();
-    }
+    private 
+    
+    
 }
 
