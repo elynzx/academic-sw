@@ -29,6 +29,7 @@ public class DashboardMatricula extends javax.swing.JFrame {
         initComponents();
         utilidad.mostrarFechaCompleta(lbFechaCompleta);
         secretaria = new SecretariaCtrl(this);
+        jlblnombre.setText(secretaria.agregarNombre());
         
     }
 

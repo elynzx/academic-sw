@@ -14,6 +14,8 @@ import java.sql.Date;
 import model.funcionalidad.ListaAulas;
 import javax.swing.table.DefaultTableModel;
 import java.util.List;
+import javax.swing.JOptionPane;
+import javax.swing.JTable;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import model.catalogo.Diagnostico;
@@ -42,7 +44,7 @@ public class SecretariaCtrl {
         String generoAlumno=matricula.getGeneroAlumno();
         
         java.util.Date utilFechaEstudiante = matricula.getJDatenacimientoAlumno();
-        java.sql.Date sqlFechaEstudiante= new java.sql.Date(utilFechaEstudiante.getTime());
+        
         
         String tipoAlergia=matricula.getJtxtalergia();
         boolean confirmacionAlergia;
@@ -68,17 +70,26 @@ public class SecretariaCtrl {
         String generoApoderado=matricula.getJcmbgeneroApoderado();
         
         java.util.Date utilFechaApoderado = matricula.getjDatenacimientoApoderado();
-        java.sql.Date sqlFechaApoderado = new java.sql.Date(utilFechaApoderado.getTime());
+        
                 
         
         String estado=matricula.getJcmbestado();
-        String fecha=matricula.getJtxtfecha();
         String diagnostico=matricula.getJListdiagnostico().getSelectedValue();
         String nivelFuncional=matricula.getJcmbnivelFuncional();
         String aulaAsignada=matricula.getJcmbaulaAsignada();
         String docenteCargo=matricula.getJcmbdocenteCargo();
         String observaciones=matricula.getJTextAreaobservaciones();
         double pension = 750;
+        
+        if(nombreAlumno.isEmpty() || apellidoAlumno.isEmpty() || dniAlumno.isEmpty() || generoAlumno.isEmpty() || utilFechaEstudiante == null
+           || nombreApoderado.isEmpty() || apellidoApoderado.isEmpty() || parentesco.isEmpty() || celular.isEmpty() || correo.isEmpty() || direccion.isEmpty() || generoApoderado.isEmpty()
+           || utilFechaApoderado==null || estado.isEmpty() || diagnostico.isEmpty() || nivelFuncional.isEmpty() || aulaAsignada.isEmpty() || docenteCargo.isEmpty() || observaciones.isEmpty()){
+            JOptionPane.showMessageDialog(matricula, "Digite los datos solicitados");
+            return;
+        }
+        
+        java.sql.Date sqlFechaEstudiante= new java.sql.Date(utilFechaEstudiante.getTime());
+        java.sql.Date sqlFechaApoderado = new java.sql.Date(utilFechaApoderado.getTime());
         
         Apoderado apoderado = new Apoderado (
             0, //id apoderado
@@ -194,6 +205,11 @@ public class SecretariaCtrl {
         aula=dao.obtenerAula(aula, docente, aulaAsignada);
         dao.registrarMatricula(aula, estudiante, estado, pension);
         
+        JOptionPane.showMessageDialog(matricula, "Matricula Realizada correctamente");
+        
+        matricula.dispose();
+        matricula = new Matricula();
+        matricula.setVisible(true);
         
         
         
@@ -434,7 +450,9 @@ public class SecretariaCtrl {
     private void cargarTablaAulas() {
         DefaultTableModel modelo = (DefaultTableModel) dashboard.getTbAlumnosDashboard().getModel();
         modelo.setRowCount(0);
+        
         dashboard.getJlblnombre().setText(SesionUsuario.getUsuarioActual().getNombres());
+        
         String num = Integer.toString(dao.numeroEstudiantes());
         dashboard.getJlbltotal().setText(num);
         num = Integer.toString(dao.numeroMatriculas());
@@ -458,4 +476,49 @@ public class SecretariaCtrl {
         }
     }
     
+    public String agregarNombre(){
+        System.out.println("Nombre usuario "+SesionUsuario.getUsuarioActual().getNombres());
+        
+        return SesionUsuario.getUsuarioActual().getNombres();
+    }
+    
+    public void llenarTablaEstudiantes(JTable tabla) {
+        DefaultTableModel modelo = (DefaultTableModel) tabla.getModel();
+        modelo.setRowCount(0); // Limpia la tabla antes de llenarla
+
+        List<String[]> estudiantes = dao.listarEstudiantesMatriculados();
+        for (String[] fila : estudiantes) {
+            modelo.addRow(fila);
+            }
+    }
+    
+    public void vaciarCampos(){
+        matricula.getNombresAlumno();
+        matricula.getApellidosAlumno();
+        matricula.getDniAlumno();
+        matricula.getGeneroAlumno();
+        
+        matricula.getJDatenacimientoAlumno();   
+        matricula.getJtxtalergia();
+        matricula.getjtxtmedicinas();
+        matricula.getJtxtnombreApoderado();
+        matricula.getJtxtapellidoApoderado();
+        matricula.getJtxtdniApoderado();
+        matricula.getJcmbparentesco();
+        matricula.getJtxtcelular();
+        matricula.getJtxtcorreo();
+        matricula.getJTextAreadireccion();
+        matricula.getJcmbgeneroApoderado();
+        
+        matricula.getjDatenacimientoApoderado();
+                
+        
+        matricula.getJcmbestado();
+        matricula.getJListdiagnostico().getSelectedValue();
+        matricula.getJcmbnivelFuncional();
+        matricula.getJcmbaulaAsignada();
+        matricula.getJcmbdocenteCargo();
+        matricula.getJTextAreaobservaciones();
+    }
 }
+

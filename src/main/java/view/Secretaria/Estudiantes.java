@@ -6,6 +6,7 @@ package view.Secretaria;
 
 import controller.SecretariaCtrl;
 import javax.swing.JLabel;
+import javax.swing.JTable;
 import view.Secretaria.DashboardMatricula;
 import view.Secretaria.Matricula;
 import view.Secretaria.ReportesMatricula;
@@ -20,6 +21,8 @@ public class Estudiantes extends javax.swing.JFrame {
     public Estudiantes() {
         initComponents();
         secretaria = new SecretariaCtrl(this);
+        secretaria.llenarTablaEstudiantes(jTableListaEstudiantes);
+        jlblnombre.setText(secretaria.agregarNombre());
     }
 
     public JLabel getJlblestudiantes() {
@@ -37,6 +40,20 @@ public class Estudiantes extends javax.swing.JFrame {
     public JLabel getJlblreportes() {
         return jlblreportes;
     }
+
+    public JTable getjTableListaEstudiantes() {
+        return jTableListaEstudiantes;
+    }
+
+    public void setjTableListaEstudiantes(JTable jTableListaEstudiantes) {
+        this.jTableListaEstudiantes = jTableListaEstudiantes;
+    }
+    
+    public javax.swing.JLabel getJlblnombre() {
+        return jlblnombre;
+    }
+    
+    
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -53,7 +70,7 @@ public class Estudiantes extends javax.swing.JFrame {
         jLabel23 = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        lbNomUsuario = new javax.swing.JLabel();
+        jlblnombre = new javax.swing.JLabel();
         mInicio1 = new javax.swing.JPanel();
         jlblinicio = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
@@ -69,7 +86,7 @@ public class Estudiantes extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jTableListaEstudiantes = new javax.swing.JTable();
         btnCrearTicket2 = new javax.swing.JButton();
         btnCrearTicket4 = new javax.swing.JButton();
         btnCrearTicket3 = new javax.swing.JButton();
@@ -141,13 +158,13 @@ public class Estudiantes extends javax.swing.JFrame {
         jLabel10.setText("Hola,");
         jPanel5.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 20, 40, -1));
 
-        lbNomUsuario.setFont(new java.awt.Font("Segoe UI Black", 0, 16)); // NOI18N
-        lbNomUsuario.setForeground(new java.awt.Color(51, 51, 51));
-        lbNomUsuario.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lbNomUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/User Alt3.png"))); // NOI18N
-        lbNomUsuario.setText("Evelyn Pascual");
-        lbNomUsuario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel5.add(lbNomUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 40, 170, -1));
+        jlblnombre.setFont(new java.awt.Font("Segoe UI Black", 0, 16)); // NOI18N
+        jlblnombre.setForeground(new java.awt.Color(51, 51, 51));
+        jlblnombre.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jlblnombre.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/User Alt3.png"))); // NOI18N
+        jlblnombre.setText("Evelyn Pascual");
+        jlblnombre.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel5.add(jlblnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 40, 170, -1));
 
         mInicio1.setBackground(new java.awt.Color(237, 237, 237));
         mInicio1.setForeground(new java.awt.Color(255, 255, 255));
@@ -322,8 +339,8 @@ public class Estudiantes extends javax.swing.JFrame {
 
         jScrollPane1.setBorder(null);
 
-        jTable1.setForeground(new java.awt.Color(51, 51, 51));
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jTableListaEstudiantes.setForeground(new java.awt.Color(51, 51, 51));
+        jTableListaEstudiantes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, "Pascual Caycho", "Evelyn Roxana", null, null, null, null, null, null},
                 {null, "Caceres", "Carlos", null, null, null, null, null, null},
@@ -349,13 +366,13 @@ public class Estudiantes extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jTable1.setFocusable(false);
-        jTable1.setGridColor(new java.awt.Color(204, 204, 204));
-        jTable1.setSelectionBackground(new java.awt.Color(66, 128, 191));
-        jTable1.setSelectionForeground(new java.awt.Color(255, 255, 255));
-        jTable1.setShowGrid(true);
-        jTable1.setShowVerticalLines(false);
-        jScrollPane1.setViewportView(jTable1);
+        jTableListaEstudiantes.setFocusable(false);
+        jTableListaEstudiantes.setGridColor(new java.awt.Color(204, 204, 204));
+        jTableListaEstudiantes.setSelectionBackground(new java.awt.Color(66, 128, 191));
+        jTableListaEstudiantes.setSelectionForeground(new java.awt.Color(255, 255, 255));
+        jTableListaEstudiantes.setShowGrid(true);
+        jTableListaEstudiantes.setShowVerticalLines(false);
+        jScrollPane1.setViewportView(jTableListaEstudiantes);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, 1140, 440));
 
@@ -492,12 +509,12 @@ public class Estudiantes extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTableListaEstudiantes;
     private javax.swing.JLabel jlblestudiantes;
     private javax.swing.JLabel jlblinicio;
     private javax.swing.JLabel jlblmatricula;
+    private javax.swing.JLabel jlblnombre;
     private javax.swing.JLabel jlblreportes;
-    private javax.swing.JLabel lbNomUsuario;
     private javax.swing.JPanel mEvaluaciones;
     private javax.swing.JPanel mIndividual;
     private javax.swing.JPanel mInicio1;

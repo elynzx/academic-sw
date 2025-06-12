@@ -17,6 +17,11 @@ public class ReportesMatricula extends javax.swing.JFrame {
     public ReportesMatricula() {
         initComponents();
         secretaria = new SecretariaCtrl(this);
+        jlblnombre.setText(secretaria.agregarNombre());
+    }
+    
+    public javax.swing.JLabel getJlblnombre() {
+        return jlblnombre;
     }
 
     public JLabel getJlblestudiantes() {
@@ -46,7 +51,7 @@ public class ReportesMatricula extends javax.swing.JFrame {
         jLabel23 = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        lbNomUsuario = new javax.swing.JLabel();
+        jlblnombre = new javax.swing.JLabel();
         mInicio1 = new javax.swing.JPanel();
         jlblinicio = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
@@ -139,13 +144,13 @@ public class ReportesMatricula extends javax.swing.JFrame {
         jLabel10.setText("Hola,");
         jPanel5.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 20, 40, -1));
 
-        lbNomUsuario.setFont(new java.awt.Font("Segoe UI Black", 0, 16)); // NOI18N
-        lbNomUsuario.setForeground(new java.awt.Color(51, 51, 51));
-        lbNomUsuario.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lbNomUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/User Alt3.png"))); // NOI18N
-        lbNomUsuario.setText("Evelyn Pascual");
-        lbNomUsuario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel5.add(lbNomUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 40, 170, -1));
+        jlblnombre.setFont(new java.awt.Font("Segoe UI Black", 0, 16)); // NOI18N
+        jlblnombre.setForeground(new java.awt.Color(51, 51, 51));
+        jlblnombre.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jlblnombre.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/User Alt3.png"))); // NOI18N
+        jlblnombre.setText("Evelyn Pascual");
+        jlblnombre.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel5.add(jlblnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 40, 170, -1));
 
         mInicio1.setBackground(new java.awt.Color(237, 237, 237));
         mInicio1.setForeground(new java.awt.Color(255, 255, 255));
@@ -612,12 +617,12 @@ public class ReportesMatricula extends javax.swing.JFrame {
     private javax.swing.JLabel jlblestudiantes;
     private javax.swing.JLabel jlblinicio;
     private javax.swing.JLabel jlblmatricula;
+    private javax.swing.JLabel jlblnombre;
     private javax.swing.JLabel jlblreportes;
     private javax.swing.JLabel lbNivel10;
     private javax.swing.JLabel lbNivel11;
     private javax.swing.JLabel lbNivel12;
     private javax.swing.JLabel lbNivel13;
-    private javax.swing.JLabel lbNomUsuario;
     private javax.swing.JPanel mEvaluaciones;
     private javax.swing.JPanel mIndividual;
     private javax.swing.JPanel mInicio1;

@@ -11,7 +11,10 @@
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
         <exec.mainClass>project.main.SistemaInclusivo</exec.mainClass>
+        <itext.version>9.1.0</itext.version>
     </properties>
+    
+
     
     <name>SistemaInclusivo</name>
     
@@ -60,6 +63,21 @@
             <artifactId>jcalendar</artifactId>
             <version>1.4</version>
         </dependency>
+        
+        <dependency>
+            <groupId>com.itextpdf</groupId>
+            <artifactId>itext-core</artifactId>
+            <version>${itext.version}</version>
+            <type>pom</type>
+        </dependency>
+    
+        <dependency>
+            <groupId>com.itextpdf</groupId>
+            <artifactId>bouncy-castle-adapter</artifactId>
+            <version>${itext.version}</version>
+        </dependency>
+        
+        
         
     </dependencies>
     
