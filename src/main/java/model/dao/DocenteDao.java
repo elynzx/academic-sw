@@ -1,5 +1,8 @@
+
 package model.dao;
 
+import com.google.common.base.Preconditions;
+import com.google.common.collect.ImmutableList;
 import configuration.Conexion;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -30,6 +33,8 @@ public class DocenteDao implements IDocenteDao {
 
     @Override
     public Aula obtenerDatosAula(int idDocente) {
+        Preconditions.checkArgument(idDocente > 0, "El ID del docente debe ser mayor a 0");
+
         String sql = "SELECT a.id_aula, a.nombre, nf.id_nivel, nf.nombre AS nivel_funcional, "
                 + "d.id_diagnostico, d.nombre AS diagnostico, a.vacantes_totales, a.vacantes_disponibles "
                 + "FROM aula a "
@@ -74,7 +79,7 @@ public class DocenteDao implements IDocenteDao {
 
     @Override
     public List<Estudiante> obtenerListaEstudiantes(int idDocente) {
-        List<Estudiante> listaEstdudiantes = new ArrayList<>();
+        List<Estudiante> listaEstudiantes = new ArrayList<>();
         String sql = "SELECT e.id_estudiante, p.nombres, p.apellidos "
                 + "FROM estudiante e "
                 + "JOIN persona p ON e.id_persona = p.id_persona "
@@ -87,17 +92,13 @@ public class DocenteDao implements IDocenteDao {
             ResultSet rs = pst.executeQuery();
 
             while (rs.next()) {
-                Estudiante estudiante = new Estudiante(
-                        rs.getInt("id_estudiante"),
-                        rs.getString("nombres"),
-                        rs.getString("apellidos")
-                );
-                listaEstdudiantes.add(estudiante);
+                listaEstudiantes.add(new Estudiante(rs.getInt("id_estudiante"), rs.getString("nombres"), rs.getString("apellidos")));
             }
         } catch (Exception e) {
-            System.out.println("Error al obtener la lista de estudiantes: : " + e.getMessage());
+            System.out.println("Error al obtener la lista de estudiantes: " + e.getMessage());
         }
-        return listaEstdudiantes;
+
+        return ImmutableList.copyOf(listaEstudiantes);
     }
 
     @Override

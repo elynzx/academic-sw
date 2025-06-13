@@ -241,7 +241,7 @@ public class FichaAbcView extends javax.swing.JPanel {
         lbNivel12.setFont(new java.awt.Font("Segoe UI", 1, 22)); // NOI18N
         lbNivel12.setForeground(new java.awt.Color(255, 255, 255));
         lbNivel12.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lbNivel12.setText("2. Ficha ABC");
+        lbNivel12.setText("Ficha ABC");
         lbNivel12.setPreferredSize(new java.awt.Dimension(70, 25));
         jPanel6.add(lbNivel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 26, 247, -1));
 

@@ -90,6 +90,7 @@ public class DashboardView extends javax.swing.JPanel {
 
         jpDashboardDocente = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
         jPanel8 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         lbEstudiante = new javax.swing.JLabel();
@@ -102,18 +103,15 @@ public class DashboardView extends javax.swing.JPanel {
         jPanel15 = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
         lbAula = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
+        lbNivel13 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jlHistorialRegistros = new javax.swing.JList<>();
-        lbNivel13 = new javax.swing.JLabel();
         lbFechaHoy = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jPanel11 = new javax.swing.JPanel();
         jScrollPane4 = new javax.swing.JScrollPane();
         jlTopIncidentes = new javax.swing.JList<>();
         lbNivel6 = new javax.swing.JLabel();
-        lbNivel12 = new javax.swing.JLabel();
-        btnAsistencia = new javax.swing.JButton();
         jPanel16 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tbEstudiantesDashboard = new javax.swing.JTable();
@@ -128,6 +126,8 @@ public class DashboardView extends javax.swing.JPanel {
         jLabel32 = new javax.swing.JLabel();
         jScrollPane5 = new javax.swing.JScrollPane();
         txtObserv = new javax.swing.JTextArea();
+        lbNivel12 = new javax.swing.JLabel();
+        btnAsistencia = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
 
         setMinimumSize(new java.awt.Dimension(1250, 734));
@@ -138,8 +138,16 @@ public class DashboardView extends javax.swing.JPanel {
         jpDashboardDocente.setPreferredSize(new java.awt.Dimension(1250, 734));
         jpDashboardDocente.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(221, 227, 241));
+        jPanel1.setBackground(new java.awt.Color(214, 223, 235));
         jPanel1.setPreferredSize(new java.awt.Dimension(1250, 243));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel7.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(39, 84, 138));
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel7.setText("Dashboard de Docente");
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 23, 758, -1));
 
         jPanel8.setBackground(new java.awt.Color(23, 50, 78));
         jPanel8.setForeground(new java.awt.Color(255, 255, 255));
@@ -167,7 +175,7 @@ public class DashboardView extends javax.swing.JPanel {
                 .addGap(0, 0, 0)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lbEstudiante, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, 176, Short.MAX_VALUE))
+                    .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE))
                 .addGap(0, 0, 0))
         );
         jPanel8Layout.setVerticalGroup(
@@ -179,6 +187,8 @@ public class DashboardView extends javax.swing.JPanel {
                 .addComponent(lbEstudiante)
                 .addContainerGap(10, Short.MAX_VALUE))
         );
+
+        jPanel1.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 110, 170, 90));
 
         jPanel13.setBackground(new java.awt.Color(23, 64, 112));
         jPanel13.setForeground(new java.awt.Color(255, 255, 255));
@@ -206,7 +216,7 @@ public class DashboardView extends javax.swing.JPanel {
                 .addGap(0, 0, 0)
                 .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lbAsistentes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, 176, Short.MAX_VALUE))
+                    .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE))
                 .addGap(0, 0, 0))
         );
         jPanel13Layout.setVerticalGroup(
@@ -218,6 +228,8 @@ public class DashboardView extends javax.swing.JPanel {
                 .addComponent(lbAsistentes)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        jPanel1.add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 110, 170, 90));
 
         jPanel14.setBackground(new java.awt.Color(45, 94, 152));
         jPanel14.setForeground(new java.awt.Color(255, 255, 255));
@@ -245,7 +257,7 @@ public class DashboardView extends javax.swing.JPanel {
                 .addGap(0, 0, 0)
                 .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lbNivel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, 176, Short.MAX_VALUE))
+                    .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE))
                 .addGap(0, 0, 0))
         );
         jPanel14Layout.setVerticalGroup(
@@ -257,6 +269,8 @@ public class DashboardView extends javax.swing.JPanel {
                 .addComponent(lbNivel)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        jPanel1.add(jPanel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 110, 170, 90));
 
         jPanel15.setBackground(new java.awt.Color(81, 124, 191));
         jPanel15.setForeground(new java.awt.Color(255, 255, 255));
@@ -270,7 +284,7 @@ public class DashboardView extends javax.swing.JPanel {
         jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Group_fill-2.png"))); // NOI18N
         jLabel13.setText("Nombre de Aula");
 
-        lbAula.setFont(new java.awt.Font("Segoe UI", 1, 28)); // NOI18N
+        lbAula.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         lbAula.setForeground(new java.awt.Color(255, 255, 255));
         lbAula.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbAula.setText("-");
@@ -284,7 +298,7 @@ public class DashboardView extends javax.swing.JPanel {
                 .addGap(0, 0, 0)
                 .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lbAula, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, 176, Short.MAX_VALUE))
+                    .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE))
                 .addGap(0, 0, 0))
         );
         jPanel15Layout.setVerticalGroup(
@@ -297,11 +311,17 @@ public class DashboardView extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jLabel7.setBackground(new java.awt.Color(51, 51, 51));
-        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(39, 84, 138));
-        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel7.setText("Dashboard de Docente");
+        jPanel1.add(jPanel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 110, 170, 90));
+
+        lbNivel13.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lbNivel13.setForeground(new java.awt.Color(39, 84, 138));
+        lbNivel13.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lbNivel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Edit_fill-1_1.png"))); // NOI18N
+        lbNivel13.setText("Mi actividad reciente:");
+        lbNivel13.setToolTipText("");
+        lbNivel13.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        lbNivel13.setPreferredSize(new java.awt.Dimension(70, 25));
+        jPanel1.add(lbNivel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 250, 30));
 
         jlHistorialRegistros.setBorder(null);
         jlHistorialRegistros.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
@@ -316,67 +336,16 @@ public class DashboardView extends javax.swing.JPanel {
         jlHistorialRegistros.setSelectionForeground(new java.awt.Color(255, 255, 255));
         jScrollPane2.setViewportView(jlHistorialRegistros);
 
-        lbNivel13.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        lbNivel13.setForeground(new java.awt.Color(39, 84, 138));
-        lbNivel13.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lbNivel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Edit_fill-1_1.png"))); // NOI18N
-        lbNivel13.setText("Mi actividad reciente:");
-        lbNivel13.setToolTipText("");
-        lbNivel13.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        lbNivel13.setPreferredSize(new java.awt.Dimension(70, 25));
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, 410, 90));
 
-        lbFechaHoy.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
+        lbFechaHoy.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         lbFechaHoy.setForeground(new java.awt.Color(39, 84, 138));
-        lbFechaHoy.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lbFechaHoy.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lbFechaHoy.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Date_fill-1_1.png"))); // NOI18N
         lbFechaHoy.setText("Fecha de hoy");
+        jPanel1.add(lbFechaHoy, new org.netbeans.lib.awtextra.AbsoluteConstraints(738, 36, 456, 40));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(44, 44, 44)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jPanel15, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lbNivel13, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lbFechaHoy, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(49, 49, 49))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(lbFechaHoy, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lbNivel13, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(jPanel15, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE)
-                        .addComponent(jPanel14, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE)
-                        .addComponent(jPanel13, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE)
-                        .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(32, 32, 32))
-        );
-
-        jpDashboardDocente.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1250, 200));
+        jpDashboardDocente.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1250, 220));
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(229, 229, 229)));
@@ -389,7 +358,7 @@ public class DashboardView extends javax.swing.JPanel {
         );
         jPanel11Layout.setVerticalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 242, Short.MAX_VALUE)
+            .addGap(0, 220, Short.MAX_VALUE)
         );
 
         jlTopIncidentes.setBorder(null);
@@ -425,59 +394,37 @@ public class DashboardView extends javax.swing.JPanel {
                     .addComponent(lbNivel6, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 219, Short.MAX_VALUE)
                     .addComponent(jPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(17, 17, 17)
-                .addComponent(lbNivel6, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lbNivel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(1, 1, 1)
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addContainerGap(37, Short.MAX_VALUE))
         );
 
-        jpDashboardDocente.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 230, 260, 420));
+        jpDashboardDocente.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, 260, 410));
 
-        lbNivel12.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        lbNivel12.setForeground(new java.awt.Color(39, 84, 138));
-        lbNivel12.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lbNivel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/pie_chart_fill-2.png"))); // NOI18N
-        lbNivel12.setText("Métricas de estudiante");
-        lbNivel12.setToolTipText("");
-        lbNivel12.setPreferredSize(new java.awt.Dimension(70, 25));
-        jpDashboardDocente.add(lbNivel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 230, 300, 40));
-
-        btnAsistencia.setBackground(new java.awt.Color(221, 168, 83));
-        btnAsistencia.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btnAsistencia.setForeground(new java.awt.Color(255, 255, 255));
-        btnAsistencia.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Tumer-2.png"))); // NOI18N
-        btnAsistencia.setText("ASISTENCIA");
-        btnAsistencia.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-        btnAsistencia.setBorderPainted(false);
-        btnAsistencia.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnAsistencia.setFocusPainted(false);
-        btnAsistencia.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAsistenciaActionPerformed(evt);
-            }
-        });
-        jpDashboardDocente.add(btnAsistencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 220, 170, 50));
+        jPanel16.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel16.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(229, 229, 229)));
 
         javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
         jPanel16.setLayout(jPanel16Layout);
         jPanel16Layout.setHorizontalGroup(
             jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 310, Short.MAX_VALUE)
+            .addGap(0, 308, Short.MAX_VALUE)
         );
         jPanel16Layout.setVerticalGroup(
             jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 328, Short.MAX_VALUE)
         );
 
-        jpDashboardDocente.add(jPanel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 310, 310, 340));
+        jpDashboardDocente.add(jPanel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 320, 310, 330));
 
         tbEstudiantesDashboard.setForeground(new java.awt.Color(51, 51, 51));
         tbEstudiantesDashboard.setModel(new javax.swing.table.DefaultTableModel(
@@ -516,65 +463,70 @@ public class DashboardView extends javax.swing.JPanel {
         tbEstudiantesDashboard.setShowHorizontalLines(true);
         jScrollPane1.setViewportView(tbEstudiantesDashboard);
 
-        jpDashboardDocente.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 310, 240, 340));
+        jpDashboardDocente.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 320, 250, 330));
 
         jLabel33.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
         jLabel33.setForeground(new java.awt.Color(51, 51, 51));
         jLabel33.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel33.setText("Edad:");
-        jpDashboardDocente.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 310, 39, -1));
+        jLabel33.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        jpDashboardDocente.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 330, 39, 20));
 
         txtEdad.setForeground(new java.awt.Color(51, 51, 51));
         txtEdad.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         txtEdad.setDisabledTextColor(new java.awt.Color(51, 51, 51));
-        jpDashboardDocente.add(txtEdad, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 330, 82, 25));
+        jpDashboardDocente.add(txtEdad, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 350, 82, 25));
 
         jLabel30.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
         jLabel30.setForeground(new java.awt.Color(51, 51, 51));
         jLabel30.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel30.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/flash-1.png"))); // NOI18N
         jLabel30.setText("Alergias:");
-        jpDashboardDocente.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 370, 101, 16));
+        jLabel30.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        jpDashboardDocente.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 380, 101, 20));
 
         txtAlergias.setEditable(false);
         txtAlergias.setBackground(new java.awt.Color(255, 255, 255));
         txtAlergias.setForeground(new java.awt.Color(51, 51, 51));
         txtAlergias.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         txtAlergias.setDisabledTextColor(new java.awt.Color(51, 51, 51));
-        jpDashboardDocente.add(txtAlergias, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 390, 240, 25));
+        jpDashboardDocente.add(txtAlergias, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 400, 240, 25));
 
         jLabel31.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
         jLabel31.setForeground(new java.awt.Color(51, 51, 51));
         jLabel31.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/pil-1.png"))); // NOI18N
         jLabel31.setText("Medicinas:");
-        jpDashboardDocente.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 420, 114, 16));
+        jLabel31.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        jpDashboardDocente.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 440, 114, 20));
 
         txtMedicinas.setEditable(false);
         txtMedicinas.setBackground(new java.awt.Color(255, 255, 255));
         txtMedicinas.setForeground(new java.awt.Color(51, 51, 51));
         txtMedicinas.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         txtMedicinas.setDisabledTextColor(new java.awt.Color(51, 51, 51));
-        jpDashboardDocente.add(txtMedicinas, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 450, 240, 25));
+        jpDashboardDocente.add(txtMedicinas, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 460, 240, 25));
 
         jLabel29.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
         jLabel29.setForeground(new java.awt.Color(51, 51, 51));
         jLabel29.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel29.setText("Diagnóstico:");
-        jpDashboardDocente.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 480, 93, 16));
+        jLabel29.setText("Diagnósticos:");
+        jLabel29.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        jpDashboardDocente.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 500, 93, 20));
 
         txtDiagnostico.setEditable(false);
         txtDiagnostico.setBackground(new java.awt.Color(255, 255, 255));
         txtDiagnostico.setForeground(new java.awt.Color(51, 51, 51));
         txtDiagnostico.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         txtDiagnostico.setDisabledTextColor(new java.awt.Color(51, 51, 51));
-        jpDashboardDocente.add(txtDiagnostico, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 510, 240, 25));
+        jpDashboardDocente.add(txtDiagnostico, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 520, 240, 25));
 
         jLabel32.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
         jLabel32.setForeground(new java.awt.Color(51, 51, 51));
         jLabel32.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel32.setText("Observación:");
-        jpDashboardDocente.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 550, 114, 16));
+        jLabel32.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        jpDashboardDocente.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 560, 114, 20));
 
         txtObserv.setEditable(false);
         txtObserv.setBackground(new java.awt.Color(255, 255, 255));
@@ -587,10 +539,36 @@ public class DashboardView extends javax.swing.JPanel {
         txtObserv.setEnabled(false);
         jScrollPane5.setViewportView(txtObserv);
 
-        jpDashboardDocente.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 570, 240, 80));
+        jpDashboardDocente.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 580, 240, 70));
+
+        lbNivel12.setFont(new java.awt.Font("Segoe UI", 1, 22)); // NOI18N
+        lbNivel12.setForeground(new java.awt.Color(39, 84, 138));
+        lbNivel12.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lbNivel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/pie_chart_fill-2.png"))); // NOI18N
+        lbNivel12.setText("Métricas de estudiante");
+        lbNivel12.setToolTipText("");
+        lbNivel12.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        lbNivel12.setPreferredSize(new java.awt.Dimension(70, 25));
+        jpDashboardDocente.add(lbNivel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 250, 300, 50));
+
+        btnAsistencia.setBackground(new java.awt.Color(221, 168, 83));
+        btnAsistencia.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnAsistencia.setForeground(new java.awt.Color(255, 255, 255));
+        btnAsistencia.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Tumer-2.png"))); // NOI18N
+        btnAsistencia.setText("ASISTENCIA");
+        btnAsistencia.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        btnAsistencia.setBorderPainted(false);
+        btnAsistencia.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsistencia.setFocusPainted(false);
+        btnAsistencia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAsistenciaActionPerformed(evt);
+            }
+        });
+        jpDashboardDocente.add(btnAsistencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 240, 170, 50));
 
         jSeparator1.setForeground(new java.awt.Color(204, 204, 204));
-        jpDashboardDocente.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 290, 850, 10));
+        jpDashboardDocente.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 300, 850, 10));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);

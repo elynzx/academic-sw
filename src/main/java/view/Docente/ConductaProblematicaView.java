@@ -139,7 +139,7 @@ public class ConductaProblematicaView extends javax.swing.JPanel {
         lbNivel8.setFont(new java.awt.Font("Segoe UI", 1, 22)); // NOI18N
         lbNivel8.setForeground(new java.awt.Color(255, 255, 255));
         lbNivel8.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lbNivel8.setText("1. Conducta Problemática");
+        lbNivel8.setText("Conducta Problemática");
         lbNivel8.setPreferredSize(new java.awt.Dimension(70, 25));
         jPanel4.add(lbNivel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 26, 284, -1));
 

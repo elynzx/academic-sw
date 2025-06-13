@@ -4,12 +4,11 @@
  */
 package view.Docente;
 
-import com.google.common.base.Preconditions;
-import com.google.common.base.Strings;
 import java.sql.Date;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.ZoneId;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 import javax.swing.JOptionPane;
@@ -29,6 +28,8 @@ import model.funcionalidad.ResumenIncidentes;
 import model.funcionalidad.catalogo.Diagnostico;
 import model.funcionalidad.catalogo.FuncionComportamiento;
 import model.funcionalidad.catalogo.TipoConducta;
+import utillities.ExcelResumenIncidentes;
+import utillities.ExcelHistorialIntervenciones;
 import utillities.Utilidad;
 
 /**
@@ -39,13 +40,16 @@ public class PlanIndividualView extends javax.swing.JPanel {
 
     private IRegistroIncidente registroIncidenteDao = new RegistroIncidenteDao();
     private IPlanIndividual planIndividualDao = new PlanIndividualDao();
-
+    private List<ResumenIncidentes> listaResumenIncidentes = new ArrayList<>();
+    private List<PlanIntervencion> listaPlanes = new ArrayList<>();
     private IEstudianteDao estudianteDao = EstudianteDao.obtenerInstancia();
     private IDocenteDao docenteDao = DocenteDao.obtenerInstancia();
     private int idDocente;
     private Utilidad utilidad = new Utilidad();
     private int idEstudianteSeleccionado;
+    private Estudiante estudianteSeleccionado;
     private FuncionComportamiento funcionComportamiento;
+    private boolean listaEstudiantesInicializado = false;
 
     public PlanIndividualView(int idDocente) {
         this.idDocente = idDocente;
@@ -78,25 +82,20 @@ public class PlanIndividualView extends javax.swing.JPanel {
     }
 
     private void cargarResumenIncidentes(int idEstudiante) {
-        DefaultTableModel modelo = new DefaultTableModel();
 
-        modelo.addColumn("Conducta problemática");
-        modelo.addColumn("Frecuencia en 14 días");
-        modelo.addColumn("Gravedad promedio");
-        modelo.addColumn("Funcion de comportamiento");
-
-        List<ResumenIncidentes> listaResumen = planIndividualDao.obtenerResumenIncidentes(idEstudiante);
+        listaResumenIncidentes = planIndividualDao.obtenerResumenIncidentes(idEstudiante);
+        DefaultTableModel modelo = (DefaultTableModel) tbResumenIncidentes.getModel();
         modelo.setRowCount(0);
 
-        for (ResumenIncidentes incidente : listaResumen) {
+        for (ResumenIncidentes incidente : listaResumenIncidentes) {
             modelo.addRow(new Object[]{
                 incidente.getTipoConducta().getNombre(),
                 incidente.getFrecuencia(),
                 incidente.getGravedadPromedio(),
-                incidente.getUltComportamiento(),});
+                incidente.getUltComportamiento()
+            });
         }
 
-        tbResumenIncidentes.setModel(modelo);
     }
 
     private String calcularEstadoPlan(Date fechaInicio) {
@@ -121,13 +120,10 @@ public class PlanIndividualView extends javax.swing.JPanel {
     }
 
     private void cargarHistorialIntervenciones(int idEstudiante) {
-        DefaultTableModel modelo = new DefaultTableModel();
-        modelo.addColumn("Fecha Inicio");
-        modelo.addColumn("Conducta Problemática intervenida");
-        modelo.addColumn("Estrategia aplicada");
-        modelo.addColumn("Estado actual");
 
-        List<PlanIntervencion> listaPlanes = planIndividualDao.obtenerHistorialPlanes(idEstudiante);
+        listaPlanes = planIndividualDao.obtenerHistorialPlanes(idEstudiante);
+
+        DefaultTableModel modelo = (DefaultTableModel) tbHistorialIntervenciones.getModel();
         modelo.setRowCount(0);
 
         for (PlanIntervencion plan : listaPlanes) {
@@ -139,7 +135,6 @@ public class PlanIndividualView extends javax.swing.JPanel {
             });
         }
 
-        tbHistorialIntervenciones.setModel(modelo);
     }
 
     private void cargarConductasEstudiante(int idEstudiante) {
@@ -158,6 +153,13 @@ public class PlanIndividualView extends javax.swing.JPanel {
         }
     }
 
+    private void limpiarSeccionPlan() {
+        cbEstrategiaIntervencion.setSelectedIndex(0);
+        cbTipoConducta.setSelectedIndex(0);
+        txtFuncionComportamiento.setText("");
+        txtObjetivoPlan.setText("");
+        txtObsPlan.setText("");
+    }
 
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -180,6 +182,8 @@ public class PlanIndividualView extends javax.swing.JPanel {
         txtNombreEstudiante = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
         lbNivel6 = new javax.swing.JLabel();
+        descargaResumen = new javax.swing.JLabel();
+        descargaHistorial = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         lbNivel1 = new javax.swing.JLabel();
         lbNivel4 = new javax.swing.JLabel();
@@ -209,6 +213,7 @@ public class PlanIndividualView extends javax.swing.JPanel {
         jpDashboardDocente.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         cbListaEstudiantes.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         cbListaEstudiantes.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
@@ -218,17 +223,21 @@ public class PlanIndividualView extends javax.swing.JPanel {
                 cbListaEstudiantesActionPerformed(evt);
             }
         });
+        jPanel3.add(cbListaEstudiantes, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 50, 240, 30));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel4.setText("Selecciona el Estudiante:");
+        jLabel4.setText("Selecciona un estudiante:");
+        jLabel4.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 30, 152, 20));
 
-        lbNivel9.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        lbNivel9.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         lbNivel9.setForeground(new java.awt.Color(39, 84, 138));
         lbNivel9.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lbNivel9.setText("Resumen de Incidentes");
         lbNivel9.setToolTipText("");
         lbNivel9.setPreferredSize(new java.awt.Dimension(70, 25));
+        jPanel3.add(lbNivel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 340, 30));
 
         tbResumenIncidentes.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         tbResumenIncidentes.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -238,7 +247,7 @@ public class PlanIndividualView extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Tipo de Conducta", "Frecuencia en 14 días", "Gravedad Promedio", "Función más frecuente"
+                "Conducta problemática", "Frecuencia en 14 días", "Gravedad Promedio", "Última función registrada"
             }
         ) {
             Class[] types = new Class [] {
@@ -260,12 +269,15 @@ public class PlanIndividualView extends javax.swing.JPanel {
         tbResumenIncidentes.setSelectionBackground(new java.awt.Color(247, 173, 213));
         jScrollPane3.setViewportView(tbResumenIncidentes);
 
-        lbNivel10.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        jPanel3.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 630, 130));
+
+        lbNivel10.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         lbNivel10.setForeground(new java.awt.Color(39, 84, 138));
         lbNivel10.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lbNivel10.setText("Historial de Intervenciones Aplicadas");
         lbNivel10.setToolTipText("");
         lbNivel10.setPreferredSize(new java.awt.Dimension(70, 25));
+        jPanel3.add(lbNivel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 380, 340, 30));
 
         tbHistorialIntervenciones.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         tbHistorialIntervenciones.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -275,14 +287,14 @@ public class PlanIndividualView extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Fecha", "Conducta Intervenida", "Estrategia"
+                "Fecha Inicio", "Conducta Intervenida", "Estrategiavaplicada", "Estado actual"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, true, true
+                false, true, true, true
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -297,119 +309,79 @@ public class PlanIndividualView extends javax.swing.JPanel {
         tbHistorialIntervenciones.setSelectionBackground(new java.awt.Color(247, 173, 213));
         jScrollPane4.setViewportView(tbHistorialIntervenciones);
 
+        jPanel3.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 414, 630, 134));
+
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(51, 51, 51));
         jLabel3.setText("Diagnósticos:");
+        jLabel3.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 90, 240, 20));
 
         txtDiagnosticoEstudiante.setEditable(false);
         txtDiagnosticoEstudiante.setBackground(new java.awt.Color(255, 255, 255));
         txtDiagnosticoEstudiante.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         txtDiagnosticoEstudiante.setForeground(new java.awt.Color(51, 51, 51));
         txtDiagnosticoEstudiante.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
+        jPanel3.add(txtDiagnosticoEstudiante, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 110, 240, 25));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(51, 51, 51));
         jLabel6.setText("ID:");
+        jLabel6.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        jPanel3.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 20, 20));
 
         txtIdEstudiante.setEditable(false);
         txtIdEstudiante.setBackground(new java.awt.Color(255, 255, 255));
         txtIdEstudiante.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         txtIdEstudiante.setForeground(new java.awt.Color(51, 51, 51));
         txtIdEstudiante.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
+        jPanel3.add(txtIdEstudiante, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 110, 25));
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(51, 51, 51));
         jLabel9.setText("Nombres y apellidos:");
+        jLabel9.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        jPanel3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 90, 111, 20));
 
         txtNombreEstudiante.setEditable(false);
         txtNombreEstudiante.setBackground(new java.awt.Color(255, 255, 255));
         txtNombreEstudiante.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         txtNombreEstudiante.setForeground(new java.awt.Color(51, 51, 51));
         txtNombreEstudiante.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
+        jPanel3.add(txtNombreEstudiante, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 110, 240, 25));
 
         jSeparator1.setForeground(new java.awt.Color(204, 204, 204));
+        jPanel3.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, 628, 10));
 
         lbNivel6.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         lbNivel6.setForeground(new java.awt.Color(39, 84, 138));
         lbNivel6.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lbNivel6.setText("Datos de estudiante");
+        lbNivel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/User_fill-2.png"))); // NOI18N
+        lbNivel6.setText("Datos de estudiante:");
         lbNivel6.setToolTipText("");
         lbNivel6.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         lbNivel6.setPreferredSize(new java.awt.Dimension(70, 25));
+        jPanel3.add(lbNivel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 330, 50));
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(lbNivel10, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel3Layout.createSequentialGroup()
-                                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(0, 85, Short.MAX_VALUE))
-                                    .addComponent(txtIdEstudiante))
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtNombreEstudiante, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 263, Short.MAX_VALUE)
-                                    .addComponent(txtDiagnosticoEstudiante)))
-                            .addComponent(jScrollPane4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 689, Short.MAX_VALUE)
-                            .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
-                                .addComponent(lbNivel9, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(lbNivel6, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(cbListaEstudiantes, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(24, 24, 24))))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, 0)
-                        .addComponent(cbListaEstudiantes, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(lbNivel6, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(15, 15, 15)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(txtNombreEstudiante, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtIdEstudiante, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtDiagnosticoEstudiante, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lbNivel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(lbNivel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32))
-        );
+        descargaResumen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Import-2.png"))); // NOI18N
+        descargaResumen.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        descargaResumen.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                descargaResumenMouseClicked(evt);
+            }
+        });
+        jPanel3.add(descargaResumen, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 200, 33, 25));
 
-        jpDashboardDocente.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 740, 580));
+        descargaHistorial.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Import-2.png"))); // NOI18N
+        descargaHistorial.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        descargaHistorial.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                descargaHistorialMouseClicked(evt);
+            }
+        });
+        jPanel3.add(descargaHistorial, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 380, 33, 25));
+
+        jpDashboardDocente.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 680, 580));
 
         jPanel4.setBackground(new java.awt.Color(45, 94, 152));
 
@@ -468,11 +440,13 @@ public class PlanIndividualView extends javax.swing.JPanel {
         lbNivel5.setText("Estrategia de Intervención");
         lbNivel5.setPreferredSize(new java.awt.Dimension(70, 25));
 
+        chkImplementacion.setBackground(new java.awt.Color(45, 94, 152));
         chkImplementacion.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
         chkImplementacion.setForeground(new java.awt.Color(255, 255, 255));
         chkImplementacion.setText("Sí");
         chkImplementacion.setEnabled(false);
         chkImplementacion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        chkImplementacion.setOpaque(true);
 
         lbNivel13.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
         lbNivel13.setForeground(new java.awt.Color(255, 255, 255));
@@ -521,37 +495,41 @@ public class PlanIndividualView extends javax.swing.JPanel {
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap(35, Short.MAX_VALUE)
+                .addContainerGap(38, Short.MAX_VALUE)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lbNivel8, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lbNivel4, javax.swing.GroupLayout.PREFERRED_SIZE, 306, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lbNivel1, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lbNivel3, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(cbEstrategiaIntervencion, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnGuardarPlan, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                            .addComponent(lbNivel5, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(lbNivel13, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(chkImplementacion, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                            .addComponent(lbNivel7, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(77, 77, 77)
-                            .addComponent(lbNivel11, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(cbTipoConducta, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(txtFuncionComportamiento, javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jScrollPane6, javax.swing.GroupLayout.Alignment.TRAILING)))
-                .addContainerGap(42, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                        .addComponent(lbNivel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                        .addComponent(lbNivel8, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(156, Short.MAX_VALUE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lbNivel7, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(lbNivel11, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(cbEstrategiaIntervencion, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtFuncionComportamiento, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(cbTipoConducta, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lbNivel3, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lbNivel1, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lbNivel4, javax.swing.GroupLayout.PREFERRED_SIZE, 338, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPanel4Layout.createSequentialGroup()
+                                    .addComponent(lbNivel13, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(chkImplementacion, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(btnGuardarPlan, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 37, Short.MAX_VALUE))))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(30, 30, 30)
                 .addComponent(lbNivel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
+                .addGap(31, 31, 31)
                 .addComponent(lbNivel4, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(cbTipoConducta, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -578,10 +556,10 @@ public class PlanIndividualView extends javax.swing.JPanel {
                 .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnGuardarPlan, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(31, Short.MAX_VALUE))
+                .addContainerGap(27, Short.MAX_VALUE))
         );
 
-        jpDashboardDocente.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 110, 420, 540));
+        jpDashboardDocente.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 110, 450, 540));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setPreferredSize(new java.awt.Dimension(1250, 243));
@@ -622,9 +600,18 @@ public class PlanIndividualView extends javax.swing.JPanel {
 
     private void cbListaEstudiantesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbListaEstudiantesActionPerformed
 
+        if (!listaEstudiantesInicializado) {
+            listaEstudiantesInicializado = true;
+            return;
+        }
+
         Estudiante estudiante = (Estudiante) cbListaEstudiantes.getSelectedItem();
         if (estudiante != null) {
+
+            estudiante = estudianteDao.obtenerDatosEstudiante(estudiante.getIdEstudiante());
+            estudianteSeleccionado = estudiante;
             idEstudianteSeleccionado = estudiante.getIdEstudiante();
+
             mostrarDatosEstudiante(idEstudianteSeleccionado);
             cargarHistorialIntervenciones(idEstudianteSeleccionado);
             cargarResumenIncidentes(idEstudianteSeleccionado);
@@ -673,7 +660,32 @@ public class PlanIndividualView extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, "Error al registrar el plan de intervención.");
         }
 
+        cargarHistorialIntervenciones(idDocente);
+        limpiarSeccionPlan();
+
     }//GEN-LAST:event_btnGuardarPlanActionPerformed
+
+    private void descargaResumenMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_descargaResumenMouseClicked
+
+        if (listaResumenIncidentes == null || listaResumenIncidentes.isEmpty()) {
+            JOptionPane.showMessageDialog(PlanIndividualView.this, "No hay datos para exportar.");
+            return;
+        }
+        ExcelResumenIncidentes.exportarResumen(listaResumenIncidentes, estudianteSeleccionado, PlanIndividualView.this);
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_descargaResumenMouseClicked
+
+    private void descargaHistorialMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_descargaHistorialMouseClicked
+        // TODO add your handling code here:
+
+        if (listaPlanes == null || listaPlanes.isEmpty()) {
+            JOptionPane.showMessageDialog(PlanIndividualView.this, "No hay datos para exportar.");
+            return;
+        }
+        ExcelHistorialIntervenciones.exportarHistorial(listaPlanes, estudianteSeleccionado, PlanIndividualView.this);
+
+    }//GEN-LAST:event_descargaHistorialMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -682,6 +694,8 @@ public class PlanIndividualView extends javax.swing.JPanel {
     private javax.swing.JComboBox<Estudiante> cbListaEstudiantes;
     private javax.swing.JComboBox<TipoConducta> cbTipoConducta;
     private javax.swing.JCheckBox chkImplementacion;
+    private javax.swing.JLabel descargaHistorial;
+    private javax.swing.JLabel descargaResumen;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;

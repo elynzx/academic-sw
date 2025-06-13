@@ -67,15 +67,10 @@ public class UsuarioCtrl {
 
                 case "docente" -> {
                     if (idDocente != -1) {
-                        
+
                         MenuDocenteView vMenuDocente = new MenuDocenteView(idDocente);
                         vMenuDocente.setVisible(true);
                         vMenuDocente.setLocationRelativeTo(null);
-                        
-//                        DashboardDocente vDocente = new DashboardDocente(idDocente);
-//                        vDocente.setVisible(true);
-//                        vDocente.setLocationRelativeTo(null);
-
 
                     } else {
                         JOptionPane.showMessageDialog(null, "No se encontró información del docente");

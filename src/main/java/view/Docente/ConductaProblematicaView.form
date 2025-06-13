@@ -147,7 +147,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="2"/>
-            <Property name="text" type="java.lang.String" value="1. Conducta Problem&#xe1;tica"/>
+            <Property name="text" type="java.lang.String" value="Conducta Problem&#xe1;tica"/>
             <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
               <Dimension value="[70, 25]"/>
             </Property>

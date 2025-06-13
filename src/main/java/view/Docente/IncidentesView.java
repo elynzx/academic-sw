@@ -35,6 +35,7 @@ public class IncidentesView extends javax.swing.JPanel {
     private int idEstudianteSeleccionado;
     private FichaAbcView vFichaAbc;
     private ConductaProblematicaView vConducta;
+    private boolean listaEstudiantesInicializado = false;
 
     public IncidentesView(int idDocente) {
         this.idDocente = idDocente;
@@ -68,16 +69,11 @@ public class IncidentesView extends javax.swing.JPanel {
     }
 
     private void cargarConductasEstudiante(int idEstudiante) {
-        DefaultTableModel modelo = new DefaultTableModel();
-        modelo.addColumn("ID");
-        modelo.addColumn("Tipo de Conducta");
-        modelo.addColumn("Fecha");
-        modelo.addColumn("Gravedad");
-        modelo.addColumn("Descripción");
 
         List<ConductaProblematica> listaConductas = registroIncidenteDao.obtenerConductasPorEstudiante(idEstudiante);
-        modelo.setRowCount(0);
 
+        DefaultTableModel modelo = (DefaultTableModel) tbIncidentesEstudiante.getModel();
+        modelo.setRowCount(0);
         for (ConductaProblematica conducta : listaConductas) {
             modelo.addRow(new Object[]{
                 conducta.getId(),
@@ -88,17 +84,13 @@ public class IncidentesView extends javax.swing.JPanel {
             });
         }
 
-        tbIncidentesEstudiante.setModel(modelo);
     }
 
     private void cargarFichasEstudiante(int idEstudiante) {
-        DefaultTableModel modelo = new DefaultTableModel();
-        modelo.addColumn("Fecha");
-        modelo.addColumn("Antecedente");
-        modelo.addColumn("Comportamiento");
-        modelo.addColumn("Gravedad");
-
+   
         List<FichaAbc> listaFichas = registroIncidenteDao.obtenerFichasPorEstudiante(idEstudiante);
+         DefaultTableModel modelo = (DefaultTableModel) tbHistorialFichasAbc.getModel();
+         
         modelo.setRowCount(0);
 
         for (FichaAbc fichaAbc : listaFichas) {
@@ -110,7 +102,7 @@ public class IncidentesView extends javax.swing.JPanel {
             });
         }
 
-        tbHistorialFichasAbc.setModel(modelo);
+
     }
 
     public void setFichaPanel() {
@@ -164,6 +156,8 @@ public class IncidentesView extends javax.swing.JPanel {
         jSeparator1 = new javax.swing.JSeparator();
         lbNivel6 = new javax.swing.JLabel();
         jSeparator2 = new javax.swing.JSeparator();
+        descargaResumen = new javax.swing.JLabel();
+        descargaHistorial = new javax.swing.JLabel();
 
         jpDashboardDocente.setBackground(new java.awt.Color(255, 255, 255));
         jpDashboardDocente.setMinimumSize(new java.awt.Dimension(1250, 734));
@@ -211,9 +205,9 @@ public class IncidentesView extends javax.swing.JPanel {
         jpDashboardDocente.add(jpIncidente, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 160, 450, 490));
 
         btnConductaProb.setBackground(new java.awt.Color(110, 146, 203));
-        btnConductaProb.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnConductaProb.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnConductaProb.setForeground(new java.awt.Color(255, 255, 255));
-        btnConductaProb.setText("CONDUCTA PROBLEMATICA");
+        btnConductaProb.setText("1. Conducta problemática");
         btnConductaProb.setBorder(null);
         btnConductaProb.setBorderPainted(false);
         btnConductaProb.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -227,10 +221,10 @@ public class IncidentesView extends javax.swing.JPanel {
         });
         jpDashboardDocente.add(btnConductaProb, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 110, 230, 50));
 
-        btnFichaAbc.setBackground(new java.awt.Color(102, 102, 102));
-        btnFichaAbc.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnFichaAbc.setBackground(new java.awt.Color(75, 75, 75));
+        btnFichaAbc.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnFichaAbc.setForeground(new java.awt.Color(255, 255, 255));
-        btnFichaAbc.setText("FICHA ABC");
+        btnFichaAbc.setText("2. Ficha ABC");
         btnFichaAbc.setBorder(null);
         btnFichaAbc.setBorderPainted(false);
         btnFichaAbc.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -256,22 +250,21 @@ public class IncidentesView extends javax.swing.JPanel {
         tbIncidentesEstudiante.setForeground(new java.awt.Color(51, 51, 51));
         tbIncidentesEstudiante.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Id", "Tipo", "Fecha", "Gravedad"
+                "Id", "Conducta problemática", "Fecha", "Gravedad", "Descripción"
             }
         ));
         tbIncidentesEstudiante.setGridColor(new java.awt.Color(214, 214, 214));
-        tbIncidentesEstudiante.setRowHeight(25);
+        tbIncidentesEstudiante.setIntercellSpacing(new java.awt.Dimension(0, 0));
         tbIncidentesEstudiante.setSelectionBackground(new java.awt.Color(252, 249, 239));
         tbIncidentesEstudiante.setShowGrid(false);
-        tbIncidentesEstudiante.setShowHorizontalLines(true);
         jScrollPane2.setViewportView(tbIncidentesEstudiante);
 
         jpDashboardDocente.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 330, 630, 130));
@@ -280,7 +273,7 @@ public class IncidentesView extends javax.swing.JPanel {
         jLabel6.setForeground(new java.awt.Color(51, 51, 51));
         jLabel6.setText("ID:");
         jLabel6.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        jpDashboardDocente.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, 70, 20));
+        jpDashboardDocente.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 190, 70, 20));
 
         txtIdEstudiante.setEditable(false);
         txtIdEstudiante.setBackground(new java.awt.Color(255, 255, 255));
@@ -292,20 +285,20 @@ public class IncidentesView extends javax.swing.JPanel {
                 txtIdEstudianteActionPerformed(evt);
             }
         });
-        jpDashboardDocente.add(txtIdEstudiante, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 220, 110, 25));
+        jpDashboardDocente.add(txtIdEstudiante, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, 110, 25));
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(51, 51, 51));
         jLabel9.setText("Nombres y apellidos:");
         jLabel9.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        jpDashboardDocente.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 200, -1, 20));
+        jpDashboardDocente.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 190, -1, 20));
 
         txtNombreEstudiante.setEditable(false);
         txtNombreEstudiante.setBackground(new java.awt.Color(255, 255, 255));
         txtNombreEstudiante.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         txtNombreEstudiante.setForeground(new java.awt.Color(51, 51, 51));
         txtNombreEstudiante.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
-        jpDashboardDocente.add(txtNombreEstudiante, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 220, 240, 25));
+        jpDashboardDocente.add(txtNombreEstudiante, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 210, 240, 25));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(51, 51, 51));
@@ -318,7 +311,7 @@ public class IncidentesView extends javax.swing.JPanel {
         txtDiagnosticoEstudiante.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         txtDiagnosticoEstudiante.setForeground(new java.awt.Color(51, 51, 51));
         txtDiagnosticoEstudiante.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
-        jpDashboardDocente.add(txtDiagnosticoEstudiante, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 220, 240, 25));
+        jpDashboardDocente.add(txtDiagnosticoEstudiante, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 210, 240, 25));
 
         tbHistorialFichasAbc.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         tbHistorialFichasAbc.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
@@ -337,13 +330,12 @@ public class IncidentesView extends javax.swing.JPanel {
             }
         ));
         tbHistorialFichasAbc.setGridColor(new java.awt.Color(214, 214, 214));
-        tbHistorialFichasAbc.setRowHeight(25);
+        tbHistorialFichasAbc.setIntercellSpacing(new java.awt.Dimension(0, 0));
         tbHistorialFichasAbc.setSelectionBackground(new java.awt.Color(252, 249, 239));
         tbHistorialFichasAbc.setShowGrid(false);
-        tbHistorialFichasAbc.setShowHorizontalLines(true);
         jScrollPane3.setViewportView(tbHistorialFichasAbc);
 
-        jpDashboardDocente.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 518, 630, 130));
+        jpDashboardDocente.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 510, 630, 140));
 
         lbNivel7.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         lbNivel7.setForeground(new java.awt.Color(39, 84, 138));
@@ -357,7 +349,7 @@ public class IncidentesView extends javax.swing.JPanel {
         jLabel4.setForeground(new java.awt.Color(51, 51, 51));
         jLabel4.setText("Diagnósticos:");
         jLabel4.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        jpDashboardDocente.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 200, -1, 20));
+        jpDashboardDocente.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 190, -1, 20));
 
         jSeparator1.setForeground(new java.awt.Color(204, 204, 204));
         jpDashboardDocente.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 270, 630, 10));
@@ -365,14 +357,33 @@ public class IncidentesView extends javax.swing.JPanel {
         lbNivel6.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         lbNivel6.setForeground(new java.awt.Color(39, 84, 138));
         lbNivel6.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lbNivel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/User_fill-2.png"))); // NOI18N
         lbNivel6.setText("Datos de estudiante:");
         lbNivel6.setToolTipText("");
         lbNivel6.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         lbNivel6.setPreferredSize(new java.awt.Dimension(70, 25));
-        jpDashboardDocente.add(lbNivel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, 230, 50));
+        jpDashboardDocente.add(lbNivel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, 290, 50));
 
         jSeparator2.setForeground(new java.awt.Color(45, 94, 152));
         jpDashboardDocente.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, 1160, 12));
+
+        descargaResumen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Import-2.png"))); // NOI18N
+        descargaResumen.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        descargaResumen.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                descargaResumenMouseClicked(evt);
+            }
+        });
+        jpDashboardDocente.add(descargaResumen, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 300, 40, 25));
+
+        descargaHistorial.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Import-2.png"))); // NOI18N
+        descargaHistorial.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        descargaHistorial.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                descargaHistorialMouseClicked(evt);
+            }
+        });
+        jpDashboardDocente.add(descargaHistorial, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 480, 40, 25));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -390,12 +401,17 @@ public class IncidentesView extends javax.swing.JPanel {
 
     private void cbListaEstudiantesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbListaEstudiantesActionPerformed
 
+        if (!listaEstudiantesInicializado) {
+            listaEstudiantesInicializado = true;
+            return;
+        }
+
         Estudiante estudiante = (Estudiante) cbListaEstudiantes.getSelectedItem();
         if (estudiante != null) {
             idEstudianteSeleccionado = estudiante.getIdEstudiante();
             mostrarDatosEstudiante(idEstudianteSeleccionado);
-            cargarConductasEstudiante(idEstudianteSeleccionado);
             cargarFichasEstudiante(idEstudianteSeleccionado);
+            cargarConductasEstudiante(idEstudianteSeleccionado);
         }
 
 
@@ -404,7 +420,7 @@ public class IncidentesView extends javax.swing.JPanel {
     private void btnConductaProbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConductaProbActionPerformed
 
         btnConductaProb.setBackground(new Color(110, 146, 203));
-        btnFichaAbc.setBackground(new Color(102, 102, 102));
+        btnFichaAbc.setBackground(new Color(75, 75, 75));
         setConductaPanel();
 
 
@@ -413,7 +429,7 @@ public class IncidentesView extends javax.swing.JPanel {
     private void btnFichaAbcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFichaAbcActionPerformed
 
         btnFichaAbc.setBackground(new Color(110, 146, 203));
-        btnConductaProb.setBackground(new Color(102, 102, 102));
+        btnConductaProb.setBackground(new Color(75, 75, 75));
         setFichaPanel();
 
 
@@ -423,6 +439,25 @@ public class IncidentesView extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtIdEstudianteActionPerformed
 
+    private void descargaResumenMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_descargaResumenMouseClicked
+//
+//        if (listaResumenIncidentes == null || listaResumenIncidentes.isEmpty()) {
+//            JOptionPane.showMessageDialog(PlanIndividualView.this, "No hay datos para exportar.");
+//            return;
+//        }
+//        ExcelResumenIncidentes.exportarResumen(listaResumenIncidentes, estudianteSeleccionado, PlanIndividualView.this);
+
+    }//GEN-LAST:event_descargaResumenMouseClicked
+
+    private void descargaHistorialMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_descargaHistorialMouseClicked
+
+//        if (listaPlanes == null || listaPlanes.isEmpty()) {
+//            JOptionPane.showMessageDialog(PlanIndividualView.this, "No hay datos para exportar.");
+//            return;
+//        }
+//        ExcelHistorialIntervenciones.exportarHistorial(listaPlanes, estudianteSeleccionado, PlanIndividualView.this);
+    }//GEN-LAST:event_descargaHistorialMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnConductaProb;
@@ -430,6 +465,8 @@ public class IncidentesView extends javax.swing.JPanel {
     private javax.swing.ButtonGroup btnGroupConducta;
     private javax.swing.ButtonGroup btnGroupFicha;
     private javax.swing.JComboBox<Estudiante> cbListaEstudiantes;
+    private javax.swing.JLabel descargaHistorial;
+    private javax.swing.JLabel descargaResumen;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;

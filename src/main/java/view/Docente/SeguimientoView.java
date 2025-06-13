@@ -188,12 +188,15 @@ public class SeguimientoView extends javax.swing.JPanel {
         jpDashboardDocente.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lbNivel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lbNivel3.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         lbNivel3.setForeground(new java.awt.Color(39, 84, 138));
         lbNivel3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lbNivel3.setText("Lista de Estudiantes");
+        lbNivel3.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         lbNivel3.setPreferredSize(new java.awt.Dimension(70, 25));
+        jPanel3.add(lbNivel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 281, 50));
 
         tbListaEstudiantes.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         tbListaEstudiantes.setForeground(new java.awt.Color(51, 51, 51));
@@ -229,47 +232,62 @@ public class SeguimientoView extends javax.swing.JPanel {
         tbListaEstudiantes.setShowHorizontalLines(true);
         jScrollPane3.setViewportView(tbListaEstudiantes);
 
+        jPanel3.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 78, 280, 468));
+
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         txtIdEstudiante.setEditable(false);
         txtIdEstudiante.setBackground(new java.awt.Color(255, 255, 255));
         txtIdEstudiante.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         txtIdEstudiante.setForeground(new java.awt.Color(51, 51, 51));
         txtIdEstudiante.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
+        jPanel2.add(txtIdEstudiante, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 70, 80, 25));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(51, 51, 51));
         jLabel6.setText("ID:");
+        jLabel6.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 50, 37, 20));
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(51, 51, 51));
         jLabel9.setText("Nombres:");
+        jLabel9.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(128, 50, -1, 20));
 
         txtNombreEstudiante.setEditable(false);
         txtNombreEstudiante.setBackground(new java.awt.Color(255, 255, 255));
         txtNombreEstudiante.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         txtNombreEstudiante.setForeground(new java.awt.Color(51, 51, 51));
         txtNombreEstudiante.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
+        jPanel2.add(txtNombreEstudiante, new org.netbeans.lib.awtextra.AbsoluteConstraints(128, 70, 216, 25));
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(51, 51, 51));
         jLabel8.setText("Apellidos:");
+        jLabel8.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 107, -1, 20));
 
         txtApellidoEstudiante.setEditable(false);
         txtApellidoEstudiante.setBackground(new java.awt.Color(255, 255, 255));
         txtApellidoEstudiante.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         txtApellidoEstudiante.setForeground(new java.awt.Color(51, 51, 51));
         txtApellidoEstudiante.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
+        jPanel2.add(txtApellidoEstudiante, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 127, 322, 25));
 
         txtDiagnosticoEstudiante.setEditable(false);
         txtDiagnosticoEstudiante.setBackground(new java.awt.Color(255, 255, 255));
         txtDiagnosticoEstudiante.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         txtDiagnosticoEstudiante.setForeground(new java.awt.Color(51, 51, 51));
         txtDiagnosticoEstudiante.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
+        jPanel2.add(txtDiagnosticoEstudiante, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 184, 322, 25));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(51, 51, 51));
         jLabel3.setText("Diagnóstico:");
+        jLabel3.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 164, -1, 20));
 
         lbNivel6.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         lbNivel6.setForeground(new java.awt.Color(39, 84, 138));
@@ -279,6 +297,7 @@ public class SeguimientoView extends javax.swing.JPanel {
         lbNivel6.setToolTipText("");
         lbNivel6.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         lbNivel6.setPreferredSize(new java.awt.Dimension(70, 25));
+        jPanel2.add(lbNivel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 0, 230, 32));
 
         lbNivel5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         lbNivel5.setForeground(new java.awt.Color(39, 84, 138));
@@ -286,6 +305,7 @@ public class SeguimientoView extends javax.swing.JPanel {
         lbNivel5.setText("Resumen de progreso");
         lbNivel5.setToolTipText("");
         lbNivel5.setPreferredSize(new java.awt.Dimension(70, 25));
+        jPanel2.add(lbNivel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 257, 265, 34));
 
         tbCategoriasEstudiante.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         tbCategoriasEstudiante.setForeground(new java.awt.Color(51, 51, 51));
@@ -324,82 +344,9 @@ public class SeguimientoView extends javax.swing.JPanel {
         tbCategoriasEstudiante.setShowHorizontalLines(true);
         jScrollPane2.setViewportView(tbCategoriasEstudiante);
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtIdEstudiante, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(26, 26, 26)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel9)
-                            .addComponent(txtNombreEstudiante, javax.swing.GroupLayout.DEFAULT_SIZE, 216, Short.MAX_VALUE)))
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(txtApellidoEstudiante, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(lbNivel5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(lbNivel6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 322, Short.MAX_VALUE)
-                        .addComponent(txtDiagnosticoEstudiante, javax.swing.GroupLayout.Alignment.LEADING)))
-                .addGap(23, 23, 23))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addComponent(lbNivel6, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel9)
-                    .addComponent(jLabel6))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtIdEstudiante, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtNombreEstudiante, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel8)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtApellidoEstudiante, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtDiagnosticoEstudiante, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(48, 48, 48)
-                .addComponent(lbNivel5, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0))
-        );
+        jPanel2.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 303, 322, 165));
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(lbNivel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 281, Short.MAX_VALUE))
-                .addGap(26, 26, 26)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(12, Short.MAX_VALUE))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(lbNivel3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane3))
-                .addContainerGap(34, Short.MAX_VALUE))
-        );
+        jPanel3.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(331, 78, -1, -1));
 
         jpDashboardDocente.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 710, 580));
 
@@ -594,9 +541,9 @@ public class SeguimientoView extends javax.swing.JPanel {
                     .addComponent(lbNivel7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lbNivel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lbNivel8, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(cbCategoriaSeguimiento, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(txtDscConducta, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(txtDscConducta, javax.swing.GroupLayout.Alignment.LEADING))
                 .addContainerGap(37, Short.MAX_VALUE))
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(58, 58, 58)
@@ -696,6 +643,8 @@ public class SeguimientoView extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, "Error al guardar seguimiento.");
         }
 
+        cargarEstudiantesTabla(idDocente);
+        
     }//GEN-LAST:event_btnGuardarSeguimientoActionPerformed
 
 
