@@ -18,6 +18,10 @@ public class TipoConducta {
         this.nombre = nombre;
     }
 
+    public TipoConducta(String nombre) {
+        this.nombre = nombre;
+    }
+
     public int getId() {
         return id;
     }

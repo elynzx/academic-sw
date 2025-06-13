@@ -38,6 +38,12 @@ public class PlanIntervencion {
         this.observaciones = observaciones;
     }
 
+    public PlanIntervencion(Date fechaInicio, TipoConducta tipoConducta, EstrategiaIntervencion estrategia) {
+        this.fechaInicio = fechaInicio;
+        this.tipoConducta = tipoConducta;
+        this.estrategia = estrategia;
+    }
+
     public int getId() {
         return id;
     }
@@ -109,8 +115,6 @@ public class PlanIntervencion {
     public void setObservaciones(String observaciones) {
         this.observaciones = observaciones;
     }
-    
-    
-    
 
+    
 }

@@ -19,6 +19,7 @@ public class MenuDocenteView extends javax.swing.JFrame {
     private DashboardView vDashboardDocente;
     private SeguimientoView vSeguimiento;
     private IncidentesView vIncidente;
+    private PlanIndividualView vPlanIndividual;
     private int idDocente;
     private Utilidad utilidad;
     Color azul = new Color(10, 93, 175);
@@ -67,15 +68,15 @@ public class MenuDocenteView extends javax.swing.JFrame {
         jpMenu.add(vIncidente);
         SwingUtilities.updateComponentTreeUI(jpMenu);
     }
-//
-//    public void setReporteDocente() {
-//        if (vReporteDocente == null) {
-//            vReporteDocente = new ReporteDocenteView(idDocente);
-//        }
-//        jpMenu.removeAll();
-//        jpMenu.add(vReporteDocente);
-//        SwingUtilities.updateComponentTreeUI(jpMenu);
-//    }
+
+    public void setPlanIndividual() {
+        if (vPlanIndividual == null) {
+            vPlanIndividual = new PlanIndividualView(idDocente);
+        }
+        jpMenu.removeAll();
+        jpMenu.add(vPlanIndividual);
+        SwingUtilities.updateComponentTreeUI(jpMenu);
+    }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -294,6 +295,11 @@ public class MenuDocenteView extends javax.swing.JFrame {
         pPlanIndividual.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         pPlanIndividual.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         pPlanIndividual.setIconTextGap(2);
+        pPlanIndividual.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pPlanIndividualMouseClicked(evt);
+            }
+        });
 
         bPlanIndividual.setBackground(new java.awt.Color(255, 255, 255));
         bPlanIndividual.setPreferredSize(new java.awt.Dimension(120, 2));
@@ -502,6 +508,18 @@ public class MenuDocenteView extends javax.swing.JFrame {
 
         // TODO add your handling code here:
     }//GEN-LAST:event_pIncidentesMouseClicked
+
+    private void pPlanIndividualMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pPlanIndividualMouseClicked
+
+        bReportes.setBackground(Color.white);
+        bInicio.setBackground(Color.white);
+        bPlanIndividual.setBackground(azul);
+        bIncidentes.setBackground(Color.white);
+        bSeguimiento.setBackground(Color.white);
+        setPlanIndividual();
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pPlanIndividualMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

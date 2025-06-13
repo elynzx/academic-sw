@@ -51,6 +51,8 @@ public class ReporteDocenteView extends javax.swing.JPanel {
         jPanel2 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         btnCrearTicket12 = new javax.swing.JButton();
+        btnBuscarEstudiante = new javax.swing.JButton();
+        txtEstudianteFiltro = new javax.swing.JTextField();
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -348,6 +350,17 @@ public class ReporteDocenteView extends javax.swing.JPanel {
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, 1090, -1));
 
+        btnBuscarEstudiante.setBackground(new java.awt.Color(45, 94, 152));
+        btnBuscarEstudiante.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Search_alt-2.png"))); // NOI18N
+        btnBuscarEstudiante.setBorder(null);
+        btnBuscarEstudiante.setBorderPainted(false);
+        btnBuscarEstudiante.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jPanel1.add(btnBuscarEstudiante, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 30, -1, -1));
+
+        txtEstudianteFiltro.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        txtEstudianteFiltro.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(45, 94, 152)));
+        jPanel1.add(txtEstudianteFiltro, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 30, -1, -1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -364,6 +377,7 @@ public class ReporteDocenteView extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBuscarEstudiante;
     private javax.swing.JButton btnCrearTicket10;
     private javax.swing.JButton btnCrearTicket11;
     private javax.swing.JButton btnCrearTicket12;
@@ -389,5 +403,6 @@ public class ReporteDocenteView extends javax.swing.JPanel {
     private javax.swing.JLabel lbNivel13;
     private javax.swing.JLabel lbNivel14;
     private javax.swing.JLabel lbNivel15;
+    private javax.swing.JTextField txtEstudianteFiltro;
     // End of variables declaration//GEN-END:variables
 }

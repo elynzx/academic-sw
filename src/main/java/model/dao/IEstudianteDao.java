@@ -15,6 +15,5 @@ public interface IEstudianteDao {
 
         
     Estudiante obtenerDatosEstudiante(int idEstudiante);
-//    List<Estudiante> obtenerEstudiantesDocente(int idDocente);
     
 }

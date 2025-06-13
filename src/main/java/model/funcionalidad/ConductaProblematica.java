@@ -39,6 +39,15 @@ public class ConductaProblematica {
         this.tipo = tipo;
         this.gravedad = gravedad;
     }
+
+    public ConductaProblematica(int id, Date fecha, TipoConducta tipo, String descripcion, int gravedad) {
+        this.id = id;
+        this.fecha = fecha;
+        this.tipo = tipo;
+        this.descripcion = descripcion;
+        this.gravedad = gravedad;
+    }
+    
     
     
     

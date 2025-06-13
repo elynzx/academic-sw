@@ -18,6 +18,10 @@ public class Antecedente {
         this.nombre = nombre;
     }
 
+    public Antecedente(String nombre) {
+        this.nombre = nombre;
+    }
+
     public int getId() {
         return id;
     }

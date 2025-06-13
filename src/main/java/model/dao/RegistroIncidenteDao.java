@@ -12,10 +12,10 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import model.funcionalidad.catalogo.Antecedente;
-import model.funcionalidad.catalogo.Diagnostico;
 import model.funcionalidad.catalogo.FuncionComportamiento;
 import model.funcionalidad.catalogo.TipoConducta;
-import model.entidades.Estudiante;
+import model.funcionalidad.ConductaProblematica;
+import model.funcionalidad.FichaAbc;
 
 /**
  *
@@ -98,16 +98,96 @@ public class RegistroIncidenteDao implements IRegistroIncidente {
     @Override
     public boolean guardarConductaProblematica(int idEstudiante, int idConducta, int idFuncionComportamiento, int gravedad, String descripcion) {
 
-        return true;
+        String sql = "INSERT INTO conducta_problematica (id_estudiante, fecha, id_tipo_conducta, id_funcion_comportamiento, descripcion, gravedad) VALUES (?, NOW(), ?, ?, ?, ?)";
+        try (PreparedStatement pst = conn.prepareStatement(sql)) {
+            pst.setInt(1, idEstudiante);
+            pst.setInt(2, idConducta);
+            pst.setInt(3, idFuncionComportamiento);
+            pst.setString(4, descripcion);
+            pst.setInt(5, gravedad);
+
+            return pst.executeUpdate() > 0;
+        } catch (SQLException e) {
+            System.out.println("Error al registrar conducta problemática:  " + e.getMessage());
+            return false;
+        }
 
     }
 
     @Override
     public boolean guardarFichaAbc(int idEstudiante, int idAntecedente, String comportamiento, String consecuencia, int gravedad) {
 
-        return true;
+        String sql = "INSERT INTO ficha_abc (id_estudiante, fecha, id_antecedente, comportamiento, consecuencia, gravedad) VALUES (?, NOW(), ?, ?, ?, ?)";
+        try (PreparedStatement pst = conn.prepareStatement(sql)) {
+            pst.setInt(1, idEstudiante);
+            pst.setInt(2, idAntecedente);
+            pst.setString(3, comportamiento);
+            pst.setString(4, consecuencia);
+            pst.setInt(5, gravedad);
+
+            return pst.executeUpdate() > 0;
+        } catch (SQLException e) {
+            System.out.println("Error al registrar Ficha ABC:  " + e.getMessage());
+            return false;
+        }
+
     }
 
+    @Override
+    public List<ConductaProblematica> obtenerConductasPorEstudiante(int idEstudiante) {
+        List<ConductaProblematica> listaConductas = new ArrayList<>();
+        String sql = "SELECT c.id_conducta, c.fecha, t.nombre AS tipo_conducta, c.gravedad, c.descripcion "
+                + "FROM conducta_problematica c "
+                + "JOIN tipo_conducta t ON c.id_tipo_conducta = t.id_tipo_conducta "
+                + "WHERE c.id_estudiante = ? "
+                + "ORDER BY c.fecha DESC";
 
-    
+        try (PreparedStatement pst = conn.prepareStatement(sql)) {
+            pst.setInt(1, idEstudiante);
+            ResultSet rs = pst.executeQuery();
+
+            while (rs.next()) {
+                listaConductas.add(new ConductaProblematica(
+                        rs.getInt("id_conducta"),
+                        rs.getDate("fecha"),
+                        new TipoConducta(rs.getString("tipo_conducta")),
+                        rs.getString("descripcion"),
+                        rs.getInt("gravedad")
+                ));
+            }
+        } catch (SQLException e) {
+            System.out.println("Error al obtener conductas del estudiante: " + e.getMessage());
+        }
+
+        return listaConductas;
+    }
+
+    @Override
+    public List<FichaAbc> obtenerFichasPorEstudiante(int idEstudiante) {
+        List<FichaAbc> listaFichas = new ArrayList<>();
+        String sql = "SELECT f.fecha, a.descripcion AS antecedente, f.comportamiento, f.gravedad "
+                + "FROM ficha_abc f "
+                + "JOIN antecedente a ON f.id_antecedente = a.id_antecedente "
+                + "WHERE f.id_estudiante = ? "
+                + "ORDER BY f.fecha DESC";
+
+        try (PreparedStatement pst = conn.prepareStatement(sql)) {
+            pst.setInt(1, idEstudiante);
+            ResultSet rs = pst.executeQuery();
+
+            while (rs.next()) {
+                listaFichas.add(new FichaAbc(
+                        rs.getDate("fecha"),
+                        new Antecedente(rs.getString("antecedente")), // ✅ Se usa `descripcion`
+                        rs.getString("comportamiento"),
+                        rs.getInt("gravedad")
+                ));
+            }
+        } catch (SQLException e) {
+            System.out.println("Error al obtener fichas ABC del estudiante: " + e.getMessage());
+        }
+
+        return listaFichas;
+    }
+
 }

@@ -89,22 +89,6 @@ public class DashboardView extends javax.swing.JPanel {
     private void initComponents() {
 
         jpDashboardDocente = new javax.swing.JPanel();
-        jPanel4 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel30 = new javax.swing.JLabel();
-        txtAlergias = new javax.swing.JTextField();
-        jLabel31 = new javax.swing.JLabel();
-        txtMedicinas = new javax.swing.JTextField();
-        jLabel32 = new javax.swing.JLabel();
-        jScrollPane5 = new javax.swing.JScrollPane();
-        txtObserv = new javax.swing.JTextArea();
-        txtEdad = new javax.swing.JTextField();
-        jLabel33 = new javax.swing.JLabel();
-        jLabel29 = new javax.swing.JLabel();
-        txtDiagnostico = new javax.swing.JTextField();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tbEstudiantesDashboard = new javax.swing.JTable();
-        jPanel16 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         jPanel8 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
@@ -128,8 +112,23 @@ public class DashboardView extends javax.swing.JPanel {
         jScrollPane4 = new javax.swing.JScrollPane();
         jlTopIncidentes = new javax.swing.JList<>();
         lbNivel6 = new javax.swing.JLabel();
-        btnAsistencia = new javax.swing.JButton();
         lbNivel12 = new javax.swing.JLabel();
+        btnAsistencia = new javax.swing.JButton();
+        jPanel16 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tbEstudiantesDashboard = new javax.swing.JTable();
+        jLabel33 = new javax.swing.JLabel();
+        txtEdad = new javax.swing.JTextField();
+        jLabel30 = new javax.swing.JLabel();
+        txtAlergias = new javax.swing.JTextField();
+        jLabel31 = new javax.swing.JLabel();
+        txtMedicinas = new javax.swing.JTextField();
+        jLabel29 = new javax.swing.JLabel();
+        txtDiagnostico = new javax.swing.JTextField();
+        jLabel32 = new javax.swing.JLabel();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        txtObserv = new javax.swing.JTextArea();
+        jSeparator1 = new javax.swing.JSeparator();
 
         setMinimumSize(new java.awt.Dimension(1250, 734));
         setPreferredSize(new java.awt.Dimension(1250, 734));
@@ -138,196 +137,6 @@ public class DashboardView extends javax.swing.JPanel {
         jpDashboardDocente.setMinimumSize(new java.awt.Dimension(1250, 734));
         jpDashboardDocente.setPreferredSize(new java.awt.Dimension(1250, 734));
         jpDashboardDocente.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(229, 229, 229)));
-
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-
-        jLabel30.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
-        jLabel30.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel30.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel30.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/flash-1.png"))); // NOI18N
-        jLabel30.setText("Alergias:");
-
-        txtAlergias.setEditable(false);
-        txtAlergias.setBackground(new java.awt.Color(255, 255, 255));
-        txtAlergias.setForeground(new java.awt.Color(51, 51, 51));
-        txtAlergias.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
-        txtAlergias.setDisabledTextColor(new java.awt.Color(51, 51, 51));
-
-        jLabel31.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
-        jLabel31.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel31.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/pil-1.png"))); // NOI18N
-        jLabel31.setText("Medicinas:");
-
-        txtMedicinas.setEditable(false);
-        txtMedicinas.setBackground(new java.awt.Color(255, 255, 255));
-        txtMedicinas.setForeground(new java.awt.Color(51, 51, 51));
-        txtMedicinas.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
-        txtMedicinas.setDisabledTextColor(new java.awt.Color(51, 51, 51));
-
-        jLabel32.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
-        jLabel32.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel32.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel32.setText("Observación:");
-
-        txtObserv.setEditable(false);
-        txtObserv.setBackground(new java.awt.Color(255, 255, 255));
-        txtObserv.setColumns(20);
-        txtObserv.setForeground(new java.awt.Color(51, 51, 51));
-        txtObserv.setLineWrap(true);
-        txtObserv.setRows(5);
-        txtObserv.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
-        txtObserv.setDisabledTextColor(new java.awt.Color(51, 51, 51));
-        txtObserv.setEnabled(false);
-        jScrollPane5.setViewportView(txtObserv);
-
-        txtEdad.setForeground(new java.awt.Color(51, 51, 51));
-        txtEdad.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
-        txtEdad.setDisabledTextColor(new java.awt.Color(51, 51, 51));
-
-        jLabel33.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
-        jLabel33.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel33.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel33.setText("Edad:");
-
-        jLabel29.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
-        jLabel29.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel29.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel29.setText("Diagnóstico:");
-
-        txtDiagnostico.setEditable(false);
-        txtDiagnostico.setBackground(new java.awt.Color(255, 255, 255));
-        txtDiagnostico.setForeground(new java.awt.Color(51, 51, 51));
-        txtDiagnostico.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
-        txtDiagnostico.setDisabledTextColor(new java.awt.Color(51, 51, 51));
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(txtDiagnostico, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtAlergias, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(txtEdad, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel32, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel31, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtMedicinas, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE))
-                        .addGap(0, 22, Short.MAX_VALUE))))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtEdad, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtAlergias, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtMedicinas, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtDiagnostico, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addComponent(jLabel32, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-
-        tbEstudiantesDashboard.setForeground(new java.awt.Color(51, 51, 51));
-        tbEstudiantesDashboard.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
-            },
-            new String [] {
-                "Id", "Nombre", "Apellido"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false, false
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        tbEstudiantesDashboard.setToolTipText("Selecciona un alumno para ver sus métricas");
-        tbEstudiantesDashboard.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        tbEstudiantesDashboard.setGridColor(new java.awt.Color(214, 214, 214));
-        tbEstudiantesDashboard.setRowHeight(25);
-        tbEstudiantesDashboard.setSelectionBackground(new java.awt.Color(45, 94, 152));
-        tbEstudiantesDashboard.setSelectionForeground(new java.awt.Color(255, 255, 255));
-        tbEstudiantesDashboard.setShowGrid(false);
-        tbEstudiantesDashboard.setShowHorizontalLines(true);
-        jScrollPane1.setViewportView(tbEstudiantesDashboard);
-
-        javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
-        jPanel16.setLayout(jPanel16Layout);
-        jPanel16Layout.setHorizontalGroup(
-            jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 275, Short.MAX_VALUE)
-        );
-        jPanel16Layout.setVerticalGroup(
-            jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPanel16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(22, Short.MAX_VALUE))
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(23, Short.MAX_VALUE))
-        );
-
-        jpDashboardDocente.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 290, 860, 380));
 
         jPanel1.setBackground(new java.awt.Color(221, 227, 241));
         jPanel1.setPreferredSize(new java.awt.Dimension(1250, 243));
@@ -528,7 +337,7 @@ public class DashboardView extends javax.swing.JPanel {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(44, 44, 44)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
@@ -537,7 +346,7 @@ public class DashboardView extends javax.swing.JPanel {
                         .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jPanel15, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lbNivel13, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -548,28 +357,23 @@ public class DashboardView extends javax.swing.JPanel {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(23, 23, 23)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(23, 23, 23)
-                        .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(15, 15, 15)
                         .addComponent(lbFechaHoy, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(lbNivel13, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(26, 26, 26)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jPanel15, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE)
-                            .addComponent(jPanel14, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE)
-                            .addComponent(jPanel13, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE)
-                            .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(26, 26, 26))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lbNivel13, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(jPanel15, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE)
+                        .addComponent(jPanel14, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE)
+                        .addComponent(jPanel13, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE)
+                        .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(32, 32, 32))
         );
 
         jpDashboardDocente.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1250, 200));
@@ -585,7 +389,7 @@ public class DashboardView extends javax.swing.JPanel {
         );
         jPanel11Layout.setVerticalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 263, Short.MAX_VALUE)
+            .addGap(0, 242, Short.MAX_VALUE)
         );
 
         jlTopIncidentes.setBorder(null);
@@ -621,7 +425,7 @@ public class DashboardView extends javax.swing.JPanel {
                     .addComponent(lbNivel6, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 219, Short.MAX_VALUE)
                     .addComponent(jPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -632,10 +436,19 @@ public class DashboardView extends javax.swing.JPanel {
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
 
-        jpDashboardDocente.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, 260, 440));
+        jpDashboardDocente.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 230, 260, 420));
+
+        lbNivel12.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        lbNivel12.setForeground(new java.awt.Color(39, 84, 138));
+        lbNivel12.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lbNivel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/pie_chart_fill-2.png"))); // NOI18N
+        lbNivel12.setText("Métricas de estudiante");
+        lbNivel12.setToolTipText("");
+        lbNivel12.setPreferredSize(new java.awt.Dimension(70, 25));
+        jpDashboardDocente.add(lbNivel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 230, 300, 40));
 
         btnAsistencia.setBackground(new java.awt.Color(221, 168, 83));
         btnAsistencia.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -653,14 +466,131 @@ public class DashboardView extends javax.swing.JPanel {
         });
         jpDashboardDocente.add(btnAsistencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 220, 170, 50));
 
-        lbNivel12.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lbNivel12.setForeground(new java.awt.Color(39, 84, 138));
-        lbNivel12.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lbNivel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/pie_chart_fill-2.png"))); // NOI18N
-        lbNivel12.setText("Métricas de estudiante");
-        lbNivel12.setToolTipText("");
-        lbNivel12.setPreferredSize(new java.awt.Dimension(70, 25));
-        jpDashboardDocente.add(lbNivel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 230, 234, 50));
+        javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
+        jPanel16.setLayout(jPanel16Layout);
+        jPanel16Layout.setHorizontalGroup(
+            jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 310, Short.MAX_VALUE)
+        );
+        jPanel16Layout.setVerticalGroup(
+            jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        jpDashboardDocente.add(jPanel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 310, 310, 340));
+
+        tbEstudiantesDashboard.setForeground(new java.awt.Color(51, 51, 51));
+        tbEstudiantesDashboard.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "Id", "Nombre", "Apellido"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tbEstudiantesDashboard.setToolTipText("Selecciona un alumno para ver sus métricas");
+        tbEstudiantesDashboard.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        tbEstudiantesDashboard.setGridColor(new java.awt.Color(214, 214, 214));
+        tbEstudiantesDashboard.setRowHeight(25);
+        tbEstudiantesDashboard.setSelectionBackground(new java.awt.Color(45, 94, 152));
+        tbEstudiantesDashboard.setSelectionForeground(new java.awt.Color(255, 255, 255));
+        tbEstudiantesDashboard.setShowGrid(false);
+        tbEstudiantesDashboard.setShowHorizontalLines(true);
+        jScrollPane1.setViewportView(tbEstudiantesDashboard);
+
+        jpDashboardDocente.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 310, 240, 340));
+
+        jLabel33.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        jLabel33.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel33.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel33.setText("Edad:");
+        jpDashboardDocente.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 310, 39, -1));
+
+        txtEdad.setForeground(new java.awt.Color(51, 51, 51));
+        txtEdad.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
+        txtEdad.setDisabledTextColor(new java.awt.Color(51, 51, 51));
+        jpDashboardDocente.add(txtEdad, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 330, 82, 25));
+
+        jLabel30.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        jLabel30.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel30.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel30.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/flash-1.png"))); // NOI18N
+        jLabel30.setText("Alergias:");
+        jpDashboardDocente.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 370, 101, 16));
+
+        txtAlergias.setEditable(false);
+        txtAlergias.setBackground(new java.awt.Color(255, 255, 255));
+        txtAlergias.setForeground(new java.awt.Color(51, 51, 51));
+        txtAlergias.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
+        txtAlergias.setDisabledTextColor(new java.awt.Color(51, 51, 51));
+        jpDashboardDocente.add(txtAlergias, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 390, 240, 25));
+
+        jLabel31.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        jLabel31.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel31.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/pil-1.png"))); // NOI18N
+        jLabel31.setText("Medicinas:");
+        jpDashboardDocente.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 420, 114, 16));
+
+        txtMedicinas.setEditable(false);
+        txtMedicinas.setBackground(new java.awt.Color(255, 255, 255));
+        txtMedicinas.setForeground(new java.awt.Color(51, 51, 51));
+        txtMedicinas.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
+        txtMedicinas.setDisabledTextColor(new java.awt.Color(51, 51, 51));
+        jpDashboardDocente.add(txtMedicinas, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 450, 240, 25));
+
+        jLabel29.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        jLabel29.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel29.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel29.setText("Diagnóstico:");
+        jpDashboardDocente.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 480, 93, 16));
+
+        txtDiagnostico.setEditable(false);
+        txtDiagnostico.setBackground(new java.awt.Color(255, 255, 255));
+        txtDiagnostico.setForeground(new java.awt.Color(51, 51, 51));
+        txtDiagnostico.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
+        txtDiagnostico.setDisabledTextColor(new java.awt.Color(51, 51, 51));
+        jpDashboardDocente.add(txtDiagnostico, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 510, 240, 25));
+
+        jLabel32.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        jLabel32.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel32.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel32.setText("Observación:");
+        jpDashboardDocente.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 550, 114, 16));
+
+        txtObserv.setEditable(false);
+        txtObserv.setBackground(new java.awt.Color(255, 255, 255));
+        txtObserv.setColumns(20);
+        txtObserv.setForeground(new java.awt.Color(51, 51, 51));
+        txtObserv.setLineWrap(true);
+        txtObserv.setRows(5);
+        txtObserv.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
+        txtObserv.setDisabledTextColor(new java.awt.Color(51, 51, 51));
+        txtObserv.setEnabled(false);
+        jScrollPane5.setViewportView(txtObserv);
+
+        jpDashboardDocente.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 570, 240, 80));
+
+        jSeparator1.setForeground(new java.awt.Color(204, 204, 204));
+        jpDashboardDocente.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 290, 850, 10));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -703,14 +633,13 @@ public class DashboardView extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel15;
     private javax.swing.JPanel jPanel16;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JList<String> jlHistorialRegistros;
     private javax.swing.JList<String> jlTopIncidentes;
     private javax.swing.JPanel jpDashboardDocente;
