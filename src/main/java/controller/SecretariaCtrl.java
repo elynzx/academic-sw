@@ -242,10 +242,13 @@ public class SecretariaCtrl {
         
         matriculaObjeto.setId(dao.obtenerMatricula(matriculaObjeto, estudiante, aula));
         
+        
+        JOptionPane.showMessageDialog(matricula, "Matricula Realizada correctamente");
         generarPdf(matriculaObjeto, aula);
         
         
-        JOptionPane.showMessageDialog(matricula, "Matricula Realizada correctamente");
+        JOptionPane.showMessageDialog(matricula, "Datos reiniciandose");
+        
         
         matricula.dispose();
         matricula = new Matricula();
